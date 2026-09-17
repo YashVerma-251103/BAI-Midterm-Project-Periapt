@@ -337,7 +337,8 @@ Continuous triage, regulatory evidence, insurance support, and premium protectio
 
 ### 9.5 Things that can't be fully verified
 24. Whether a **stealth startup or classified programme** already does this.
-25. Whether the professor accepts a niche inside a sub-topic (**ask the TA**).
+25. ~~Whether the professor accepts a niche inside a sub-topic.~~ **Resolved (17 Sept):** the official DES530 topic-selection sheet states *"Multiple students may select the same topic... Topic selection does not reserve an idea or solution. Students are expected to develop their own company and approach within the selected topic."* Topic submitted on the sheet.
+    - **New implication:** other students may pick Day-Zero Vulnerability Prioritisation too, so the satellite-mission angle is what differentiates this submission. Keep the idea private until submission.
 
 ---
 
