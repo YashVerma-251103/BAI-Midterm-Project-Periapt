@@ -209,6 +209,35 @@ Retraining is continuous and does not wait for failures.
 ### Q15. "Lock it in and write a detailed report."
 **Done:** this document.
 
+### Q16. "Which jurisdiction fits best for this idea?"
+**Key insight first:** all three listed jurisdictional frameworks centre on **personal data** (DPDP, UK GDPR, CCPA), but the platform mainly processes **non-personal machine telemetry**. Personal data enters in only three places, and governance must name them:
+1. **User terminals**: subscriber identity and location (in scope because of the whole-mission design).
+2. **Operator staff**: approver identities, audit logs of who approved which uplink.
+3. **Ground-station access logs.**
+
+So the best jurisdiction is the one whose framework also covers **AI risk and cybersecurity**, not only privacy.
+
+| | 🇺🇸 United States | 🇮🇳 India | 🇬🇧 United Kingdom |
+|---|---|---|---|
+| **Listed AI framework** | **NIST AI RMF** covers any AI system; its functions (Govern, Map, Measure, Manage) map to oversight, escalation, monitoring and audits | No AI-specific law; IT Rules target online intermediaries (weak fit) | AISI benchmarks aim at frontier models (weak fit) |
+| **Privacy** | CCPA/CPRA for subscriber and staff data | **DPDP Act**; **data localisation** fits federated learning (raw data stays in-country) | UK GDPR / DPA 2018; **Art. 22** concerns decisions *about people*, not patch decisions |
+| **Space and cyber rules** | **NIST IR 8270, NIST IR 8401**, **Space Policy Directive-5**, NCCoE space project | CERT-In 6-hour reporting, IN-SPACe authorisation, Indian Space Policy 2023 | NCSC guidance, Space Industry Act 2018 |
+| **Market fit** | Largest commercial space market and largest government buyer (matches B2G) | Fast-growing private sector, few mid-size constellation operators today | Small |
+| **References in hand** | NIST IR 8270 + NCCoE (from searches) | New research needed | New research needed |
+| **Extra depth** | **Export controls (ITAR/EAR)** limit sharing spacecraft technical data with foreign persons, which constrains federated learning across foreign operators | Localisation vs cross-border model updates | Little |
+| **Overall fit** | **Strongest** | Good alternative | Weakest |
+
+**Recommendation: United States.**
+1. **One coherent reference family:** NIST AI RMF (AI governance) + NIST IR 8270 (satellite security) + NIST IR 8401 (ground segment).
+2. **Matches the business:** the biggest pool of mid-size operators plus government buyers.
+3. **Original depth:** *"Our federated design lets us learn from foreign fleets without moving controlled technical data across borders."* This ties governance back to the moat (storytelling marks).
+
+**When to pick India instead:** for local relevance and viva comfort ("built for India's private space sector under IN-SPACe", with localisation justifying the federated design). Trade-off: weaker AI-specific regulation and fewer references in hand.
+
+**UK rejected:** smallest market, and its distinctive item (Art. 22) doesn't apply to non-personal patch decisions.
+
+**Status:** US recommended; **final confirmation pending**.
+
 ---
 
 ## 5. Questions Claude Asked Me
