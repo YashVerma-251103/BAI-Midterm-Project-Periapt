@@ -382,6 +382,7 @@ These came from Claude's general knowledge, **not** from the web searches in thi
 - **India Patents Act s.3(k)** limits software patents.
 - Google Gboard uses federated learning.
 - AWS Ground Station and KSAT as rentable ground stations.
+- *(Jurisdiction analysis, Q16)* NIST AI RMF's four functions (Govern, Map, Measure, Manage); **NIST IR 8401** scope (satellite ground segment); **SPD-5** content; **ITAR/EAR** limits on sharing spacecraft technical data with foreign persons; IN-SPACe authorisation and Indian Space Policy 2023; UK Space Industry Act 2018; the UK GDPR Art. 22 scope.
 
 ---
 
