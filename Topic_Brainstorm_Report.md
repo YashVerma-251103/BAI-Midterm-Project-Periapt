@@ -250,7 +250,8 @@ So the best jurisdiction is the one whose framework also covers **AI risk and cy
 | 4 | Lock in option 1, or search competitors first? | **Search competitors first** |
 | 5 | Lock in the sharper version, or test Agentic Commerce against the same questions? | Raised further challenges |
 | 6 | Where should the report go? | **Markdown file in the project folder** |
-| 7 | Jurisdiction: US, UK or India? | **Not yet answered** (see §8) |
+| 7 | Jurisdiction: US, UK or India? | Asked for a recommendation → **US recommended**, confirmation pending (see Q16) |
+| 8 | Record US or India in the report? | "Save this" → saved US as the recommendation |
 
 ---
 
@@ -334,7 +335,7 @@ Continuous triage, regulatory evidence, insurance support, and premium protectio
 ## 9. Still Unanswered / Open Questions
 
 ### 9.1 Decisions I still need to make
-1. **Jurisdiction** for compliance: US (NIST AI RMF, CCPA/CPRA, FTC) / UK (UK GDPR, DPA 2018, ICO, Art. 22, AISI) / India (DPDP Act, consent managers, IT Rules, data localisation). *Note: India's data localisation interacts with the federated design; US ties naturally to NIST IR 8270 and B2G.*
+1. **Jurisdiction:** **US recommended** (see Q16); India is the alternative. Confirm the final choice. Still to work out under the US: which NIST AI RMF actions map to each guardrail, how CCPA/CPRA applies to subscriber-terminal data, and how ITAR/EAR shapes federated learning with foreign operators.
 2. **Company name, mission, vision.**
 3. **Submission format** (document, slides, video, or a mix).
 4. **Exact persona**: job title, company size, region.
