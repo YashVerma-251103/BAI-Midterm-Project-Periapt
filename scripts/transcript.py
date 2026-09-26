@@ -62,7 +62,8 @@ def main():
         ["git", "-C", str(ROOT), "rev-parse", "--verify", "-q", branch],
         capture_output=True).returncode else git("switch", "-q", branch)
     git("add", str(dest), str(LOG))
-    git("commit", "-qm", f"docs: log transcript {slug}")
+    if subprocess.run(["git", "-C", str(ROOT), "diff", "--cached", "--quiet"]).returncode:
+        git("commit", "-qm", f"docs: log transcript {slug}")
     git("switch", "-q", "main")
     git("merge", "-q", "--no-ff", branch, "-m", f"Merge branch '{branch}'")
     print(f"logged {dest.name} -> {LOG.name}")
