@@ -2,7 +2,7 @@
 
 **Course:** The Business of AI — Mid-Semester Assignment (20 marks)
 **Session date:** 17 September 2026
-**Submission deadline:** 30 September 2026, 11:59 PM
+**Submission deadline:** 1 October 2026, 11:59 PM
 **AI tool used in this session:** Claude Code (Claude Opus 5), with web search
 
 ---
