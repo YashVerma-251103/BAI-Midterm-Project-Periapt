@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Clean a Claude Code /export file and append it to TRANSCRIPT_LOG.md, then commit.
+"""Clean a Claude Code /export file and append it to logs/TRANSCRIPT_LOG.md, then commit.
 
 Usage: transcript.py [export.txt ...]   (default: newest export in project root)
 Re-running for the same slug replaces its section. An export that continues an
@@ -12,7 +12,7 @@ import re, subprocess, sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-LOG = ROOT / "TRANSCRIPT_LOG.md"
+LOG = ROOT / "logs" / "TRANSCRIPT_LOG.md"
 NAME = re.compile(r"(\d{4}-\d\d-\d\d)-(\d\d)(\d\d)\d\d-(.+)\.txt$")
 HEAD = "# Conversation Transcript Log\n"
 
@@ -62,8 +62,8 @@ def git(*a):
 
 def log_one(src):
     slug = NAME.match(src.name).group(4)
-    dest = ROOT / "exports" / src.name
-    dest.parent.mkdir(exist_ok=True)
+    dest = ROOT / "logs" / "exports" / src.name
+    dest.parent.mkdir(parents=True, exist_ok=True)
     if src != dest:
         src.rename(dest)
     log = LOG.read_text() if LOG.exists() else HEAD
