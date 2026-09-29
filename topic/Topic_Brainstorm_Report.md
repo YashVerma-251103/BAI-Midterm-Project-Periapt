@@ -300,6 +300,29 @@ So the best jurisdiction is the one whose framework also covers **AI risk and cy
 **Conclusion:** the rubric grades analysis, not investability. Honest moat/Porter's reasoning with named weaknesses scores better than unchecked claims. Switching topics a day before the deadline is not a real option.
 **Decision:** make this the last research pass. Fix the red-team review's top 5 (`research/Research_Findings_Review.md`), then draft.
 
+### Q24. "At ~$90K a year per customer, is the business even feasible? Training, continuous compute, aggregation and inference would push costs way up. Charging this little doesn't match the value I'd need to deliver or the cost of delivering it."
+**Origin of doubt:** review R20 (`research/Research_Findings_Review.md`) gave $36K–98K/yr by multiplying Datadog's $15–41/host/month (RF item 28) by ~200 satellites.
+**Reasoning:**
+- *The anchor is wrong:* that figure prices a satellite worth $0.5M–$300M (RF item 4) like a $15/month cloud server. Item 28 gives a pricing *structure*, not a *level*.
+- *Compute is probably not the main cost (reasoning, not sourced):* telemetry is low-rate time series, not video, so the model is far smaller than V-JEPA 2 (RF item 7). Inference runs per advisory or patch decision, a handful a week per operator. Federated overhead at a few dozen clients is 1.5–3x compute and 1.7–2x communication (RF item 9).
+- *The real cost is people:* cleared domain engineers, per-customer integration (every bus and mission control setup differs), a digital twin per satellite platform, and compliance (CMMC, possibly FedRAMP). That makes it a business heavy on services and specialist labour.
+**Conclusion:** **the user is right about the outcome, for a different reason.** At ~$90K × a few dozen customers the business is not feasible. It is only viable if (1) pricing is value-based: e.g. saving 10% of SES's 40+ person team's triage time ≈ 4 people × $115K–159K (RF item 5, general-industry) ≈ **$460K–640K/yr**, or a one-time avoided smallsat loss of $0.5M–1M; (2) twin cost is paid once per satellite bus type and shared across operators flying that bus (this needs manufacturer cooperation, which is unevidenced, see review R13/R14); and (3) the market widens beyond commercial operators (government programmes, ground-station-as-a-service, manufacturers pre-launch; review R19). All three are hypotheses.
+**Change:** drafting tasks T1–T3 (§9.6). The report shows a one-line revenue model with its assumptions and names this as the business's weakest point.
+
+### Q25. "Liability: we'd be claiming we've correctly and completely tested everything. Even if we magically had an undo option, needing to use it means we're not reliable in a highly critical sector."
+**Origin of doubt:** review R29 (liability unresearched; TB §9.4 Q23 open) and the rollback step in the architecture.
+**Reasoning:**
+- *The premise is the error:* no safety-critical industry (aviation, medicine, nuclear) claims complete testing. They assume failures will happen and design to **detect them early, limit the damage and recover**. A rollback plan signals maturity. A vendor claiming it needs none would be the untrustworthy one.
+- *Operators already expect it:* Planet runs ground test → on-orbit staging → fleet, with an "un-spaceworthy" reject path. Spire's tool has automated rollbacks (RF item 31). SpaceX uses canary plus auto-rollback with zero losses reported (secondary source, review R21). Not patching is also a risk (Viasat was an unpatched ground-side flaw).
+- *The user's real point, sharper than R29:* undo only works if the satellite is still listening. A patch that breaks the command receiver or boot path **cannot be undone from the ground**.
+**Conclusion:** reliability in this sector means **failures that are rare, caught at the canary stage and recoverable**, not zero failures. Unrecoverable failure classes must be *prevented*, not undone:
+- never auto-schedule changes touching the command, boot or authentication path;
+- require an A/B software partition plus a hardware watchdog that falls back to a known-good image (a manufacturer feature, so a precondition for us to operate);
+- canary on the least-critical satellite first;
+- hard stop rules.
+Liability follows the wording: we don't write patches (Q8), the operator approves each uplink, and our output is **"decision support with evidence and a stated residual risk"**, never "certified safe". Back that with a contractual liability cap and the full audit trail (RF item 24).
+**Correction:** remove any "fully/completely tested" language from the concept and report. Drafting tasks T4–T6 (§9.6). This answers rubric A.5 "what happens when the AI is wrong".
+
 ---
 
 ## 5. Questions Claude Asked Me
@@ -407,8 +430,8 @@ Continuous triage, regulatory evidence, insurance support, and premium protectio
 7. Confirm what "hiring me" meant (assumed: customers paying for the platform).
 
 ### 9.2 Business questions not yet worked out
-8. **Pricing model**: per satellite, per fleet tier, or enterprise licence? The "crores per year" figure is unvalidated.
-9. **Market size in revenue terms**: how many mid-size operators exist, and what's the realistic total addressable revenue?
+8. *(→ Q24, task T1)* **Pricing model**: per satellite, per fleet tier, or enterprise licence? The "crores per year" figure is unvalidated.
+9. *(→ Q24, task T3)* **Market size in revenue terms**: how many mid-size operators exist, and what's the realistic total addressable revenue?
 10. **Manufacturer incentives**: why would manufacturers share parts lists and patches or resell us?
 11. **Design partners**: who are the first 2–3, and what do they get?
 12. **Go-to-market** sequence: commercial first, or government first?
@@ -423,15 +446,26 @@ Continuous triage, regulatory evidence, insurance support, and premium protectio
 19. Deployment for defence customers who refuse to contribute data.
 
 ### 9.4 Governance questions not yet worked out
-20. Concrete **escalation thresholds**: when must the agent stop?
+20. *(→ Q25, task T4)* Concrete **escalation thresholds**: when must the agent stop?
 21. **Who** at the operator approves which class of action?
 22. **Audit trail** format and safety audit cadence.
-23. Liability when an approved patch still bricks a satellite.
+23. *(→ Q25, task T6)* Liability when an approved patch still bricks a satellite.
 
 ### 9.5 Things that can't be fully verified
 24. Whether a **stealth startup or classified programme** already does this.
 25. ~~Whether the professor accepts a niche inside a sub-topic.~~ **Resolved (17 Sept):** the official DES530 topic-selection sheet states *"Multiple students may select the same topic... Topic selection does not reserve an idea or solution. Students are expected to develop their own company and approach within the selected topic."* Topic submitted on the sheet.
     - **New implication:** other students may pick Day-Zero Vulnerability Prioritisation too, so the satellite-mission angle is what differentiates this submission. Keep the idea private until submission.
+
+### 9.6 Drafting tasks (added 2026-09-30, from Q24–Q25 and the red-team review)
+Design and framing decisions to make while drafting. These are **not new research** (Q23 decision).
+- [ ] **T1 — Revenue model (A.0/A.3):** one line: buyers × annual contract value, with the assumption shown, plus the break-even customer count. Value-based anchor (≈$460K–640K/yr team-time saving for an SES-scale team, or a $0.5M–1M avoided smallsat loss). State that per-host analogues (item 28) give the structure only. Name it as the weakest point.
+- [ ] **T2 — Cost structure (A.2/A.3):** state that people, per-customer integration, per-bus twins and compliance dominate cost, and that compute is minor (event-driven inference, small telemetry). Flag it as reasoning, not sourced figures.
+- [ ] **T3 — Honest buyer count and expansion path (A.3/A.4):** the 6 named in-range operators (item 11) minus Globalstar (item 31), then the widening segments (government programmes, ground-station-as-a-service, manufacturers pre-launch). No unsourced "dozens"/"~200".
+- [ ] **T4 — Stop rules + approval matrix (A.5):** 3–5 concrete halt rules (e.g. world-model anomaly score over a threshold after the canary; any telemetry loss after uplink; model confidence under a floor; a flaw touching the command-authentication path → human-only) and who approves which class of action.
+- [ ] **T5 — The unrecoverable-action class (A.1/A.5):** never auto-schedule command/boot/auth-path changes; A/B partition + watchdog fallback as a precondition; canary on the least-critical satellite; limit how far a bad patch can spread.
+- [ ] **T6 — Liability position (A.5):** wording is "decision support with evidence and stated residual risk", not a warranty; contractual cap; the manufacturer warrants its own patch; the audit trail (item 24) is the evidence. Remove "fully tested" language everywhere.
+- [ ] **T7 — Remaining review top-5 (`research/Research_Findings_Review.md`):** R6/R17 (what the model can know, and how to evaluate it), R25/R26 (one first customer; the SBIR contradiction between items 10/15 and 17), R13/R14 (dependence on manufacturers).
+- [ ] **T8 — Quick number fixes before citing:** R10 (57,908 CVEs is year-to-date through Aug 31, not annual), R2 (Starlink share: use one source's denominator), R7 (item 6 says "no automated rollback documented", contradicted by items 14/31), plus the stale TB figures listed in R2.
 
 ---
 
