@@ -152,7 +152,7 @@ Trade-offs noted: cold start, JEPA explainability, training cost.
 5. AI-drafted patch → **suggestion to the manufacturer only, never uplinked directly.**
 Manufacturers become **key partners** (parts lists, patches, reseller channel), which feeds the supplier-power analysis.
 **Answer (Hypergiant):** not needed. **Every satellite already has a command uplink**; the product plugs into the operator's existing mission control and its ground stations (own or rented, e.g. AWS Ground Station, KSAT). Limitation: some older satellites have firmware that can't be changed in orbit, so only fixes 2–4 apply.
-**Answer (Deloitte / internal teams):** Deloitte's space offerings found were Silent Shield, Project Constellation (its own cyber-payload satellites) and space data services. **No prioritisation product found**, but Deloitte could deliver it as a consulting engagement (substitute). Internal teams are **users, not replacements** ("a 3-person team manages 300 satellites + 12 ground stations"). The largest operators may build in-house, so they are not the first market.
+**Answer (Deloitte / internal teams):** Deloitte's space offerings found were Silent Shield, Project Constellation (its own cyber-payload satellites) and space data services. **No prioritisation product found**, but Deloitte could deliver it as a consulting engagement (substitute). Internal teams are **users, not replacements** ("a 3-person team manages 300 satellites + 12 ground stations") *(**Unsourced — searched 2026-09-30, NOT FOUND anywhere; do not cite.** See Q20.)*. The largest operators may build in-house, so they are not the first market.
 **Key discovery — Viasat KA-SAT attack (24 Feb 2022):** tens of thousands of modems across Europe were wiped (AcidRain) through a **misconfigured VPN appliance in the ground network**. **The spacecraft itself was never touched.**
 **Change:** scope widened to the **whole mission system** (ground → network → link → satellite → terminals), with a world model that understands how ground flaws spread to space. Most fixes happen on the ground; in-orbit patches become the rare, closely controlled case.
 **Corrections:** the orbit-only focus was too narrow; Hypergiant is not a required partner.
@@ -238,6 +238,68 @@ So the best jurisdiction is the one whose framework also covers **AI risk and cy
 
 **Status:** US recommended; **final confirmation pending**.
 
+*Q17–Q23 below come from the 2026-09-29/30 session that stress-tested the research findings. Each entry records where the doubt came from, the reasoning, the conclusion and what changed.*
+
+### Q17. "Isn't regulation a double-edged sword? If companies must test for vulnerabilities, they don't need us — but once launched, we survive because they're legally bound to do security."
+**Origin of doubt:** RF item 2. The proposed EU Space Act, Art. 88, mandates threat-led penetration testing before launch and every 3 years.
+**Reasoning:**
+- *First edge (they won't need us):* rejected. Testing *produces* findings, and we *prioritise and resolve* them. A mandated test makes the backlog bigger, so testing is a complement, not a substitute. The 3-year cycle leaves a 36-month gap where only continuous tooling helps.
+- *Second edge (legally bound, so we survive):* too comfortable, for three reasons. Compliance buyers buy the cheapest thing an auditor will accept. Whoever runs the mandated test is best placed to bundle prioritisation. And the finding is EU (not before 2030), while our jurisdiction is the US.
+- *Research (Sonnet subagent → RF item 30, raw/06):* **no binding US vulnerability-management mandate exists for commercial operators.** Only narrow hooks bind: FCC 47 CFR 25.271(d) (a one-line duty to prevent unauthorised access), NOAA Tier 2/3 encryption, and DoD DFARS 7012/CMMC → NIST 800-171 3.14.1 "correct system flaws in a timely manner" (CUI IT systems only).
+**Conclusion:** "legally bound" is **false** in the US. The pitch rests on operational risk; regulation is only a tailwind. The one real opening: 800-171 says "timely" but gives no method for deciding what to fix first, which makes **DoD contractors** the natural first customers.
+**Change:** RF item 30 added. Porter's Five Forces should show regulation cutting both ways: it lowers the threat of new entrants but raises the threat of bundling by incumbent auditors.
+
+### Q18. "Item 7 (public data sufficiency for JEPA) — how does it show we're hard to copy? If public data proves it works and the real product depends on the data provider, it doesn't connect."
+**Origin of doubt:** RF item 7 called public-data sufficiency "a legitimate, honest moat argument".
+**Reasoning:** the user was right. Public data proving the architecture works proves it **for every competitor too**. It lowers *our* technical risk, not how easy we are to copy. And customer data alone isn't a moat, because a rival can sign the same operators. A moat can only come from what data access *builds up into*: (1) signing design partners first (weak, only a timing lead); (2) ITAR/EAR and clearance barriers (medium; they stop foreign and fast entrants but not incumbents like Aerospace Corp, Booz Allen or the primes); (3) assets that build up over time (strongest).
+**Conclusion:** item 7 is a **feasibility argument, not a moat argument**. Say honestly that the moat is thin at the start and strengthens with scale.
+**Correction:** RF item 7 rewritten (first correction), then re-ranked again after Q22.
+
+### Q19. "Why is a live framework better than a static one, and why would static be better? Does moving to live give enough value to break the traditional approach, and where does it fall short?"
+**Origin of doubt:** RF item 10/13 differentiates us from Aerospace Corp's SPARTA as "static reference framework, not a live per-operator AI platform".
+**Reasoning:**
+- *Static wins on:* transparency and auditability; no data sharing (ITAR-friendly); no new attack surface (a matrix can't be poisoned); free and comparable across operators; and speed matters less when patches wait for ground passes and human approval.
+- *Live wins on:* context (whether the vulnerable component is on this bus, whether it's reachable this pass, the satellite's power and thermal state, how critical its mission is); scale versus headcount as CVE volume rises; and the one thing static can't do at all, **proving a fix is safe before uplink**.
+- *Live falls short on:* we can't prove its value early (almost no real attacks to serve as ground truth); cold start (on day one it's roughly SPARTA plus noise); an explainability gap; and it becomes an attack target itself.
+- *Factual catch:* SPARTEND already delivers SPARTA's knowledge to orbiting assets, so "static" is shaky wording.
+**Conclusion:** the right axis is **reference vs decision-and-execution**, not static vs live. **Build on SPARTA rather than fight it:** use it as the knowledge base and express our outputs in SPARTA technique and countermeasure IDs. That turns explainability into auditability, lowers switching resistance, and makes SPARTA a complement in Porter's.
+**Still open:** the RF item 10/13 differentiator wording hasn't been updated yet. Suggested: *"SPARTA/SPARTEND provide general-purpose threat knowledge and on-orbit detection; neither performs per-operator patch decisioning, digital-twin validation of fixes, or scheduled fleet rollout."*
+
+### Q20. "Why did we assume the companies we cater to aren't doing the work internally?"
+**Origin of doubt:** Q8 answered "internal teams are users, not replacements", resting on a "3-person team manages 300 satellites + 12 ground stations" line. RF item 14 already showed SpaceX builds in-house.
+**Reasoning:** the evidence already in hand pointed the other way: SpaceX (full rollout in-house), Axiom (hiring for vulnerability management and patching), Spire (built an On-Orbit Update Manager and sells it), Planet (a mature CISO organisation), and every DoD contractor (800-171 3.14.1). The counter-evidence (White House and WEF reports) is industry-level only.
+**Research (Sonnet subagent → RF item 31, raw/07):**
+- every target runs a formal program (SES has over 40 security staff; Planet has a Satellite Security team; Spire ranks vulnerabilities by ISO 27005);
+- Planet and Spire already validate software before uplink and roll it out in stages;
+- Spire's platform covers deployment only, so it's a partner, not a rival;
+- the **"3-person team" quote was NOT FOUND anywhere**;
+- Globalstar is out as a customer (Amazon acquisition).
+**Conclusion:** the assumption was wrong. Operators do this work, formally. What's still arguable is that no one publicly claims **cross-domain prioritisation tied to validated rollout**, and that's an absence of claims, not proof of a gap. The real substitute is the **good-enough stack**: in-house program + SPARTA + vendor patches + Spire-style rollout tooling.
+**Correction:** the Q8 quote is marked unsourced. The pitch becomes "we connect and speed up what your team already does," not "you lack a team".
+
+### Q21. "If companies do it internally, they're probably doing it better and more efficiently."
+**Origin of doubt:** follows from Q20.
+**Reasoning:**
+- *Internal is better at:* knowing its own buses, priorities and risk tolerance; sharing no data; and handing no uplink path to a vendor. At SpaceX scale, internal clearly wins.
+- *"Better" doesn't follow automatically:* a world model, twin and planner are a large fixed cost. Paid off across one fleet versus many, that's the usual reason firms buy security tooling rather than build it. A single fleet also sees few incidents. And mid-size security roles are stretched: Planet's CISO scope spans IT, physical security, compliance and AI governance.
+- *Research partly confirmed the doubt:* SES's 40+ staff and Planet's staged deploy pipeline show more maturity than we assumed.
+**Conclusion:** **half confirmed.** Internal teams have context we can't get on our own, so the product must take in their priorities, not override them. We're a tool for their team (human-approved uplinks already fit this), not a replacement. Whether "better and more efficient" is true for mid-size operators is still unmeasured, in both directions.
+
+### Q22. "Why would companies want to help their competitors?"
+**Origin of doubt:** the moat relied on a federated cross-fleet model, where each operator improves the shared model for all (RF item 7 correction, TB §7.5 point 1, Q11–Q12).
+**Reasoning:**
+- *For sharing:* security is often treated as non-competitive (ISACs); after Viasat, an attack on one operator hurts everyone's insurance and regulatory position; federated learning shares updates, not raw data; and private per-operator layers keep each operator's edge.
+- *Against sharing:* free riders (big contributors gain least); leakage through model inversion (DP costs accuracy on small datasets, RF item 9); ITAR/EAR splitting the pool by country; and ISACs share threat indicators, not training signal.
+- *Research (RF item 31):* operators share only anonymised, TLP-gated alerts (Space ISAC) or minimum orbit data through a neutral third party (Space Data Association). Documented reluctance: sharing can "hand competitors an advantage". **No federated or pooled security-telemetry program exists.**
+**Conclusion:** **strongly confirmed.** The network effect is a **conditional upside, not the main moat**. The product must deliver full value to a single operator on its own. The moats that need no cooperation come first: the patch-outcome record and workflow switching costs. The best precedent for later sharing is the SDA model (neutral third party, minimum data, participation incentives such as contribution-weighted pricing).
+**Correction:** RF item 7 second correction (moat re-ranked). TB §7.5 is flagged below.
+
+### Q23. "Why do I feel like the more I research, the more I realise I've chosen the worst topic?"
+**Origin of doubt:** the accumulated corrections from Q17–Q22, plus a red-team review listing 35 more doubts.
+**Reasoning:** the feeling comes from the process: two days spent attacking one idea, compared against topics nobody examined. **What died:** the legal-mandate tailwind, public data as a moat, the network effect as the main moat, "operators lack teams", "nobody validates patches". **What survived with evidence:** no one claims the whole loop; reference vs decision-and-execution against SPARTA; Spire as partner; the 800-171 prioritisation gap; Viasat's ground→space path; outcome data and switching costs as a moat. Everything that died was an overclaim, not the core. *Honest concession:* as a real business it's hard (small market, long sales cycles, capable in-house teams).
+**Conclusion:** the rubric grades analysis, not investability. Honest moat/Porter's reasoning with named weaknesses scores better than unchecked claims. Switching topics a day before the deadline is not a real option.
+**Decision:** make this the last research pass. Fix the red-team review's top 5 (`research/Research_Findings_Review.md`), then draft.
+
 ---
 
 ## 5. Questions Claude Asked Me
@@ -298,6 +360,7 @@ Supporting pieces: predictive ML for in-orbit exploitability (transferred from g
 Vendor patch → workaround without new code → ground-side fix → accept and monitor → AI-drafted patch (**suggestion to manufacturer only**).
 
 ### 7.5 Moat (final form)
+*(**Superseded 2026-09-30** — see Q18, Q22 and RF item 7. Point 1's cross-fleet pooling is now a conditional upside; the patch-outcome record + switching costs lead. Point 2's manufacturer partnerships are unsupported by evidence — see review R13/R14.)*
 1. **Pooled patch outcomes and anomaly behaviour across fleets**: weak early, strong at scale.
 2. **Manufacturer partnerships and mission-control integrations**: the early moat.
 3. **Neutrality**: no operator can offer this to rivals.

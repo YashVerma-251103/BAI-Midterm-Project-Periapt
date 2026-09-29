@@ -19,7 +19,7 @@ The Business of AI — Mid-Semester Assignment (20 marks). **Not code.** The del
 |---|---|
 | `brief/` | Assignment inputs (Instructions, Project Topics, professor note). Read-only. |
 | `topic/` | `Topic_Brainstorm_Report.md` — topic decision history, every challenge raised and answered, §10.1 verification log. |
-| `research/` | `Research_Plan.md` (29 numbered research tasks, tagged to rubric markers) → `Research_Findings.md` (sourced answers) → `Research_Findings_Explained.md` (same, plain-language). `research/raw/` = the 6 subagents' full prompts/approach/sources/output — never edit, historical record. |
+| `research/` | `Research_Plan.md` (29 numbered research tasks, tagged to rubric markers) → `Research_Findings.md` (sourced answers) → `Research_Findings_Explained.md` (same, plain-language). `Research_Findings_Review.md` (red-team list of weak claims, R1–R35 + top 5). `research/raw/` = the 7 subagents' full prompts/approach/sources/output — never edit, historical record. |
 | `report/` | Final submission goes here. Currently empty. |
 | `logs/` | `TRANSCRIPT_LOG.md` (committed, redacted, feeds the mandatory GenAI appendix) + `exports/` (raw `/export` dumps, source material for the log). |
 | `scripts/` | `transcript.py` + its test — do not hand-edit `TRANSCRIPT_LOG.md`. |
