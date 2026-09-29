@@ -1,5 +1,5 @@
 ---
-description: Clean /export file(s) and append them to TRANSCRIPT_LOG.md (committed to git)
+description: Clean /export file(s) and append them to logs/TRANSCRIPT_LOG.md (committed to git)
 ---
 Run `python3 scripts/transcript.py $ARGUMENTS` from the project root and report its output. Run /export first and save to a file in the project root; with no argument the newest export there is used.
 

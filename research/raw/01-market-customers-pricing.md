@@ -1,12 +1,12 @@
 # Research Thread 1 — Market, Customers, Pricing
 
-**Agent:** general-purpose subagent | **Run:** 2026-09-29 | **Items covered:** 1, 4, 5, 11, 16, 17, 18, 26, 27, 28 (per `Research_Plan.md`)
+**Agent:** general-purpose subagent | **Run:** 2026-09-29 | **Items covered:** 1, 4, 5, 11, 16, 17, 18, 26, 27, 28 (per `research/Research_Plan.md`)
 
 ## Prompt given
 
 > You are researching for a fictitious-company business assignment (satellite-fleet vulnerability-prioritisation AI platform, B2B/B2G, Defence/Space/Cybersecurity segment). Use WebSearch/WebFetch. This is a research task, NOT company identification — do not worry about confidentiality, just gather public market data.
 >
-> Research and answer these specific items (numbers match the project's Research_Plan.md). For EACH item give: the finding, the source URL, and whether it's a primary source (official report/filing/standard) or secondary (news/blog). If you cannot find a real source, say so explicitly — do not fabricate numbers.
+> Research and answer these specific items (numbers match the project's research/Research_Plan.md). For EACH item give: the finding, the source URL, and whether it's a primary source (official report/filing/standard) or secondary (news/blog). If you cannot find a real source, say so explicitly — do not fabricate numbers.
 >
 > 1. Current active-satellite count and LEO market growth trend/CAGR — find one credible industry report (Euroconsult, SIA "State of the Satellite Industry", NSR, or similar) in addition to any web trackers.
 > 4. Cost of a patch-related satellite/network failure: Viasat KA-SAT (Feb 2022) attack — actual recovery/replacement cost if disclosed (Viasat statements, 10-K/annual report, insurance trade press), and any figure for what a "bricked" satellite is worth (typical smallsat/constellation satellite replacement cost).

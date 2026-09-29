@@ -1,12 +1,12 @@
 # Research Thread 2 — Suppliers and Manufacturers
 
-**Agent:** general-purpose subagent | **Run:** 2026-09-29 | **Item covered:** 12 (per `Research_Plan.md`)
+**Agent:** general-purpose subagent | **Run:** 2026-09-29 | **Item covered:** 12 (per `research/Research_Plan.md`)
 
 ## Prompt given
 
 > You are researching for a fictitious-company business assignment (satellite-fleet vulnerability-prioritisation AI platform, B2B/B2G, Defence/Space/Cybersecurity segment). Use WebSearch/WebFetch.
 >
-> Research item 12 from the project's Research_Plan.md: **Supplier power analysis for a Porter's Five Forces section.**
+> Research item 12 from the project's research/Research_Plan.md: **Supplier power analysis for a Porter's Five Forces section.**
 >
 > Specifically:
 > - Identify the main satellite manufacturers relevant to mid-size constellation operators (e.g. Spire, Airbus Defence and Space, Thales Alenia Space, Terran Orbital, York Space Systems, Blue Canyon Technologies) — for each, note whether they publish anything about software/firmware update practices, SBOMs, or security patching for their satellite buses.
