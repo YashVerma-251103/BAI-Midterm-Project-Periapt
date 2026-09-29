@@ -386,6 +386,34 @@ These came from Claude's general knowledge, **not** from the web searches in thi
 
 ---
 
+## 10.1 §10 Claims Resolved (2026-09-29 research pass)
+
+Full sourced detail in `Research_Findings.md`. Status of each §10 claim:
+
+| Claim | Status | Correction |
+|---|---|---|
+| ~16,000–17,000 active satellites | **Corrected** | **14,266** (SIA 29th Annual Report, end-2025, primary) |
+| ~40,000 CVEs/year | **Corrected — stale, not wrong** | 40,009 was the **2024** figure; 2026 run-rate is **~58,000/year** |
+| ~40% of small-sat missions failed | **Confirmed, reword** | Real (Langer & Bouwmeester, AIAA/USU 2016), but framed as "since 2000" / "within 2 years of launch," not "last 20 years" |
+| Generic vuln-mgmt leaders (Tenable, Qualys, Palo Alto, Claroty, Medcrypt, Asimily) | Not re-verified this pass | Low-stakes, general industry knowledge — fine to keep |
+| Agent payment rails (Visa, Mastercard, Stripe, Google) | Not applicable | Belongs to the dropped FinTech option, not the satellite idea |
+| EU NIS2 lists space as critical sector | **Confirmed [primary]** | Annex I, sector 11 — ground infrastructure supporting space services |
+| Proposed EU Space Act cybersecurity rules | **Confirmed [primary]** | COM(2025) 335 final, Arts. 75–95; not in force before ~2030 |
+| US Space Policy Directive-5 | **Confirmed [primary]** | Federal Register 85 FR 56155 — see `Research_Findings.md` item 21 for the actual principles |
+| CERT-In 6-hour reporting (India) | **Confirmed [secondary only]** | PDF wouldn't render; confirmed via legal-analysis secondary sources — re-verify primary before citing |
+| India Patents Act s.3(k) limits software patents | Not re-verified this pass | Low-stakes for the US-jurisdiction path |
+| Google Gboard uses federated learning | Not re-verified this pass | Illustrative analogy only, not load-bearing |
+| AWS Ground Station / KSAT as rentable ground stations | **Confirmed + deepened [primary/secondary]** | Full pricing-model and supplier-power detail in `Research_Findings.md` item 12 |
+| NIST AI RMF four functions (Govern/Map/Measure/Manage) | **Confirmed [primary]**, mapped to guardrails | See `Research_Findings.md` item 19 |
+| NIST IR 8401 scope (ground segment) | **Confirmed [weak sourcing]** | Title/structure primary; specific control text is secondary-sourced — PDF should be re-read directly before final citation |
+| ITAR/EAR limits on spacecraft technical data to foreign persons | **Confirmed [primary]** | 22 CFR 120.33/120.16, "deemed export" doctrine — the federated-learning cross-border argument is legally well-grounded, not just plausible |
+| IN-SPACe authorisation, Indian Space Policy 2023 | **Confirmed [primary]** | Non-Indian entities must go through an Indian subsidiary/JV |
+| UK Space Industry Act 2018 / GDPR Art. 22 scope | Not re-verified this pass | UK path already rejected; low priority |
+
+**New finding not in the original list:** a **Satellite Cybersecurity Act of 2025 (S.3404)** is pending in the US Congress — add as regulatory-tailwind context. SBIR/STTR statutory authority **lapsed 30 Sept 2025** and was not renewed in the FY2026 NDAA — any "government funding channel" or SpaceWERX/AFWERX argument needs this caveat.
+
+---
+
 ## 11. Appendix Material (ready to use)
 
 ### 11.1 Candidates for "most difficult concept"
