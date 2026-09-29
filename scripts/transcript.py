@@ -1,8 +1,12 @@
 #!/usr/bin/env python3
 """Clean a Claude Code /export file and append it to TRANSCRIPT_LOG.md, then commit.
 
-Usage: transcript.py [export.txt]   (default: newest export in project root)
-Re-running for the same session replaces its section (keyed by filename slug).
+Usage: transcript.py [export.txt ...]   (default: newest export in project root)
+Re-running for the same slug replaces its section. An export that continues an
+already-logged one (its cleaned text starts with the logged text) supersedes it:
+the old section is replaced by the fuller one, so each session appears once.
+Several files are processed oldest-first; a leading "@" is stripped; args that
+are not /export filenames are skipped with a warning.
 """
 import re, subprocess, sys
 from pathlib import Path
@@ -28,7 +32,24 @@ def section(name, text):
             f"```text\n{redact(body)}\n```\n<!-- /session: {slug} -->\n")
 
 
+def body_of(sec):
+    return re.search(r"```text\n(.*)\n```\n<!-- /session", sec, re.S).group(1)
+
+
+def supersedes(log, sec):
+    """Slug of a logged section whose text is a proper prefix of sec's, else None."""
+    new = body_of(sec)
+    for m in re.finditer(r"<!-- session: (.+?) -->.*?<!-- /session: \1 -->\n", log, re.S):
+        old = body_of(m.group(0))
+        if old != new and new.startswith(old):
+            return m.group(1)
+
+
 def upsert(log, slug, sec):
+    old = supersedes(log, sec)
+    if old and old != slug:  # continuation under a new filename: drop the old section
+        log = re.sub(rf"<!-- session: {re.escape(old)} -->.*?<!-- /session: {re.escape(old)} -->\n\n?",
+                     "", log, flags=re.S)
     pat = re.compile(rf"<!-- session: {re.escape(slug)} -->.*?<!-- /session: {re.escape(slug)} -->\n", re.S)
     if pat.search(log):
         return pat.sub(lambda _: sec, log)
@@ -39,16 +60,7 @@ def git(*a):
     subprocess.run(["git", "-C", str(ROOT), *a], check=True)
 
 
-def main():
-    if len(sys.argv) > 1:
-        src = Path(sys.argv[1]).resolve()
-    else:
-        found = sorted(p for p in ROOT.glob("*.txt") if NAME.match(p.name))
-        if not found:
-            sys.exit("no export found; run /export first")
-        src = found[-1]
-    if not NAME.match(src.name):
-        sys.exit(f"not an /export filename: {src.name}")
+def log_one(src):
     slug = NAME.match(src.name).group(4)
     dest = ROOT / "exports" / src.name
     dest.parent.mkdir(exist_ok=True)
@@ -67,6 +79,26 @@ def main():
     git("switch", "-q", "main")
     git("merge", "-q", "--no-ff", branch, "-m", f"Merge branch '{branch}'")
     print(f"logged {dest.name} -> {LOG.name}")
+
+
+def main():
+    args = [a.lstrip("@") for a in sys.argv[1:]]
+    if args:
+        srcs = []
+        for a in args:
+            if NAME.match(Path(a).name) and Path(a).exists():
+                srcs.append(Path(a).resolve())
+            else:
+                print(f"skipping {a!r}: not an existing /export file", file=sys.stderr)
+        if not srcs:
+            sys.exit("no valid export given")
+    else:
+        found = sorted(p for p in ROOT.glob("*.txt") if NAME.match(p.name))
+        if not found:
+            sys.exit("no export found; run /export first")
+        srcs = [found[-1]]
+    for src in sorted(srcs, key=lambda p: p.name):
+        log_one(src)
 
 
 if __name__ == "__main__":
