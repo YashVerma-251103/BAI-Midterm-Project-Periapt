@@ -99,6 +99,9 @@ These two NIST documents list security controls for satellites. 8270 points to f
 **Item 21 — SPD-5 primary text**
 This 2020 US space policy sets the basic rules: build security in before launch, block unauthorized access and spoofing, protect command links with strong encryption, follow NIST practices on the ground (patching, separation), check the supply chain, and share threat info. It applies to both government and commercial satellites.
 
+**Item 30 — Is there a binding US vuln-management mandate for commercial operators?**
+No. No US law makes commercial satellite operators, as a group, find, rank and patch security holes. What does bind is narrower. The FCC requires one sentence's worth: keep satellite commands safe from unauthorized access. NOAA requires strong encryption on the control links of some Earth-imaging satellites. DoD contracts require "fix system flaws in a timely manner", but only on the IT systems holding defence data, and without saying how fast or in what order. Everything else is voluntary, still a proposal, or about reporting incidents rather than fixing flaws. *What it means:* we can't say customers "must" buy us because of the law. We sell on the risk of losing or bricking a satellite. DoD contractors are the best first customers, because their rule says "fix in time" but gives no way to decide what comes first. *Catch:* the FCC text is a draft circulated before release, and the report that DoD paused its third-party audits comes only from trade press.
+
 **Item 15/22 — ITAR/EAR**
 Export laws are confirmed to apply. US arms rules (ITAR) cover spacecraft technical data. Giving that data to a foreign person, even inside the US, counts as an export. Most commercial satellites fall under a lighter rule (EAR, category 9A515). *What it means:* our claim that federated learning helps by not moving data across borders is legally well-grounded.
 
