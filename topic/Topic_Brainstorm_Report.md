@@ -43,7 +43,7 @@ Invent a **fictitious company** with AI at its core and tell its **story**: what
 - Possible **three-tier review → viva** to verify understanding.
 - Off-list topics needed approval by **17 Sept, 6:00 PM** (the day of this session), so the topic had to come from the list.
 
-### 1.4 Professor's guidance (GC_instructions.txt)
+### 1.4 Professor's guidance (brief/GC_instructions.txt)
 "Dream big": resources aren't the limit, imagination is. Deliver an experience that genuinely excites the user.
 
 ### 1.5 Constraint discussed in person (reported by me)
@@ -388,7 +388,7 @@ These came from Claude's general knowledge, **not** from the web searches in thi
 
 ## 10.1 §10 Claims Resolved (2026-09-29 research pass)
 
-Full sourced detail in `Research_Findings.md`. Status of each §10 claim:
+Full sourced detail in `research/Research_Findings.md`. Status of each §10 claim:
 
 | Claim | Status | Correction |
 |---|---|---|
@@ -399,12 +399,12 @@ Full sourced detail in `Research_Findings.md`. Status of each §10 claim:
 | Agent payment rails (Visa, Mastercard, Stripe, Google) | Not applicable | Belongs to the dropped FinTech option, not the satellite idea |
 | EU NIS2 lists space as critical sector | **Confirmed [primary]** | Annex I, sector 11 — ground infrastructure supporting space services |
 | Proposed EU Space Act cybersecurity rules | **Confirmed [primary]** | COM(2025) 335 final, Arts. 75–95; not in force before ~2030 |
-| US Space Policy Directive-5 | **Confirmed [primary]** | Federal Register 85 FR 56155 — see `Research_Findings.md` item 21 for the actual principles |
+| US Space Policy Directive-5 | **Confirmed [primary]** | Federal Register 85 FR 56155 — see `research/Research_Findings.md` item 21 for the actual principles |
 | CERT-In 6-hour reporting (India) | **Confirmed [secondary only]** | PDF wouldn't render; confirmed via legal-analysis secondary sources — re-verify primary before citing |
 | India Patents Act s.3(k) limits software patents | Not re-verified this pass | Low-stakes for the US-jurisdiction path |
 | Google Gboard uses federated learning | Not re-verified this pass | Illustrative analogy only, not load-bearing |
-| AWS Ground Station / KSAT as rentable ground stations | **Confirmed + deepened [primary/secondary]** | Full pricing-model and supplier-power detail in `Research_Findings.md` item 12 |
-| NIST AI RMF four functions (Govern/Map/Measure/Manage) | **Confirmed [primary]**, mapped to guardrails | See `Research_Findings.md` item 19 |
+| AWS Ground Station / KSAT as rentable ground stations | **Confirmed + deepened [primary/secondary]** | Full pricing-model and supplier-power detail in `research/Research_Findings.md` item 12 |
+| NIST AI RMF four functions (Govern/Map/Measure/Manage) | **Confirmed [primary]**, mapped to guardrails | See `research/Research_Findings.md` item 19 |
 | NIST IR 8401 scope (ground segment) | **Confirmed [weak sourcing]** | Title/structure primary; specific control text is secondary-sourced — PDF should be re-read directly before final citation |
 | ITAR/EAR limits on spacecraft technical data to foreign persons | **Confirmed [primary]** | 22 CFR 120.33/120.16, "deemed export" doctrine — the federated-learning cross-border argument is legally well-grounded, not just plausible |
 | IN-SPACe authorisation, Indian Space Policy 2023 | **Confirmed [primary]** | Non-Indian entities must go through an Indian subsidiary/JV |

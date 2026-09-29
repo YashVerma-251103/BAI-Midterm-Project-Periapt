@@ -1,12 +1,12 @@
 # Research Thread 4 — US Regulation Primary Texts
 
-**Agent:** general-purpose subagent | **Run:** 2026-09-29 | **Items covered:** 2, 15/22, 19, 20, 21, 23, 24, 25 (per `Research_Plan.md`)
+**Agent:** general-purpose subagent | **Run:** 2026-09-29 | **Items covered:** 2, 15/22, 19, 20, 21, 23, 24, 25 (per `research/Research_Plan.md`)
 
 ## Prompt given
 
 > You are researching for a fictitious-company business assignment requiring a Governance/Compliance section under US jurisdiction (satellite-fleet vulnerability-prioritisation AI platform, B2B/B2G). Use WebSearch/WebFetch and prefer PRIMARY sources (the actual government/standards documents), not secondary summaries.
 >
-> Research items 2, 15, 19, 20, 21, 22, 23, 24, 25 from the project's Research_Plan.md:
+> Research items 2, 15, 19, 20, 21, 22, 23, 24, 25 from the project's research/Research_Plan.md:
 >
 > 2. Confirm primary-source content: does EU NIS2 list space as a critical sector? What does the proposed EU Space Act say about cybersecurity rules (status as of now)? What does US Space Policy Directive-5 (SPD-5) actually say? (Note: this is background for "why is the sector ripe now" even though the jurisdiction chosen is US — EU NIS2 is comparative context only.)
 > 15/22. ITAR (22 CFR 120-130) and EAR (Category 9, spacecraft) — find the actual primary-source scope: does it genuinely restrict sharing spacecraft technical data / satellite telemetry with foreign persons? Pull the specific regulatory citation.

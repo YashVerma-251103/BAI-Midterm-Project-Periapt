@@ -1,12 +1,12 @@
 # Mid-Sem Project — Research Plan
 
-**Purpose:** turn every open question in `Topic_Brainstorm_Report.md` (§9) into a research task tagged to the rubric marker it feeds (`Instructions.md` §A), so drafting can start straight from sourced findings instead of model memory. Deadline: 1 Oct 2026, 23:59.
+**Purpose:** turn every open question in `topic/Topic_Brainstorm_Report.md` (§9) into a research task tagged to the rubric marker it feeds (`brief/Instructions.md` §A), so drafting can start straight from sourced findings instead of model memory. Deadline: 1 Oct 2026, 23:59.
 
-**Company (locked):** AI platform prioritising and safely resolving vulnerabilities across satellite missions — JEPA-style world model + constrained RL rollout planner + LLM agent, human-approved uplinks. Topic: Day-Zero Vulnerability Prioritisation, Defence/Space/Cybersecurity segment (`Project Topics.md` §1).
+**Company (locked):** AI platform prioritising and safely resolving vulnerabilities across satellite missions — JEPA-style world model + constrained RL rollout planner + LLM agent, human-approved uplinks. Topic: Day-Zero Vulnerability Prioritisation, Defence/Space/Cybersecurity segment (`brief/Project Topics.md` §1).
 
 Each row below is tagged:
 - **[gap]** — nothing in hand yet
-- **[verify]** — a claim already stated from model knowledge (`Topic_Brainstorm_Report.md` §10) that needs a real citation
+- **[verify]** — a claim already stated from model knowledge (`topic/Topic_Brainstorm_Report.md` §10) that needs a real citation
 - **[deepen]** — partially covered, needs more
 
 ---
@@ -71,7 +71,7 @@ Each row below is tagged:
 | 26 | Failure-rate statistic (~40% of small-sat missions have partial/total failure) — find the actual study, not the secondhand mention | verify | Used as a headline stat in Overview/Value; if wrong, undermines credibility in the viva |
 | 27 | CVE volume (~40,000/year) — confirm current year figure | verify | Used to justify continuous-triage value prop |
 | 28 | Pricing model sanity check: per-satellite vs. per-fleet-tier vs. enterprise licence, against comparable B2B security SaaS pricing (e.g. per-asset security tooling) | gap | Needed to make the "why customers pay" section concrete instead of hand-waved |
-| 29 | 3–4 key non-blog references, shortlisted from `Topic_Brainstorm_Report.md` §12, confirmed accessible and correctly cited | deepen | Explicit assignment requirement (§F) |
+| 29 | 3–4 key non-blog references, shortlisted from `topic/Topic_Brainstorm_Report.md` §12, confirmed accessible and correctly cited | deepen | Explicit assignment requirement (§F) |
 
 ---
 
@@ -79,9 +79,9 @@ Each row below is tagged:
 
 1. **Parallel research threads**, each a separate focused pass (web search + read primary sources, not just headlines): (a) market/customers/pricing, (b) suppliers/manufacturers, (c) competitors/rivalry refresh, (d) US regulation primary texts, (e) technical feasibility (JEPA/federated learning/data volume).
 2. **Every claim gets sourced or flagged.** No number goes into the deck without a link; anything that can't be sourced is marked as an explicit assumption with its reasoning shown, never presented as fact.
-3. **Output:** findings get written into `Research_Findings.md` in the project folder, organized by the same numbered items as this plan, each with: finding, source link, and the rubric marker it feeds. The §10 "verify before citing" list in `Topic_Brainstorm_Report.md` gets resolved item-by-item (confirmed with citation, or struck and replaced).
+3. **Output:** findings get written into `research/Research_Findings.md` in the project folder, organized by the same numbered items as this plan, each with: finding, source link, and the rubric marker it feeds. The §10 "verify before citing" list in `topic/Topic_Brainstorm_Report.md` gets resolved item-by-item (confirmed with citation, or struck and replaced).
 4. **Reference shortlist** (item 29) gets finalized last, once findings show which sources actually held up.
-5. Skipped: primary interviews / surveys of real satellite operators — not feasible for a mid-sem assignment; public-source research only. Skipped: exhaustive Porter's-Five-Forces literature review — the framework serves the strategic point (§A.3 note in `Instructions.md`), not a standalone analysis.
+5. Skipped: primary interviews / surveys of real satellite operators — not feasible for a mid-sem assignment; public-source research only. Skipped: exhaustive Porter's-Five-Forces literature review — the framework serves the strategic point (§A.3 note in `brief/Instructions.md`), not a standalone analysis.
 
 ---
 

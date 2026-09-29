@@ -1,6 +1,6 @@
 # Research Findings
 
-Compiled from 5 parallel research threads run 2026-09-29 against `Research_Plan.md`. Organized by rubric marker (`Instructions.md` §A). Each finding is tagged **[primary]**/**[secondary]** for source type and, where the researching agent flagged it, a confidence note. Gaps are stated explicitly, never guessed.
+Compiled from 5 parallel research threads run 2026-09-29 against `research/Research_Plan.md`. Organized by rubric marker (`brief/Instructions.md` §A). Each finding is tagged **[primary]**/**[secondary]** for source type and, where the researching agent flagged it, a confidence note. Gaps are stated explicitly, never guessed.
 
 ---
 
@@ -8,7 +8,7 @@ Compiled from 5 parallel research threads run 2026-09-29 against `Research_Plan.
 
 **Item 1 — Satellite count & market growth [primary: SIA report]**
 **14,266 operational satellites** in orbit end of 2025 (SIA 29th Annual State of the Satellite Industry Report). 296 commercial launches deployed 4,434 satellites in 2025 — 65% more than 2024. Global space economy $429B (+3%); commercial satellite industry $303B (+4% YoY). Satellite broadband subscribers +62% to >10M.
-→ **Correction:** supersedes the "~16,000–17,000 satellites" figure used in `Topic_Brainstorm_Report.md` §13 — use 14,266 (SIA, end-2025) going forward.
+→ **Correction:** supersedes the "~16,000–17,000 satellites" figure used in `topic/Topic_Brainstorm_Report.md` §13 — use 14,266 (SIA, end-2025) going forward.
 No clean LEO CAGR published by SIA itself; third-party market-research aggregators show 11.9%–24.7% CAGR estimates (2025–2030/2034) — wide variance, cite as directional only if used.
 Source: [SIA 29th Annual Report](https://sia.org/affordability-productivity-drive-historic-satellite-industry-growth-satellite-industry-association-releases-29th-annual-state-of-the-satellite-industry-report/)
 
@@ -61,7 +61,7 @@ Checked, no overlap: Slingshot Aerospace, Voyager Technologies, Kayhan Space, Sp
 **Note: SBIR/STTR statutory authority lapsed 30 Sept 2025, not renewed in FY2026 NDAA** — the "manufacturers/government funding channel" argument needs updating; SpaceWERX/AFWERX awards are currently on hold.
 Sources: [SPARTA countermeasures guide](https://newspaceeconomy.ca/2026/04/11/sparta-countermeasures-the-complete-guide-to-defending-spacecraft-from-cyber-and-counterspace-threats/) · [CT Cubed](https://ctcubed.com/) · [SBIR standoff (SpaceNews)](https://spacenews.com/congresss-sbir-standoff-is-slowing-space-force-innovation-it-must-act-now/)
 
-**Moat/defensibility bottom line:** pooled patch-outcome data (as already concluded in `Topic_Brainstorm_Report.md` §7.5) remains the right moat story; items 7–9 above make the *technical* feasibility of building it honest and defensible rather than asserted.
+**Moat/defensibility bottom line:** pooled patch-outcome data (as already concluded in `topic/Topic_Brainstorm_Report.md` §7.5) remains the right moat story; items 7–9 above make the *technical* feasibility of building it honest and defensible rather than asserted.
 
 ---
 
@@ -154,4 +154,4 @@ Backup candidates: NIST IR 8401 (ground segment); Bonawitz et al., "Practical Se
 1. Directly re-read NIST IR 8270/8401 PDFs (fetch tool couldn't render them as text this session) to pull verbatim control language for item 20/29 citations.
 2. Directly re-read SPD-5 Federal Register PDF for verbatim Section 4 quoting (currently a close paraphrase from an archived White House memorandum page).
 3. Company name/mission/vision — still an open creative decision (item 3), not research.
-4. Confirm final jurisdiction choice (US recommended, per `Topic_Brainstorm_Report.md` §4 Q16) — this research assumed US.
+4. Confirm final jurisdiction choice (US recommended, per `topic/Topic_Brainstorm_Report.md` §4 Q16) — this research assumed US.

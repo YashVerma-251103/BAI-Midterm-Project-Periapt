@@ -1,6 +1,6 @@
 # Research Findings, Explained Simply
 
-Plain-language version of `Research_Findings.md`. Same headings and item numbers. Each item says what was found, what it means, and any catch.
+Plain-language version of `research/Research_Findings.md`. Same headings and item numbers. Each item says what was found, what it means, and any catch.
 
 ---
 

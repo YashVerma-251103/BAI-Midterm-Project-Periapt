@@ -1,12 +1,12 @@
 # Research Thread 5 — Technical Feasibility
 
-**Agent:** general-purpose subagent | **Run:** 2026-09-29 | **Items covered:** 6, 7, 8, 9 (per `Research_Plan.md`)
+**Agent:** general-purpose subagent | **Run:** 2026-09-29 | **Items covered:** 6, 7, 8, 9 (per `research/Research_Plan.md`)
 
 ## Prompt given
 
 > You are researching for a fictitious-company business assignment. The company's claimed technical architecture: a JEPA-style (Joint Embedding Predictive Architecture) self-supervised world model trained on satellite fleet telemetry, a constrained RL rollout planner trained inside that world model, an LLM agent for reading security advisories, and federated learning across satellite operators (raw telemetry never leaves the operator). Use WebSearch/WebFetch. This is a business-school assignment, not an engineering build — the goal is to find enough real research to make the technical moat argument credible and identify real limitations to acknowledge, not to design the system.
 >
-> Research items 6, 7, 8, 9 from the project's Research_Plan.md:
+> Research items 6, 7, 8, 9 from the project's research/Research_Plan.md:
 >
 > 6. Confirm the operational analogue exists: does NIST IR 8270 or ESA's on-board software maintenance documentation describe a real multi-step process resembling "ingest advisory → map to component → score → validate → schedule patch window → uplink → monitor → rollback"? Pull specifics.
 >

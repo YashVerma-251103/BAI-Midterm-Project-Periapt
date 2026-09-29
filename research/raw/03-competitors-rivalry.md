@@ -1,12 +1,12 @@
 # Research Thread 3 — Competitors and Rivalry Refresh
 
-**Agent:** general-purpose subagent | **Run:** 2026-09-29 | **Items covered:** 10, 13, 14, 15 (per `Research_Plan.md`)
+**Agent:** general-purpose subagent | **Run:** 2026-09-29 | **Items covered:** 10, 13, 14, 15 (per `research/Research_Plan.md`)
 
 ## Prompt given
 
 > You are researching for a fictitious-company business assignment. The company idea: an AI platform that prioritises and safely resolves cybersecurity vulnerabilities across satellite missions (ground stations, network, spacecraft, terminals) — the WHOLE loop of orbit-aware vulnerability prioritisation + patch scheduling + digital-twin validation + fleet rollout. This originality claim ("nobody does the whole loop") is load-bearing for the assignment's "must not be done by an existing company" rule, so it needs a genuinely thorough refresh. Use WebSearch/WebFetch.
 >
-> Research items 10, 13, 14, 15 from the project's Research_Plan.md:
+> Research items 10, 13, 14, 15 from the project's research/Research_Plan.md:
 >
 > 10 & 13 (competitor/rivalry refresh): Search thoroughly for ANY company, product, or program that does end-to-end satellite vulnerability prioritisation + patch decisioning + validation + rollout. Check:
 > - Known adjacent players: Deloitte Silent Shield, Booz Allen (digital twins), Aerospace Corporation (SPARTA, SPARTEND), AMI VMS/SBOM, Nucleus Security, Palo Alto Networks/Claroty (OT security).
