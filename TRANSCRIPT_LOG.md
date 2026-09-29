@@ -1903,8 +1903,8 @@ are still unanswered.
 ```
 <!-- /session: command-intial-topic-brainstroming -->
 
-<!-- session: Research-Planning -->
-## 2026-09-29 13:00 — use brainstorming and research skills to plan what things need to research
+<!-- session: research-plan-complete -->
+## 2026-09-29 14:19 — use brainstorming and research skills to plan what things need to research
 
 ```text
 ❯ use brainstorming and research skills to plan what things need to research    
@@ -2026,5 +2026,115 @@ are still unanswered.
   I'm stopping here until you approve or adjust the plan.
 
 ✻ Worked for 30s · done Saturday 5:59 PM
+
+❯ /export                                                                       
+  ⎿  Conversation exported to: ~/ZorinProjects/College/BAI BusinessArt
+     ificialIntelligense/MidTerm_Project/2026-09-29-130010-Research-Planning.txt
+
+❯ /model 
+  ⎿  Kept model as Sonnet 5
+
+❯ /superpowers:brainstorming use these priorities and method with the other     
+files to construct a complete end-to-end research plan which includes all the   
+markers that are to be included and researched on.                              
+
+  Read 1 file, ran 1 shell command, recalled 1 memory (ctrl+o to expand)
+
+● Building the complete research plan now — mapping every rubric marker from
+  Instructions.md to the open questions already logged in
+  Topic_Brainstorm_Report.md §9, plus the priorities/method from before.
+
+● Write(Research_Plan.md)
+  ⎿  Wrote 92 lines to Research_Plan.md
+      1 # Mid-Sem Project — Research Plan
+      3 **Purpose:** turn every open question in `Topic_Brainstorm_Report
+        ds (`Instructions.md` §A), so drafting can start straight from so
+        urced findings instead of model memory. Deadline: 1 Oct 2026, 23:
+      4 
+        ng vulnerabilities across satellite missions — JEPA-style world m
+         uplinks. Topic: Day-Zero Vulnerability Prioritisation, Defence/S
+        pace/Cybersecurity segment (`Project Topics.md` §1).
+      7 Each row below is tagged:
+      9 - **[verify]** —
+     … +192 lines (ctrl+o to expand)
+
+● Now saving per the mini-branch + micro-commit habit.
+
+  Committed 254b89b, merged docs/research-plan, ran 1 shell command (ctrl+o to expand)
+
+● Saved and merged (docs/research-plan → main, working tree clean of my
+  changes). Research_Plan.md is in the project folder — 29 numbered research
+  tasks mapped to the 6 rubric markers, tagged [gap]/[verify]/[deepen], with a
+  method section for how findings get captured.
+
+  Two things left untracked that I didn't touch: the new
+  2026-09-29-...-Research-Planning.txt export and a Prof_Materials/ folder that
+  appeared — not part of this task, so I left them alone. Want me to look at
+  Prof_Materials/ in case it changes anything, or start executing the research
+  threads from the plan?
+
+✻ Churned for 1m 11s · done 1:29 PM
+
+※ recap: We're building your BAI mid-term satellite-vulnerability-AI project; I just wrote and committed Research_Plan.md mapping 29 research tasks to the rubric. Next: start running those research threads to fill in Research_Findings.md. (disable recaps in /config)
+
+❯ The Prof_Material directory is a symlink to the materials that the professor  
+  provided like lecture slides and student PPT slides so it contains the course 
+  concepts that I need to apply as well to the reports that will be submitted   
+  so keep it uh, in git ignore and uh, the research planning export was before  
+  this uh, before I told you to compile all the priorities and the methods and  
+  all the other files to create the research plan.                              
+
+  Ran 2 shell commands (ctrl+o to expand)
+
+● Confirmed — it's a symlink out to the course folder. No .gitignore exists yet.
+
+● Write(.gitignore)
+  ⎿  Wrote 1 line to .gitignore
+      1 Prof_Materials
+
+  Committed 14b813e, merged docs/gitignore-prof-materials (ctrl+o to expand)
+
+● Done — Prof_Materials is now git-ignored and won't get committed.
+
+  Only 2026-09-29-130010-Research-Planning.txt is left untracked — that's the
+  pre-plan export you mentioned. I'll leave it as-is unless you want it logged
+  into TRANSCRIPT_LOG.md via the transcript skill (it's the raw /export, not the
+  cleaned/committed form).
+
+  Ready to start pulling the research threads from Research_Plan.md whenever you
+  say go — happy to run them in parallel.
+
+✻ Brewed for 19s · done 2:16 PM
+
+❯ yes, go ahead and run the research threads in parallel (use sub-agents if     
+  needed).                                                                      
+
+● Launching 5 parallel research agents matching the plan's threads
+  (market/customers/pricing, suppliers, competitors/rivalry, US regulation,
+  technical feasibility). Each returns sourced findings tagged to the item
+  numbers in Research_Plan.md, which I'll compile into Research_Findings.md.
+
+● 5 background agents launched (↓ to manage)
+   ├ Research market, customers, pricing
+   ├ Research suppliers and manufacturers
+   ├ Refresh competitor and rivalry research
+   ├ Research US regulation primary texts
+   └ Research technical feasibility
+
+● All 5 research agents are running in the background:
+
+  1. Market/customers/pricing — items 1, 4, 5, 11, 16, 17, 18, 26, 27, 28
+  2. Suppliers/manufacturers — item 12
+  3. Competitors/rivalry refresh — items 10, 13, 14, 15
+  4. US regulation primary texts — items 2, 15, 19–25
+  5. Technical feasibility (JEPA/federated learning) — items 6, 7, 8, 9
+
+  I'll be notified as each completes, then compile everything into
+  Research_Findings.md and resolve the §10 "verify before citing" list in
+  Topic_Brainstorm_Report.md. No further action needed from you until they land.
+
+✻ Sautéed for 1m 10s · done 2:18 PM
+
+❯ /export                                                                         ⎿  Export cancelled
 ```
-<!-- /session: Research-Planning -->
+<!-- /session: research-plan-complete -->

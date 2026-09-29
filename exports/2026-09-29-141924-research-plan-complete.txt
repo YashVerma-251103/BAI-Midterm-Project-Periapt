@@ -1,0 +1,234 @@
+ ▐▛███▛█   Claude Code v2.1.283
+▝▜██████▀  Sonnet 5 · Claude Pro
+ ▝▝   ▝▝   ~/…/College/BAI BusinessArtificialIntelligense/MidTerm_Project
+
+
+❯ use brainstorming and research skills to plan what things need to research    
+  on, the existing companies, technologies, customers, suppliers, demands,      
+  regulations, cost, etc.                                                       
+
+● Using superpowers:brainstorming to scope the research plan.
+
+● Skill(superpowers:brainstorming)
+  ⎿  Successfully loaded skill
+
+  Listed 1 directory, recalled 1 memory (ctrl+o to expand)
+
+● This is a bounded planning task, so I'll skip the spec file and share a short
+  research plan directly in chat. First, let me check what already exists so I
+  don't duplicate work. · summary
+
+  Read 3 files (ctrl+o to expand)
+
+● This is a bounded task: a research plan for the locked topic, with no code.
+  I've read Topic_Brainstorm_Report.md, which already covers competitors (§6),
+  architecture (§7) and a first jurisdiction comparison (§4 Q16). The plan below
+  covers only the gaps, and about 10 claims in §10 that came from model
+  knowledge still need a real source.
+
+  What the research must produce: every rubric section (4 pages, 3–4 non-blog
+  references) gets defensible numbers and citations, so you can survive the
+  viva. Each item is tagged [gap] (nothing in hand), [verify] (a claim to check)
+  or [deepen] (partly covered).
+
+  Priority 1: needed to write and defend the pages
+
+  Area: Customers and demand
+  Questions to answer: [gap] How many mid-size operators (50–300 satellites)
+  exist, and which ones? What are their security team sizes and budgets? What
+  do they pay today for space cyber consulting and tools? Is there any demand
+  signal, such as surveys, RFPs or insurer requirements?
+  Feeds section: Overview, Persona, Value
+  ────────────────────────────────────────
+  Area: Cost and pricing
+  Questions to answer: [gap] What does a patch-related loss cost: a bricked
+  satellite, an outage, or Viasat's recovery cost? What are analyst salaries
+  and consulting day rates? What should pricing look like per satellite or per
+  fleet tier? What are our own costs for compute, twin infrastructure and a
+  design-partner programme?
+  Feeds section: Value, Moat
+  ────────────────────────────────────────
+  Area: Suppliers
+  Questions to answer: [gap] Which manufacturers (e.g. Spire, Airbus, Thales,
+  Terran Orbital) and ground-station-as-a-service providers (AWS Ground
+  Station, KSAT) exist? Would they share parts lists (SBOMs) and patches? What
+  GPU/cloud costs apply? Is any single supplier dominant?
+  Feeds section: Porter's supplier power
+  ────────────────────────────────────────
+  Area: Regulation (US)
+  Questions to answer: [verify] NIST AI RMF (map Govern/Map/Measure/Manage to
+  the
+  guardrails), NIST IR 8270 and 8401, SPD-5, and ITAR/EAR limits on foreign
+  federated learning. [gap] Subscriber-terminal data under CCPA/CPRA.
+  Feeds section: Governance
+  ────────────────────────────────────────
+  Area: Existing companies
+  Questions to answer: [deepen] Re-check for a new entrant or stealth player,
+  since the whole idea depends on there being none: Deloitte, Booz Allen, Palo
+  Alto/Claroty, Tenable, Axiom Space, Slingshot, Voyager. Search funding
+  databases, Space Force SBIR and DARPA awards.
+  Feeds section: Porter's rivalry and entrants, Moat
+
+  Priority 2: strengthens depth and the appendix
+
+  Area: Technology
+  Questions: Is ESA-ADB/OPS-SAT enough to bootstrap the world model? Has JEPA
+  been used for satellite telemetry? Are there constrained-RL safety methods
+  for rollouts? How does federated learning cope with heterogeneous fleets, and
+   what does differential privacy cost?
+  Feeds: Moat, Governance, appendix
+  ────────────────────────────────────────
+  Area: Substitutes
+  Questions: Consulting engagements versus in-house teams versus doing nothing.
+  How much do these cost, and is there evidence customers actually choose them?
+  Feeds: Porter's substitutes
+  ────────────────────────────────────────
+  Area: Incident evidence
+  Questions: [deepen] Viasat 2022 as the hook. Patch-caused satellite failures
+  beyond what we have. Solid failure-rate statistics (the ~40% figure needs a
+  proper source).
+  Feeds: Overview, Value
+  ────────────────────────────────────────
+  Area: Insurance
+  Questions: Is the space insurance market real, and does it price cyber risk?
+  Would an insurer pay or subsidise?
+  Feeds: Value, Persona
+
+  Priority 3: only if time remains
+
+  - The India alternative (DPDP, IN-SPACe, CERT-In), to confirm US or India
+    before drafting.
+  - Go-to-market: whether to start commercial or government (B2G).
+  - Liability when an approved patch still fails.
+
+  Method and output
+
+  - Web research runs as separate parallel threads (customers, cost, suppliers,
+    regulation, competitors, technology), each returning cited findings.
+  - Results go into a Research_Findings.md in the project folder, with each
+    claim labelled sourced or unverified. It also gets a shortlist of 3–4
+    non-blog key references, and the §10 claims become verified or struck.
+  - Every finding is tagged to a rubric section, so drafting can start from it
+    directly.
+  - I would not fabricate market numbers. Anything I can't source gets flagged
+    as an estimate and shown with its assumptions.
+
+  Two questions before I run it:
+  1. Is the jurisdiction confirmed as US, so I spend the regulation effort there
+     instead of on India too? (Your memory notes say confirmation was pending.)
+  2. Should I go ahead with Priorities 1–2 in parallel, and follow your usual
+     branch and commit routine for the new file?
+
+  I'm stopping here until you approve or adjust the plan.
+
+✻ Worked for 30s · done Saturday 5:59 PM
+
+❯ /export                                                                       
+  ⎿  Conversation exported to: /home/nemox/ZorinProjects/College/BAI BusinessArt
+     ificialIntelligense/MidTerm_Project/2026-09-29-130010-Research-Planning.txt
+
+❯ /model 
+  ⎿  Kept model as Sonnet 5
+
+❯ /superpowers:brainstorming use these priorities and method with the other     
+files to construct a complete end-to-end research plan which includes all the   
+markers that are to be included and researched on.                              
+
+  Read 1 file, ran 1 shell command, recalled 1 memory (ctrl+o to expand)
+
+● Building the complete research plan now — mapping every rubric marker from
+  Instructions.md to the open questions already logged in
+  Topic_Brainstorm_Report.md §9, plus the priorities/method from before.
+
+● Write(Research_Plan.md)
+  ⎿  Wrote 92 lines to Research_Plan.md
+      1 # Mid-Sem Project — Research Plan
+      3 **Purpose:** turn every open question in `Topic_Brainstorm_Report
+        ds (`Instructions.md` §A), so drafting can start straight from so
+        urced findings instead of model memory. Deadline: 1 Oct 2026, 23:
+      4 
+        ng vulnerabilities across satellite missions — JEPA-style world m
+         uplinks. Topic: Day-Zero Vulnerability Prioritisation, Defence/S
+        pace/Cybersecurity segment (`Project Topics.md` §1).
+      7 Each row below is tagged:
+      9 - **[verify]** —
+     … +192 lines (ctrl+o to expand)
+
+● Now saving per the mini-branch + micro-commit habit.
+
+  Committed 254b89b, merged docs/research-plan, ran 1 shell command (ctrl+o to expand)
+
+● Saved and merged (docs/research-plan → main, working tree clean of my
+  changes). Research_Plan.md is in the project folder — 29 numbered research
+  tasks mapped to the 6 rubric markers, tagged [gap]/[verify]/[deepen], with a
+  method section for how findings get captured.
+
+  Two things left untracked that I didn't touch: the new
+  2026-09-29-...-Research-Planning.txt export and a Prof_Materials/ folder that
+  appeared — not part of this task, so I left them alone. Want me to look at
+  Prof_Materials/ in case it changes anything, or start executing the research
+  threads from the plan?
+
+✻ Churned for 1m 11s · done 1:29 PM
+
+※ recap: We're building your BAI mid-term satellite-vulnerability-AI project; I just wrote and committed Research_Plan.md mapping 29 research tasks to the rubric. Next: start running those research threads to fill in Research_Findings.md. (disable recaps in /config)
+
+❯ The Prof_Material directory is a symlink to the materials that the professor  
+  provided like lecture slides and student PPT slides so it contains the course 
+  concepts that I need to apply as well to the reports that will be submitted   
+  so keep it uh, in git ignore and uh, the research planning export was before  
+  this uh, before I told you to compile all the priorities and the methods and  
+  all the other files to create the research plan.                              
+
+  Ran 2 shell commands (ctrl+o to expand)
+
+● Confirmed — it's a symlink out to the course folder. No .gitignore exists yet.
+
+● Write(.gitignore)
+  ⎿  Wrote 1 line to .gitignore
+      1 Prof_Materials
+
+  Committed 14b813e, merged docs/gitignore-prof-materials (ctrl+o to expand)
+
+● Done — Prof_Materials is now git-ignored and won't get committed.
+
+  Only 2026-09-29-130010-Research-Planning.txt is left untracked — that's the
+  pre-plan export you mentioned. I'll leave it as-is unless you want it logged
+  into TRANSCRIPT_LOG.md via the transcript skill (it's the raw /export, not the
+  cleaned/committed form).
+
+  Ready to start pulling the research threads from Research_Plan.md whenever you
+  say go — happy to run them in parallel.
+
+✻ Brewed for 19s · done 2:16 PM
+
+❯ yes, go ahead and run the research threads in parallel (use sub-agents if     
+  needed).                                                                      
+
+● Launching 5 parallel research agents matching the plan's threads
+  (market/customers/pricing, suppliers, competitors/rivalry, US regulation,
+  technical feasibility). Each returns sourced findings tagged to the item
+  numbers in Research_Plan.md, which I'll compile into Research_Findings.md.
+
+● 5 background agents launched (↓ to manage)
+   ├ Research market, customers, pricing
+   ├ Research suppliers and manufacturers
+   ├ Refresh competitor and rivalry research
+   ├ Research US regulation primary texts
+   └ Research technical feasibility
+
+● All 5 research agents are running in the background:
+
+  1. Market/customers/pricing — items 1, 4, 5, 11, 16, 17, 18, 26, 27, 28
+  2. Suppliers/manufacturers — item 12
+  3. Competitors/rivalry refresh — items 10, 13, 14, 15
+  4. US regulation primary texts — items 2, 15, 19–25
+  5. Technical feasibility (JEPA/federated learning) — items 6, 7, 8, 9
+
+  I'll be notified as each completes, then compile everything into
+  Research_Findings.md and resolve the §10 "verify before citing" list in
+  Topic_Brainstorm_Report.md. No further action needed from you until they land.
+
+✻ Sautéed for 1m 10s · done 2:18 PM
+
+❯ /export                                                                         ⎿  Export cancelled
