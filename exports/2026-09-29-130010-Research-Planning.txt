@@ -1,0 +1,124 @@
+ ▐▛███▛█   Claude Code v2.1.283
+▝▜██████▀  Sonnet 5 · Claude Pro
+ ▝▝   ▝▝   ~/…/College/BAI BusinessArtificialIntelligense/MidTerm_Project
+
+
+❯ use brainstorming and research skills to plan what things need to research    
+  on, the existing companies, technologies, customers, suppliers, demands,      
+  regulations, cost, etc.                                                       
+
+● Using superpowers:brainstorming to scope the research plan.
+
+● Skill(superpowers:brainstorming)
+  ⎿  Successfully loaded skill
+
+  Listed 1 directory, recalled 1 memory (ctrl+o to expand)
+
+● This is a bounded planning task, so I'll skip the spec file and share a short
+  research plan directly in chat. First, let me check what already exists so I
+  don't duplicate work. · summary
+
+  Read 3 files (ctrl+o to expand)
+
+● This is a bounded task: a research plan for the locked topic, with no code.
+  I've read Topic_Brainstorm_Report.md, which already covers competitors (§6),
+  architecture (§7) and a first jurisdiction comparison (§4 Q16). The plan below
+  covers only the gaps, and about 10 claims in §10 that came from model
+  knowledge still need a real source.
+
+  What the research must produce: every rubric section (4 pages, 3–4 non-blog
+  references) gets defensible numbers and citations, so you can survive the
+  viva. Each item is tagged [gap] (nothing in hand), [verify] (a claim to check)
+  or [deepen] (partly covered).
+
+  Priority 1: needed to write and defend the pages
+
+  Area: Customers and demand
+  Questions to answer: [gap] How many mid-size operators (50–300 satellites)
+  exist, and which ones? What are their security team sizes and budgets? What
+  do they pay today for space cyber consulting and tools? Is there any demand
+  signal, such as surveys, RFPs or insurer requirements?
+  Feeds section: Overview, Persona, Value
+  ────────────────────────────────────────
+  Area: Cost and pricing
+  Questions to answer: [gap] What does a patch-related loss cost: a bricked
+  satellite, an outage, or Viasat's recovery cost? What are analyst salaries
+  and consulting day rates? What should pricing look like per satellite or per
+  fleet tier? What are our own costs for compute, twin infrastructure and a
+  design-partner programme?
+  Feeds section: Value, Moat
+  ────────────────────────────────────────
+  Area: Suppliers
+  Questions to answer: [gap] Which manufacturers (e.g. Spire, Airbus, Thales,
+  Terran Orbital) and ground-station-as-a-service providers (AWS Ground
+  Station, KSAT) exist? Would they share parts lists (SBOMs) and patches? What
+  GPU/cloud costs apply? Is any single supplier dominant?
+  Feeds section: Porter's supplier power
+  ────────────────────────────────────────
+  Area: Regulation (US)
+  Questions to answer: [verify] NIST AI RMF (map Govern/Map/Measure/Manage to
+  the
+  guardrails), NIST IR 8270 and 8401, SPD-5, and ITAR/EAR limits on foreign
+  federated learning. [gap] Subscriber-terminal data under CCPA/CPRA.
+  Feeds section: Governance
+  ────────────────────────────────────────
+  Area: Existing companies
+  Questions to answer: [deepen] Re-check for a new entrant or stealth player,
+  since the whole idea depends on there being none: Deloitte, Booz Allen, Palo
+  Alto/Claroty, Tenable, Axiom Space, Slingshot, Voyager. Search funding
+  databases, Space Force SBIR and DARPA awards.
+  Feeds section: Porter's rivalry and entrants, Moat
+
+  Priority 2: strengthens depth and the appendix
+
+  Area: Technology
+  Questions: Is ESA-ADB/OPS-SAT enough to bootstrap the world model? Has JEPA
+  been used for satellite telemetry? Are there constrained-RL safety methods
+  for rollouts? How does federated learning cope with heterogeneous fleets, and
+   what does differential privacy cost?
+  Feeds: Moat, Governance, appendix
+  ────────────────────────────────────────
+  Area: Substitutes
+  Questions: Consulting engagements versus in-house teams versus doing nothing.
+  How much do these cost, and is there evidence customers actually choose them?
+  Feeds: Porter's substitutes
+  ────────────────────────────────────────
+  Area: Incident evidence
+  Questions: [deepen] Viasat 2022 as the hook. Patch-caused satellite failures
+  beyond what we have. Solid failure-rate statistics (the ~40% figure needs a
+  proper source).
+  Feeds: Overview, Value
+  ────────────────────────────────────────
+  Area: Insurance
+  Questions: Is the space insurance market real, and does it price cyber risk?
+  Would an insurer pay or subsidise?
+  Feeds: Value, Persona
+
+  Priority 3: only if time remains
+
+  - The India alternative (DPDP, IN-SPACe, CERT-In), to confirm US or India
+    before drafting.
+  - Go-to-market: whether to start commercial or government (B2G).
+  - Liability when an approved patch still fails.
+
+  Method and output
+
+  - Web research runs as separate parallel threads (customers, cost, suppliers,
+    regulation, competitors, technology), each returning cited findings.
+  - Results go into a Research_Findings.md in the project folder, with each
+    claim labelled sourced or unverified. It also gets a shortlist of 3–4
+    non-blog key references, and the §10 claims become verified or struck.
+  - Every finding is tagged to a rubric section, so drafting can start from it
+    directly.
+  - I would not fabricate market numbers. Anything I can't source gets flagged
+    as an estimate and shown with its assumptions.
+
+  Two questions before I run it:
+  1. Is the jurisdiction confirmed as US, so I spend the regulation effort there
+     instead of on India too? (Your memory notes say confirmation was pending.)
+  2. Should I go ahead with Priorities 1–2 in parallel, and follow your usual
+     branch and commit routine for the new file?
+
+  I'm stopping here until you approve or adjust the plan.
+
+✻ Worked for 30s · done Saturday 5:59 PM
