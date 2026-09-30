@@ -446,6 +446,17 @@ Only two ideas failed. The scope grew from the work-arounds (emulator judge, sol
 
 **Conclusion:** the revised concept holds, and the fixes are wording and competitor naming. The scores and the remaining open decisions are in the session review; spec v3 is pending approval.
 
+### Q39. "Can we be a complement or sit in an adjacent space instead of competing with Aerospace Corp? How exactly is the value smaller for new, identical fleets? I'm keeping it people-heavy because this industry doesn't trust new automation: you have to earn trust first, then grow into the scope we cut. And we'll never have full data at the start; it all comes from the client at onboarding."
+**Origin of doubt:** the weak spots listed in the Q38 review.
+**Reasoning:**
+- *Aerospace Corp:* **yes, a complement.** As an FFRDC it is barred by FAR 35.017 from competing with industry (RF item 32). It publishes frameworks (SPARTA) and builds government prototypes. Periapt builds on SPARTA, speaks its IDs, and can validate through Aerospace's ASC-100 testbed access (RF item 31). *The real entrant threat moves* to its partner Google and to the primes and consultancies.
+- *Identical fleets:* the world model earns its keep by telling satellites apart. In a new fleet of identical, healthy satellites, "what would this attack do?" gives nearly the same answer for each, so it adds little over a rule, and the history is short. The value left is reading at scale, speed, and ranking *across* flaws. Satellites drift apart as they age (reasoning, not sourced). → Early adopters are older or mixed fleets.
+- *People-heavy:* **agreed as a strategy**, and backed by the course: experts rely less on automation (Sanchez et al., S11), and forward-deployed engineers are in demand (S1 note). *Pushback:* it's still a cost, so viability stays the weakest point. Onboarding gets cheaper only if parts libraries per satellite bus type can be reused across customers, which is a hypothesis that needs manufacturer data (R13/R14).
+- *Staged growth:* **agreed.** Prove Stage 1, then add fix-window planning, then validation and rollout with partners. This is the course's "think big, act small" and "dominate a niche, then adjacent markets" (Porter deck, Thiel).
+- *Data:* **correct.** Onboarding builds the parts list, the reach map and the history from the client (R14). Until a fleet's model is trained, layer 3 says "unknown", so rankings stay high by default. Shadow mode earns trust, gathers data and trains the model at the same time.
+**Conclusion:** all five folded into spec v3 (§1, §2.4–2.6, A.3, A.4, close).
+**Change:** spec v3 written 2026-09-30. User approved: the re-centred concept and cuts, the ranking authority rule, and the reference list. India and SBIR are on hold.
+
 ---
 
 ## 5. Questions Claude Asked Me
