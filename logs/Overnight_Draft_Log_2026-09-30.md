@@ -31,3 +31,7 @@ Format: *decision — why — cost if wrong.*
   - *Ruling:* the opening does not say "dozens of advisories a week" (my first idea) — no source for that rate. It says "tomorrow another advisory will arrive". Cost if wrong: slightly weaker scene.
   - *Ruling:* the fictional CISO gets no gendered pronoun (neutral wording throughout).
   - *Note:* the "we found nothing that predicts…" line in A.0 is an absence-of-claims statement; the streetlight caveat (R23) is stated in A.3.
+- **Task 2: complete.** A.1 with the three-layer table, value table, before/after, five tests and the Visual 1 mermaid block. Required terms 16/16 ok. Hedge check: 3 lines flagged, all describe the design (table row, tool list, mermaid node), none claims a result — accepted as the plan allows.
+  - *Ruling:* raw word count 615 vs target 420–560 (first pass 713, rewritten). Prose alone, without the mermaid block and tags, is 528, inside the range. The plan says the mermaid block "counts a little", so I stopped cutting there. Cost if wrong: ~55 more words for the user to cut; A.1 is the densest rubric section.
+  - *Ruling:* the tool list in "Why it is agentic" is shortened to six named tools ("scores" covers the CVSS/EPSS feed). Cost if wrong: none.
+  - *Ruling:* before/after says a ranked list "arrives in minutes" (matches the mission line), marked illustrative; no measured time is claimed.

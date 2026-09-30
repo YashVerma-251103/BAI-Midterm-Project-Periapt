@@ -30,6 +30,48 @@ So what does the AI actually do at 2 a.m.?
 
 ## A.1 Agentic AI and Value
 
+**The workflow.** Triage: turning each new advisory into a ranked, explained decision for security, flight software and mission ops.
+
+**Three layers; AI only where rules can't reach.**
+
+| Layer | Question | How |
+|---|---|---|
+| 1. Facts | Which satellites have it? Can an attacker reach them? | LLM proposes matches; a plain rule confirms each against a cited parts-list line; a reach map checks ground → spacecraft paths |
+| 2. Scores | How severe? How likely? | CVSS, EPSS (FIRST's free ML exploit forecast [RF 32]), SPARTA: reused, not rebuilt |
+| 3. Impact | What would an attack do to *each* satellite? | Periapt's world model |
+
+Rank = likelihood × impact. This fills in the operator's own method (Spire ranks by ISO 27005 likelihood × impact [RF 31]) instead of replacing it.
+
+**The two AI parts.** (1) A self-hosted **LLM agent** reads advisories, even prose ones, matches, briefs and orchestrates. (2) A **world model** learned per fleet from telemetry and command history ("state + command → next state"); JEPA-style is the candidate, and JPL's LSTM (Hundman et al. 2018 [RF 32]) is the precedent and the baseline to beat. It is designed to play out "what if these commands were sent?" Real attacks often misuse legitimate commands (Viasat [RF 32]), which the model learns from normal operations. *Illustrative:* "heaters off" should hurt old satellite 12, entering eclipse on a weak battery, more than new satellite 40 in sunlight. It also aims to forecast battery and thermal margin, so a fix window is safe. Outside its data, impact is "unknown" and counts as high.
+
+**Why it is agentic.** One orchestrator works ReAct-style (reason → call a tool → observe), with tools for the parts list, reach map, scores, SPARTA, world model and tickets. It perceives, processes, decides (ranks) and acts (briefs, tickets), then re-ranks on news or overrides. Step limits, validated outputs and the layer-1/2 floor keep it reliable. It runs alone up to the ranking; humans override at any time and approve anything that touches a satellite.
+
+**Why teams want it** [Q27, Q35]: coverage, memory (the record outlives staff turnover), consistency at 2 a.m., and translation (security gets *why*, flight software *what*, ops *when*). A general chatbot can't trace reach or play out commands, and pasting fleet data into one is shadow AI.
+
+| Efficiency | Risk | Innovation |
+|---|---|---|
+| Analyst hours per advisory; time to decision; coverage | Fewer critical flaws missed; evidence behind approvals; a lost smallsat (~$0.5–1M [RF 4]) as tail risk only | Evidence packs for insurers and DoD audits, a method for 800-171's "timely" [RF 30] |
+
+*Before/after (illustrative):* today, three teams check lists by hand until morning; with Periapt, a ranked list with reasons arrives in minutes. Proof is renewal on these pilot metrics (A.4).
+
+**Tests** [R17]: world model vs JPL's LSTM on ESA-ADB (fewer false alarms at equal detection) [RF 7, RF 32]; predicted vs actual telemetry after real commands; predicted vs simulator impact on replayed attacks (NOS3-style [RF 32]); agreement with the team in shadow mode; backtest on past advisories. If it loses to the plain forecaster, only the model changes [Q33].
+
+*Visual 1 (source):*
+
+```mermaid
+flowchart LR
+  A[New advisory] --> B[LLM agent: read + match]
+  B --> C[Layer 1: facts + reach map]
+  C --> D[Layer 2: CVSS, EPSS, SPARTA]
+  D --> E[Layer 3: world model what-if per satellite]
+  E --> F[Ranked list with reasons]
+  F --> G[Briefs: security / flight software / ops]
+  G --> H{Human: override any time; approve before anything touches a satellite}
+  E -. "can raise; lowering needs a human; unknown = high" .-> F
+```
+
+If this works, what stops a rival copying it?
+
 ## A.2 Architecture, Moat and Defensibility
 
 ## A.3 Porter's Five Forces
