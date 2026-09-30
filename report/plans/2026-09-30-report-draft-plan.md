@@ -69,15 +69,15 @@ These are the failure modes most likely to hurt the user in grading or a viva. E
 - Create: `report/Periapt_Report_Draft.md`
 - Create: `scripts/draft_check.sh` (section-scoped checks used by every task)
 
-- [ ] **Step 1: Read inputs.** Read in full: `CLAUDE.md`, `HANDOFF.md` (banner), `report/specs/2026-09-30-report-draft-design.md`, `report/Viva_Prep.md` §9. Keep `research/Research_Findings.md` open for number checks.
-- [ ] **Step 2: Create the branch.**
+- [x] **Step 1: Read inputs.** Read in full: `CLAUDE.md`, `HANDOFF.md` (banner), `report/specs/2026-09-30-report-draft-design.md`, `report/Viva_Prep.md` §9. Keep `research/Research_Findings.md` open for number checks.
+- [x] **Step 2: Create the branch.**
 
 ```bash
 cd "/home/nemox/ZorinProjects/College/BAI BusinessArtificialIntelligense/MidTerm_Project"
 git switch main && git switch -c docs/report-draft
 ```
 
-- [ ] **Step 3: Write the skeleton** to `report/Periapt_Report_Draft.md`:
+- [x] **Step 3: Write the skeleton** to `report/Periapt_Report_Draft.md`:
 
 ```markdown
 # Periapt — Know Which Flaw Matters First
@@ -105,7 +105,7 @@ git switch main && git switch -c docs/report-draft
 ## Appendix: Thinking and AI Use
 ```
 
-- [ ] **Step 4: Write `scripts/draft_check.sh`:**
+- [x] **Step 4: Write `scripts/draft_check.sh`:**
 
 ```bash
 #!/usr/bin/env bash
@@ -127,13 +127,13 @@ case "$cmd" in
 esac
 ```
 
-- [ ] **Step 5: Verify the skeleton and the script.**
+- [x] **Step 5: Verify the skeleton and the script.**
 
 Run: `grep -c '^## ' report/Periapt_Report_Draft.md` → expect `10`.
 Run: `bash scripts/draft_check.sh words "A.1 Agentic AI and Value"` → expect `0`.
 Run: `bash scripts/draft_check.sh has "A.1 Agentic AI and Value" "zzz"; echo "exit=$?"` → expect `MISSING zzz` and `exit=1`.
 
-- [ ] **Step 6: Commit.**
+- [x] **Step 6: Commit.**
 
 ```bash
 git add report/Periapt_Report_Draft.md scripts/draft_check.sh
@@ -163,8 +163,8 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
 - **A.0 topic fit:** "day zero" = the day a flaw becomes known, often before a patch. Critical infrastructure = infrastructure critical sectors depend on (Viasat → ~5,800 turbines [RF 4]; EU NIS2 lists space [RF 2]). Do **not** call satellites a US critical-infrastructure sector.
 - End with the handoff to A.1.
 
-- [ ] **Step 1: Write both sections** under their headings, following the content list.
-- [ ] **Step 2: Required-term check.**
+- [x] **Step 1: Write both sections** under their headings, following the content list.
+- [x] **Step 2: Required-term check.**
 
 ```bash
 bash scripts/draft_check.sh has "Opening: 2 a.m." "2 a.m." "200 satellites" "no patch" "Which flaw first" "illustrative"
@@ -172,8 +172,8 @@ bash scripts/draft_check.sh has "A.0 Overview: Periapt" "periapsis" "Layer 7" "C
 ```
 
 Expected: all `ok`, exit 0.
-- [ ] **Step 3: Word counts.** `bash scripts/draft_check.sh words "Opening: 2 a.m."` → 90–140; `bash scripts/draft_check.sh words "A.0 Overview: Periapt"` → 220–320. If a count is outside its range, edit and re-run.
-- [ ] **Step 4: Commit** with the message `docs(report): draft opening scene and A.0 overview`.
+- [x] **Step 3: Word counts.** `bash scripts/draft_check.sh words "Opening: 2 a.m."` → 90–140; `bash scripts/draft_check.sh words "A.0 Overview: Periapt"` → 220–320. If a count is outside its range, edit and re-run.
+- [x] **Step 4: Commit** with the message `docs(report): draft opening scene and A.0 overview`.
 
 ---
 
@@ -208,21 +208,21 @@ flowchart LR
 
 - End with the handoff to A.2.
 
-- [ ] **Step 1: Write A.1**, including the value table and the mermaid block.
-- [ ] **Step 2: Required-term check.**
+- [x] **Step 1: Write A.1**, including the value table and the mermaid block.
+- [x] **Step 2: Required-term check.**
 
 ```bash
 bash scripts/draft_check.sh has "A.1 Agentic AI and Value" "ReAct" "orchestrat" "world model" "Hundman" "ISO 27005" "EPSS" "SPARTA" "shadow AI" "ESA-ADB" "illustrative" "renewal" "efficiency" "innovation" "mermaid" "unknown" "heaters"
 ```
 
 Expected: all `ok`, exit 0.
-- [ ] **Step 3: Hypothesis hedging check.** Every sentence claiming what the world model predicts must carry a hedge.
+- [x] **Step 3: Hypothesis hedging check.** Every sentence claiming what the world model predicts must carry a hedge.
 
 Run: `awk '$0=="## A.1 Agentic AI and Value"{f=1;next}/^## /{f=0}f' report/Periapt_Report_Draft.md | grep -i "world model" | grep -viE "hypothes|test|pilot|candidate|assum|aim|designed|expect|learn"`
 
 Expected: no output, or only lines that clearly describe the design rather than claim a result. Rephrase any line that states a result as fact.
-- [ ] **Step 4: Word count.** `bash scripts/draft_check.sh words "A.1 Agentic AI and Value"` → 420–560 (the mermaid block counts a little).
-- [ ] **Step 5: Commit** with the message `docs(report): draft A.1 agentic AI and value`.
+- [x] **Step 4: Word count.** `bash scripts/draft_check.sh words "A.1 Agentic AI and Value"` → 420–560 (the mermaid block counts a little).
+- [x] **Step 5: Commit** with the message `docs(report): draft A.1 agentic AI and value`.
 
 ---
 
@@ -243,20 +243,20 @@ Expected: no output, or only lines that clearly describe the design rather than 
 - **Removed from the moat:** public data (feasibility only [RF 7]) and manufacturer partnerships [R13].
 - One honest line: thin at cold start. End with the handoff to A.3.
 
-- [ ] **Step 1: Write A.2.**
-- [ ] **Step 2: Required-term check.**
+- [x] **Step 1: Write A.2.**
+- [x] **Step 2: Required-term check.**
 
 ```bash
 bash scripts/draft_check.sh has "A.2 Architecture, Moat and Defensibility" "intangible" "switching cost" "efficient scale" "network effect" "changed tomorrow" "record" "shadow mode" "belongs to the customer" "time in orbit"
 ```
 
 Expected: all `ok`, exit 0.
-- [ ] **Step 3: Moat-claim check** (a banned claim).
+- [x] **Step 3: Moat-claim check** (a banned claim).
 
 Run: `grep -niE "telemetry (data|archive) is (our|the) moat|data moat" report/Periapt_Report_Draft.md`
 Expected: no output.
-- [ ] **Step 4: Word count.** `bash scripts/draft_check.sh words "A.2 Architecture, Moat and Defensibility"` → 280–380.
-- [ ] **Step 5: Commit** with the message `docs(report): draft A.2 architecture and moat`.
+- [x] **Step 4: Word count.** `bash scripts/draft_check.sh words "A.2 Architecture, Moat and Defensibility"` → 280–380.
+- [x] **Step 5: Commit** with the message `docs(report): draft A.2 architecture and moat`.
 
 ---
 
@@ -279,20 +279,20 @@ Expected: no output.
 - **Regulation both ways:** no binding US mandate [RF 30]; 800-171 3.14.1 as the DoD-contractor beachhead.
 - End with the handoff to A.4.
 
-- [ ] **Step 1: Write A.3** with the table.
-- [ ] **Step 2: Required-term check.**
+- [x] **Step 1: Write A.3** with the table.
+- [x] **Step 2: Required-term check.**
 
 ```bash
 bash scripts/draft_check.sh has "A.3 Porter's Five Forces" "SPARTA" "SPARTEND" "IRON GALAXY" "Google" "FAR 35.017" "streetlight" "Globalstar" "ICEYE" "3.14.1" "substitut" "new entrant" "supplier" "rivalry" "buyer"
 ```
 
 Expected: all `ok`, exit 0.
-- [ ] **Step 3: FAR wording check.**
+- [x] **Step 3: FAR wording check.**
 
 Run: `grep -niE "banned from|prohibited from (all )?commercial|barred from" report/Periapt_Report_Draft.md`
 Expected: no output.
-- [ ] **Step 4: Word count.** `bash scripts/draft_check.sh words "A.3 Porter's Five Forces"` → 300–420.
-- [ ] **Step 5: Commit** with the message `docs(report): draft A.3 five forces`.
+- [x] **Step 4: Word count.** `bash scripts/draft_check.sh words "A.3 Porter's Five Forces"` → 300–420.
+- [x] **Step 5: Commit** with the message `docs(report): draft A.3 five forces`.
 
 ---
 
@@ -315,16 +315,16 @@ Expected: no output.
 - **Timeline, labelled an assumption** [R28]: paid pilot → shadow mode ~1 quarter → assisted triage → renewal at 12 months.
 - End with the handoff to A.5.
 
-- [ ] **Step 1: Write A.4** with the persona card and the journey strip.
-- [ ] **Step 2: Required-term check.**
+- [x] **Step 1: Write A.4** with the persona card and the journey strip.
+- [x] **Step 2: Required-term check.**
 
 ```bash
 bash scripts/draft_check.sh has "A.4 Persona and Customer Journey" "Stretched Sentinel" "pain" "goal" "decision criteria" "psychographic" "buying committee" "early adopter" "prepurchase" "postpurchase" "data capture" "classification" "delegation" "social" "renewal" "pilot trap" "assumption" "onboarding"
 ```
 
 Expected: all `ok`, exit 0.
-- [ ] **Step 3: Word count.** `bash scripts/draft_check.sh words "A.4 Persona and Customer Journey"` → 350–470.
-- [ ] **Step 4: Commit** with the message `docs(report): draft A.4 persona and journey`.
+- [x] **Step 3: Word count.** `bash scripts/draft_check.sh words "A.4 Persona and Customer Journey"` → 350–470.
+- [x] **Step 4: Commit** with the message `docs(report): draft A.4 persona and journey`.
 
 ---
 
@@ -360,20 +360,20 @@ Expected: all `ok`, exit 0.
 - **Customer exit:** per-fleet model and data deleted; the pooled-model limit stated [R33].
 - **Trust close:** calibrated trust between over- and under-trust (Lee & See); competence, integrity, benevolence (Pavlou & Fygenson). End with the handoff to the close.
 
-- [ ] **Step 1: Write A.5** with the autonomy table.
-- [ ] **Step 2: Required-term check.**
+- [x] **Step 1: Write A.5** with the autonomy table.
+- [x] **Step 2: Required-term check.**
 
 ```bash
 bash scripts/draft_check.sh has "A.5 Governance, Guardrails and US Compliance" "override" "stop" "escalat" "kill switch" "hallucinat" "prompt injection" "least privilege" "CrowdStrike" "drift" "audit" "model card" "bias" "Air Canada" "NIST AI RMF" "Govern" "Map" "Measure" "Manage" "CCPA" "FTC" "EAR" "ITAR" "800-171" "competence" "integrity" "benevolence" "certified safe"
 ```
 
 Expected: all `ok`, exit 0. "certified safe" may only appear inside "never 'certified safe'".
-- [ ] **Step 3: "certified safe" context check.**
+- [x] **Step 3: "certified safe" context check.**
 
 Run: `grep -ni "certified safe" report/Periapt_Report_Draft.md`
 Expected: every hit is a negation ("never", "not").
-- [ ] **Step 4: Word count.** `bash scripts/draft_check.sh words "A.5 Governance, Guardrails and US Compliance"` → 380–500.
-- [ ] **Step 5: Commit** with the message `docs(report): draft A.5 governance`.
+- [x] **Step 4: Word count.** `bash scripts/draft_check.sh words "A.5 Governance, Guardrails and US Compliance"` → 380–500.
+- [x] **Step 5: Commit** with the message `docs(report): draft A.5 governance`.
 
 ---
 
@@ -396,8 +396,8 @@ Expected: every hit is a negation ("never", "not").
   3. NIST AI 100-1 (2023), *Artificial Intelligence Risk Management Framework (AI RMF 1.0)*.
   4. Hundman, K., Constantinou, V., Laporte, C., Colwell, I., & Soderstrom, T. (2018). Detecting Spacecraft Anomalies Using LSTMs and Nonparametric Dynamic Thresholding. *Proc. ACM SIGKDD (KDD '18)*. arXiv:1802.04431.
 
-- [ ] **Step 1: Write the close and the references.**
-- [ ] **Step 2: Required-term check.**
+- [x] **Step 1: Write the close and the references.**
+- [x] **Step 2: Required-term check.**
 
 ```bash
 bash scripts/draft_check.sh has "Close: Four Lenses, and 2 a.m. Again" "Feasibility" "Usability" "Desirability" "Viability" "weakest" "Stage 2" "Stage 3" "2:10" "Which flaw first"
@@ -405,12 +405,12 @@ bash scripts/draft_check.sh has "References" "Satellite Industry Association" "8
 ```
 
 Expected: all `ok`, exit 0.
-- [ ] **Step 3: Reference count.**
+- [x] **Step 3: Reference count.**
 
 Run: `awk '$0=="## References"{f=1;next}/^## /{f=0}f' report/Periapt_Report_Draft.md | grep -cE '^[0-9]+\.'`
 Expected: `4`
-- [ ] **Step 4: Word count.** `bash scripts/draft_check.sh words "Close: Four Lenses, and 2 a.m. Again"` → 130–200.
-- [ ] **Step 5: Commit** with the message `docs(report): draft close and references`.
+- [x] **Step 4: Word count.** `bash scripts/draft_check.sh words "Close: Four Lenses, and 2 a.m. Again"` → 130–200.
+- [x] **Step 5: Commit** with the message `docs(report): draft close and references`.
 
 ---
 
@@ -426,16 +426,16 @@ Expected: `4`
 3. **Hardest concept:** *what the AI should actually predict.* The options: patch effect (fails: new code), a judge of test runs (works, but commodity), flaw impact per satellite (chosen: in-distribution commands, per-satellite value, fits the topic). Add one line noting the alternative (defensibility), which the user may swap in.
 4. **Accepted / modified / rejected / independently developed:** a short 4-row table. Raised independently by the user: regulation cuts both ways (Q17), public data isn't a moat (Q18), in-house teams (Q20), helping competitors (Q22), unit economics (Q24), undo = unreliable (Q25), scope drift from AI (Q34), replacement vs assistance (Q35), topic fit (Q36), autonomy (Q37), the Aerospace complement (Q39), matching is already automated (Q40).
 
-- [ ] **Step 1: Write the appendix.**
-- [ ] **Step 2: Required-term check.**
+- [x] **Step 1: Write the appendix.**
+- [x] **Step 2: Required-term check.**
 
 ```bash
 bash scripts/draft_check.sh has "Appendix: Thinking and AI Use" "decision tree" "Claude Code" "subagent" "Transcript 1" "Transcript 2" "hardest" "accepted" "modified" "rejected" "independently" "Q34" "Q36"
 ```
 
 Expected: all `ok`, exit 0.
-- [ ] **Step 3: Word count.** `bash scripts/draft_check.sh words "Appendix: Thinking and AI Use"` → 380–520.
-- [ ] **Step 4: Commit** with the message `docs(report): draft appendix`.
+- [x] **Step 3: Word count.** `bash scripts/draft_check.sh words "Appendix: Thinking and AI Use"` → 380–520.
+- [x] **Step 4: Commit** with the message `docs(report): draft appendix`.
 
 ---
 
@@ -445,36 +445,36 @@ Expected: all `ok`, exit 0.
 - Modify: `report/Periapt_Report_Draft.md` (fixes only)
 - Modify: `HANDOFF.md` (banner line)
 
-- [ ] **Step 1: Banned-wording check.**
+- [x] **Step 1: Banned-wording check.**
 
 ```bash
 grep -niE "16,?000|17,?000|16k|58,?000 CVEs|Starlink[^.]*%|3-person|three-person|40% of CubeSats|since 2000|fully tested|legally required|nobody validates|\bACV\b|annual contract value|revenue of|Terrain Trace|SBIR|S\.? ?3404|predicts? what (a|the) patch|banned from|barred from|service life|year design life|critical-infrastructure sector|unpatched (ground|VPN)" report/Periapt_Report_Draft.md
 ```
 
 Expected: no output. Rewrite any hit.
-- [ ] **Step 2: Scope-drift check** (Review Focus 2).
+- [x] **Step 2: Scope-drift check** (Review Focus 2).
 
 ```bash
 grep -niE "periapt (rolls out|deploys|uplinks|patches|writes|tests the patch|monitors)|we (roll out|uplink|deploy the patch|monitor the fleet)" report/Periapt_Report_Draft.md
 ```
 
 Expected: no output. Anything that fixes is done by the team or the operator's tools; Periapt ranks and explains.
-- [ ] **Step 3: Number audit (manual).** List every number: `grep -noE "[0-9][0-9,.]*%?" report/Periapt_Report_Draft.md | sort -u -t: -k3`. Each must be in the Global Constraints "use exactly" list, marked illustrative (scene times, the 200-satellite fleet), or be a regulation or section ID. Remove anything else.
-- [ ] **Step 4: Tag presence.** Count tags per section. Every section except the opening and the appendix should have at least 2.
+- [x] **Step 3: Number audit (manual).** List every number: `grep -noE "[0-9][0-9,.]*%?" report/Periapt_Report_Draft.md | sort -u -t: -k3`. Each must be in the Global Constraints "use exactly" list, marked illustrative (scene times, the 200-satellite fleet), or be a regulation or section ID. Remove anything else.
+- [x] **Step 4: Tag presence.** Count tags per section. Every section except the opening and the appendix should have at least 2.
 
 ```bash
 for h in "A.0 Overview: Periapt" "A.1 Agentic AI and Value" "A.2 Architecture, Moat and Defensibility" "A.3 Porter's Five Forces" "A.4 Persona and Customer Journey" "A.5 Governance, Guardrails and US Compliance"; do n=$(awk -v h="$h" '$0=="## " h{f=1;next}/^## /{f=0}f' report/Periapt_Report_Draft.md | grep -oE "\[(RF|Q|R) [0-9/]+[^]]*\]" | wc -l); echo "$n  $h"; done
 ```
 
 Expected: every count ≥ 2.
-- [ ] **Step 5: Storytelling check** (Review Focus 5).
+- [x] **Step 5: Storytelling check** (Review Focus 5).
 
 Run: `grep -ciE "which flaw first" report/Periapt_Report_Draft.md` → expect `≥ 2`.
 Run: `grep -ci "Stretched Sentinel\|the CISO" report/Periapt_Report_Draft.md` → expect `≥ 3` (opening, A.4, close).
-- [ ] **Step 6: Coverage matrix walk.** Open spec §6. For each row (K1–K5, R1–R35, RF 32), confirm the handling is visible in the draft section named ("Avoid", "Held" and "Cut" rows mean it must be absent). Fix any gap.
-- [ ] **Step 7: Total length.** `wc -w report/Periapt_Report_Draft.md`. Expected about 2,700–3,500 words; the user cuts to 4 pages + a 1-page appendix later.
-- [ ] **Step 8: Update HANDOFF.md §1.** Replace the bullet "**The report prose has not been started.** The next session writes `report/Periapt_Report_Draft.md` by running the plan." with "**Draft written:** `report/Periapt_Report_Draft.md` (with source tags). Next: the user's voice rewrite and cut to 4+1 pages → visuals → .docx (docx skill) → strip tags. User tasks are in §6." Also set §2 step 1 to "The plan is done; see §6." In `CLAUDE.md`, change "the report prose has not been started. Ask the user for the execution method (Native recommended) before running the plan." to "the draft is written; next is the user's rewrite."
-- [ ] **Step 9: Commit and merge.**
+- [x] **Step 6: Coverage matrix walk.** Open spec §6. For each row (K1–K5, R1–R35, RF 32), confirm the handling is visible in the draft section named ("Avoid", "Held" and "Cut" rows mean it must be absent). Fix any gap.
+- [x] **Step 7: Total length.** `wc -w report/Periapt_Report_Draft.md`. Expected about 2,700–3,500 words; the user cuts to 4 pages + a 1-page appendix later.
+- [x] **Step 8: Update HANDOFF.md §1.** Replace the bullet "**The report prose has not been started.** The next session writes `report/Periapt_Report_Draft.md` by running the plan." with "**Draft written:** `report/Periapt_Report_Draft.md` (with source tags). Next: the user's voice rewrite and cut to 4+1 pages → visuals → .docx (docx skill) → strip tags. User tasks are in §6." Also set §2 step 1 to "The plan is done; see §6." In `CLAUDE.md`, change "the report prose has not been started. Ask the user for the execution method (Native recommended) before running the plan." to "the draft is written; next is the user's rewrite."
+- [x] **Step 9: Commit and merge.**
 
 ```bash
 git add report/Periapt_Report_Draft.md HANDOFF.md
@@ -485,4 +485,4 @@ git switch main && git merge --no-ff docs/report-draft -m "Merge branch 'docs/re
 git status --short   # expect only: M README.md, ?? Discussion on the World model.txt
 ```
 
-- [ ] **Step 10: Report to the user** in plain words: the draft location, the word counts per section, any check that needed a judgement call, and the user's next steps (rewrite, transcript links, reference checks, India).
+- [x] **Step 10: Report to the user** in plain words: the draft location, the word counts per section, any check that needed a judgement call, and the user's next steps (rewrite, transcript links, reference checks, India).

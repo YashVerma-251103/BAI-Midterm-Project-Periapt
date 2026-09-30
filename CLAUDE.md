@@ -13,7 +13,7 @@ The Business of AI — Mid-Semester Assignment (20 marks). **Not code.** The del
 - **Architecture:** LLM agent (self-hosted, citation-required; ReAct orchestrator) + reused scores (CVSS, EPSS, SPARTA) + reach map + **world model** (learned per fleet from telemetry and command history; predicts what an attacker's commands would do to each satellite, and forecasts battery/thermal margin; JEPA-style as the candidate). Ranking rule: the AI can raise a priority, lowering needs a human, and outside its data means high. The RL planner, patch testing, rollout/rollback and monitoring are **cut** from Stage 1. Evolution: topic report Q26 and Q31–Q39.
 - **Jurisdiction:** **United States** (confirmed 2026-09-30). India line and SBIR: on hold (user decision pending).
 - **Format:** Word/PDF doc, 4 pages + 1-page appendix, 3 visuals. Draft in markdown with source tags; the user rewrites it in their own voice.
-- **Current state:** see `HANDOFF.md` (read it first in a new session). Spec v3 is approved; the drafting plan (`report/plans/2026-09-30-report-draft-plan.md`) is written; the report prose has not been started. Ask the user for the execution method (Native recommended) before running the plan.
+- **Current state:** see `HANDOFF.md` (read it first in a new session). Spec v3 is approved; the drafting plan (`report/plans/2026-09-30-report-draft-plan.md`) was run overnight (Native) and the draft is written. **⚠️ The user had not reviewed the plan**, so the draft is named `report/Periapt_Report_Draft_PLAN-NOT-USER-REVIEWED.md` until they approve it. Next: the user's review, then their rewrite. Decisions from the run: `logs/Overnight_Draft_Log_2026-09-30.md`.
 
 ## File map
 
@@ -22,8 +22,8 @@ The Business of AI — Mid-Semester Assignment (20 marks). **Not code.** The del
 | `brief/` | Assignment inputs (Instructions, Project Topics, professor note). Read-only. |
 | `topic/` | `Topic_Brainstorm_Report.md` — topic decision history, every challenge raised and answered, §10.1 verification log. |
 | `research/` | `Research_Plan.md` (29 numbered research tasks, tagged to rubric markers) → `Research_Findings.md` (sourced answers) → `Research_Findings_Explained.md` (same, plain-language). `Research_Findings_Review.md` (red-team list of weak claims, R1–R35 + top 5). `research/raw/` = the 7 subagents' full prompts/approach/sources/output — never edit, historical record. |
-| `report/` | `specs/2026-09-30-report-draft-design.md` (report blueprint, **spec v3, approved**), `plans/2026-09-30-report-draft-plan.md` (drafting tasks + checks), `Viva_Prep.md` (defend-ready answers; §9 is current). The draft (`Periapt_Report_Draft.md`) and final submission go here. |
-| `logs/` | `TRANSCRIPT_LOG.md` (committed, redacted, feeds the mandatory GenAI appendix) + `exports/` (raw `/export` dumps, source material for the log). |
+| `report/` | `specs/2026-09-30-report-draft-design.md` (report blueprint, **spec v3, approved**), `plans/2026-09-30-report-draft-plan.md` (drafting tasks + checks), `Viva_Prep.md` (defend-ready answers; §9 is current). The draft (`Periapt_Report_Draft_PLAN-NOT-USER-REVIEWED.md`: written from a plan the user hadn't reviewed; rename once approved) and final submission go here. |
+| `logs/` | `TRANSCRIPT_LOG.md` (committed, redacted, feeds the mandatory GenAI appendix) + `exports/` (raw `/export` dumps, source material for the log). `Overnight_Draft_Log_2026-09-30.md`: rulings and checks from the unattended drafting run. |
 | `scripts/` | `transcript.py` + its test — do not hand-edit `TRANSCRIPT_LOG.md`. `draft_check.sh` (created by plan Task 0) — checking tool for the draft only (required terms, word counts per section); not part of the report. |
 | `Prof_Materials` | Symlink to the professor's lecture/student-PPT materials — gitignored (external, not project content), but its course concepts must be applied when drafting. |
 

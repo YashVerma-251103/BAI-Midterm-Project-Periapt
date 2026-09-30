@@ -74,3 +74,15 @@ Format: *decision — why — cost if wrong.*
   - "(the Zillow lesson)" and "(the Cruise lesson)" in A.5 are terse.
   - Spelling mix: "platformization" (course deck spelling) next to British "prioritisation".
   - The opening and close talk about a "work-around" the CISO approves; Periapt's briefs suggest *what* to do, but Stage 1 doesn't plan fixes. That follows the spec, but a viva question could press on it ("who proposed the work-around?" → the flight-software brief; the team decides).
+- **Task 9 (handoff + marks): done.**
+  - `HANDOFF.md` §1–§2 rewritten for the new state, with a ⚠️ banner about the unreviewed plan and the file name.
+  - `CLAUDE.md`: "Current state" and the file map (report/, logs/) now name the draft file and this log.
+  - `README.md`: the `report/` row now marks the draft. **Only that line is committed**; the user's own uncommitted lines (`claude --resume …`) were left unstaged, untouched.
+  - Plan checkboxes ticked (53/53). The plan text itself is otherwise unchanged; it still names `report/Periapt_Report_Draft.md` and the branch `docs/report-draft` (see rulings 2–4).
+  - Merged `docs/report-draft-v3` into `main` with `--no-ff` (the project's standard flow). Not pushed.
+
+## Morning checklist for the user
+1. Read this log's rulings, especially: the appendix "I rewrote in my own words" line (Task 8), the time-in-orbit moat wording (Task 3), and the Deferred minors.
+2. Review the plan (`report/plans/2026-09-30-report-draft-plan.md`) and the draft side by side.
+3. If you're happy: rename the draft (drop `_PLAN-NOT-USER-REVIEWED`) and update HANDOFF, CLAUDE.md and README; `scripts/draft_check.sh`'s default path needs the same rename.
+4. Still yours (HANDOFF §6): the voice rewrite and cut to 4+1 pages, the hardest-concept choice, transcript links (`/export` then `/transcript` for this session too), NIST AI RMF PDF check, SIA report citation, India decision.
