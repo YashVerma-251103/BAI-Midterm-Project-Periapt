@@ -1,5 +1,7 @@
 # Session Handoff
 
+> **⚠ Partly superseded (2026-09-30 evening).** The scope was cut back to the original problem, with AI at the centre: **predictive prioritisation** (scan → score → rank with reasons) delivered as a copilot. The world model now predicts what a flaw would do to each satellite, plus battery/thermal margin. The RL planner, rollout/rollback building and monitoring are cut. See topic report **Q31–Q38**, RF **item 32** and Viva_Prep **§9**. **Spec v2 is NOT to be drafted from.** Spec v3 is pending the user's approval of the re-centred concept. §1–§4 below describe the older v2 state.
+
 **Written:** 2026-09-30, end of the research-validation + report-design session.
 **Deadline:** 1 Oct 2026, 23:59. That's about a day, so bias toward drafting, not more research.
 **Purpose:** give a fresh session everything it needs to continue without re-deriving decisions. `CLAUDE.md` (auto-loaded) has the stable facts; this file has the *state of work* and the *why* behind recent decisions.

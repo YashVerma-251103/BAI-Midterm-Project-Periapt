@@ -160,7 +160,7 @@ I also rejected the unsourced "3-person team" claim and the stale numbers after 
 
 **"Isn't this Spacecraft Mission Operations (telemetry analytics), not vulnerability prioritisation?"** No. The world model's output is a **security ranking**: which flaw to fix first and why. We deliberately don't sell fleet monitoring. Aerospace Corp and Google are building that [Q36, RF 32].
 
-**"Aerospace Corp has SPARTA and an AI anomaly tool with Google. Why won't they build this?"** They might; they're the biggest new-entrant threat. But they are a government research centre (FFRDC) working for government missions. We serve mid-size *commercial* operators, a niche they don't sell to, and we output in SPARTA IDs so we build on their work instead of fighting it [RF 10/13, RF 32].
+**"Aerospace Corp has SPARTA and an AI anomaly tool with Google. Why won't they build this?"** They might; they're the biggest new-entrant threat. But they are a government research centre (FFRDC) working for government missions. We serve mid-size *commercial* operators, which their government focus doesn't target (my reasoning, not a sourced fact), and we output in SPARTA IDs so we build on their work instead of fighting it [RF 10/13, RF 32].
 
 **"Viasat was a misconfiguration, not an unpatched flaw. Why use it?"** Correct, and I say so. I use it for the path and the method: getting in on the ground, then using legitimate commands to harm tens of thousands of terminals. That is exactly the kind of harm our world model plays out [RF 32].
 
