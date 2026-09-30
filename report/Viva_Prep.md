@@ -49,6 +49,8 @@ Satellite operators carry known flaws across ground stations, networks, radio li
 
 **"Viasat said the attack was immaterial. Why would anyone pay?"** We don't use Viasat as a dollar loss. We use it for the **path** (a ground VPN flaw reached tens of thousands of terminals) and the **scale of disruption**. Our value leads with triage speed and coverage. A bricked satellite is a tail risk, and SpaceX reports zero losses from its updates (a secondary source) [R3, R4, R5].
 
+**"Spire already sells automated rollout and rollback. What's left that's yours?"** Prioritisation and cross-domain decisions: which flaw, whether it reaches the fleet, which fix, in what order. We hand the approved plan to the operator's existing update manager rather than replacing it [R7, RF 31].
+
 **"How would a customer know your ranking beats their analyst's?"** Pilot metrics: analyst hours per finding at equal coverage, time from advisory to approved plan, agreement with red-team results in the testbed, and a backtest against past Space ISAC advisories. *Conceded:* transferring exploitability learned on the ground to space is an open validation risk [R17].
 
 **"How do you show value without revenue?"** Three layers: a value table (efficiency, risk reduction, innovation), a before/after of the 2 a.m. scene, and renewal triggered by measured pilot metrics. The innovation value is assurance evidence for insurers and defence contracts [Q29].
@@ -129,5 +131,7 @@ Satellite operators carry known flaws across ground stations, networks, radio li
 I also rejected the unsourced "3-person team" claim and the stale numbers after verification [Q20, §10.1].
 
 **"Which AI tools, for what?"** Claude Code (Opus) as the thinking partner; Sonnet and Opus subagents for sourced research and a red-team review of our own findings (35 weaknesses found). Every number was checked against a source before use.
+
+**"Did you read your own references?"** Before submission: NIST SP 800-171 was read directly. SPD-5 is quoted from the Federal Register. NIST IR 8270's control text must be checked in the PDF, and the SIA reference must cite the report itself, not the press release. *(Complete these checks before you say yes.)* [R35]
 
 **"Why this topic, if the research kept finding problems?"** Everything that failed was an **overclaim**, not the core idea. What survived has evidence: no one claims the whole loop, and the ground-to-space path is real (Viasat) [Q23].
