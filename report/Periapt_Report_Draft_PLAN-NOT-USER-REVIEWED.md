@@ -194,6 +194,23 @@ Does the whole story hold up?
 
 ## Close: Four Lenses, and 2 a.m. Again
 
+**Four lenses** (Session 1):
+- *Feasibility:* impact prediction is the one unproven piece. It has named tests and a safe fallback (layers 1–2; "unknown = high").
+- *Usability:* it fits the team's tools and ranking method, and each team gets its own brief.
+- *Desirability:* capable teams get a copilot, not a replacement, and value grows with time in orbit.
+- *Viability:* a per-fleet subscription plus an onboarding fee; people-heavy on purpose at first; a small buyer pool; compliance (EAR/ITAR, CMMC) costs money too. **This is the weakest point.**
+
+**Think big, act small.** Stage 1 ranks. Stage 2 adds fix-window planning and outcome tracking. Stage 3 adds validation and rollout with partners (Spire-style tools, manufacturer emulators). Each stage starts only once the last has earned trust.
+
+**2 a.m., again** (illustrative). The same advisory lands. By 2:10 the CISO has a ranked list: satellite 12 first, because the flaw is reachable from the ground and "heaters off" would hurt it most in tonight's eclipse; the rest below, each with its reasons. The CISO approves the first work-around and goes back to sleep. Which flaw first, and why? Now there is an answer anyone can check.
+
 ## References
+
+1. Satellite Industry Association (2026). *29th State of the Satellite Industry Report*.
+2. NIST (2020). *SP 800-171 Rev. 2: Protecting Controlled Unclassified Information in Nonfederal Systems and Organizations*.
+3. NIST (2023). *AI 100-1: Artificial Intelligence Risk Management Framework (AI RMF 1.0)*.
+4. Hundman, K., Constantinou, V., Laporte, C., Colwell, I., & Soderstrom, T. (2018). Detecting Spacecraft Anomalies Using LSTMs and Nonparametric Dynamic Thresholding. *Proc. ACM SIGKDD (KDD '18)*. arXiv:1802.04431.
+
+Course frameworks (Porter; Lemon & Verhoef 2016; Puntoni et al. 2021; Lee & See 2004; Pavlou & Fygenson 2006; Sanchez et al. 2011) are cited in the text.
 
 ## Appendix: Thinking and AI Use
