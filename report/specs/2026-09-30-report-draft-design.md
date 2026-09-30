@@ -43,6 +43,8 @@ A 2 a.m. advisory lands. A CISO at a mid-size operator has 200 satellites, a fla
   6. *Human approval gate* → uplink via the operator's existing update manager → monitor → auto-halt/rollback.
 - Fix ladder: vendor patch → workaround → ground fix → accept and monitor → AI-drafted patch only as a suggestion to the manufacturer [TB 7.4].
 - **Value**: *efficiency* = triage hours saved at equal coverage, and faster time-to-remediate. *Innovation* = safe-to-patch evidence packs that support insurance and defence-contract assurance (new capability, not cost-cutting).
+- **Value ordering (R3/R4):** lead with **speed and coverage of triage** (frequent, measurable). A bricked satellite is a **tail risk**, not the headline: no base rate exists, and Viasat itself reported the attack as financially immaterial [RF 4]. Viasat is used for *disruption scale* (30,000 modems, 5,800 turbines) and the *ground→space path*, never as a dollar loss.
+- **Evaluation (R17):** proxy metrics are named up front: analyst hours per finding at equal coverage; time-to-remediate for flaws later exploited on the ground segment (observable); agreement with red-team results in the testbed/cyber range; backtest against past Space ISAC advisories. Transfer of ground-trained exploitability to space is stated as an open validation risk.
 - Honest line: rollout/rollback tooling already exists (Planet pipeline, Spire CMP [RF 31]). Phylax connects prioritisation to it; it doesn't replace it.
 - **Visual 1:** loop/architecture diagram (six stages, human gate highlighted).
 
@@ -52,16 +54,18 @@ A 2 a.m. advisory lands. A CISO at a mid-size operator has 200 satellites, a fla
   1. **Context graph / patch-outcome record**: every decision, approval and outcome, including ground-segment patch outcomes (the frequent ones, R11). Nobody can buy it.
   2. **Switching costs**: the approval workflow, audit trail, integrations, and SPARTA-mapped history (platformization logic from the student moats PPT).
   3. **Efficient scale**: a niche too small for many players; the small buyer pool becomes a moat (turns R19 around).
-  4. *Conditional upside*: a cross-fleet network effect, only if operators opt in via an SDA-style neutral model sharing minimum data [RF 31, Q22].
+  4. *Conditional upside*: a cross-fleet network effect, only if operators opt in via an SDA-style neutral model sharing minimum data [RF 31, Q22]. Named test before claiming it: **pooled vs local model on held-out anomalies in design-partner pilots**, since DP noise and per-fleet adapters may erase the gain (R12).
+- **Data-volume caveat (R11):** spacecraft patch outcomes are rare and mostly "success". The record therefore counts any post-update anomaly/degradation plus ground-segment patch outcomes, and the report says the space-side label volume is unmeasured.
 - Removed from the moat: public data (feasibility only [RF 7]) and manufacturer partnerships (unevidenced, R13).
 - Honest line: thin at cold start, grows per customer; the product must work fully for one operator.
 
 ### A.3 Five Forces — Porter (S7); niche strategy (Thiel); "competitors = anyone meeting the same need" → Content + Presentation (Visual 2)
 - **Strategic point:** *be the neutral decision layer on top of what operators already use.* Every force pushes Phylax toward integrating, not replacing.
-- Buyers: few and capable → **high**. Honest count: Planet, Spire, Iridium, SES(+Intelsat), ICEYE [RF 11, 31]; all run formal in-house programs (SES 40+ staff). Globalstar out.
+- Buyers: few and capable → **high**. Honest count: Planet, Iridium, SES(+Intelsat), ICEYE [RF 11, 31]; all run formal in-house programs (SES 40+ staff). Globalstar out (Amazon). **Spire is not counted as a buyer**: it is the co-opetition case (a possible buyer, a supplier, and a rollout-tooling partner/rival at once, R15). Buyer HQ/US status is not verified (R19), so the text says "named mid-size operators", not "US buyers".
 - Suppliers (Phylax's own inputs, R18): manufacturers' SBOMs, emulators and patches → **high**, consolidating under primes [RF 12]. Their incentive: lower support/warranty cost, and a customer-requested SBOM feed. Ground-station-as-a-service → low [RF 12].
 - Rivalry: **low on the whole loop**. Named adjacents: **Aerospace Corp SPARTA/SPARTEND** (reference and on-orbit detection, not per-operator decisioning), **CT Cubed IRON GALAXY** (training range), Spire CMP (rollout only → partner), Deloitte Silent Shield (detection) [RF 10/13, 31]. Caveat: absence of public claims ≠ absence (R23).
-- Substitutes: **the good-enough stack** = in-house program + SPARTA + vendor patches + Spire-style tooling; doing nothing [RF 14, 31] → **high**.
+- Substitutes: **the good-enough stack** = in-house program + SPARTA + vendor patches + Spire-style tooling; doing nothing [RF 14, 31] → **high**. SpaceX's in-house OTA system is cited only as a *secondary* source about *mega-operators*, and terminals and satellites are kept separate (R21).
+- S.3404 appears, if at all, only as a policy-attention signal, never as a "tailwind" (R24).
 - New entrants: primes and Booz Allen/Deloitte → **high threat**. Clearances/FOCI/ITAR block startups first (R22), so the entry path is commercial, unclassified, US-person team; a cleared partner later.
 - Regulation cuts both ways: no binding US mandate [RF 30]. 800-171 3.14.1 "timely" with no prioritisation method is the opening for the ground-IT module.
 - **Visual 2:** compact table: force · rating · evidence · what Phylax does about it.
@@ -76,7 +80,7 @@ A 2 a.m. advisory lands. A CISO at a mid-size operator has 200 satellites, a fla
   - *Delegation*: guarded execution. Ground-side fixes and plan drafting run automatically; uplinks are human-approved; pre-approved fix plans ahead of pass windows (R9).
   - *Social*: the explanations and evidence packs the CISO shows the board and insurer.
   - Renewal: triggered by hours saved plus zero unsafe uplinks.
-- Timelines as labelled assumptions (R28). Entry via the ground-IT module (800-171), with the space core as upsell. SBIR only "if authority is current" (R25 unresolved).
+- **Timeline (R28), labelled as an assumption:** design-partner paid pilot → shadow mode ~1 quarter → guarded ground-side automation → first uplink-assist decisions → renewal at 12 months. Runway from paid pilots and seed funding. Entry via the ground-IT module (800-171), with the space core as upsell. SBIR only "if authority is current" (R25, checked in §7).
 
 ### A.5 Governance (US) — Trust (competence, integrity, benevolence; distrust ↔ overtrust zone, S11); risk taxonomy, kill switch, audit log, drift, prompt injection, Air Canada (S5); NIST AI RMF → Content + Storytelling
 - **Autonomy table** (R9): autonomous = ingest, map, score, draft plans, ground ticketing, monitoring, auto-halt · human-approved = ground-change execution, every uplink · **never automated** = changes to the command, boot or auth path; AI-written flight code uplink. Missing approval at pass close → **hold**.
@@ -86,6 +90,7 @@ A 2 a.m. advisory lands. A CISO at a mid-size operator has 200 satellites, a fla
 - **Monitoring and audit:** drift monitoring (Zillow lesson); NIST SP 800-53 AU-2/3/6 audit trail [RF 24]; model cards.
 - **Liability (T6, Q25):** "decision support with evidence and stated residual risk", never "certified safe"; the manufacturer warrants its own patch; contractual cap; audit trail as evidence. Air Canada lesson: companies are bound by their AI's output, so claims are worded carefully.
 - **Jurisdiction:** NIST AI RMF Govern/Map/Measure/Manage mapping [RF 19]; CCPA: Phylax is a service provider; terminal location data minimised [RF 23, R32]; FTC: fairness risk low (machines, not people) but AI capability claims must not overstate (one line, no specific FTC case); **EAR 9A515 first, ITAR where applicable** [RF 22, R16]; federated pool limited to US + licence-exempt allies (AUS/CAN/UK); whether trained weights are controlled is flagged as open.
+- **Customer exit / unlearning (R33):** a departing operator's local data and adapters are deleted; its past contribution to any shared model can't be removed selectively. It is handled by periodic retraining from retained contributions, and the limitation is stated.
 - Ends the trust thread: calibrated trust = the zone between over- and under-trust.
 
 ### Close: four-lens check (~⅙ p) → Storytelling + Content
@@ -103,6 +108,53 @@ One line per lens with its honest risk: *Feasibility* (validation stays with the
 ## 4. Numbers: use / avoid (Content accuracy)
 Use: 14,266 sats [RF 1] · 4,434 deployed 2025 (+65%) · CVEs 40,009 / 48,185 / 57,908 YTD 31 Aug 2026 · Viasat ~30,000 modems, ~5,800 turbines, and "no material impact" (use honestly) · SES 40+ security staff · smallsat ~$0.5–1M (secondary, CubeSat-class) · analyst $115–159K (general-industry) · 800-171 3.14.1 exact text.
 Avoid: ~16–17k sats · ~58k/yr · Starlink % · "3-person team" · "40% since 2000" · "fully tested" · "legally required to patch" · "nobody validates patches" · "crores per year".
+
+## 4a. Review coverage matrix (every item in `research/Research_Findings_Review.md`)
+
+"Fixed" = the draft changes the claim. "Caveat" = the claim stays but its limit is stated. "Avoid" = the claim is kept out of the draft.
+
+| Item | Issue (short) | Handling | Where |
+|---|---|---|---|
+| K1 | No binding US mandate | Fixed: pitch on operational risk; regulation cuts both ways | A.3, A.5 |
+| K2 | Public data ≠ moat | Fixed: removed from moat, kept as feasibility | A.2 |
+| K3 | Static vs live is the wrong axis | Fixed: reference vs decision-and-execution; build on SPARTA | A.1, A.3 |
+| K4 | Operators do it in-house | Fixed: "connect and speed up"; good-enough stack as substitute | A.3, close |
+| K5 | Why share with rivals | Fixed: network effect conditional, SDA model | A.2 |
+| R1 | Growth is mega-constellation growth | Caveat: say so; target is the mid-size tier | A.0 |
+| R2 | Satellite numbers don't reconcile | Avoid: no Starlink %; SIA 14,266 only | A.0, §4 |
+| R3 | Viasat "immaterial" | Fixed: disruption scale + path, not dollars | A.1 |
+| R4 | No brick base rate | Fixed: triage speed leads; bricking = tail risk | A.1 |
+| R5 | Viasat supports the commodity layer | Fixed: ground→space consequence modelling is the differentiator | A.1 |
+| R6 | World model can't predict new code | Fixed: emulator validates; JEPA scores risk + detects anomalies | A.1 |
+| R7 | Auto-rollback exists (Spire, SpaceX) | Fixed: integrate with existing update managers | A.1, A.3 |
+| R8 | RL vs solver | Fixed: solver + learned ordering (user to confirm) | A.1 |
+| R9 | Where does the agent act? | Fixed: autonomy table; hold on missing approval | A.4, A.5 |
+| R10 | CVE arithmetic | Fixed: 57,908 stated as YTD; scoped to ground software | A.0 |
+| R11 | Outcome-label volume unknown | Caveat: broadened label; volume unmeasured | A.2 |
+| R12 | DP erodes pooled model | Caveat: pooled-vs-local pilot test named | A.2 |
+| R13 | Manufacturer moat unevidenced | Fixed: removed from moat; moved to supplier power | A.2, A.3 |
+| R14 | No SBOMs available | Fixed: onboarding builds inventory as cost-to-serve | A.1, A.4 |
+| R15 | Spire triple role | Fixed: co-opetition case, not in buyer pool | A.3 |
+| R16 | Export-control overstated | Fixed: EAR 9A515 first; allied pool; weights question open | A.5 |
+| R17 | No evaluation method | Fixed: proxy metrics named; transfer risk stated | A.1, close |
+| R18 | Supplier power from wrong side | Fixed: Phylax's own inputs = high | A.3 |
+| R19 | Buyer pool tiny/unsourced | Caveat: named operators only; efficient-scale framing | A.2, A.3 |
+| R20 | No unit economics | Caveat: value-based formula with labelled assumption | close |
+| R21 | SpaceX evidence secondary | Caveat: tagged secondary, mega-operators only | A.3 |
+| R22 | Barriers hit the startup first | Fixed: entry path stated | A.3 |
+| R23 | Originality caveats dropped | Caveat: absence of claims ≠ absence | A.3 |
+| R24 | S.3404 "tailwind" | Avoid: attention signal only | A.3 |
+| R25 | SBIR contradiction | Caveat: conditional wording; status check in §7 | A.4 |
+| R26 | Three first customers | Fixed: one actor (mid-size operator with DoD contracts) | A.4 |
+| R27 | Buyer ≠ approver ≠ user | Fixed: buying committee | A.4 |
+| R28 | No sales cycle | Fixed: labelled assumption timeline | A.4 |
+| R29 | Liability | Fixed: decision-support wording, cap, manufacturer warranty | A.5 |
+| R30 | No stop rules | Fixed: 5 stop rules + autonomy table | A.5 |
+| R31 | LLM hosting + hallucination | Fixed: self-hosted, citation-required, deterministic match | A.1, A.5 |
+| R32 | FTC + CCPA role | Fixed: one-line FTC; service-provider role | A.5 |
+| R33 | Unlearning on exit | Caveat: retraining approach, limitation stated | A.5 |
+| R34 | 40% statistic unsourced | Avoid: Langer dropped unless the exact figure is used | §4, refs |
+| R35 | Reference flags | Caveat: verify IR 8270 + cite the SIA report itself before final | refs |
 
 ## 5. Output files
 - `report/Phylax_Report_Draft.md`: the draft, with source tags.
