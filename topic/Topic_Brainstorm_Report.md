@@ -313,7 +313,7 @@ So the best jurisdiction is the one whose framework also covers **AI risk and cy
 **Origin of doubt:** review R29 (liability unresearched; TB §9.4 Q23 open) and the rollback step in the architecture.
 **Reasoning:**
 - *The premise is the error:* no safety-critical industry (aviation, medicine, nuclear) claims complete testing. They assume failures will happen and design to **detect them early, limit the damage and recover**. A rollback plan signals maturity. A vendor claiming it needs none would be the untrustworthy one.
-- *Operators already expect it:* Planet runs ground test → on-orbit staging → fleet, with an "un-spaceworthy" reject path. Spire's tool has automated rollbacks (RF item 31). SpaceX uses canary plus auto-rollback with zero losses reported (secondary source, review R21). Not patching is also a risk (Viasat was an unpatched ground-side flaw).
+- *Operators already expect it:* Planet runs ground test → on-orbit staging → fleet, with an "un-spaceworthy" reject path. Spire's tool has automated rollbacks (RF item 31). SpaceX uses canary plus auto-rollback with zero losses reported (secondary source, review R21). Not acting on ground-side weaknesses is also a risk (Viasat's entry point was a misconfigured ground VPN appliance; *corrected 2026-09-30, Q38: it was not an unpatched flaw*).
 - *The user's real point, sharper than R29:* undo only works if the satellite is still listening. A patch that breaks the command receiver or boot path **cannot be undone from the ground**.
 **Conclusion:** reliability in this sector means **failures that are rare, caught at the canary stage and recoverable**, not zero failures. Unrecoverable failure classes must be *prevented*, not undone:
 - never auto-schedule changes touching the command, boot or authentication path;
@@ -361,6 +361,90 @@ Liability follows the wording: we don't write patches (Q8), the operator approve
 **Candidates checked:** PassWarden (taken: KeepSolid password manager) · **Amyntor (taken: two cybersecurity firms in Thiruvananthapuram, India; missed by the quick search and found by the deep one)** · Nightpass (several nightlife apps) · Kessler Shield (no company, but reads as debris shielding) · **Periapt: no security/space use; only unrelated uses (audio cables, AU financial advisory, IL ADHD health startup, RPG publisher, dissolved UK software firm).**
 **Conclusion:** renamed to **Periapt**, a protective amulet that echoes *periapsis*, an orbit's closest point ("protection at the closest point of risk"). Test applied: *no security/space company uses the name, and nothing a TA finds could be confused with the idea.*
 **Lesson:** a quick search isn't a name check. Amyntor passed the quick search and failed the deep one.
+
+*Q31–Q38 come from the spec-v2 review session (2026-09-30, evening). They cut the scope back to the original problem and put AI back at the centre. Q33 comes from my separate study session, saved as `Discussion on the World model.txt`.*
+
+### Q31. "Is JEPA-style the only kind of world model? I chose a world model because it can understand and connect the components, link RL outcomes and the digital twin, test on it, and plug into physics engines, unlike classifiers or LLMs that work on text. Is my thinking right?"
+**Origin of doubt:** spec v2 named a JEPA world model as the judge of test runs, and I wasn't sure the style mattered.
+**Reasoning:**
+- *Right:* "world model" is the category (a learned model of how a system's state changes). JEPA is one family; others are Dreamer-style models, physics-informed hybrids and plain forecasters. JPL already learns spacecraft telemetry from commands and past values with LSTMs (Hundman et al. 2018, RF item 32).
+- *Right:* telemetry is numbers over time, not text, so an LLM is the wrong tool for it.
+- *Flaw 1:* telemetry links subsystems inside one satellite, but it holds nothing about ground networks. The ground→space link comes from the exposure graph, not the world model.
+- *Flaw 2:* it can't test new code. "Digital twin" names two different things: the manufacturer's emulator runs code, a learned model can't (R6, Q26).
+- *Overreach:* coupling to a physics engine is harder for JEPA, whose state is an abstract embedding. Unsourced, so vision line only.
+- *A stronger reason than mine:* failures are rare, so there aren't enough labelled failures to train a classifier. A world model learns normal behaviour from unlabelled data.
+**Conclusion:** call it "a learned world model (JEPA-style as the candidate)". Its jobs were set in Q34–Q36: predict what a flaw would do to each satellite, and forecast battery/thermal margin. It does not predict what new code does, and it does not trace ground→space reach.
+**Change:** spec v3.
+
+### Q32. "Explain the planner contradiction. How severe is it, how does each option change the company's path, and are there only two options?"
+**Origin of doubt:** Claude's review of spec v2 (R8, R11).
+**Reasoning:** v2 said a learned policy improves rollout order "from outcomes", while A.2 concedes spacecraft patch outcomes are rare and mostly successes (R11). It would learn from data we said we don't have. Severity: medium, a logic gap rather than a factual error; the solver still guarantees a safe plan. Five options, not two: (A) solver + risk-score order, (B) learned from past outcomes (v2), (C) adaptive order within one rollout, (D) constrained RL inside the world model (the original lock), (E) solver only. They differ in data needed, hiring, auditability and viva risk.
+**Conclusion:** Claude first recommended C starting from A. **Superseded by Q34:** once the scope was cut back to prioritisation, the planner stops being an AI component. What remains is a suggested fix window from a plain scheduler, fed by the world model's battery/thermal forecast.
+**Change:** the "constrained RL planner" lock in CLAUDE.md is dropped, pending spec v3 approval.
+
+### Q33. "If the emulator already runs the patch, isn't the world model useless? What are the alternatives, does a layered approach solve it, and what are its flaws?" *(separate study session)*
+**Origin of doubt:** my own study of what a world model is.
+**Reasoning:** the judging job has cheaper tools: limit checks, comparing patched and unpatched emulator runs, statistical tests, a learned forecaster, a JEPA model. **Layered design:** rules and run comparison first, the learned model as the safety net. Flaws and counters:
+- intended changes set off alarms → the patch ships with a list of expected changes;
+- the canary has no control group → compare with sister satellites and with its own pre-patch behaviour;
+- the emulator isn't the real satellite → that's what the canary is for;
+- slow failures → a soak period plus a long watch;
+- too many alarms → each layer gets different authority (a limit breach halts, an unexpected difference holds, a learned-model flag only flags; any layer can stop, only a human can clear);
+- the learned layer is unproven → a test that can fail: fewer false alarms than a plain forecaster at the same detection rate on ESA-ADB, with Hundman 2018 as the forecaster (RF item 32);
+- forged data from a hacked ground segment → a shared-responsibility split (the customer secures the ground and keys; Periapt cross-checks data, refuses unsigned patches and secures itself).
+
+*Pushback I received:* "if a simple forecaster worked it would already be published" is wrong, because forecasters are published (Hundman 2018, now verified), so keep the test and drop that argument. "The adversarial blind spot isn't my problem" is wrong too, because Periapt's all-clear would become part of the attack.
+**Conclusion:** the layered check was adopted. After Q34–Q35 the safety check stays small, and the layering principle moved into the ranking itself (Q35).
+**Change:** spec v3 and Viva_Prep.
+
+### Q34. "The original workflow was: read advisories, score how dangerous each flaw is, predict what would happen, plan the rollout and rollback. Which of these wasn't feasible, and why? The current scope is way too big, we can't deliver it, and AI has become secondary, which is the exact opposite of what's needed."
+**Origin of doubt:** I compared spec v2 with the 17 Sept problem statement (§0, §7.1–7.3).
+**Reasoning:** step by step:
+- reading advisories works (the parts list has to be built at onboarding, R14);
+- scoring works (whether ground-trained scores carry over to space is unproven, R17);
+- predicting what a *flaw* does works;
+- predicting what a *patch* does fails, because a patch is new code (R6);
+- planning the rollout works, but not with RL (R8);
+- rollback works, but it is already sold (Spire, SpaceX; R7) and impossible if the radio breaks (Q25).
+
+Only two ideas failed. The scope grew from the work-arounds (emulator judge, solver, whole mission, rollout tooling), not from the original idea. *Conceded:* the product had become "known flaw → fix across the whole mission" with AI as a helper, which is backwards for an AI course and for a topic called prioritisation. *Pushback:* keep the ground→space reach (Viasat) as one input, not as a product area.
+**Conclusion:** cut back to the original niche. Out: ground-IT patching as a product, terminals as a product area, building rollout/rollback, the RL planner, and fleet monitoring as a product.
+**Change:** spec v3. The §0 one-line pitch will be updated with v3.
+
+### Q35. "I don't want to build fancy decisions that simple, existing software can already do. A prioritiser (even with a safety check) just replaces the humans and software they already have. It's not worth the switching cost or the risk. The goal was to assist the people doing these steps and tie them together with AI."
+**Origin of doubt:** Claude's options A (pure prioritiser) and B (prioritiser + safety check).
+**Reasoning:** *conceded:* teams already rank flaws (Spire ranks by ISO 27005 likelihood and impact, RF item 31; SES has 40+ staff). *Pushback:* "tying teams together" alone can be done by a ticket tool such as Jira, without AI. So the AI must do something at each handoff that a ticket tool can't: read advisories, translate between security, flight software and ops, draft, predict. **Principle adopted:** simple software does what it can (parts matching, CVSS, EPSS, SPARTA IDs), and those are used, not rebuilt. AI works only where rules can't reach, which is the impact on each specific satellite. It plugs into the team's own tools and ranking method, so there is no migration to justify.
+**Conclusion:** a copilot for the three teams, where each keeps its own decision.
+**Change:** see Q36 for the topic-fit correction.
+
+### Q36. "Is this goal still in the topic's category, Day-Zero Vulnerability Prioritisation (Predictive ML)? I feel it isn't."
+**Origin of doubt:** the copilot description in Q35 was centred on handoffs.
+**Reasoning:** checked against the listing's words. Scanning fits. Scoring with predictive ML was weak, and prioritising wasn't central, so the copilot had drifted toward fixing. The same segment also lists "Spacecraft Mission Operations (… telemetry analytics)", and IT lists "Threat Detection & Incident Response (SOAR)". Pitching the world model as monitoring would drift into those.
+**Conclusion:** the **core is predictive prioritisation** (scan → score → rank with reasons), **delivered as a copilot**, with fixing kept small. Per flaw it predicts:
+- will attackers use it (FIRST's EPSS, an existing input, RF item 32);
+- can it reach the satellites (the graph);
+- what would it do to each satellite (the world model: ours);
+- how risky is fixing now (the world model's battery/thermal forecast).
+
+**Change:** spec v3.
+
+### Q37. "It scans, scores and prioritises, but a human intervenes at each stage. Is it autonomous?"
+**Reasoning:** if a human had to act at every stage, no; that's a tool. Autonomy means the system does the work on its own. Scanning, scoring and prioritising only produce information, so they run on their own around the clock. Humans supervise and can override at any time ("human on the loop"). A hard approval is needed only before anything touches a satellite ("human in the loop").
+**Conclusion:** "autonomous in deciding what matters; a human approves every action on a satellite." This fits the topic's "autonomous", the course's rule of human oversight for high-stakes actions, and rubric A.5.
+**Change:** spec v3 autonomy table.
+
+### Q38. "Before we lock it: a hard review of the whole conversation, the scope and the revised concept against the grading components, the course concepts and the topic listing, and a check of every claim."
+**Origin of doubt:** one final check before spec v3, with no time left for another round.
+**Findings (verified 2026-09-30, RF item 32):**
+- *Viasat:* the attacker got in through a **misconfigured** VPN appliance (not an unpatched flaw). The satellite and ground infrastructure were not affected. Legitimate management commands overwrote modem flash, and the modems could be restored by a factory reset (~30,000 shipped). The Q25 line and Viva_Prep were corrected. Useful: real harm came from *legitimate commands*, which is exactly what the world model plays out.
+- *EPSS* (FIRST) already predicts, with ML, whether a CVE will be exploited within 30 days, for free. It is an input, not our novelty.
+- *Aerospace Corp + Google Public Sector* (April 2026) are building agentic AI that monitors every satellite in large LEO constellations for anomalies. Monitoring is taken; name them, and Aerospace Corp becomes the top new-entrant threat (SPARTA + SPARTEND + this).
+- *CT Cubed:* the homepage now lists assessments, training and cyber ranges, and "Terrain Trace" can't be found. Keep IRON GALAXY named; drop the "AI risk assessment" wording unless it is found again.
+- *Hundman et al. 2018* (JPL, KDD) confirms that learned command-and-telemetry models exist, and gives the baseline for the world-model test.
+- *Simulating attack impact on satellites* is done in research with physics simulators (NASA NOS3, arXiv 2603.10388). Claim only that no one publicly does it automatically, per satellite, from live data, to rank flaws.
+- *"Critical infrastructure":* space is not a US CISA sector (RF item 30). Word it as "infrastructure that critical sectors depend on".
+
+**Conclusion:** the revised concept holds, and the fixes are wording and competitor naming. The scores and the remaining open decisions are in the session review; spec v3 is pending approval.
 
 ---
 

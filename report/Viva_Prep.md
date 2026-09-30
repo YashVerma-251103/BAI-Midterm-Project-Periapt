@@ -16,7 +16,7 @@ Satellite operators carry known flaws across ground stations, networks, radio li
 |---|---|
 | 14,266 operational satellites (end-2025); 4,434 deployed in 2025 (+65%) | SIA 2026 [RF 1] |
 | CVEs: 40,009 (2024) → 48,185 (2025, +20.6%) → 57,908 by 31 Aug 2026 (**year to date**) | [RF 27, R10] |
-| Viasat KA-SAT 2022: ~30,000 modems replaced, ~5,800 wind turbines lost remote monitoring; entry via a ground VPN flaw; **Viasat's 10-K called it financially immaterial** | [RF 4] |
+| Viasat KA-SAT 2022: ~30,000 modems shipped, ~5,800 wind turbines lost remote monitoring; entry via a **misconfigured** ground VPN appliance (not an unpatched flaw), then *legitimate* management commands wiped modem flash; the satellite was never touched; **Viasat's 10-K called it financially immaterial** | [RF 4] |
 | SES: "over 40" security professionals | SES AR 2025 [RF 31] |
 | NIST SP 800-171 3.14.1: "Identify, report, and correct system flaws in a timely manner" | [RF 30] |
 | Smallsat ~$0.5–1M (secondary, CubeSat-class); GEO ~$300M | [RF 4] |
@@ -49,7 +49,7 @@ Satellite operators carry known flaws across ground stations, networks, radio li
 
 **"Why not just use ChatGPT/Claude?"** A general assistant can't trace ground→fleet reachability, plan around passes and power, or judge emulator telemetry against a specific satellite's normal behaviour [Q27].
 
-**"Viasat said the attack was immaterial. Why would anyone pay?"** We don't use Viasat as a dollar loss. We use it for the **path** (a ground VPN flaw reached tens of thousands of terminals) and the **scale of disruption**. Our value leads with triage speed and coverage. A bricked satellite is a tail risk, and SpaceX reports zero losses from its updates (a secondary source) [R3, R4, R5].
+**"Viasat said the attack was immaterial. Why would anyone pay?"** We don't use Viasat as a dollar loss. We use it for the **path** (a misconfigured ground VPN appliance let the attacker send legitimate commands to tens of thousands of terminals) and the **scale of disruption**. Our value leads with triage speed and coverage. A bricked satellite is a tail risk, and SpaceX reports zero losses from its updates (a secondary source) [R3, R4, R5].
 
 **"Spire already sells automated rollout and rollback. What's left that's yours?"** Prioritisation and cross-domain decisions: which flaw, whether it reaches the fleet, which fix, in what order. We hand the approved plan to the operator's existing update manager rather than replacing it [R7, RF 31].
 
@@ -137,3 +137,39 @@ I also rejected the unsourced "3-person team" claim and the stale numbers after 
 **"Did you read your own references?"** Before submission: NIST SP 800-171 was read directly. SPD-5 is quoted from the Federal Register. NIST IR 8270's control text must be checked in the PDF, and the SIA reference must cite the report itself, not the press release. *(Complete these checks before you say yes.)* [R35]
 
 **"Why this topic, if the research kept finding problems?"** Everything that failed was an **overclaim**, not the core idea. What survived has evidence: no one claims the whole loop, and the ground-to-space path is real (Viasat) [Q23].
+
+---
+
+## 9. Re-centring (Q31–Q38): the current concept
+
+*Added 2026-09-30 evening. This supersedes the older answers above wherever they differ, especially on the world model, the planner and the scope. Sections 3–5 get rebuilt when spec v3 is written, and cut material moves here.*
+
+**The concept in one breath:** Periapt watches new security advisories around the clock. For every flaw it finds which satellites have it, whether an attacker could reach them, how likely an attack is, and what the attack would actually do to each satellite. It ranks the flaws, says why, and briefs each team in its own terms. Humans can override any ranking. Nothing touches a satellite without a human's approval.
+
+**"What does the AI actually do?"** Two things. An **LLM agent** reads advisories and matches them to each satellite's parts list, citing the line it matched. A **world model**, learned from each satellite's own telemetry and command history, plays out "what if an attacker sent these commands?" to predict the damage per satellite. Everything else (CVSS, EPSS, SPARTA IDs, reach checks) is existing software that we use, not rebuild [Q35, Q36].
+
+**"Why a world model and not rules or a classifier?"** Rules give every satellite the same answer, but the same flaw hurts an old satellite with a weak battery more than a new one. A classifier needs many labelled failures, and those are rare. A world model learns normal behaviour from unlabelled data [Q31].
+
+**"Can it predict an attack it has never seen?"** Partly, and I say so. Real attacks often use *legitimate* commands at the wrong time or scale: Viasat's attackers used legitimate management commands [RF 32]. The model has seen those command types. For extreme cases outside its data, we lean on the manufacturer's physics simulator, and "unknown" is treated as **high** priority, never low [Q36, Q38].
+
+**"Isn't EPSS already doing this?"** EPSS predicts *whether* a flaw will be exploited, for ordinary IT. It says nothing about what the flaw does to a specific satellite. We use EPSS as an input [RF 32].
+
+**"Isn't this just replacing your analysts?"** No. The analysts still decide. The AI does the reading, cross-checking and "what-if" work that doesn't scale with people, and it plugs into their existing ranking method (Spire, for example, ranks by ISO 27005 likelihood × impact). It fills in that method with evidence rather than replacing it [Q35, RF 31].
+
+**"Is it autonomous if humans approve things?"** Yes. Scanning, scoring and ranking run on their own around the clock, because they only produce information. Humans supervise and can override ("on the loop"). The only hard stop is before anything touches a satellite ("in the loop") [Q37].
+
+**"Isn't this Spacecraft Mission Operations (telemetry analytics), not vulnerability prioritisation?"** No. The world model's output is a **security ranking**: which flaw to fix first and why. We deliberately don't sell fleet monitoring. Aerospace Corp and Google are building that [Q36, RF 32].
+
+**"Aerospace Corp has SPARTA and an AI anomaly tool with Google. Why won't they build this?"** They might; they're the biggest new-entrant threat. But they are a government research centre (FFRDC) working for government missions. We serve mid-size *commercial* operators, which their government focus doesn't target (my reasoning, not a sourced fact), and we output in SPARTA IDs so we build on their work instead of fighting it [RF 10/13, RF 32].
+
+**"Viasat was a misconfiguration, not an unpatched flaw. Why use it?"** Correct, and I say so. I use it for the path and the method: getting in on the ground, then using legitimate commands to harm tens of thousands of terminals. That is exactly the kind of harm our world model plays out [RF 32].
+
+**"Is this really 'day zero'?"** Day zero is the day a flaw becomes known, often before a patch exists. That is when our clock starts: rank it, explain it, and suggest a safe work-around until a patch arrives. The listed topic itself says "unpatched security flaws" [Q36].
+
+**"Satellites aren't a US critical-infrastructure sector."** True: they aren't one of CISA's 16 [RF 30]. They are infrastructure that critical sectors depend on. Viasat's outage cut remote monitoring of ~5,800 wind turbines [RF 4], and the EU lists space as a high-criticality sector [RF 2].
+
+**"How do you prove the world model beats a simple forecaster?"** With a test that can fail: fewer false alarms than JPL's published LSTM forecaster (Hundman et al. 2018) at the same detection rate, on ESA's public anomaly benchmark (ESA-ADB). If it loses, only the choice of model changes. The product works the same with the forecaster inside [Q33, RF 7, RF 32].
+
+**"Why no RL planner any more?"** The review showed RL would learn from rollout outcomes that are rare and mostly successes. Once we focused on prioritisation, the planner shrank to a suggested fix window: a plain scheduler fed by the world model's battery and thermal forecast [Q32, Q34].
+
+**"What did you cut, and why?"** Writing patches (the manufacturer's job). Running rollouts and rollbacks (Spire and SpaceX already sell or build them). Fleet monitoring (Aerospace Corp + Google). Ground-IT patching as a product (Tenable, Qualys). Terminals as a separate product area. The RL planner. Every cut was either already sold by someone else or not part of the original problem [Q34].
