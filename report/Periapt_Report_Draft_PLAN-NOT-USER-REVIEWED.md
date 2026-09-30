@@ -98,6 +98,28 @@ The honest limit: the moat is thin at cold start, so the product must deliver fu
 
 ## A.3 Porter's Five Forces
 
+**The strategic point:** be the neutral commercial layer that builds on public tools (SPARTA, EPSS) and plugs into the operator's own. Every force below pushes towards integrating, not replacing.
+
+*Visual 2:*
+
+| Force | Rating | Evidence | What Periapt does |
+|---|---|---|---|
+| Buyers | High | Few, capable, named mid-size operators (Planet, Iridium, SES (+Intelsat), ICEYE), all with formal programs; SES has "over 40" security staff. Globalstar is out (Amazon deal) [RF 11, RF 31] | A copilot that fills in their method, with evidence they can audit |
+| Suppliers | High for parts lists and manufacturer data; low for public feeds and open-weight LLMs | Primes are buying up manufacturers [RF 12]; telemetry is the customer's own | Build parts lists at onboarding; self-host an open-weight model |
+| Rivalry | Low for satellite-specific impact ranking; crowded for IT | Tenable, Qualys and Nucleus already rank IT flaws [RF 10; TB §10.1] | Take their output as input; don't sell IT ranking |
+| Substitutes | High | The good-enough stack: in-house team + ISO 27005 + scanners with EPSS + SPARTA [RF 31] | Plug into it and prove hours saved |
+| New entrants | High | Google (already working with Aerospace), the primes, Booz Allen, Deloitte [RF 32] | Move first with a commercial, unclassified, US-person team; a cleared partner later [R22] |
+
+Spire is co-opetition, not a buyer: operator, manufacturer and tooling vendor at once [R15, RF 31].
+
+**Named neighbours.** Aerospace Corp's SPARTA/SPARTEND (reference framework and on-orbit detection); Aerospace + Google (agentic anomaly monitoring for proliferated-LEO constellations [RF 32]); CT Cubed's IRON GALAXY (assessments, training, cyber ranges [RF 32]); Deloitte Silent Shield (detection); Spire CMP (rollout) [RF 10]. None publicly ranks flaws by predicted impact per satellite. That is the streetlight effect, though: we searched public claims, and absence isn't proof [R23].
+
+**Aerospace Corp is a partner, not a rival.** Under FAR 35.017, an FFRDC like Aerospace is not meant to use its privileged access to compete with the private sector [RF 32]. Periapt builds on SPARTA and speaks its IDs, and Aerospace's ASC-100 testbed for ISAC members is a validation route [RF 31].
+
+**Regulation cuts both ways.** No binding US mandate requires flaw prioritisation [RF 30], so compliance won't sell it. But NIST SP 800-171 3.14.1 tells DoD contractors to "Identify, report, and correct system flaws in a timely manner" without defining "timely" [RF 30]. DoD-contracting operators need a method they can show: our beachhead.
+
+Inside those operators, who actually buys?
+
 ## A.4 Persona and Customer Journey
 
 ## A.5 Governance, Guardrails and US Compliance
