@@ -1,6 +1,6 @@
 # Report Draft — Design Spec
 
-**Date:** 2026-09-30 · **Deadline:** 1 Oct 2026, 23:59 · **Status:** awaiting user review
+**Date:** 2026-09-30 · **Deadline:** 1 Oct 2026, 23:59 · **Status:** v2, awaiting user review (v2 changes listed in §8)
 
 ## 1. Decisions (from the brainstorming session)
 
@@ -10,6 +10,8 @@
 | Format | Word/PDF doc, 4 pages + 1-page appendix, 2 visuals | Draft in markdown → convert to .docx at the end. |
 | Draft depth | Full prose, **user rewrites in own voice** | Brief §F prohibits submitting AI text unrevised; viva possible. Every factual sentence carries a source tag `[RF n]` / `[Q n]` in the draft so it can be defended, and the tags are stripped at conversion. |
 | Jurisdiction | **United States** (main) | India = a one-line "next market / engineering base" in the vision, backed by a separate research task (§7). |
+| Positioning | **A domain copilot that owns the workflow** (Q27) | Phylax makes security, flight-software and mission-ops teams more productive. It reads, cross-references, drafts and watches; **the team decides**. It never pitches replacing staff. |
+| Revenue | **No revenue or ACV figure** (Q29) | The rubric asks for value *to the customer*. Show pricing *structure* only: per-fleet annual subscription + one-time onboarding/integration fee (covers the people-heavy integration cost, Q24). |
 | Structure | **Design-Thinking frame**: an empathy opening, one course concept anchoring each rubric section, a closing four-lens check (Feasibility / Usability / Desirability / Viability) | Each section is also designed to hit a named grading component (§3). |
 
 ## 2. Running threads (Storytelling)
@@ -39,10 +41,15 @@ A 2 a.m. advisory lands. A CISO at a mid-size operator has 200 satellites, a fla
   2. *Exposure graph*: ground → network → link → spacecraft → terminal consequence paths. This is the answer to Viasat: knowing *that* VPN flaw reaches the fleet, which generic vulnerability management tools don't model (R5).
   3. *Risk scorer*: exploitability + consequence, expressed in **SPARTA technique/countermeasure IDs**.
   4. *Fix planner*: constraint solver for pass windows, power and staged rollout (guaranteed feasibility) + a learned policy that improves rollout *order* from outcomes. **Change from the locked "constrained RL planner" — flag for user.**
-  5. *Validation*: execution-level tests run in the manufacturer's emulator/testbed (as with ESA OBSM [RF 6]; Spire-style CI/testbed [RF 31]). **The JEPA world model does pre-uplink risk scoring from features plus post-uplink anomaly detection and rollback triggering**, not prediction of what new code will do.
+  5. *Validation*: the manufacturer's emulator/testbed **runs** the fix (as with ESA OBSM [RF 6]; Spire-style CI/testbed [RF 31]). **The JEPA world model is the judge (Q26):** it compares the emulator's simulated telemetry, then the canary satellite's real telemetry, against "how *this* satellite normally behaves", catching subtle drift that scripted pass/fail tests miss. It judges code that has actually run; it doesn't predict unseen code (R6). During rollout it watches every channel on every satellite in every pass, which no team can do by hand.
   6. *Human approval gate* → uplink via the operator's existing update manager → monitor → auto-halt/rollback.
 - Fix ladder: vendor patch → workaround → ground fix → accept and monitor → AI-drafted patch only as a suggestion to the manufacturer [TB 7.4].
-- **Value**: *efficiency* = triage hours saved at equal coverage, and faster time-to-remediate. *Innovation* = safe-to-patch evidence packs that support insurance and defence-contract assurance (new capability, not cost-cutting).
+- **What is new vs existing tools (Q26):** scoring (IT scanners, SPARTA), health monitoring (Spire CMP) and attack detection (Deloitte Silent Shield) already exist. Phylax's product is the **agentic flow from a known flaw to a safe, scheduled fix across the whole mission**: reachability → ranked plan (satellites, order, pass, or a workaround) → emulator-and-canary validation → approval → watch and halt. It replaces today's handoff chain (security → flight software/manufacturer → mission ops), not any team.
+- **Why teams want it (Q27):** it takes on the parts of the job that don't scale with people: *coverage* (every channel, satellite and pass), *memory* (the context graph keeps outcomes when staff leave), *consistency* (the same at 2 a.m. as 2 p.m.; fights automation bias) and *joining the pieces*. Versus a general AI assistant: a general assistant can't trace ground→fleet reachability, plan around passes and power, or judge emulator runs against a satellite's normal behaviour. Demand line: CVEs grew 20.6% from 2024 to 2025 [RF 27], and Phylax lets a team absorb growing volume without growing headcount at the same rate (no claim about actual team growth).
+- **Value case in three layers (Q29), no revenue figure:**
+  1. *Value table*, split into efficiency, risk reduction and innovation (S3): analyst hours per finding · time from advisory to approved plan · handoffs cut (4 teams → 1 flow, structural, from Q8) · findings per analyst as volume grows [RF 27] · unsafe uplinks = 0 · tail-loss avoided (~$0.5–1M smallsat, secondary; ~$300M GEO [RF 4]) · **innovation:** assurance evidence packs for insurers and defence contracts (supports 800-171 3.14.1 [RF 30]).
+  2. *Before/after* of the opening scene: the steps and handoffs come from our research; any durations are marked **"illustrative"**.
+  3. *Proof = renewal*: pilot metrics from layer 1 trigger renewal in A.4 (links A.1 → A.4).
 - **Value ordering (R3/R4):** lead with **speed and coverage of triage** (frequent, measurable). A bricked satellite is a **tail risk**, not the headline: no base rate exists, and Viasat itself reported the attack as financially immaterial [RF 4]. Viasat is used for *disruption scale* (30,000 modems, 5,800 turbines) and the *ground→space path*, never as a dollar loss.
 - **Evaluation (R17):** proxy metrics are named up front: analyst hours per finding at equal coverage; time-to-remediate for flaws later exploited on the ground segment (observable); agreement with red-team results in the testbed/cyber range; backtest against past Space ISAC advisories. Transfer of ground-trained exploitability to space is stated as an open validation risk.
 - Honest line: rollout/rollback tooling already exists (Planet pipeline, Spire CMP [RF 31]). Phylax connects prioritisation to it; it doesn't replace it.
@@ -94,14 +101,14 @@ A 2 a.m. advisory lands. A CISO at a mid-size operator has 200 satellites, a fla
 - Ends the trust thread: calibrated trust = the zone between over- and under-trust.
 
 ### Close: four-lens check (~⅙ p) → Storytelling + Content
-One line per lens with its honest risk: *Feasibility* (validation stays with the manufacturer's testbed; ground→space exploitability transfer unproven, R17), *Usability* (fits existing pipelines; approval inside pass windows), *Desirability* (in-house teams are capable → "connect and speed up", Q20–21), *Viability* (value-based pricing; revenue formula with labelled assumption: ACV ≈ 3–4 analyst-equivalents × buyers; weakest point, Q24). Then the dream-big vision line (+ India as next market/engineering base, pending §7).
+One line per lens with its honest risk: *Feasibility* (validation stays with the manufacturer's testbed; ground→space exploitability transfer unproven, R17), *Usability* (fits existing pipelines; approval inside pass windows), *Desirability* (in-house teams are capable → "connect and speed up", Q20–21), *Viability* (per-fleet subscription + onboarding fee that covers integration labour; a small buyer pool; people-heavy delivery. Named as the weakest point, Q24; no revenue figure, Q29). Then the dream-big vision line (+ India as next market/engineering base, pending §7).
 
 ### References (3–4 key, non-blog)
 1. NIST IR 8270 (verify the control text in the PDF, R35) · 2. SPD-5, 85 FR 56155 (Federal Register, primary) · 3. NIST SP 800-171 Rev 2 (read directly in item 30) · 4. SIA 29th State of the Satellite Industry Report 2026 (cite the report, not the press release). Langer & Bouwmeester is dropped unless its exact 2-year reliability figure is used. Course frameworks (Porter, Lemon & Verhoef 2016, Puntoni et al. 2021, Lee & See 2004) are cited in-text.
 
 ### Appendix (1 page) → Creativity & Effort
 1. Working evidence: **moat-evolution decision tree** (Q10 → Q12 → Q13 → Q18 → Q22: network effect → rare events → outcome data → context graph + switching costs).
-2. AI tools: Claude Code (Opus) as main assistant; Sonnet/Opus subagents for sourced research and a red-team review; verification discipline (§10.1 log). ≥2 transcript links (from `logs/`; **the user must supply the shareable links**).
+2. AI tools: Claude Code (Opus) as main assistant; Sonnet/Opus subagents for sourced research and a red-team review; verification discipline (§10.1 log). ≥2 transcript links (Q28): run `/export` + `/transcript` for this session first; split the **redacted** `logs/TRANSCRIPT_LOG.md` into per-session chunks; the user uploads them to Google Drive with "anyone with the link can view" and pastes the links.
 3. Hardest concept: **defensibility, i.e. who owns the data and why operators would share.** Options considered: federated network effect, public data, manufacturer partnerships, outcome record + switching costs. Why the last one was chosen.
 4. Accepted / modified / rejected / independently developed: from TB §11.2 + Q17–Q25. Independently raised by the user: regulation double edge, the Item 7 disconnect, in-house teams, helping competitors, unit economics, undo = unreliable.
 
@@ -139,7 +146,7 @@ Avoid: ~16–17k sats · ~58k/yr · Starlink % · "3-person team" · "40% since 
 | R17 | No evaluation method | Fixed: proxy metrics named; transfer risk stated | A.1, close |
 | R18 | Supplier power from wrong side | Fixed: Phylax's own inputs = high | A.3 |
 | R19 | Buyer pool tiny/unsourced | Caveat: named operators only; efficient-scale framing | A.2, A.3 |
-| R20 | No unit economics | Caveat: value-based formula with labelled assumption | close |
+| R20 | No unit economics | Reframed (Q29): customer-value case + pricing structure; no revenue figure; viability named as weakest point | A.1, close |
 | R21 | SpaceX evidence secondary | Caveat: tagged secondary, mega-operators only | A.3 |
 | R22 | Barriers hit the startup first | Fixed: entry path stated | A.3 |
 | R23 | Originality caveats dropped | Caveat: absence of claims ≠ absence | A.3 |
@@ -168,3 +175,11 @@ New research (except §7), final formatting, the .docx build, stripping source t
 - **India research** (Sonnet subagent): mid-size operator count under IN-SPACe, security-team maturity, engineering cost base, DPDP/IN-SPACe/CERT-In constraints. Output → RF item 32 + raw/08. Feeds one vision line only.
 - **Name check**: web search "Phylax" for company clashes in security/space.
 - **SBIR status** (R25): quick check whether SBIR/STTR authority is current; one line in A.4 depends on it.
+
+## 8. v2 changes (from the post-review discussion, TB Q26–Q29)
+1. **Positioning:** a domain copilot that owns the workflow; the product is the flaw → safe-fix flow, not scoring/monitoring (Q26, Q27).
+2. **World model role:** the judge of emulator and canary runs, plus fleet-wide watch during rollout (Q26).
+3. **Value:** the three-layer value case replaces the revenue/ACV formula; pricing structure only (Q29).
+4. **Persona:** "the Stretched Sentinel" confirmed; the author is free to strengthen it (Q28).
+5. **Transcripts:** redacted log chunks via Google Drive links (Q28).
+6. **Viva prep:** every challenge and review question compiled in `report/Viva_Prep.md`.

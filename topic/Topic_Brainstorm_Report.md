@@ -323,6 +323,37 @@ So the best jurisdiction is the one whose framework also covers **AI risk and cy
 Liability follows the wording: we don't write patches (Q8), the operator approves each uplink, and our output is **"decision support with evidence and a stated residual risk"**, never "certified safe". Back that with a contractual liability cap and the full audit trail (RF item 24).
 **Correction:** remove any "fully/completely tested" language from the concept and report. Drafting tasks T4–T6 (§9.6). This answers rubric A.5 "what happens when the AI is wrong".
 
+*Q26–Q29 come from the report-design discussion (2026-09-30), after the draft spec (`report/specs/2026-09-30-report-draft-design.md`) was checked against every review item.*
+
+### Q26. "If the model scores risk before applying and detects anomalies after, how is it different from current workflows? Detection and monitoring already exist in normal software (e.g. Deloitte)."
+**Origin of doubt:** the spec's reframe of the world model (review R6): it stopped predicting what new code does and became a pre-uplink risk scorer and post-uplink anomaly detector.
+**Reasoning:** conceded. Scoring (IT scanners, SPARTA), health monitoring (Spire CMP) and attack detection (Deloitte Silent Shield) all exist. The reframe had made the world model sound like the product. What no existing tool does is take a **known flaw to a safe, scheduled fix across the whole mission** in one flow: ground→fleet reachability, then a ranked plan (satellites, order, pass, or a workaround), then validation, approval, watch and halt. Today that is a handoff chain across security, flight software/manufacturer and mission ops.
+**Stronger role for the world model:** the manufacturer's emulator *runs* the fix, but a test run needs something to judge the results. The world model compares the emulator's simulated telemetry, then the canary satellite's real telemetry, against how *that* satellite normally behaves, catching drift that scripted tests miss. It judges code that has run; it doesn't predict unseen code.
+**Conclusion:** the product is the agentic flaw→safe-fix flow. The world model is its judge and safety net, not the headline.
+**Change:** spec v2 (A.1 architecture step 5 + "what is new" line).
+
+### Q27. "How is this safety net valuable enough against the companies' own researchers and teams? That is what they were hired to do. The main thing is to make the researcher's life easier and more productive."
+**Origin of doubt:** follows from Q26 and Q20–Q21 (operators run capable in-house programs).
+**Reasoning:** the user's reframe was adopted. Phylax shouldn't compete with teams. It should take on the parts of their job that don't scale with people: *coverage* (every channel, satellite and pass during a rollout), *memory* (outcomes stay in the context graph when staff leave), *consistency* (the same at 2 a.m.; counters automation bias and fatigue) and *joining the pieces* across the four groups. It fits the trust thread: experts rely less on automation (Sanchez et al., S11), so a copilot that supports judgment is adopted and a replacement is rejected. *Pushback:* "why not a general AI assistant?" Because a general assistant can't trace ground→fleet reachability, plan around passes and power, or judge emulator runs against a satellite's normal behaviour.
+**Conclusion:** the positioning is **"a domain copilot that owns the workflow"** (Foundation Capital: own the workflow, not the model). Demand line limited to what's sourced: CVEs +20.6% from 2024 to 2025 (RF item 27). No claim about how fast teams grow.
+**Change:** spec v2 decisions table (positioning) and A.1.
+
+### Q28. "What exactly needs my attention? Did you create the persona, or do I need to do something? And for transcripts, I'll split the log into chunks and attach Google Drive links."
+**Origin of doubt:** the spec review listed "points needing attention" without saying which were decisions and which were tasks.
+**Answer:** the persona was a **decision to confirm**, not a task. The spec picks the first customer (a US mid-size operator holding DoD contracts; its CISO is "the Stretched Sentinel", with a buying committee). The user confirmed it: "Looks okay to me. Do the best you can think of." The only real user tasks are the transcript links and the final voice rewrite. For transcripts: use the **redacted** `logs/TRANSCRIPT_LOG.md`; run `/export` + `/transcript` for this session first; set Drive sharing to "anyone with the link can view".
+**Change:** spec v2 (persona confirmed; appendix transcript method).
+
+### Q29. "Is revenue even necessary? What is ACV? The 3–4 analyst-equivalents × buyers figure is low, and our main cost is the people who validate and correct our models. If we don't use ACV, how do we show the value created?"
+**Origin of doubt:** the spec's close used "ACV ≈ 3–4 analyst-equivalents × buyers" to answer review R20.
+**Reasoning:**
+- *ACV* = annual contract value, what **one customer pays per year**. Total revenue = ACV × customers.
+- *Not required:* the rubric's "Economic Value" asks for value **to the customer** (efficiency, cost, speed), not the company's revenue.
+- *The user's objection shows the formula was weak anyway:* priced on analyst time saved, one customer pays a few hundred thousand a year, while the main cost is skilled people integrating each customer and validating the models. The numbers don't close, and printing them invites that attack.
+- *Value without ACV, in three layers:* (1) a value table split into efficiency, risk reduction and innovation (S3), with pilot-measurable metrics; (2) a before/after of the opening scene (steps from research, durations marked illustrative); (3) value proven through renewal triggered by pilot metrics.
+- *Pricing structure without numbers:* per-fleet annual subscription + a one-time onboarding/integration fee that pays for the people-heavy integration work.
+**Conclusion:** drop the revenue and ACV figures. Show customer value in three layers and pricing structure only. Viability stays named as the weakest point.
+**Change:** spec v2 (A.1 value case, close, review matrix R20 row).
+
 ---
 
 ## 5. Questions Claude Asked Me
