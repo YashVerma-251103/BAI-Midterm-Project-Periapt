@@ -160,7 +160,7 @@ I also rejected the unsourced "3-person team" claim and the stale numbers after 
 
 **"Isn't this Spacecraft Mission Operations (telemetry analytics), not vulnerability prioritisation?"** No. The world model's output is a **security ranking**: which flaw to fix first and why. We deliberately don't sell fleet monitoring. Aerospace Corp and Google are building that [Q36, RF 32].
 
-**"Aerospace Corp has SPARTA and an AI anomaly tool with Google. Why won't they build this?"** They might; they're the biggest new-entrant threat. But they are a government research centre (FFRDC) working for government missions. We serve mid-size *commercial* operators, which their government focus doesn't target (my reasoning, not a sourced fact), and we output in SPARTA IDs so we build on their work instead of fighting it [RF 10/13, RF 32].
+**"Aerospace Corp has SPARTA and an AI anomaly tool with Google. Why won't they build this?"** Aerospace is an FFRDC, and federal rules (FAR 35.017) bar FFRDCs from competing with industry. They publish frameworks like SPARTA and build prototypes for government. We build on SPARTA and speak its IDs, so we complement them. The real threat is the commercial side: their partner Google, the primes, Booz Allen and Deloitte [Q39, RF 32].
 
 **"Viasat was a misconfiguration, not an unpatched flaw. Why use it?"** Correct, and I say so. I use it for the path and the method: getting in on the ground, then using legitimate commands to harm tens of thousands of terminals. That is exactly the kind of harm our world model plays out [RF 32].
 
@@ -173,3 +173,11 @@ I also rejected the unsourced "3-person team" claim and the stale numbers after 
 **"Why no RL planner any more?"** The review showed RL would learn from rollout outcomes that are rare and mostly successes. Once we focused on prioritisation, the planner shrank to a suggested fix window: a plain scheduler fed by the world model's battery and thermal forecast [Q32, Q34].
 
 **"What did you cut, and why?"** Writing patches (the manufacturer's job). Running rollouts and rollbacks (Spire and SpaceX already sell or build them). Fleet monitoring (Aerospace Corp + Google). Ground-IT patching as a product (Tenable, Qualys). Terminals as a separate product area. The RL planner. Every cut was either already sold by someone else or not part of the original problem [Q34].
+
+**"Why does value drop for new fleets?"** Our AI's edge is telling satellites apart. In a new fleet of identical, healthy satellites, an attack would do roughly the same to each, so a simple rule does almost as well, and there's little history to learn from. We still help with reading, speed and ranking across flaws. That's why our first customers are older or mixed fleets [Q39].
+
+**"Isn't people-heavy a bad business?"** It's a cost, and I name viability as the weakest point. But it's deliberate: experts don't trust new automation, so trust has to be earned in shadow mode first. It gets cheaper per customer if the parts library for a satellite design can be reused, which is a hypothesis [Q39].
+
+**"Where does your data come from on day one?"** From the client, at onboarding: parts lists, software versions, the ground-to-fleet network map, and telemetry and command history. Until the model is trained, it says "unknown", so rankings stay high by default. Shadow mode builds trust and trains the model at the same time [Q39].
+
+**"Why not build the whole patch pipeline?"** Stage 1 has to earn trust first. Once the rankings are trusted, we add fix-window planning, then validation and rollout with partners. Think big, act small [Q39].

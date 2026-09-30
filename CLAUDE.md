@@ -8,12 +8,12 @@ The Business of AI — Mid-Semester Assignment (20 marks). **Not code.** The del
 
 ## Locked decisions
 
-- **Company:** **Periapt** (protective amulet; echoes *periapsis*): an AI platform that prioritises and safely resolves cybersecurity vulnerabilities across satellite missions (ground → network → spacecraft → terminals), inside the listed topic "Day-Zero Vulnerability Prioritisation" (Defence, Space & Cybersecurity segment). Renamed from Phylax on 2026-09-30 (name clash; topic report Q30).
-- **Positioning:** a domain copilot that owns the workflow: the agentic flow from a known flaw to a safe, scheduled fix, with humans approving every uplink. It makes expert teams faster and doesn't replace them.
-- **Architecture:** LLM advisory agent (self-hosted, citation-required) + exposure graph + JEPA-style world model (judges emulator/canary runs and watches rollouts) + rollout planner + human-approved uplinks only. **Pending user confirmation:** planner = constraint solver + learned ordering, replacing the original "constrained RL" (spec v2, review R8). Evolution: `topic/Topic_Brainstorm_Report.md` §7 and Q26.
-- **Jurisdiction:** **United States** (confirmed 2026-09-30); India only as a next-market line, pending research.
-- **Format:** Word/PDF doc, 4 pages + 1-page appendix, 2 visuals. Draft in markdown with source tags; the user rewrites it in their own voice.
-- **Current state:** see `HANDOFF.md` (read it first in a new session). Spec v2 awaits approval; the report prose has not been started.
+- **Company:** **Periapt** (protective amulet; echoes *periapsis*): an AI platform that predicts and prioritises which known security flaws matter most for each satellite in an operator's fleet (ground systems count as the way in), inside the listed topic "Day-Zero Vulnerability Prioritisation" (Defence, Space & Cybersecurity segment). Renamed from Phylax on 2026-09-30 (name clash; topic report Q30).
+- **Positioning (re-centred 2026-09-30, Q31–Q39):** **predictive prioritisation** is the core: scan advisories → score → rank flaws per satellite, with reasons. It's delivered as a copilot to the security, flight-software and ops teams, and each team keeps its decision. It runs on its own up to the ranking; a human approves anything that touches a satellite or a ground system. It complements Aerospace Corp (builds on SPARTA; FAR 35.017). Growth is staged: fixing, validation and rollout come later, once trust is earned.
+- **Architecture:** LLM agent (self-hosted, citation-required; ReAct orchestrator) + reused scores (CVSS, EPSS, SPARTA) + reach map + **world model** (learned per fleet from telemetry and command history; predicts what an attacker's commands would do to each satellite, and forecasts battery/thermal margin; JEPA-style as the candidate). Ranking rule: the AI can raise a priority, lowering needs a human, and outside its data means high. The RL planner, patch testing, rollout/rollback and monitoring are **cut** from Stage 1. Evolution: topic report Q26 and Q31–Q39.
+- **Jurisdiction:** **United States** (confirmed 2026-09-30). India line and SBIR: on hold (user decision pending).
+- **Format:** Word/PDF doc, 4 pages + 1-page appendix, 3 visuals. Draft in markdown with source tags; the user rewrites it in their own voice.
+- **Current state:** see `HANDOFF.md` (read it first in a new session). Spec v3 (`report/specs/2026-09-30-report-draft-design.md`) awaits the user's review; the report prose has not been started.
 
 ## File map
 
