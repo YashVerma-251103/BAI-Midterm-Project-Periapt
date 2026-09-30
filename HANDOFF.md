@@ -1,34 +1,33 @@
 # Session Handoff
 
-**Written:** 2026-09-30, end of the re-centring session (spec v3 + drafting plan).
-**Deadline:** 1 Oct 2026, 23:59. Draft first; no new research.
-**Older state:** the v2-era handoff is in git history (commit `f39c184` and earlier). Where they differ, trust this file.
+**Written:** 2026-09-30, end of the overnight drafting run (the earlier version, written after spec v3 + the plan, is in git history).
+**Deadline:** 1 Oct 2026, 23:59. No new research.
+
+> ⚠️ **The draft was written from a plan the user had NOT reviewed.** The user asked for this to show in the file name: `report/Periapt_Report_Draft_PLAN-NOT-USER-REVIEWED.md`. Keep that name until the user has reviewed the plan (`report/plans/2026-09-30-report-draft-plan.md`) and the draft; then rename it (`git mv`) and update this file, `CLAUDE.md` and `README.md`.
 
 ---
 
 ## 1. Where we are
 
 - **Spec v3 is approved:** `report/specs/2026-09-30-report-draft-design.md`.
-- **The drafting plan is written:** `report/plans/2026-09-30-report-draft-plan.md` (Tasks 0–9).
-- **The report prose has not been started.** The next session writes `report/Periapt_Report_Draft.md` by running the plan.
+- **The drafting plan was run in full overnight (Tasks 0–9), unattended.** The user had not read the plan.
+- **Draft written:** `report/Periapt_Report_Draft_PLAN-NOT-USER-REVIEWED.md` (with source tags; ~3,400 words without tags and code blocks). Every plan check passes.
+- **Every decision made on the user's behalf** is in `logs/Overnight_Draft_Log_2026-09-30.md` ("Rulings", "Deferred minors"). Read it first.
 
 ## 2. What the next session does, in order
 
-1. Read the files in §3.
-2. **Ask the user for the execution method** before starting. They haven't picked one yet.
-   - **Native (recommended):** one session writes every section, then one reviewer checks the whole draft. This keeps one voice and one story.
-   - **Subagent-driven:** a fresh agent per section plus a reviewer each time. Slower, and the voice may vary.
-3. Run the plan task by task: Native → `superpowers:executing-plans`; Subagent-driven → `superpowers:subagent-driven-development`. Tick the checkboxes in the plan as you go.
-4. After each section, run its checks with `scripts/draft_check.sh`. The plan gives the exact commands. **The script is a checking tool only**, not part of the report. The user approved keeping it: it catches missing rubric points, banned claims and over-length sections.
-5. Task 9 does the whole-draft checks, updates this file, and merges into `main`.
-6. Tell the user in plain words what's done and what's left for them (§6).
+1. Read `logs/Overnight_Draft_Log_2026-09-30.md`, then the draft.
+2. The user reviews the plan and the draft (morning of 1 Oct). Act on their changes; log new challenges as Q41+.
+3. Once the user approves: rename the draft (drop `_PLAN-NOT-USER-REVIEWED`) and update the marks in this file, `CLAUDE.md` and `README.md`.
+4. Then: the user's voice rewrite and cut to 4 pages + 1-page appendix → visuals (Visual 1 mermaid, Visual 2 Five Forces table, Visual 3 persona + journey) → .docx (docx skill) → strip tags. User tasks are in §6.
+5. `scripts/draft_check.sh` points at the current draft name by default (`DRAFT=<path>` overrides it). Re-run the checks after edits.
 
 ## 3. Read order
 
 1. `CLAUDE.md` (auto-loaded): locked decisions and working habits.
 2. **This file.**
 3. `report/specs/2026-09-30-report-draft-design.md`: **the blueprint.** Read all of it: the product (§2), threads (§3), each section (§4), the use/avoid list (§5), and the coverage matrix (§6).
-4. `report/plans/2026-09-30-report-draft-plan.md`: the tasks and their checks.
+4. `report/plans/2026-09-30-report-draft-plan.md`: the tasks and their checks (all tasks run; checkboxes ticked; deviations are in the overnight log).
 5. `report/Viva_Prep.md` **§9**: the current reasoning in plain words. §1–§8 are older; where they differ, §9 wins.
 6. `research/Research_Findings.md`: check here **before writing any number**. Item 32 holds the newest verified facts.
 7. Only if needed: `topic/Topic_Brainstorm_Report.md` §4 **Q31–Q40** (why the scope changed), `research/Research_Findings_Review.md` (R1–R35), and `Prof_Materials/` (course decks; regenerate text with `pdftotext` if needed).
