@@ -6,7 +6,7 @@
 
 | Decision | Choice | Note |
 |---|---|---|
-| Company name | **Periapt**: a protective amulet; echoes *periapsis*, an orbit's closest point ("protection at the closest point of risk") | Renamed from Periapt after an existing EU AI security firm, Periapt Intelligence, was found (Q30). Deep web check 2026-09-30: no security/space company named Periapt; only unrelated uses (audio cables, AU financial advisory, IL health startup, RPG publisher). |
+| Company name | **Periapt**: a protective amulet; echoes *periapsis*, an orbit's closest point ("protection at the closest point of risk") | Renamed from Phylax after an existing EU AI security firm, Phylax Intelligence, was found (Q30). Deep web check 2026-09-30: no security/space company named Periapt; only unrelated uses (audio cables, AU financial advisory, IL health startup, RPG publisher). |
 | Format | Word/PDF doc, 4 pages + 1-page appendix, 2 visuals | Draft in markdown → convert to .docx at the end. |
 | Draft depth | Full prose, **user rewrites in own voice** | Brief §F prohibits submitting AI text unrevised; viva possible. Every factual sentence carries a source tag `[RF n]` / `[Q n]` in the draft so it can be defended, and the tags are stripped at conversion. |
 | Jurisdiction | **United States** (main) | India = a one-line "next market / engineering base" in the vision, backed by a separate research task (§7). |
@@ -132,7 +132,7 @@ Avoid: ~16–17k sats · ~58k/yr · Starlink % · "3-person team" · "40% since 
 | R3 | Viasat "immaterial" | Fixed: disruption scale + path, not dollars | A.1 |
 | R4 | No brick base rate | Fixed: triage speed leads; bricking = tail risk | A.1 |
 | R5 | Viasat supports the commodity layer | Fixed: ground→space consequence modelling is the differentiator | A.1 |
-| R6 | World model can't predict new code | Fixed: emulator validates; JEPA scores risk + detects anomalies | A.1 |
+| R6 | World model can't predict new code | Fixed: emulator runs the fix; JEPA judges emulator + canary runs against normal behaviour (Q26) | A.1 |
 | R7 | Auto-rollback exists (Spire, SpaceX) | Fixed: integrate with existing update managers | A.1, A.3 |
 | R8 | RL vs solver | Fixed: solver + learned ordering (user to confirm) | A.1 |
 | R9 | Where does the agent act? | Fixed: autonomy table; hold on missing approval | A.4, A.5 |
@@ -173,7 +173,7 @@ New research (except §7), final formatting, the .docx build, stripping source t
 
 ## 7. Parallel tasks
 - **India research** (Sonnet subagent): mid-size operator count under IN-SPACe, security-team maturity, engineering cost base, DPDP/IN-SPACe/CERT-In constraints. Output → RF item 32 + raw/08. Feeds one vision line only.
-- **Name check**: done (Q30). Periapt, Amyntor and PassWarden were taken; Periapt is clear in security/space.
+- **Name check**: done (Q30). Phylax, Amyntor and PassWarden were taken; Periapt is clear in security/space.
 - **SBIR status** (R25): quick check whether SBIR/STTR authority is current; one line in A.4 depends on it.
 
 ## 8. v2 changes (from the post-review discussion, TB Q26–Q29)
