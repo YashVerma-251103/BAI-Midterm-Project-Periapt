@@ -214,3 +214,41 @@ Does the whole story hold up?
 Course frameworks (Porter; Lemon & Verhoef 2016; Puntoni et al. 2021; Lee & See 2004; Pavlou & Fygenson 2006; Sanchez et al. 2011) are cited in the text.
 
 ## Appendix: Thinking and AI Use
+
+**1. Working evidence: two decision trees from my notes.**
+
+*What is the moat?*
+```
+Cross-fleet network effect (Q10)
+ └ Enough shared failures to learn from? No, they're rare (Q13)
+    └ Public data? Proves feasibility for everyone, so not a moat (Q18)
+       └ Pooled data? Operators won't help rivals (Q22), so only conditional
+          └ What needs no cooperation? The record + earned trust ✓ (Q40)
+```
+
+*Where should the AI sit?*
+```
+Predict patch effects ✗  new code is outside the model's data (R6)
+ └ Judge emulator test runs? Works, but a commodity (Q33)
+    └ Predict each flaw's impact per satellite ✓  (Q36)
+```
+
+**2. AI tools.** Claude Code (Opus) was my main thinking partner: brainstorming, a logged challenge-and-answer record (Q1–Q40), the report blueprint, and a tagged first draft that I rewrote in my own words. Claude subagents (Sonnet/Opus) ran seven sourced research threads and a red-team review that listed 35 weak claims. Rule: no number is used unless it's in the findings file; a verification pass corrected my Viasat story (a misconfiguration, not an unpatched flaw).
+- Transcript 1: <Google Drive link — user adds>
+- Transcript 2: <Google Drive link — user adds>
+
+**3. The hardest concept: what should the AI actually predict?** I considered three options.
+- *What a patch will do to a satellite:* rejected. A patch is new code, outside anything the model has seen (R6).
+- *A judge of emulator test runs:* it works, but emulators already exist, so it is a commodity (Q33).
+- *Each flaw's impact on each satellite:* chosen. Attacks misuse commands the model has already seen in normal operations, the answer differs per satellite, and it is exactly "prioritisation", the listed topic (Q36).
+
+The trade-off: the chosen option is the least proven, so it comes with named tests and the rule "unknown = high". (Alternative topic for this box: defensibility, meaning who owns the data.)
+
+**4. Accepted, modified, rejected, independently developed.**
+
+| | What |
+|---|---|
+| Accepted | The satellite niche inside Day-Zero Vulnerability Prioritisation; mid-size operators as the target; reusing EPSS and SPARTA instead of rebuilding them |
+| Modified | Moat: network effect → the record + earned trust; world model: judging patches → predicting flaw impact; Aerospace Corp: rival → complement; scope: the whole flaw-to-fix pipeline → prioritisation only |
+| Rejected | Generic vulnerability management (not novel); AI-written patches sent to satellites; the RL planner; customer telemetry as the moat; a revenue figure without evidence |
+| Independently raised by me | Regulation cuts both ways (Q17); public data isn't a moat (Q18); in-house teams (Q20); why help competitors (Q22); unit economics (Q24); undo = unreliable (Q25); scope drift away from AI (Q34); replacement vs assistance (Q35); topic fit (Q36); autonomy (Q37); Aerospace as a complement (Q39); matching is already automated (Q40) |
