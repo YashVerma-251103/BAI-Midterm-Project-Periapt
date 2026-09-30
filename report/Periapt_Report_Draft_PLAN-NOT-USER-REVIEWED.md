@@ -74,6 +74,28 @@ If this works, what stops a rival copying it?
 
 ## A.2 Architecture, Moat and Defensibility
 
+**Core product architecture** (the loop in Visual 1):
+1. **Advisory reader:** the LLM agent, which must cite what it matched.
+2. **Parts list and reach map**, built with the customer.
+3. **Score layer:** CVSS, EPSS and SPARTA, reused.
+4. **World-model what-if:** impact per satellite.
+5. **Ranking with the authority rule:** the AI can raise a priority; lowering needs a human; "unknown" counts as high.
+6. **Per-team briefs and tickets** in each team's own tools.
+7. **The record:** every flaw, ranking, override and outcome.
+
+**Would Periapt survive if the model changed tomorrow?** Yes. The model isn't the moat (Foundation Capital); A.1's tests already allow swapping it. The moat is what each customer's use builds up. Using Morningstar's moat sources, ranked:
+1. **Intangible asset: the record.** Every flaw, ranking, override (with its reason) and outcome, tied to each satellite's history. Nobody can buy it. Spacecraft failures are rare, so overrides also count as learning signal [R11].
+2. **Switching cost: earned trust.** A new vendor must rebuild the parts list and reach map, retrain, and sit through its own shadow mode before sceptical experts trust it. The telemetry archive belongs to the customer and leaves with them [Q40]; the moat is the time and trust to rebuild, not the data.
+3. **Switching cost: workflow.** Tickets, approvals and the audit trail run through Periapt, a light form of platformization.
+4. **Efficient scale:** the niche is small, so it supports few players [R19].
+5. *Conditional:* **a cross-fleet network effect**, only through opt-in, minimum-data sharing on the Space Data Association model [RF 31, Q22], and only if a pooled model beats local ones on held-out pilot data [R12].
+
+**Value grows with time in orbit.** Identical satellites face different orbits, eclipses, radiation and workloads. We assume the differences grow as batteries wear and software versions split. The model needs history per satellite first, so value grows the longer the fleet flies; how fast is a pilot metric, not a promise. A later rival must retrain on that history and re-earn trust.
+
+**Not counted as moats:** public data, which proves feasibility for everyone [RF 7], and manufacturer partnerships (no evidence found) [R13].
+
+The honest limit: the moat is thin at cold start, so the product must deliver full value to a single operator. Who else wants this job?
+
 ## A.3 Porter's Five Forces
 
 ## A.4 Persona and Customer Journey
