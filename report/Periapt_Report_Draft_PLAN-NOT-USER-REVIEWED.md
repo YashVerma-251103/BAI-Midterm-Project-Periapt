@@ -122,6 +122,37 @@ Inside those operators, who actually buys?
 
 ## A.4 Persona and Customer Journey
 
+*Visual 3, part 1: persona card*
+
+> **"The Stretched Sentinel"**: CISO / VP Security at a US mid-size operator that also holds DoD contracts [R26]. Grounded in Planet's live VP & CISO posting, where one role spans cyber, compliance and AI governance [RF 16].
+> - **Pains:** advisory overload; audit pressure; blame for the one flaw that was missed.
+> - **Goals:** defend the fleet; show auditors a method.
+> - **Decision criteria:** evidence behind every ranking; auditability; never touches the command path; fits the tools the team already has.
+> - **Psychographic:** an expert, and so sceptical of automation (experts rely less on automation; Sanchez et al., 2011).
+
+**Buying committee** [R27]: the CISO holds the budget; a SecOps analyst is the daily user and champion; the mission-ops lead approves anything that touches a satellite.
+
+**Diffusion of Innovation.** The category is at the introduction stage of its life cycle (Session 7), so we sell to early adopters: operators with formal programs, DoD contracts and fleets with some time in orbit, older or mixed, where the world model has most to say.
+
+**Journey.** Lemon & Verhoef's stages, with Puntoni et al.'s AI experiences, built to escape the pilot trap (Gartner: over 80% of enterprise AI initiatives stall at pilot).
+
+*Visual 3, part 2: journey strip*
+
+| Stage | What happens | AI experience |
+|---|---|---|
+| Prepurchase | Advisory overload plus a trigger: an audit or an incident | |
+| Purchase | Paid pilot and onboarding: forward-deployed engineers build the parts list, reach map and history with the customer; we never start with full data [R14] | Data capture |
+| Postpurchase: shadow | Periapt's rankings sit next to the team's own while the world model trains | Classification |
+| Postpurchase: assist | Low-impact flaws are auto-triaged and ticketed; humans own the top of the list | Delegation |
+| Postpurchase: show | Explanations and evidence packs for the board, insurer and DoD auditor | Social |
+| Renewal | Renew on hours saved, time to decision and no critical flaw missed; the loop restarts with new advisories and, later, Stage 2 | |
+
+Shadow mode does the trust work. Satisfaction means performance above expectations, and it drives renewal (Kumar et al. 2019, Session 11). The 2 a.m. fear turns into confidence one ranking at a time.
+
+**Timeline** (an assumption, not a sourced sales cycle) [R28]: paid pilot → about one quarter in shadow mode → assisted triage → renewal at 12 months.
+
+Delegation raises the obvious question: what happens when the AI is wrong?
+
 ## A.5 Governance, Guardrails and US Compliance
 
 ## Close: Four Lenses, and 2 a.m. Again
