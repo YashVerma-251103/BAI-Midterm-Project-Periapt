@@ -1,93 +1,78 @@
 # Session Handoff
 
-> **⚠ Partly superseded (2026-09-30 evening).** The scope was cut back to the original problem, with AI at the centre: **predictive prioritisation** (scan → score → rank with reasons) delivered as a copilot. The world model now predicts what a flaw would do to each satellite, plus battery/thermal margin. The RL planner, rollout/rollback building and monitoring are cut. See topic report **Q31–Q39**, RF **item 32** and Viva_Prep **§9**. **Spec v2 is NOT to be drafted from.** **Spec v3 is approved** (same path). **The drafting plan is written:** `report/plans/2026-09-30-report-draft-plan.md` (Tasks 0–9, each with runnable checks). Next session: run the plan with the execution method the user picks → `report/Periapt_Report_Draft.md`. India and SBIR are on hold. §1–§4 below describe the older v2 state; where they differ, trust v3.
-
-**Written:** 2026-09-30, end of the research-validation + report-design session.
-**Deadline:** 1 Oct 2026, 23:59. That's about a day, so bias toward drafting, not more research.
-**Purpose:** give a fresh session everything it needs to continue without re-deriving decisions. `CLAUDE.md` (auto-loaded) has the stable facts; this file has the *state of work* and the *why* behind recent decisions.
+**Written:** 2026-09-30, end of the re-centring session (spec v3 + drafting plan).
+**Deadline:** 1 Oct 2026, 23:59. Draft first; no new research.
+**Older state:** the v2-era handoff is in git history (commit `f39c184` and earlier). Where they differ, trust this file.
 
 ---
 
 ## 1. Where we are
 
-The design is finished; the report prose has not been started.
+- **Spec v3 is approved:** `report/specs/2026-09-30-report-draft-design.md`.
+- **The drafting plan is written:** `report/plans/2026-09-30-report-draft-plan.md` (Tasks 0–9).
+- **The report prose has not been started.** The next session writes `report/Periapt_Report_Draft.md` by running the plan.
 
-- **Spec v2 written, awaiting the user's approval:** `report/specs/2026-09-30-report-draft-design.md`. The user has **not** approved it yet (last answer before the rename: "Discuss more first", then v2 was written from that discussion).
-- **Next steps, in order** (the superpowers:brainstorming → writing-plans flow was in use; respect its gates):
-  1. Get explicit approval of spec v2 (or apply requested changes).
-  2. Invoke `superpowers:writing-plans` for an implementation plan for the draft; the user picks the execution method.
-  3. Write `report/Periapt_Report_Draft.md`: full prose, every fact tagged `[RF n]`/`[Q n]`. **The user will rewrite it in their own voice** (brief §F forbids unrevised AI text; a viva is possible).
-  4. Later: visuals (loop diagram + Five Forces table), then `.docx` conversion (docx skill), then strip the tags.
-- **Parallel tasks still to launch once the spec is approved** (spec §7):
-  - India research (Sonnet subagent) → RF item 32 + `research/raw/08-*.md`. It feeds **one vision line only**: India as next market / engineering base.
-  - SBIR/STTR current status check (review R25: items 10/15 say lapsed, item 17 cites a live Sept 2026 topic).
-  - *(The name check is done; see §3.)*
+## 2. What the next session does, in order
 
-## 2. Read order for a new session
+1. Read the files in §3.
+2. **Ask the user for the execution method** before starting. They haven't picked one yet.
+   - **Native (recommended):** one session writes every section, then one reviewer checks the whole draft. This keeps one voice and one story.
+   - **Subagent-driven:** a fresh agent per section plus a reviewer each time. Slower, and the voice may vary.
+3. Run the plan task by task: Native → `superpowers:executing-plans`; Subagent-driven → `superpowers:subagent-driven-development`. Tick the checkboxes in the plan as you go.
+4. After each section, run its checks with `scripts/draft_check.sh`. The plan gives the exact commands. **The script is a checking tool only**, not part of the report. The user approved keeping it: it catches missing rubric points, banned claims and over-length sections.
+5. Task 9 does the whole-draft checks, updates this file, and merges into `main`.
+6. Tell the user in plain words what's done and what's left for them (§6).
 
-1. `CLAUDE.md` (auto-loaded): stable decisions and working habits.
+## 3. Read order
+
+1. `CLAUDE.md` (auto-loaded): locked decisions and working habits.
 2. **This file.**
-3. `report/specs/2026-09-30-report-draft-design.md`: **the blueprint.** Section design, numbers to use or avoid (§4), coverage matrix of every review item (§4a), v2 changes (§8).
-4. `report/Viva_Prep.md`: every challenge compressed into defend-ready answers. The fastest way to absorb the reasoning.
-5. `research/Research_Findings.md`: the sourced facts (items 1–31). **Check here before stating any number.**
-6. `research/Research_Findings_Review.md`: red-team list R1–R35 (why many claims were reframed).
-7. `topic/Topic_Brainstorm_Report.md` §4 **Q17–Q30** (this session's challenges), §7 concept (§7.5 moat is marked superseded), §9.6 drafting tasks T1–T8.
-8. Only if needed: `research/raw/0N-*.md` (full subagent outputs; never edit), `brief/Instructions.md` (rubric), `Prof_Materials/` course decks (text extracts can be regenerated with `pdftotext`).
+3. `report/specs/2026-09-30-report-draft-design.md`: **the blueprint.** Read all of it: the product (§2), threads (§3), each section (§4), the use/avoid list (§5), and the coverage matrix (§6).
+4. `report/plans/2026-09-30-report-draft-plan.md`: the tasks and their checks.
+5. `report/Viva_Prep.md` **§9**: the current reasoning in plain words. §1–§8 are older; where they differ, §9 wins.
+6. `research/Research_Findings.md`: check here **before writing any number**. Item 32 holds the newest verified facts.
+7. Only if needed: `topic/Topic_Brainstorm_Report.md` §4 **Q31–Q40** (why the scope changed), `research/Research_Findings_Review.md` (R1–R35), and `Prof_Materials/` (course decks; regenerate text with `pdftotext` if needed).
 
-## 3. Decisions made this session (and why)
+## 4. The concept in one paragraph
 
-| Decision | Outcome | Why / where logged |
+Periapt watches new security advisories around the clock. For every flaw it works out which satellites are affected, whether an attacker could reach them, how likely an attack is, and **what the attack would actually do to each satellite**. It then ranks the flaws with reasons and briefs each team (security, flight software, mission ops) in its own terms.
+- **AI parts:** an LLM agent (reads, matches, briefs) and a **world model** learned per fleet from telemetry and command history. The world model predicts attack impact per satellite and forecasts battery/thermal margin.
+- **Reused, not rebuilt:** existing tools cover CVSS, EPSS and SPARTA.
+- **Autonomy:** it runs on its own up to the ranking. Humans can override at any time. A human approves anything that touches a satellite or a ground system.
+- **Ranking rule:** the AI can raise a priority; lowering it needs a human; outside the model's data, impact counts as high.
+- **Scope:** Stage 1 is prioritisation only. Fixing, validation and rollout are later stages, once trust is earned.
+
+## 5. Decisions made in this session (and why)
+
+| Decision | Outcome | Where logged |
 |---|---|---|
-| **Company name** | **Periapt**: a protective amulet; echoes *periapsis*, "protection at the closest point of risk" | "Phylax" clashed with Phylax Intelligence (EU AI security firm, different product). Amyntor failed a *deep* check (two Indian cybersecurity firms). Periapt has no security/space use. [Q30] |
-| Format | Word/PDF doc, 4 pages + 1-page appendix, 2 visuals | user choice |
-| Jurisdiction | **United States** (main); India as next-market line pending research | user choice |
-| Draft depth | Full prose with source tags; user rewrites | academic-integrity rule |
-| Structure | Design-Thinking frame: empathy opening → one course concept anchoring each rubric section → four-lens close (Feasibility/Usability/Desirability/Viability). Each section also targets a named grading component. | user asked for "course concepts in harmony" + "mix grading components" |
-| Positioning | **A domain copilot that owns the workflow**: makes security, flight-software and ops teams more productive; the team decides | [Q26, Q27] |
-| Product core | The agentic flow **known flaw → safe, scheduled fix across the whole mission** (reachability → ranked plan → validation → human approval → watch/halt), not scoring or monitoring | [Q26] |
-| World model role | **Judge** of manufacturer-emulator runs and the canary satellite vs "how this satellite normally behaves"; fleet-wide watch during rollout. It does **not** predict unseen code. | [Q26, R6] |
-| Planner | Constraint solver (passes/power) + learned rollout *ordering*. **Differs from the CLAUDE.md "constrained RL" lock; user confirmation is pending.** | [R8] |
-| Moat order | (1) context graph / patch-outcome record → (2) switching costs → (3) efficient scale → network effect *conditional* only. Public data and manufacturer partnerships removed. | [Q18, Q22, RF 7] |
-| Value | **No revenue/ACV figure.** Three-layer value case: value table (efficiency / risk / innovation) → before/after of the opening scene → renewal on pilot metrics. Pricing *structure* only: per-fleet subscription + onboarding fee. | [Q29] |
-| First customer | One actor: a US mid-size operator that also holds DoD contracts. Persona "the Stretched Sentinel" (CISO) + buying committee (mission-ops approver, SecOps champion). User approved. | [Q28, R26, R27] |
-| Liability | "Decision support with evidence and stated residual risk", never "certified safe"; command/boot/auth-path changes never automated; missing approval → hold | [Q25, R29, R30] |
-
-## 4. The discussion arc, compressed (so the next session doesn't re-open settled points)
-
-Each line is a user challenge and what it changed. Full entries are in the topic report §4.
-- **Q17:** regulation is a double edge → there is **no binding US vulnerability-management mandate** (RF 30); regulation is only a tailwind.
-- **Q18:** public data proves feasibility for everyone → not a moat.
-- **Q19:** "static vs live" is the wrong SPARTA axis → reference vs decision-and-execution; build *on* SPARTA.
-- **Q20–Q21:** operators already do this in-house, formally (SES 40+ staff, Planet SatSec, Spire ISO 27005 ranking; RF 31) → "connect and speed up", not "you lack a team". The "3-person team" quote **has no source; never cite it.**
-- **Q22:** operators won't feed competitors → network effect conditional; SDA-style sharing is the only precedent.
-- **Q23:** "worst topic?" → everything that died was an overclaim, not the core. Stop researching, draft.
-- **Q24:** unit economics don't close at SaaS per-asset rates; the cost is **people**, not compute.
-- **Q25:** "needing undo means unreliable" → reliability = rare, contained, recoverable failures; unrecoverable classes are prevented.
-- **Q26–Q27:** detection and monitoring already exist → the product is the flaw→fix flow; a copilot for researchers.
-- **Q28:** the persona was a decision, not a task; transcripts go out as Google Drive links.
-- **Q29:** drop revenue/ACV; show customer value in three layers.
-- **Q30:** name clash → Periapt.
-
-## 5. Hard rules for drafting
-
-- **Source every fact** from `research/Research_Findings.md` (CLAUDE.md rule; §10.1 in the topic report shows why).
-- **Never say:** "~16k satellites", "58k CVEs/yr" (57,908 is **YTD to 31 Aug 2026**), any Starlink %, "3-person team", "40% of CubeSats since 2000", "fully tested", "legally required to patch", "nobody validates patches", any revenue/ACV number. (Spec §4.)
-- **Name SPARTA/SPARTEND and CT Cubed IRON GALAXY** explicitly (originality rule).
-- Keep **Spire** as the co-opetition case, not a buyer; **Globalstar** is out (Amazon acquisition).
-- Every review item R1–R35 has a planned handling in spec §4a. Don't silently drop any.
-- The user **challenges hard and wants honest pushback, not agreement.** When a challenge lands, log it as the next Q-entry (Q31+) in the topic report §4 *and* add the defend-ready answer to `report/Viva_Prep.md`.
+| Scope | Cut back to the original problem: **predictive prioritisation**, not the whole flaw → fix flow | Q34, Q36 |
+| Positioning | A copilot for the three teams; it plugs into their own ranking method (e.g. ISO 27005) | Q35 |
+| World model | Predicts **flaw impact** per satellite, plus margin forecast. It does **not** predict what a patch does, and it is **not** a monitoring product | Q31, Q33, Q36 |
+| Planner | RL dropped; a plain scheduler fed by the forecast | Q32 |
+| Autonomy | Autonomous up to the ranking; on-the-loop override; in-the-loop approval | Q37 |
+| Aerospace Corp | **Complement, not rival** (builds on SPARTA; FAR 35.017, softened wording) | Q39, Q40 |
+| Value over time | Grows with time in orbit; how fast is a pilot metric, not a promise | Q39, Q40 |
+| Moat | The record + earned trust. The telemetry archive belongs to the customer | Q40 |
+| People-heavy | Deliberate, to earn trust; viability stays the weakest point | Q39 |
+| References | SIA 2026 report · NIST SP 800-171 · NIST AI RMF 1.0 · Hundman et al. 2018 | spec §1 |
+| Visuals | 3: loop diagram (mermaid in the draft), Five Forces table, persona + journey strip | spec §4 |
+| India, SBIR | **On hold.** Keep them out of the draft | spec §9 |
 
 ## 6. User-owned tasks (Claude can't do these)
 
-- Approve spec v2 (and confirm the planner change).
-- Final rewrite of the draft in their own voice.
-- Transcript links: split the **redacted** `logs/TRANSCRIPT_LOG.md` into per-session chunks (Claude can do the split), upload to Google Drive with "anyone with the link can view", and paste ≥2 links into the appendix.
-- Before claiming references were read: check NIST IR 8270's control text in the PDF, and cite the SIA *report*, not its press release (R35).
+- The final rewrite of the draft in their own voice, and cutting it to 4 pages + a 1-page appendix.
+- Choosing the appendix's hardest concept (default: *what the AI should predict*).
+- Transcript links: run `/export` then `/transcript` for this session; split the **redacted** `logs/TRANSCRIPT_LOG.md` into chunks; upload to Google Drive with "anyone with the link can view"; paste ≥2 links into the appendix.
+- Before submitting: check the NIST AI RMF PDF text, and cite the SIA *report*, not its press release.
+- The India decision.
+- Whether to move `Discussion on the World model.txt` into `logs/` as appendix evidence (it's the user's own study session).
 
 ## 7. Practical gotchas
 
-- **Git:** mini-branch per change (`docs/<topic>`), conventional commits, `merge --no-ff` into `main`, never push. `README.md` has an **uncommitted user edit (resume IDs)**: leave it alone and never stage it.
-- **`/transcript` does its own git work.** `scripts/transcript.py` branches from the *current* HEAD, commits and merges into `main`. Run from a feature branch, it also merges that branch's unmerged work. That is harmless, but tell the user.
-- **Bash's auto-mode safety check can fail transiently.** Fall back to the Read tool for reading.
-- **Name checks:** a quick web search isn't enough (Amyntor passed quick, failed deep). Use the extended search mode.
-- The session style used subagents only when the user asked (Sonnet for research, Opus for review). Don't spawn unprompted.
+- **Git:** mini-branch per change (`docs/<topic>`), conventional commits, `merge --no-ff` into `main`, never push. **Never stage** `README.md` (the user's uncommitted edit) or `Discussion on the World model.txt` (the user's file).
+- **`/transcript` does its own git work:** it branches from the current HEAD and merges into `main`. Run from a feature branch, it also merges that branch. Harmless, but tell the user.
+- **The Bash safety check can fail transiently.** Retry once. If it fails again, use the Read/Edit/Write tools, which worked every time this session.
+- **Plain language is a user rule:** short, simple, to the point, no jargon.
+- The user challenges hard and wants honest pushback. Log each new challenge as the next Q-entry (**Q41+**) in the topic report §4 *and* in Viva_Prep §9.
+- Subagents only when the user asks.
