@@ -160,7 +160,7 @@ I also rejected the unsourced "3-person team" claim and the stale numbers after 
 
 **"Isn't this Spacecraft Mission Operations (telemetry analytics), not vulnerability prioritisation?"** No. The world model's output is a **security ranking**: which flaw to fix first and why. We deliberately don't sell fleet monitoring. Aerospace Corp and Google are building that [Q36, RF 32].
 
-**"Aerospace Corp has SPARTA and an AI anomaly tool with Google. Why won't they build this?"** Aerospace is an FFRDC, and federal rules (FAR 35.017) bar FFRDCs from competing with industry. They publish frameworks like SPARTA and build prototypes for government. We build on SPARTA and speak its IDs, so we complement them. The real threat is the commercial side: their partner Google, the primes, Booz Allen and Deloitte [Q39, RF 32].
+**"Aerospace Corp has SPARTA and an AI anomaly tool with Google. Why won't they build this?"** Aerospace is an FFRDC. Federal rules (FAR 35.017) say an FFRDC should not use its privileged access to compete with the private sector. They publish frameworks like SPARTA and build prototypes for government. We build on SPARTA and speak its IDs, so we complement them. The real threat is the commercial side: their partner Google, the primes, Booz Allen and Deloitte [Q39, RF 32].
 
 **"Viasat was a misconfiguration, not an unpatched flaw. Why use it?"** Correct, and I say so. I use it for the path and the method: getting in on the ground, then using legitimate commands to harm tens of thousands of terminals. That is exactly the kind of harm our world model plays out [RF 32].
 
@@ -174,7 +174,11 @@ I also rejected the unsourced "3-person team" claim and the stale numbers after 
 
 **"What did you cut, and why?"** Writing patches (the manufacturer's job). Running rollouts and rollbacks (Spire and SpaceX already sell or build them). Fleet monitoring (Aerospace Corp + Google). Ground-IT patching as a product (Tenable, Qualys). Terminals as a separate product area. The RL planner. Every cut was either already sold by someone else or not part of the original problem [Q34].
 
-**"Why does value drop for new fleets?"** Our AI's edge is telling satellites apart. In a new fleet of identical, healthy satellites, an attack would do roughly the same to each, so a simple rule does almost as well, and there's little history to learn from. We still help with reading, speed and ranking across flaws. That's why our first customers are older or mixed fleets [Q39].
+**"Does it work for a brand-new fleet?"** Partly at first, and better over time. Identical hardware doesn't mean identical conditions: each satellite has its own orbit position, eclipses, radiation and workload, and the differences grow as batteries and sensors age. But the model needs some operating history per satellite first. So the value grows the longer the fleet flies, and how fast is something we measure in the pilot, not a promise. Until then, we still help with reading, speed and ranking across flaws [Q39, Q40].
+
+**"Isn't this just a scanner? Tools already match CVEs to software."** Yes, they do, and we use them. What they don't do is judge what a flaw means for each satellite: space advisories that aren't CVE entries, missing spacecraft parts lists, whether a ground flaw reaches the fleet, and what an attack would actually do [Q40].
+
+**"The customer owns the telemetry. How is that a moat?"** It isn't; the data leaves with them. The moat is the record (every decision, override and outcome) and the time and trust a new vendor needs to rebuild everything and pass its own shadow mode with sceptical experts [Q40].
 
 **"Isn't people-heavy a bad business?"** It's a cost, and I name viability as the weakest point. But it's deliberate: experts don't trust new automation, so trust has to be earned in shadow mode first. It gets cheaper per customer if the parts library for a satellite design can be reused, which is a hypothesis [Q39].
 
