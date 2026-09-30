@@ -155,6 +155,43 @@ Delegation raises the obvious question: what happens when the AI is wrong?
 
 ## A.5 Governance, Guardrails and US Compliance
 
+**Where humans sit (risk tiers).**
+
+| Tier | What | Who |
+|---|---|---|
+| Runs alone | Ingest, match, score, what-if, rank, brief, ticket, re-rank | The agent |
+| Override, any time (on the loop) | Change any ranking, logged with a reason | Any team |
+| Approval (in the loop) | Any action touching a satellite or ground system | Mission-ops lead |
+| Never automated | Changes to the command, boot or authentication path | Humans only |
+
+**When the AI must stop or escalate** [R30]:
+1. No cited parts-list line → human.
+2. World model outside its data → "impact unknown", ranked high, flagged.
+3. Conflicting advisories → escalate.
+4. The flaw touches command authentication or the boot path → top priority, humans only.
+5. Drift (predictions stop matching telemetry) → layer 3 paused; fall back to layers 1–2.
+
+A **kill switch** lets the operator turn off layer 3 or the whole agent, with the same fallback.
+
+**Hallucination and reliability.** Every match cites a parts-list line and passes a plain-rule check; outputs are structured and validated [R31].
+
+**AI security.** Advisories are untrusted input, a route for prompt injection, so their text is data, never instructions. **Least privilege:** the agent reads telemetry and writes tickets, with no route to command systems. Self-hosting avoids shadow AI. Why never auto-act? In 2024 one bad CrowdStrike update hit 8.5M Windows devices: being everywhere cuts both ways.
+
+**Monitoring and safety audits.** Drift checks as satellites age (the Zillow lesson). An audit trail on NIST SP 800-53 AU-2/3/6, reviewed at least weekly [RF 24] (the Cruise lesson). A model card per fleet, and a periodic safety review re-running A.1's tests. **Bias:** the model may under-rank satellites with thin data; "unknown = high" guards against that, and the review checks it.
+
+**Liability.** Decision support with evidence and a stated residual risk, never "certified safe". Periapt ranks and humans act, so exposure is smaller [Q25]; Air Canada was held to its chatbot's words, so claims stay careful.
+
+**Data privacy and US rules.**
+- **NIST AI RMF** [RF 19]: Govern = who owns overrides and approvals; Map = the rank-vs-act boundary; Measure = A.1's tests plus drift; Manage = stop rules and the kill switch.
+- **CCPA:** a service provider handling mostly machine data; terminal data only as aggregate counts, which CCPA excludes [RF 23].
+- **FTC:** low fairness risk; capability claims must not overstate.
+- **Sector rules:** EAR 9A515 first, ITAR where it applies; deemed-export rules mean only US persons touch customer technical data [RF 22]; NIST SP 800-171 for DoD work [RF 30].
+- **Customer exit:** that fleet's model and data are deleted (simple, as models are per fleet); only an opt-in pooled model faces the unlearning limit [R33].
+
+**Trust** = competence (the tests), integrity (the audit trail), benevolence (no route to commands) (Pavlou & Fygenson, 2006). The aim is calibrated trust, between distrust and over-trust (Lee & See, 2004), earned in stages.
+
+Does the whole story hold up?
+
 ## Close: Four Lenses, and 2 a.m. Again
 
 ## References
