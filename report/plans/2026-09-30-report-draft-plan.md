@@ -473,7 +473,7 @@ Run: `grep -ciE "which flaw first" report/Periapt_Report_Draft.md` → expect `�
 Run: `grep -ci "Stretched Sentinel\|the CISO" report/Periapt_Report_Draft.md` → expect `≥ 3` (opening, A.4, close).
 - [ ] **Step 6: Coverage matrix walk.** Open spec §6. For each row (K1–K5, R1–R35, RF 32), confirm the handling is visible in the draft section named ("Avoid", "Held" and "Cut" rows mean it must be absent). Fix any gap.
 - [ ] **Step 7: Total length.** `wc -w report/Periapt_Report_Draft.md`. Expected about 2,700–3,500 words; the user cuts to 4 pages + a 1-page appendix later.
-- [ ] **Step 8: Update the HANDOFF banner.** Replace the sentence "**Spec v3 is written** (same path) and awaits the user's review. Next: approval → writing-plans → draft." with "**Draft written:** `report/Periapt_Report_Draft.md` (with source tags). Next: the user's voice rewrite and cut to 4+1 pages → visuals → .docx (docx skill) → strip tags. User tasks: transcript links, check the NIST AI RMF PDF and SIA report, India decision."
+- [ ] **Step 8: Update HANDOFF.md §1.** Replace the bullet "**The report prose has not been started.** The next session writes `report/Periapt_Report_Draft.md` by running the plan." with "**Draft written:** `report/Periapt_Report_Draft.md` (with source tags). Next: the user's voice rewrite and cut to 4+1 pages → visuals → .docx (docx skill) → strip tags. User tasks are in §6." Also set §2 step 1 to "The plan is done; see §6." In `CLAUDE.md`, change "the report prose has not been started. Ask the user for the execution method (Native recommended) before running the plan." to "the draft is written; next is the user's rewrite."
 - [ ] **Step 9: Commit and merge.**
 
 ```bash
