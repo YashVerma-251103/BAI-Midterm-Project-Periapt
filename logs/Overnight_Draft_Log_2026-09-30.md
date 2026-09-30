@@ -26,3 +26,8 @@ Format: *decision — why — cost if wrong.*
 ## Progress (one line per task)
 
 - **Task 0: complete.** Skeleton (10 headings) + `scripts/draft_check.sh`. Checks: heading count 10 ✓; empty A.1 = 0 words ✓; missing term → `MISSING zzz`, exit 1 ✓. Added a warning banner at the top of the draft pointing to the unreviewed plan and this log.
+- **Task 1: complete.** Opening (121 words, target 90–140) + A.0 (320, target 220–320; first pass was 396, trimmed twice). All required terms ok (6/6, 12/12).
+  - *Ruling:* Viasat modems worded as "Viasat shipped nearly 30,000 modems" (RF 32 wording), not "replaced" — RF 32 says modems were restorable by factory reset, so "had to be replaced" overstated. Cost if wrong: none.
+  - *Ruling:* the opening does not say "dozens of advisories a week" (my first idea) — no source for that rate. It says "tomorrow another advisory will arrive". Cost if wrong: slightly weaker scene.
+  - *Ruling:* the fictional CISO gets no gendered pronoun (neutral wording throughout).
+  - *Note:* the "we found nothing that predicts…" line in A.0 is an absence-of-claims statement; the streetlight caveat (R23) is stated in A.3.
