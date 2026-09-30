@@ -9052,3 +9052,5152 @@ ALso add compile the discussion in the viva file.
 ✻ Sautéed for 31s · done 7:36 PM
 ```
 <!-- /session: discussion-on-the-world-model -->
+
+<!-- session: completed-v3-drafted-plan-report-draft-next -->
+## 2026-09-30 21:24 — Continue the BAI mid-sem project (company: Periapt). Read HANDOFF.md first,
+
+```text
+❯ Continue the BAI mid-sem project (company: Periapt). Read HANDOFF.md first,   
+  then the files in its §2 read order — at minimum the spec                     
+  (report/specs/2026-09-30-report-draft-design.md) and report/Viva_Prep.md —    
+  before doing anything. Then summarise back to me in a few lines: where we     
+  are, what's pending my approval, and what you'll do next. Don't start         
+  drafting until I approve spec v2. Keep challenging my reasoning honestly; log 
+  any new challenge as Q31+ in the topic report and in Viva_Prep.md.            
+
+  Ran 5 shell commands (ctrl+o to expand)
+
+● Bash(cd "~/ZorinProjects/College/BAI
+      BusinessArtificialIntelligense/MidTerm_Project" && git switch -c
+      docs/spec-rename-errata && python3 - <<'EOF'
+      p='repor…)
+  ⎿  Switched to a new branch 'docs/spec-rename-errata'
+     fc85e6e Merge branch 'docs/spec-rename-errata'
+     69f5daa docs(spec): fix Phylax→Periapt over-rename and stale R6 row
+     … +2 lines (ctrl+o to expand)
+  ⎿  Updated report/specs/2026-09-30-report-draft-design.md (+3 -3)
+       6  
+       7  | Decision | Choice | Note |
+       8  |---|---|---|
+       9 -| Company name | **Periapt**: a protective amulet; echoes *peri
+         -apsis*, an orbit's closest point ("protection at the closest po
+         -int of risk") | Renamed from Periapt after an existing EU AI se
+         -curity firm, Periapt Intelligence, was found (Q30). Deep web ch
+         -eck 2026-09-30: no security/space company named Periapt; only u
+         -nrelated uses (audio cables, AU financial advisory, IL health s
+         -tartup, RPG publisher). |                                      
+       9 +| Company name | **Periapt**: a protective amulet; echoes *peri
+         +apsis*, an orbit's closest point ("protection at the closest po
+         +int of risk") | Renamed from Phylax after an existing EU AI sec
+         +urity firm, Phylax Intelligence, was found (Q30). Deep web chec
+         +k 2026-09-30: no security/space company named Periapt; only unr
+         +elated uses (audio cables, AU financial advisory, IL health sta
+         +rtup, RPG publisher). |                                        
+      10  | Format | Word/PDF doc, 4 pages + 1-page appendix, 2 visuals |
+           Draft in markdown → convert to .docx at the end. |
+      11  | Draft depth | Full prose, **user rewrites in own voice** | Br
+          ief §F prohibits submitting AI text unrevised; viva possible. E
+          very factual sentence carries a source tag `[RF n]` / `[Q n]` i
+          n the draft so it can be defended, and the tags are stripped at
+           conversion. |
+      12  | Jurisdiction | **United States** (main) | India = a one-line 
+          "next market / engineering base" in the vision, backed by a sep
+          arate research task (§7). |
+     ...
+      132  | R3 | Viasat "immaterial" | Fixed: disruption scale + path, n
+           ot dollars | A.1 |
+      133  | R4 | No brick base rate | Fixed: triage speed leads; brickin
+           g = tail risk | A.1 |
+      134  | R5 | Viasat supports the commodity layer | Fixed: ground→spa
+           ce consequence modelling is the differentiator | A.1 |
+      135 -| R6 | World model can't predict new code | Fixed: emulator va
+          -lidates; JEPA scores risk + detects anomalies | A.1 |         
+      135 +| R6 | World model can't predict new code | Fixed: emulator ru
+          +ns the fix; JEPA judges emulator + canary runs against normal 
+          +behaviour (Q26) | A.1 |                                       
+      136  | R7 | Auto-rollback exists (Spire, SpaceX) | Fixed: integrate
+            with existing update managers | A.1, A.3 |
+      137  | R8 | RL vs solver | Fixed: solver + learned ordering (user t
+           o confirm) | A.1 |
+      138  | R9 | Where does the agent act? | Fixed: autonomy table; hold
+            on missing approval | A.4, A.5 |
+     ...
+      173  
+      174  ## 7. Parallel tasks
+      175  - **India research** (Sonnet subagent): mid-size operator coun
+           t under IN-SPACe, security-team maturity, engineering cost bas
+           e, DPDP/IN-SPACe/CERT-In constraints. Output → RF item 32 + ra
+           w/08. Feeds one vision line only.
+      176 -- **Name check**: done (Q30). Periapt, Amyntor and PassWarden 
+          -were taken; Periapt is clear in security/space.               
+      176 +- **Name check**: done (Q30). Phylax, Amyntor and PassWarden w
+          +ere taken; Periapt is clear in security/space.                
+      177  - **SBIR status** (R25): quick check whether SBIR/STTR authori
+           ty is current; one line in A.4 depends on it.
+      178  
+      179  ## 8. v2 changes (from the post-review discussion, TB Q26–Q29)
+
+● I've read HANDOFF, spec v2, Viva_Prep and topic report Q23–Q30. I haven't
+  drafted anything.
+
+  Where we are: the design is finished and no report prose exists yet. The
+  deadline is tomorrow at 23:59.
+
+  What's pending your approval:
+  1. Spec v2 as a whole.
+  2. The planner change: a constraint solver plus learned rollout ordering,
+     replacing "constrained RL".
+
+  What I'll do next, once you approve: write report/Periapt_Report_Draft.md
+  section by section, with every fact tagged [RF n]/[Q n]. In parallel I'll do
+  the quick SBIR status check myself. After that come the visuals and the .docx.
+
+  One fix already made: when the name changed, the find-and-replace also swapped
+  the old name for the new one in two places. The spec said "renamed from
+  Periapt… Periapt Intelligence" where it should say Phylax. The review-matrix
+  row for R6 also still described the pre-Q26 world model. I fixed both on
+  docs/spec-rename-errata and merged it. README.md is still uncommitted and I
+  didn't touch it.
+
+  Where I think the spec is weak, before you approve:
+
+  1. It won't fit in 4 pages. A.1 alone plans a 6-stage architecture, a fix
+     ladder, "what's new", "why teams want it", a three-layer value case,
+     evaluation metrics and a visual, all in about half a page. A.5 is nearly as
+     dense. I'd cut now rather than find out while drafting:
+     - fold the evaluation metrics into the value table;
+     - put the stop rules inside the autonomy table;
+     - reduce the fix ladder to one line;
+     - drop the separate "honest line" sentences, since the four-lens close
+       already collects them.
+  2. The "learned ordering" in the planner contradicts our own R11 point. We
+     concede that spacecraft patch outcomes are rare and mostly successes, so
+     there's almost nothing to learn a rollout order from. Two ways to keep it
+     honest:
+     - rank rollout order by the world model's per-satellite risk score, which
+       needs no outcome labels; or
+     - call it a solver with a canary-first heuristic, and say learning comes
+       later.
+
+     I'd take the first. It keeps the AI in the planner without an unsupported
+     claim.
+  3. Viva gap: "why a JEPA world model and not an ordinary anomaly detector?"
+     Viva_Prep has no answer to this, and a grader who knows ML will ask it. The
+     honest answer is probably: "it learns each satellite's normal behaviour
+     without labels and can compare a simulated run with a real one in the same
+     learned space. A standard detector does part of that." If we can't defend
+     it, the architecture diagram should say "world model (JEPA-style)" and not
+     lean on the name.
+  4. Process: the next step on the plan is the writing-plans stage, which was
+     designed for code and would only restate spec §3 as a task list. With about
+     a day left, I'd skip it and draft directly from the spec. The India
+     research subagent feeds only one vision line, so I'd drop it and write
+     India as an unresearched next-market line.
+
+  I'll log each point you push back on or accept as Q31+ in both the topic
+  report and Viva_Prep, with how it was resolved.
+
+  Your call: approve v2 with or without points 1–4? And which planner wording do
+  you want: solver + risk-score ordering, or solver + learned ordering?
+
+✻ Cogitated for 1m 4s · done 6:49 PM
+
+❯ /superpowers:brainstorming Do a complete fresh review of the spec (on grading 
+components, course concepts, and logical sense). On the quesitons you asked:    
+1) we can fix or do the cutting after we have everything correct and complete   
+first.                                                                          
+2) Can you explain the contradiction that you are saying? And uh, what is the   
+severity? And how does taking any of the two options affects the path that the  
+company would take? Are these the only two options that are available?          
+3) Is JEPA style the only model? I mean, I was thinking that main component is  
+a world model, any style can do. The reason we chose the world model is because 
+it is able to understand and connect various components. It can also connect    
+the RL learning outcomes as well as the digital twin that we have get (or       
+create). We can it can test it on it. Rather than just simple classifiers or    
+LLMs which operate on text, it can it has a better understanding and can also   
+be integrated with with physics engines as well. Is my thinking correct or      
+there is a flaw? Anyway, all the information that will be cut as well as the is 
+an understanding gaps. We can come up and put them in the viva prep itself.     
+The current viva prep is just things that were discussed first, not complete.   
+
+● This is a continuation of the architectural path: I'll review spec v2, answer
+  points 2 and 3, and then write a v3 once you've approved the changes. First I
+  need the rubric and the course materials to review against.
+
+  Ran 6 shell commands (ctrl+o to expand)
+
+● I'm still reading the course decks so the review is checked against what the
+  professor actually taught. Next are the journey, trust, governance, moat and
+  quiz materials.
+
+  Ran 3 shell commands (ctrl+o to expand)
+
+● Course materials done. Now the research record on the planner, the world model
+  and the digital twin, to answer points 2 and 3 properly.
+
+  Ran 4 shell commands (ctrl+o to expand)
+
+● This is a continuation of the architectural path: review now, then the changes
+  you agree to become spec v3, then your approval, then drafting. Nothing gets
+  drafted before that.
+
+  Point 1 noted: we make the spec complete and correct first, and cut to four
+  pages later. Anything cut goes into Viva_Prep. I'll also rebuild Viva_Prep so
+  it covers every section and every gap, not only what has come up in discussion
+  so far.
+
+  ---
+
+  Point 2: the planner contradiction
+
+  The contradiction. In A.1, the spec says a learned policy "improves rollout
+  order from outcomes." Learning from outcomes needs many outcomes, and it needs
+  some failures among them to learn anything. But A.2 (review item R11) says
+  spacecraft patch outcomes are "rare and mostly success" and that their volume
+  is unmeasured. So one section claims the planner learns from a record that the
+  next section says barely exists.
+
+  Severity: medium. It isn't a factual error, and the product still works
+  because the solver guarantees a feasible plan. It's a logic gap under Content.
+  A careful grader, or a viva, asks "learn from what?" and our own A.2 supplies
+  the answer against us.
+
+  There are five options, not two:
+
+  Option: A. Solver + risk-score ordering
+  What the planner is: The solver meets pass/power/staging constraints. The
+  world
+  model's risk score for each satellite decides the order.
+  What it means for the company: Works from day one with no outcome history. The
+
+  AI sits in the risk model, and the planner is ordinary optimisation. Easy to
+  audit, because every plan has a stated reason. The hiring profile is
+  optimisation engineers.
+  ────────────────────────────────────────
+  Option: B. Solver + learned from past outcomes (spec v2)
+  What the planner is: As A, plus a policy trained on the history of past
+  rollouts.
+  What it means for the company: The planner only gets better if outcomes pile
+  up. That means pooling across customers, which is the network effect we made
+  conditional, or waiting years. It ties planner quality to the weakest part of
+   the moat.
+  ────────────────────────────────────────
+  Option: C. Solver + adaptive ordering during a rollout
+  What the planner is: Each wave of the rollout is judged by the world model,
+  and
+  that verdict updates the risk of the remaining satellites. The rest are
+  reordered, slowed or halted.
+  What it means for the company: Learns within each campaign, so it needs no
+  historical labels. It is a real agentic loop (observe → decide → act, as
+  taught in S2–3) and ties the planner to the world model as judge. Cost:
+  harder to explain, and a small fleet gives few waves, so the real power is
+  "slow down or stop on a bad signal".
+  ────────────────────────────────────────
+  Option: D. Constrained RL inside the world model (original lock)
+  What the planner is: A policy trained in simulation.
+  What it means for the company: A research-heavy company with the biggest viva
+  risk: RL exploits the learned model's errors, and the world model is weakest
+  on unseen code (R6, R8).
+  ────────────────────────────────────────
+  Option: E. Solver only
+  What the planner is: No AI in the planner.
+  What it means for the company: The most honest option, but the planner stops
+  being part of the AI story.
+
+  Recommendation: C, starting from A.
+  - The risk score orders the first waves.
+  - Each wave's result, judged by the world model, updates the order of the
+    waves that follow.
+  - Learning from history (B) is stated as a later upgrade that depends on
+    outcomes building up.
+
+  This also fits the moat story ("thin at cold start, grows per customer")
+  instead of contradicting it.
+
+  Point 3: is your world-model reasoning right?
+
+  Your direction is right. You have one flaw, one overreach, and you're missing
+  one argument that is stronger than the ones you listed.
+
+  - "Any style can do": correct. "World model" is the category: a learned model
+    of how a system's state changes over time. JEPA is one family. Others are
+    generative latent-dynamics models (Dreamer-style), physics-informed hybrids,
+    and plain time-series forecasters. The report should say "a learned world
+    model (JEPA-style as our starting design)", then give a one-line reason.
+    JEPA predicts in an abstract embedding space, so it ignores sensor noise
+    (MTS-JEPA, TB Q7).
+  - "Connects various components": partly right. Telemetry does link subsystems
+    inside one satellite (power ↔ thermal ↔ attitude). But it contains nothing
+    about a ground VPN appliance. The link from ground to spacecraft comes from 
+    the exposure graph, not the world model. Giving the world model that job is
+    an overreach.
+  - "Connect the digital twin and test on it": this is the flaw, and it is R6 
+    again. "Digital twin" names two different things:
+    - the manufacturer's emulator, which executes real code and is built from
+      design data (ESA OBSM);
+    - a learned model, which can't run new flight code.
+
+    So the world model can't be where a patch is tested. It sits beside the
+    emulator and judges the run, which is what Q26 settled. Using it to train RL
+    is legitimate in principle (it's how Dreamer works), but it brings back
+    option D and its risks.
+  - "Better than LLMs or simple classifiers": right, but for a stronger reason 
+    than the one you gave. LLMs work on text, while telemetry is numeric time
+    series. That much is true. The decisive argument is different: failures are 
+    rare, so there aren't enough labelled failures to train a classifier. A
+    world model learns normal behaviour from unlabelled telemetry and flags
+    deviation. This turns our own concession (R11) into the justification. It is
+    the best viva line available on this point.
+  - "Integrates with physics engines": plausible, but it pulls against JEPA, and
+    it is unsourced. A JEPA model's state is an abstract embedding, which is
+    harder to couple to a physics engine than a model whose state is physical
+    variables. If physics integration matters to you, "physics-informed hybrid"
+    is the more accurate label. Either way, keep it to the vision line unless we
+    find a source.
+  - The missing argument: forecasting. A world model can predict future 
+    satellite state, such as battery and thermal margin at the next pass
+    windows. That tells the planner which satellites can safely take an update
+    (for example, not in eclipse on a low battery). This is a genuine
+    world-model job that never requires predicting unseen code, and it connects
+    directly to option C. (This is design reasoning, not a sourced fact.)
+
+  Proposed world-model scope for v3: three jobs.
+  1. Learn each satellite's normal behaviour without labels.
+  2. Forecast state at upcoming passes for the planner.
+  3. Judge emulator runs, the canary and each rollout wave.
+
+  Explicitly not: predicting what unseen code will do, and not ground→space
+  reachability (that's the graph's job).
+
+  ---
+
+  Fresh review of spec v2
+
+  Findings are ordered by severity, with the grading component each one affects.
+
+  High
+  1. The rubric puts "Core Product Architecture" under A.2 (Moat), and the spec 
+     puts it in A.1. A grader checking A.2 for "flagship platform's key
+     features" won't find them. Fix: A.1 covers the workflow (what the AI does,
+     and where it is agentic). A.2 opens with the platform (the architecture
+     diagram), then shows how that architecture builds the context graph, which
+     is the moat. (Content)
+  2. Planner contradiction: point 2 above. (Content)
+  3. World-model overreach: point 3 above. (Content)
+  4. The opening scene doesn't hang together. It describes a ground-station
+     flaw, then asks whether the patch is safe to uplink. But a ground flaw is
+     fixed by ordinary IT patching (fix ladder rung 3), with no uplink involved.
+     The scene needs a flaw where both questions are real. For example: a
+     ground flaw that reaches the fleet, where the ground fix is quick but the
+     terminal firmware or on-board component needs an update. (Storytelling)
+
+  Medium
+
+  5. The agentic design isn't described in the course's vocabulary. The spec
+     cites S2–3 but lists six stages without naming the pattern. Fix:
+     - name it a hierarchical orchestration: an orchestrator plus specialist
+       agents (advisory, graph, planner, judge);
+     - map it to perceive → process → decide → act;
+     - show the world model acting as the course's critic/reviewer agent;
+     - cite Parth Garg's reliability patterns (limit steps, validate outputs,
+       critic, retry).
+
+     This is exactly what rubric A.1 "where could agentic AI execute" is looking
+     for. (Content)
+  6. The rubric's "HITL overrides" is missing. The spec has an approval gate,
+     but no mechanism for a human to override the ranking. Add it: overrides are
+     logged with a reason and fed into the context graph, which is a second
+     route for the moat to grow. (Content)
+  7. The trust thread uses only a third of Session 11. The session was titled
+     "Satisfaction, Emotions and Trust". Missing:
+     - emotions are the primary determinant of trusting behaviour (Lee & See).
+       The 2 a.m. scene is fear, and the product's job is to replace it with
+       confidence;
+     - satisfaction means performance exceeds expectations (Oliver), which is
+       the mechanism behind renewal;
+     - reliability and validity are antecedents of trust, which is Q25's
+       definition of reliability.
+
+     (Storytelling + Content)
+  8. Missing course hooks that fit this project almost too well:
+     - The Gartner "pilot trap" (80%+ of AI initiatives stall at pilot): frame
+       the journey as built to escape it, with shadow mode giving measurable
+       proof and then renewal.
+     - The CrowdStrike 2024 bad update (8.5M devices, from the class moat deck):
+       "being deeply embedded cuts both ways" is the best one-line argument for
+       staged rollout and the stop rules.
+     - Morningstar's "intangible assets": the context graph fits that category,
+       so the moat uses the course's full five-source vocabulary.
+     - Shadow AI: staff pasting telemetry into ChatGPT is the concrete risk
+       behind "why not a general assistant", and the self-hosted model is the
+       sanctioned alternative.
+     - The course's "AI agent orchestration" attack vector: state least 
+       privilege, meaning the agents have no route to the uplink at all.
+     - Cruise (audit logs) as the lesson for the audit trail; keep Zillow for
+       drift.
+  9. The Viability lens is incomplete. Session 1 defines Viability as
+     "sustainable economic model while ensuring full regulatory compliance". The
+     spec's close covers economics only. Add EAR/ITAR and CMMC to that lens.
+     (Content, precise course fit)
+  10. Gartner layer placement is muddled. "Layer 6 serving Layer 7" reads oddly.
+      The class deck places CrowdStrike, Palo Alto and Fortinet in Layer 7, and
+      CrowdStrike's Charlotte AI ("helps analysts triage") is Periapt's closest
+      course analogue. Place Periapt in Layer 7 with Charlotte as the reference
+      point. Note that Periapt must also apply Layer-7 protections (TRiSM) to
+      its own LLM.
+  11. The "why now" has no source. "Satellites becoming software-defined"
+      appears in Viva_Prep but not in Research_Findings; it has only a
+      trade-magazine link in the topic report. Either source it or cut it.
+  12. The visual count is inconsistent. The spec says 2 visuals, but A.4 names a
+      persona card. Presentation is worth 4 marks, and a text-heavy 4 pages is
+      a risk. Propose 3 visuals: the loop diagram, the Five Forces table, and a
+      persona card combined with a journey strip. The autonomy table is a table,
+      not a visual.
+  13. None of the references are about AI. The four key references are
+      space/cyber policy plus SIA. Swap NIST IR 8270 (which R35 says still needs
+      verifying) for the NIST AI RMF 1.0: it is primary, AI-centred, and the
+      backbone of the US jurisdiction section.
+
+  Low
+
+  14. "4 teams → 1 flow" reads like replacing teams, which fights the copilot
+      positioning. Reword to "four handoffs → one shared plan".
+  15. Too much hedging for a persuasive story. The brief asks for a "compelling
+      story", and the professor says "dream big". Currently every section plans
+      an honest-weakness line and the close gathers them again. Proposal: at
+      most one in-body hedge per section, the real weaknesses in the four-lens
+      close, and the full concession list in Viva_Prep.
+  16. Bookend the story. Resolve the 2 a.m. scene again at the very end, not
+      only in A.1's before/after.
+  17. Optional: use the streetlight effect (Porter deck) to frame the R23 caveat
+      ("we searched where the light is: public claims").
+
+  Checked and fine: brand, the persona label and its grounding, Diffusion of
+  Innovation, Lemon & Verhoef plus Puntoni, the niche/Thiel strategy, B2B/B2G,
+  the appendix plan, the number rules, and full R1–R35 coverage.
+
+  ---
+
+  Your call: do you approve these as the v3 changes? That means option C for the
+  planner (starting from A), the three-job world-model scope, and findings
+  1–17. Or tell me which to change. Once you decide, I'll log your two questions
+  as Q31 (planner) and Q32 (world model), with their outcomes, in both the
+  topic report and Viva_Prep. Then I'll write v3.
+
+✻ Sautéed for 3m 42s · done 7:06 PM
+
+❯ let's hold on uh, what was the original problem statement that we were going  
+  to solve and what was the original aim of the company and how did we          
+  originally planned to use AI in this?                                         
+
+  Ran 1 shell command (ctrl+o to expand)
+
+● Here is the original version, from topic report §0, §3 and Q6–Q8, all dated 17
+  Sept.
+
+  The original problem statement
+
+  The listed topic: "Day-Zero Vulnerability Prioritisation (Predictive ML):
+  autonomous systems scanning, scoring, and prioritising unpatched security
+  flaws in critical infrastructure."
+
+  We chose satellites because generic vulnerability management failed the "no
+  existing company" rule; Tenable, Qualys and Palo Alto already do it. The
+  original problem (Stage 3, later written up in §7.1) was:
+
+  ▎ Satellite operators carry a growing backlog of known flaws, and they can't 
+  ▎ patch satellites like laptops. Uplinks are limited to ground-station pass 
+  ▎ windows and power budgets, a bad patch can brick a satellite, and triage is 
+  ▎ slow manual work.
+
+  It was orbit-only at first. Q8 widened it to the whole mission (ground →
+  network → link → spacecraft → terminals) after the Viasat case showed that the
+  real attack path started on the ground.
+
+  The original aim of the company
+
+  §7.2: decide which flaws matter, what the safest fix is, when and where to 
+  apply it, and whether it worked, with humans approving every in-orbit action.
+  The Q6 pitch was "an AI security analyst for satellite fleets". Its core idea
+  was that combining existing vendors gives you three tools with nobody making 
+  the decision, and that decision layer is the product.
+
+  How we originally planned to use AI, in three stages
+
+  1. Stage 3 (first idea): a patch scheduler with digital-twin testing and
+     staged rollout. The AI wasn't really specified.
+  2. Q6. You asked, "how is this centred on AI?" I conceded that scheduling is
+     optimisation and a twin is simulation, not AI. The AI was re-centred on
+     five things:
+     - an LLM agent that reads advisories and maps flaws to components;
+     - predictive ML for in-orbit exploitability;
+     - predictive ML for patch risk;
+     - agentic orchestration;
+     - anomaly detection for rollback.
+  3. Q7. You asked, "why not JEPA or a custom RL architecture?" That added:
+     - a JEPA world model meant to predict patch effects (a "learned digital
+       twin");
+     - a constrained RL planner trained inside it.
+
+     That became the §0 pitch: "a world model that predicts how a vulnerability,
+     or a patch, will change a satellite's behaviour; a safety-bounded RL agent
+     plans the rollout."
+
+  What I notice looking back (honest observation)
+
+  - We've come nearly full circle. The red-team review (R6, R8) took apart
+    exactly the two things Q7 added: predicting patch effects, and RL for the
+    planner. The architecture I recommended just now (risk scoring + solver +
+    world model as judge) is essentially the Q6 version plus a world model in a 
+    narrower role. The overreach came in at Q7, not at the start.
+  - We've drifted from the listed topic. The topic is prioritisation with 
+    predictive ML. In Q26 we conceded that "scoring already exists" and moved
+    the product to "the whole flaw → safe-fix flow". Scoring became a supporting
+    step, and the world model and planner took the spotlight. A TA checking the
+    report against the listed topic wants to see predictive prioritisation as 
+    the core. Right now the spec treats it as step 3 of 6. I'd count this as a
+    real risk to Content, and it's bigger than anything in my 17-point review.
+
+  If you agree, v3 could re-centre on the original aim. The core would be
+  predictive prioritisation: which flaws matter for this fleet, given
+  ground→space reachability and predicted exploitability. The safe-fix flow
+  would then be how that prioritisation turns into action, and the world model
+  would be the safety net. That matches the listed topic, the Q6 "decision
+  layer" idea, and what survived the review.
+
+  Is that where you were heading, or did you have something else in mind?
+
+✻ Crunched for 37s · done 7:14 PM
+
+※ recap: We're settling spec v3 for the Periapt report before drafting, and I suggested putting predictive prioritisation back at the core, which is what the listed topic asks for. Next, tell me whether that matches your intent or where you were heading instead. (disable recaps in /config)
+
+❯ in one paragraph in simple words exactly tell me how is this the current      
+  state of the project and the goal implementation and scope is different from  
+  the original aim scope and the implementation that we thought of.             
+
+● We started out to build an AI that, for a satellite operator, decides which
+  known security flaws matter most, the safest way to fix each one, and when to
+  fix it. Humans would approve every change sent to a satellite. At first this
+  covered only the satellites. The AI had three parts: a language model that
+  reads security advisories, prediction models that score how dangerous each
+  flaw is, and later a "world model" that would predict what a patch does to a
+  satellite, plus a reinforcement-learning planner to schedule the rollout. The
+  scope has since grown from the satellites alone to the whole mission (ground
+  stations, networks, radio links, satellites and user terminals). The goal has
+  shifted from "decide what to fix" to "run the whole process from a known flaw
+  to a safely installed fix", as a copilot that helps the existing teams.
+  Meanwhile the AI claims have shrunk. The world model no longer predicts what a
+  patch will do. It only judges test runs and live rollouts against how the
+  satellite normally behaves, because a model trained on past behaviour can't
+  predict what new code will do. The reinforcement-learning planner is being
+  replaced by an ordinary scheduling solver with a smaller learned part. Several
+  claims were dropped: the cross-operator data-sharing moat, manufacturer
+  partnerships, legal pressure to buy, and revenue figures. The net effect is a
+  wider product whose AI promises less, and the flaw ranking, which is what the
+  assigned topic ("vulnerability prioritisation") is about, has been pushed into
+  a supporting role when it should be the centre.
+
+✻ Baked for 7s · done 7:19 PM
+
+❯ This is the problem that jargons and extensive language eats up. Okay, from   
+  now on, simple language, to the point answers. This is the rule.              
+                                                                                
+  - the original workflow was reading security advisories, scoring how          
+  dangerous each flaw is, then predict what would happen, and then plan the     
+  rollout as well as rollback. during the research which of these was not       
+  feasible and why?                                                             
+  - the current structure and scope is we have a way big scope and we cannot    
+  fulfill that scope as well as main objective was to center it around AI and   
+  we are making it a secondary option which is exactly opposite of what has to  
+  be done.                                                                      
+                                                                                
+  I had a discusion and study it as well  @"Discussion on the World model.txt"  
+                                                                                
+  /superpowers:brainstorming how can we bring the scope back to centered around 
+  AI and if possible back to the niche scope of the original problem that we    
+  thought of solving not this wide scope of flawed claims.                      
+  ⎿  Read Discussion on the World model.txt (334 lines)
+
+  Ran 1 shell command, wrote 1 memory (ctrl+o to expand)
+
+● I've saved the simple-language rule, and I'll follow it from now on.
+
+  1. What in the original workflow didn't work, and why
+
+  Step: Read security advisories (LLM)
+  Works?: Yes
+  Why: One catch: it needs a parts list for each satellite, and most operators
+  don't have one. We'd have to build it at onboarding.
+  ────────────────────────────────────────
+  Step: Score how dangerous each flaw is
+  Works?: Yes
+  Why: One open risk: danger scores learned from normal IT systems may not carry
+
+  over to satellites. It can be tested.
+  ────────────────────────────────────────
+  Step: Predict what a flaw would do
+  Works?: Yes
+  Why: That's what prioritising a flaw means.
+  ────────────────────────────────────────
+  Step: Predict what a patch would do
+  Works?: No
+  Why: A patch is new code. A model trained on the satellite's past behaviour
+  has
+  never seen that code, so it can't know what it will do. Only the
+  manufacturer's emulator, which actually runs the code, can show that.
+  ────────────────────────────────────────
+  Step: Plan the rollout
+  Works?: Yes, but not with RL
+  Why: Pass windows and battery limits are fixed rules, and a normal scheduling
+  solver handles them exactly. RL needs lots of past outcomes to learn from,
+  and we don't have them.
+  ────────────────────────────────────────
+  Step: Rollback
+  Works?: Works, but it isn't ours
+  Why: Spire and SpaceX already sell it. A patch that breaks the satellite's
+  radio can't be rolled back at all.
+
+  So only two things actually failed: predicting what a patch does and using RL 
+  for the planner. Everything else worked. What made the scope wide was the
+  fixes for those two failures (the emulator judge, the solver, whole-mission
+  coverage, rollout tooling), not the original idea.
+
+  2. Your diagnosis
+
+  I agree. The scope grew to "everything from flaw to fix across the whole
+  mission", and the AI became a helper inside it. That's backwards for a course
+  about AI, and for a topic called "vulnerability prioritisation".
+
+  One pushback: the ground→satellite path (Viasat) is real and sourced. Keep it
+  as one input ("can this ground flaw reach the satellites?"). Don't make it a
+  separate product area.
+
+  3. How to re-centre on AI
+
+  This is a spec rewrite, so the full path applies: agree the approach, write
+  spec v3, you approve it, then drafting.
+
+  A. Pure prioritiser (the narrowest). The AI answers one question: which flaws 
+  on this fleet matter most, and why?
+  - The LLM reads advisories and finds the affected satellites.
+  - An ML model scores how likely each flaw is to be used by an attacker.
+  - The world model scores how badly the satellite would suffer if it were.
+  - Output: a ranked list with reasons. Humans and existing tools do the fixing.
+
+  B. Prioritiser + safety check (recommended). A, plus one extra job for the
+  same world model: watch the first satellite that gets a fix and flag anything
+  that looks wrong. That's the layered check from your discussion file (limits →
+  comparing runs → learned model). Rollout and rollback stay with existing
+  tools such as Spire's.
+
+  C. Keep the current wide scope. Not recommended, for the reason you gave.
+
+  Why B, and the key idea behind it. In A and B the world model gets its
+  original job back: "predict what would happen". This time it predicts what a
+  flaw would do, not what a patch would do. A world model learns "state +
+  command → next state". An attacker exploiting a flaw is, in effect, sending
+  the satellite commands. So the model can play out "if someone sends these
+  commands, does the satellite lose power or pointing?" That makes it the core
+  of the ranking instead of a safety net. The limit to state honestly: the
+  attacker's commands may be ones the model has never seen. That's a hypothesis
+  to test, not a proven fact.
+
+  What gets cut from scope: patching ground IT systems, terminals as a separate
+  product area, building rollout and rollback, and planner detail.
+
+  Your call: A, B, or something else?
+
+✻ Cooked for 47s · done 7:41 PM
+
+❯ /superpowers:brainstorming Did you read the discussion I had about the world  
+models? In that we came up with a layered approach. What do you think of that?  
+- The scope cutting is making sense it was not included in the original Problem 
+statement.                                                                      
+- I don't want the thing we built to be making fancy decisions that can be done 
+with simple software that is already existing and that turn out to be useless   
+the value that would be outputted is not worth the cost to switch. in prior     
+prioritizer I feel like that is the case that would be happening even if we     
+proceed with our plan the things that you have learned are already easily done  
+by humans that the company has employed as well as the software in combination  
+making our pro procedure just a replacement and not worth to risk everything    
+out.                                                                            
+- Same goes for prioritizer or plus safety check. After all, prioritizer is in  
+essence a replacement for humans with software combination.                     
+                                                                                
+the goal is the original problem statement was there we just needed to assist   
+the ones performing these things and tying them all up using AI.                
+
+● Yes, I read it. This is still the full spec-rewrite path: we agree the idea
+  here, then I write spec v3, and you approve it.
+
+  The layered approach
+
+  It's good, and it works. Cheap checks come first: limit alarms and comparing
+  the patched run with the unpatched run. The learned model only covers what
+  those miss (slow drift, or several readings that are each fine but wrong
+  together).
+
+  It also proves your point. Most of that safety check is done by simple tools 
+  operators already have. On its own it isn't worth switching for, so keep it as
+  one part of the product and don't sell it as the product.
+
+  Your concern about replacement
+
+  You're right. A prioritiser and a safety check both do jobs the teams and
+  their tools already do. That's replacement, and nobody takes that risk for a
+  small gain.
+
+  One pushback. "Tying the teams together" can also be done without AI, with a
+  ticket or workflow tool like Jira. So the AI has to do something at each
+  handoff that a ticket tool can't. Here is what that looks like:
+
+  Person: Security analyst
+  What they do today: Reads advisories and works out which satellites are
+  affected
+  What the AI does for them: Reads the advisory, finds the affected satellites
+  and parts, and shows its sources
+  Who decides: Analyst
+  ────────────────────────────────────────
+  Person: Flight-software engineer / manufacturer
+  What they do today: Gets a vague request and digs up context
+  What the AI does for them: Gets a ready case: which satellites, which software
+
+  version, what the flaw touches. After the test run, the AI shows only the
+  changes nobody expected
+  Who decides: Engineer
+  ────────────────────────────────────────
+  Person: Mission ops
+  What they do today: Plans uplinks around passes and battery
+  What the AI does for them: Gets draft schedules. The world model predicts
+  which
+  satellites will have battery and thermal margin at each pass, then watches
+  every channel during the rollout
+  Who decides: Ops
+  ────────────────────────────────────────
+  Person: Everyone
+  What they do today: Knowledge leaves when people leave
+  What the AI does for them: One shared case file: every decision, the reason
+  for
+  it, and what happened
+  Who decides: —
+
+  The AI reads, translates between the teams, drafts, predicts and watches.
+  Every person still makes their own decision. It works the way GitHub Copilot
+  does: the developer still writes the code.
+
+  On switching cost: it plugs into the tools they already use, like their ticket
+  system, telemetry and parts lists. Nobody has to switch anything, so the
+  value only needs to beat a small setup cost, not a full migration.
+
+  Honest note: this is our earlier "copilot" idea (Q27). It got buried under the
+  big scope. The difference now is a narrow scope (satellite patching only,
+  with ground flaws only as the way in) and AI at every handoff.
+
+  One check before I go further
+
+  Is this the goal? A copilot for the three teams (security, flight software, 
+  mission ops) on satellite patching. The AI does the reading, translating, 
+  drafting, predicting and watching, and each team keeps its own decision. Yes,
+  or correct me.
+
+✻ Crunched for 31s · done 7:53 PM
+
+❯ is it still like I get the goal but is the goal still in the category of the  
+  topic predictive day zero vulnerability ml and something like that is it      
+  still in that category because I feel like this is no in that.                
+
+● Your instinct is right. The goal as I wrote it last is only partly inside the
+  topic.
+
+  Checking it against the topic's own words
+
+  The topic: "Autonomous systems scanning, scoring, and prioritising unpatched 
+  security flaws in critical infrastructure (Predictive ML)."
+
+  ┌────────────────────────┬──────────────────────────┬────────────────────┐
+  │       Topic word       │ The copilot I described  │       Fits?        │
+  ├────────────────────────┼──────────────────────────┼────────────────────┤
+  │                        │ The AI reads advisories  │                    │
+  │ Scanning               │ and finds the affected   │ Yes                │
+  │                        │ satellites               │                    │
+  ├────────────────────────┼──────────────────────────┼────────────────────┤
+  │ Scoring / predictive   │ Barely there; it was     │ Weak               │
+  │ ML                     │ hidden behind "drafting" │                    │
+  ├────────────────────────┼──────────────────────────┼────────────────────┤
+  │ Prioritising           │ Not the centre; the      │ No                 │
+  │                        │ table was about handoffs │                    │
+  ├────────────────────────┼──────────────────────────┼────────────────────┤
+  │ Unpatched flaws,       │                          │                    │
+  │ critical               │ Satellites               │ Yes                │
+  │ infrastructure         │                          │                    │
+  ├────────────────────────┼──────────────────────────┼────────────────────┤
+  │                        │                          │ OK, since the      │
+  │ Autonomous             │ Assists; humans decide   │ topic allows       │
+  │                        │                          │ humans to approve  │
+  └────────────────────────┴──────────────────────────┴────────────────────┘
+
+  The last version drifted towards fixing (handoffs, schedules, watching
+  rollouts). The topic is about deciding what to fix first.
+
+  How to get both
+
+  Your goal (assist, don't replace) and the topic (predictive prioritisation)
+  don't conflict. They're two layers of the same product:
+
+  - The core is predictive prioritisation, which fits the topic. For each flaw,
+    the ML predicts four things and turns them into one ranked list with
+    reasons:
+    a. Will attackers use it?
+    b. Can it reach the satellites (for example, from a ground station)?
+    c. What would it do to this satellite? This is the world model's job.
+    d. How hard or risky is it to fix (passes, battery)?
+  - The delivery is a copilot, which is your goal. The ranking is a starting 
+    point the humans check, not a verdict. Each team sees its own part: security
+    sees the "why", flight software the "what", and ops the "when".
+  - The fixing steps (schedule, safety check) stay small. They come after the
+    ranking and are not the product.
+
+  Why this isn't just replacing people: existing tools already score flaws for
+  normal IT, but none predicts what a flaw does to a satellite. Today people
+  work that out by hand, across three teams. The AI gives them a ranked,
+  explained starting point, and they still decide.
+
+  Is this the goal: predictive prioritisation as the core, delivered as a 
+  copilot, with fixing kept small? Yes, or correct me.
+
+✻ Brewed for 17s · done 7:56 PM
+
+※ recap: We're refocusing Periapt on AI that predicts which satellite flaws to fix first, helping the teams rather than replacing them. Next, please confirm that goal so I can write spec v3. (disable recaps in /config)
+
+❯ the thing that we are building would be an autonomous system that will be     
+  scanning, scoring and prioritizing but at each stage there will be a human    
+  intervention so is it autonomous ?                                            
+
+● If a human had to step in at every stage, then no. That's a tool, not an
+  autonomous system. So don't design it that way.
+
+  What makes a system autonomous is whether it can do the work on its own, not
+  whether a human is ever involved. The line is simple:
+
+  ┌────────────────────────┬───────────────────┬───────────────────────────┐
+  │         Stage          │ Changes anything  │        Who runs it        │
+  │                        │ on the satellite? │                           │
+  ├────────────────────────┼───────────────────┼───────────────────────────┤
+  │ Scan (read advisories, │                   │                           │
+  │  find affected         │ No                │ The AI, on its own, 24/7  │
+  │ satellites)            │                   │                           │
+  ├────────────────────────┼───────────────────┼───────────────────────────┤
+  │ Score (predict danger  │ No                │ The AI, on its own        │
+  │ and impact)            │                   │                           │
+  ├────────────────────────┼───────────────────┼───────────────────────────┤
+  │ Prioritise (rank, with │                   │ The AI, on its own. It    │
+  │  reasons)              │ No                │ re-ranks as soon as a new │
+  │                        │                   │  advisory arrives         │
+  ├────────────────────────┼───────────────────┼───────────────────────────┤
+  │ Fix (any change to a   │ Yes               │ A human approves first    │
+  │ satellite)             │                   │                           │
+  └────────────────────────┴───────────────────┴───────────────────────────┘
+
+  - Scan, score and prioritise are fully autonomous. They're safe because they
+    only produce information, and these are exactly the topic's three verbs.
+  - Humans supervise without stepping in at each stage. They can check or
+    override the ranking at any time, and the system keeps running whether they
+    look or not. This is called "human on the loop".
+  - A human gives hard approval at one point: before anything touches a 
+    satellite. This is called "human in the loop".
+
+  So the honest description is: autonomous in deciding what matters, with a 
+  human approving every action on a satellite. That fits the topic's
+  "autonomous" and the course's governance rule (humans in the loop for
+  high-stakes actions), and it gives you a clean answer for the rubric's "where
+  is human oversight needed".
+
+  Do you agree with this split: autonomous up to the ranking, human approval 
+  only before a satellite is touched?
+
+✻ Brewed for 13s · done 8:00 PM
+❯ /effort                                                                       
+  ⎿  Set effort level to max (this session only): Maximum capability with
+     deepest reasoning. May use excessive tokens resulting in long response
+     times or overthinking. Use sparingly for the hardest tasks.
+
+❯ /superpowers:brainstorming Now everything looks like it is coming together.   
+But just once I want to review the whole conversation, the whole scope and the  
+revised thing. Because I don't have the time to do the correction and digging   
+again. do hard scoring against the grading components, the concepts, as well as 
+the topic description and listings. verification of the scopes and the claims   
+that we are putting out.                                                        
+
+● I'll do this properly. First I'll check the topic listing, the rest of the
+  research file and the competitor record, because narrowing the scope changes
+  which claims matter.
+
+  Ran 4 shell commands (ctrl+o to expand)
+
+● The core is now prioritisation, so the originality check has to be redone
+  against prioritisation specifically. I'll load web search and verify the new
+  claims.
+
+● Web Search("CT Cubed "Terrain Trace" cyber risk assessment AI")
+  ⎿  Did 1 search in 4s
+
+● Web Search("AI vulnerability prioritization platform for satellite operators
+            spacecraft startup 2026")
+  ⎿  Did 1 search in 8s
+
+● Web Search("satellite digital twin cyberattack impact assessment malicious
+            telecommand simulation research paper")
+  ⎿  Did 1 search in 8s
+
+● Web Search("FIRST EPSS Exploit Prediction Scoring System probability
+            exploitation next 30 days")
+  ⎿  Did 1 search in 6s
+
+● Web Search("Viasat KA-SAT attack overview misconfiguration VPN appliance
+            management segment official statement")
+  ⎿  Did 1 search in 6s
+
+● Web Search("Hundman 2018 detecting spacecraft anomalies using LSTMs
+            nonparametric dynamic thresholding KDD")
+  ⎿  Did 1 search in 6s
+
+● Fetch(https://ctcubed.com/)
+  ⎿  Received 125KB (200 OK)
+
+● Fetch(https://aerospace.org/press-release/aerospace-and-google-public-sector-c
+       ollaborate-modernize-satellite-anomaly-resolution)
+  ⎿  Received 0 bytes (403 Forbidden)
+
+● Fetch(https://arxiv.org/abs/2603.10388)
+  ⎿  Received 42.3KB (200 OK)
+
+● Fetch(https://swri.org/node/11277091)
+  ⎿  Received 0 bytes (404 Not Found)
+
+● Web Search(""Terrain Trace" ctcubed")
+  ⎿  Did 1 search in 4s
+
+● Web Search("Aerospace Corporation Google Public Sector satellite anomaly
+            resolution AI collaboration announced")
+  ⎿  Did 1 search in 6s
+
+● Fetch(https://arxiv.org/abs/2603.10388v1)
+  ⎿  Received 42.3KB (200 OK)
+
+● The searches changed three things, so I'm confirming the two most important
+  claims against their primary sources before writing anything down.
+
+● Fetch(https://www.first.org/epss/)
+  ⎿  Received 26.2KB (200 OK)
+
+● Fetch(https://www.viasat.com/perspectives/corporate/2022/ka-sat-network-cyber-
+       attack-overview/)
+  ⎿  Received 211.9KB (200 OK)
+
+  Ran 1 shell command (ctrl+o to expand)
+
+● I'll save the confirmed facts to the research file, add your challenges as
+  Q31–Q38 in the topic report with defend-ready answers in Viva_Prep, and fix
+  the Viasat wording while adding a warning in HANDOFF to prevent a new session
+  from drafting off spec v2.
+  Ran 1 shell command (ctrl+o to expand)
+
+● Bash(cd "~/ZorinProjects/College/BAI
+      BusinessArtificialIntelligense/MidTerm_Project" && python3 - <<'EOF'
+      p='research/Research_Findings.md'…)
+  ⎿  1029d01 docs(research): add item 32 verification pass for re-centred c
+     oncept
+  ⎿  Updated research/Research_Findings.md (+13 -0)
+      174  
+      175  ---
+      176  
+      177 +**Item 32 — Verification pass for the re-centred concept (2026
+          +-09-30 evening; topic report Q38) [primary unless tagged]**   
+      178 +Run after the scope was cut back to predictive prioritisation 
+          +(Q34–Q36). Checks the claims the new core leans on.           
+      179 +- *Viasat root cause (corrects the wording in TB Q25 and Viva_
+          +Prep):* "a ground-based network intrusion by an attacker **exp
+          +loiting a misconfiguration in a VPN appliance** to gain remote
+          + access to the trusted management segment". The attacker then 
+          +"used this network access to **execute legitimate, targeted ma
+          +nagement commands** on a large number of residential modems si
+          +multaneously", overwriting key data in modem flash. "No eviden
+          +ce… that the KA-SAT satellite itself or its supporting satelli
+          +te ground infrastructure… were directly involved, impaired or 
+          +compromised." Modems were "not permanently unusable" (restorab
+          +le by factory reset); Viasat "shipped nearly 30,000 modems". →
+          + It was a **misconfiguration, not an unpatched flaw**, and the
+          + spacecraft was never touched. Usable as: ground access → legi
+          +timate commands → mass harm.                                  
+      180 +- *EPSS already predicts exploitation:* "a data-driven machine
+          +-learning model that estimates the probability that a publishe
+          +d CVE will be exploited in the wild in the next 30 days", main
+          +tained by FIRST's EPSS SIG and "published freely". → "Will att
+          +ackers use it?" is an existing, free input for CVEs, not Peria
+          +pt's novelty.                                                 
+      181 +- *Learned spacecraft telemetry models exist:* Hundman et al.,
+          + "Detecting Spacecraft Anomalies Using LSTMs and Nonparametric
+          + Dynamic Thresholding" (NASA JPL; ACM KDD 2018). LSTMs learn n
+          +ormal behaviour "using encoded command information and prior t
+          +elemetry values" on SMAP and the Curiosity rover (MSL). → A pr
+          +ecedent for a learned "state + command → next state" model, an
+          +d the baseline for the world-model test. A peer-reviewed, AI-c
+          +entred reference candidate.                                   
+      182 +- *Attack-impact simulation on satellites exists in research, 
+          +with physics simulators:* Vanlyssel, Roman and Anwar, "Silent 
+          +Subversion: Sensor Spoofing Attacks via Supply Chain Implants 
+          +in Satellite Systems" (arXiv 2603.10388, 11 Mar 2026) demonstr
+          +ates an attack end to end in NASA's NOS3 simulator (physics-ba
+          +sed, not learned). → "Nobody simulates attack impact" would be
+          + false. Claim only that no one publicly offers it automaticall
+          +y, per satellite, from live data, to rank flaws (absence of cl
+          +aims, not proof of absence).                                  
+      183 +- *New adjacent: Aerospace Corp + Google Public Sector (April 
+          +2026) [secondary + press release]:* an agentic-AI proof of con
+          +cept on Vertex AI that monitors every satellite in proliferate
+          +d-LEO constellations for behavioural anomalies, moving "beyond
+          + static threshold alarms", and suggests root causes. → Fleet m
+          +onitoring is being built by the FFRDC that owns SPARTA/SPARTEN
+          +D. Name it in rivalry/new entrants; keep monitoring out of Per
+          +iapt's core (it also sits near the sibling topic "Spacecraft M
+          +ission Operations… telemetry analytics").                     
+      184 +- *CT Cubed today:* homepage lists tactics (security assessmen
+          +ts, penetration testing), training, and custom cyber ranges. *
+          +*"Terrain Trace" was not found** (site or web search, 2026-09-
+          +30); treat the "AI risk assessment" description in item 10/13 
+          +as unverified. Keep IRON GALAXY named (originality rule).     
+      185 +- *Reminder (item 30):* space is **not** one of the 16 CISA cr
+          +itical-infrastructure sectors. Word the topic fit as "infrastr
+          +ucture that critical sectors depend on" (Viasat → ~5,800 wind 
+          +turbines, item 4); the EU does list space (NIS2, item 2).     
+      186 +Sources: [Viasat KA-SAT overview](https://www.viasat.com/persp
+          +ectives/corporate/2022/ka-sat-network-cyber-attack-overview/) 
+          +· [GovInfoSecurity (secondary)](https://www.govinfosecurity.co
+          +m/viasat-traces-outage-to-exploit-vpn-misconfiguration-a-18815
+          +) · [FIRST EPSS](https://www.first.org/epss/) · [Hundman et al
+          +. 2018 (arXiv)](https://arxiv.org/abs/1802.04431) · [Silent Su
+          +bversion (arXiv)](https://arxiv.org/abs/2603.10388) · [Aerospa
+          +ce press release](https://aerospace.org/press-release/aerospac
+          +e-and-google-public-sector-collaborate-modernize-satellite-ano
+          +maly-resolution) · [Military & Aerospace Electronics (secondar
+          +y)](https://www.militaryaerospace.com/communications/news/5538
+          +7527/aerospace-and-google-collaborate-on-ai-for-satellite-oper
+          +ations) · [CT Cubed](https://ctcubed.com/)                    
+      187 +                                                              
+      188 +---                                                           
+      189 +                                                              
+      190  ## Open items still needing action before drafting
+      191  
+      192  1. Directly re-read NIST IR 8270/8401 PDFs (fetch tool couldn'
+           t render them as text this session) to pull verbatim control l
+           anguage for item 20/29 citations.
+
+● Bash(cd "~/ZorinProjects/College/BAI
+      BusinessArtificialIntelligense/MidTerm_Project" && python3 - <<'EOF'
+      p='topic/Topic_Brainstorm_Report.md'…)
+  ⎿  35c96c1 docs(topic): log Q31-Q38 re-centring challenges and correct Vi
+     asat wording
+  ⎿  Updated topic/Topic_Brainstorm_Report.md (+85 -1)
+      313  **Origin of doubt:** review R29 (liability unresearched; TB §9
+           .4 Q23 open) and the rollback step in the architecture.
+      314  **Reasoning:**
+      315  - *The premise is the error:* no safety-critical industry (avi
+           ation, medicine, nuclear) claims complete testing. They assume
+            failures will happen and design to **detect them early, limit
+            the damage and recover**. A rollback plan signals maturity. A
+            vendor claiming it needs none would be the untrustworthy one.
+      316 -- *Operators already expect it:* Planet runs ground test → on-
+          -orbit staging → fleet, with an "un-spaceworthy" reject path. S
+          -pire's tool has automated rollbacks (RF item 31). SpaceX uses 
+          -canary plus auto-rollback with zero losses reported (secondary
+          - source, review R21). Not patching is also a risk (Viasat was 
+          -an unpatched ground-side flaw).                               
+      316 +- *Operators already expect it:* Planet runs ground test → on-
+          +orbit staging → fleet, with an "un-spaceworthy" reject path. S
+          +pire's tool has automated rollbacks (RF item 31). SpaceX uses 
+          +canary plus auto-rollback with zero losses reported (secondary
+          + source, review R21). Not acting on ground-side weaknesses is 
+          +also a risk (Viasat's entry point was a misconfigured ground V
+          +PN appliance; *corrected 2026-09-30, Q38: it was not an unpatc
+          +hed flaw*).                                                   
+      317  - *The user's real point, sharper than R29:* undo only works i
+           f the satellite is still listening. A patch that breaks the co
+           mmand receiver or boot path **cannot be undone from the ground
+           **.
+      318  **Conclusion:** reliability in this sector means **failures th
+           at are rare, caught at the canary stage and recoverable**, not
+            zero failures. Unrecoverable failure classes must be *prevent
+           ed*, not undone:
+      319  - never auto-schedule changes touching the command, boot or au
+           thentication path;
+     ...
+      362  **Conclusion:** renamed to **Periapt**, a protective amulet th
+           at echoes *periapsis*, an orbit's closest point ("protection a
+           t the closest point of risk"). Test applied: *no security/spac
+           e company uses the name, and nothing a TA finds could be confu
+           sed with the idea.*
+      363  **Lesson:** a quick search isn't a name check. Amyntor passed 
+           the quick search and failed the deep one.
+      364  
+      365 +*Q31–Q38 come from the spec-v2 review session (2026-09-30, eve
+          +ning). They cut the scope back to the original problem and put
+          + AI back at the centre. Q33 comes from my separate study sessi
+          +on, saved as `Discussion on the World model.txt`.*            
+      366 +                                                              
+      367 +### Q31. "Is JEPA-style the only kind of world model? I chose 
+          +a world model because it can understand and connect the compon
+          +ents, link RL outcomes and the digital twin, test on it, and p
+          +lug into physics engines, unlike classifiers or LLMs that work
+          + on text. Is my thinking right?"                              
+      368 +**Origin of doubt:** spec v2 named a JEPA world model as the j
+          +udge of test runs, and I wasn't sure the style mattered.      
+      369 +**Reasoning:**                                                
+      370 +- *Right:* "world model" is the category (a learned model of h
+          +ow a system's state changes). JEPA is one family; others are D
+          +reamer-style models, physics-informed hybrids and plain foreca
+          +sters. JPL already learns spacecraft telemetry from commands a
+          +nd past values with LSTMs (Hundman et al. 2018, RF item 32).  
+      371 +- *Right:* telemetry is numbers over time, not text, so an LLM
+          + is the wrong tool for it.                                    
+      372 +- *Flaw 1:* telemetry links subsystems inside one satellite, b
+          +ut it holds nothing about ground networks. The ground→space li
+          +nk comes from the exposure graph, not the world model.        
+      373 +- *Flaw 2:* it can't test new code. "Digital twin" names two d
+          +ifferent things: the manufacturer's emulator runs code, a lear
+          +ned model can't (R6, Q26).                                    
+      374 +- *Overreach:* coupling to a physics engine is harder for JEPA
+          +, whose state is an abstract embedding. Unsourced, so vision l
+          +ine only.                                                     
+      375 +- *A stronger reason than mine:* failures are rare, so there a
+          +ren't enough labelled failures to train a classifier. A world 
+          +model learns normal behaviour from unlabelled data.           
+      376 +**Conclusion:** call it "a learned world model (JEPA-style as 
+          +the candidate)". Its jobs were set in Q34–Q36: predict what a 
+          +flaw would do to each satellite, and forecast battery/thermal 
+          +margin. It does not predict what new code does, and it does no
+          +t trace ground→space reach.                                   
+      377 +**Change:** spec v3.                                          
+      378 +                                                              
+      379 +### Q32. "Explain the planner contradiction. How severe is it,
+          + how does each option change the company's path, and are there
+          + only two options?"                                           
+      380 +**Origin of doubt:** Claude's review of spec v2 (R8, R11).    
+      381 +**Reasoning:** v2 said a learned policy improves rollout order
+          + "from outcomes", while A.2 concedes spacecraft patch outcomes
+          + are rare and mostly successes (R11). It would learn from data
+          + we said we don't have. Severity: medium, a logic gap rather t
+          +han a factual error; the solver still guarantees a safe plan. 
+          +Five options, not two: (A) solver + risk-score order, (B) lear
+          +ned from past outcomes (v2), (C) adaptive order within one rol
+          +lout, (D) constrained RL inside the world model (the original 
+          +lock), (E) solver only. They differ in data needed, hiring, au
+          +ditability and viva risk.                                     
+      382 +**Conclusion:** Claude first recommended C starting from A. **
+          +Superseded by Q34:** once the scope was cut back to prioritisa
+          +tion, the planner stops being an AI component. What remains is
+          + a suggested fix window from a plain scheduler, fed by the wor
+          +ld model's battery/thermal forecast.                          
+      383 +**Change:** the "constrained RL planner" lock in CLAUDE.md is 
+          +dropped, pending spec v3 approval.                            
+      384 +                                                              
+      385 +### Q33. "If the emulator already runs the patch, isn't the wo
+          +rld model useless? What are the alternatives, does a layered a
+          +pproach solve it, and what are its flaws?" *(separate study se
+          +ssion)*                                                       
+      386 +**Origin of doubt:** my own study of what a world model is.   
+      387 +**Reasoning:** the judging job has cheaper tools: limit checks
+          +, comparing patched and unpatched emulator runs, statistical t
+          +ests, a learned forecaster, a JEPA model. **Layered design:** 
+          +rules and run comparison first, the learned model as the safet
+          +y net. Flaws and counters:                                    
+      388 +- intended changes set off alarms → the patch ships with a lis
+          +t of expected changes;                                        
+      389 +- the canary has no control group → compare with sister satell
+          +ites and with its own pre-patch behaviour;                    
+      390 +- the emulator isn't the real satellite → that's what the cana
+          +ry is for;                                                    
+      391 +- slow failures → a soak period plus a long watch;            
+      392 +- too many alarms → each layer gets different authority (a lim
+          +it breach halts, an unexpected difference holds, a learned-mod
+          +el flag only flags; any layer can stop, only a human can clear
+          +);                                                            
+      393 +- the learned layer is unproven → a test that can fail: fewer 
+          +false alarms than a plain forecaster at the same detection rat
+          +e on ESA-ADB, with Hundman 2018 as the forecaster (RF item 32)
+          +;                                                             
+     … 58 more lines (ctrl+o to expand)
+
+● Bash(cd "~/ZorinProjects/College/BAI
+      BusinessArtificialIntelligense/MidTerm_Project" && python3 - <<'EOF'
+      p='report/Viva_Prep.md'…)
+  ⎿  1a12ef5 docs(viva): add re-centring answers Q31-Q38 and correct Viasat
+      wording
+  ⎿  Updated report/Viva_Prep.md (+38 -2)
+      16  |---|---|
+      17  | 14,266 operational satellites (end-2025); 4,434 deployed in 2
+          025 (+65%) | SIA 2026 [RF 1] |
+      18  | CVEs: 40,009 (2024) → 48,185 (2025, +20.6%) → 57,908 by 31 Au
+          g 2026 (**year to date**) | [RF 27, R10] |
+      19 -| Viasat KA-SAT 2022: ~30,000 modems replaced, ~5,800 wind turb
+         -ines lost remote monitoring; entry via a ground VPN flaw; **Via
+         -sat's 10-K called it financially immaterial** | [RF 4] |       
+      19 +| Viasat KA-SAT 2022: ~30,000 modems shipped, ~5,800 wind turbi
+         +nes lost remote monitoring; entry via a **misconfigured** groun
+         +d VPN appliance (not an unpatched flaw), then *legitimate* mana
+         +gement commands wiped modem flash; the satellite was never touc
+         +hed; **Viasat's 10-K called it financially immaterial** | [RF 4
+         +] |                                                            
+      20  | SES: "over 40" security professionals | SES AR 2025 [RF 31] |
+      21  | NIST SP 800-171 3.14.1: "Identify, report, and correct system
+           flaws in a timely manner" | [RF 30] |
+      22  | Smallsat ~$0.5–1M (secondary, CubeSat-class); GEO ~$300M | [R
+          F 4] |
+     ...
+      49  
+      50  **"Why not just use ChatGPT/Claude?"** A general assistant can'
+          t trace ground→fleet reachability, plan around passes and power
+          , or judge emulator telemetry against a specific satellite's no
+          rmal behaviour [Q27].
+      51  
+      52 -**"Viasat said the attack was immaterial. Why would anyone pay?
+         -"** We don't use Viasat as a dollar loss. We use it for the **p
+         -ath** (a ground VPN flaw reached tens of thousands of terminals
+         -) and the **scale of disruption**. Our value leads with triage 
+         -speed and coverage. A bricked satellite is a tail risk, and Spa
+         -ceX reports zero losses from its updates (a secondary source) [
+         -R3, R4, R5].                                                   
+      52 +**"Viasat said the attack was immaterial. Why would anyone pay?
+         +"** We don't use Viasat as a dollar loss. We use it for the **p
+         +ath** (a misconfigured ground VPN appliance let the attacker se
+         +nd legitimate commands to tens of thousands of terminals) and t
+         +he **scale of disruption**. Our value leads with triage speed a
+         +nd coverage. A bricked satellite is a tail risk, and SpaceX rep
+         +orts zero losses from its updates (a secondary source) [R3, R4,
+         + R5].                                                          
+      53  
+      54  **"Spire already sells automated rollout and rollback. What's l
+          eft that's yours?"** Prioritisation and cross-domain decisions:
+           which flaw, whether it reaches the fleet, which fix, in what o
+          rder. We hand the approved plan to the operator's existing upda
+          te manager rather than replacing it [R7, RF 31].
+      55  
+     ...
+      137  **"Did you read your own references?"** Before submission: NIS
+           T SP 800-171 was read directly. SPD-5 is quoted from the Feder
+           al Register. NIST IR 8270's control text must be checked in th
+           e PDF, and the SIA reference must cite the report itself, not 
+           the press release. *(Complete these checks before you say yes.
+           )* [R35]
+      138  
+      139  **"Why this topic, if the research kept finding problems?"** E
+           verything that failed was an **overclaim**, not the core idea.
+            What survived has evidence: no one claims the whole loop, and
+            the ground-to-space path is real (Viasat) [Q23].
+      140 +                                                              
+      141 +---                                                           
+      142 +                                                              
+      143 +## 9. Re-centring (Q31–Q38): the current concept              
+      144 +                                                              
+      145 +*Added 2026-09-30 evening. This supersedes the older answers a
+          +bove wherever they differ, especially on the world model, the 
+          +planner and the scope. Sections 3–5 get rebuilt when spec v3 i
+          +s written, and cut material moves here.*                      
+      146 +                                                              
+      147 +**The concept in one breath:** Periapt watches new security ad
+          +visories around the clock. For every flaw it finds which satel
+          +lites have it, whether an attacker could reach them, how likel
+          +y an attack is, and what the attack would actually do to each 
+          +satellite. It ranks the flaws, says why, and briefs each team 
+          +in its own terms. Humans can override any ranking. Nothing tou
+          +ches a satellite without a human's approval.                  
+      148 +                                                              
+      149 +**"What does the AI actually do?"** Two things. An **LLM agent
+          +** reads advisories and matches them to each satellite's parts
+          + list, citing the line it matched. A **world model**, learned 
+          +from each satellite's own telemetry and command history, plays
+          + out "what if an attacker sent these commands?" to predict the
+          + damage per satellite. Everything else (CVSS, EPSS, SPARTA IDs
+          +, reach checks) is existing software that we use, not rebuild 
+          +[Q35, Q36].                                                   
+      150 +                                                              
+      151 +**"Why a world model and not rules or a classifier?"** Rules g
+          +ive every satellite the same answer, but the same flaw hurts a
+          +n old satellite with a weak battery more than a new one. A cla
+          +ssifier needs many labelled failures, and those are rare. A wo
+          +rld model learns normal behaviour from unlabelled data [Q31]. 
+      152 +                                                              
+      153 +**"Can it predict an attack it has never seen?"** Partly, and 
+          +I say so. Real attacks often use *legitimate* commands at the 
+          +wrong time or scale: Viasat's attackers used legitimate manage
+          +ment commands [RF 32]. The model has seen those command types.
+          + For extreme cases outside its data, we lean on the manufactur
+          +er's physics simulator, and "unknown" is treated as **high** p
+          +riority, never low [Q36, Q38].                                
+      154 +                                                              
+      155 +**"Isn't EPSS already doing this?"** EPSS predicts *whether* a
+          + flaw will be exploited, for ordinary IT. It says nothing abou
+          +t what the flaw does to a specific satellite. We use EPSS as a
+          +n input [RF 32].                                              
+      156 +                                                              
+      157 +**"Isn't this just replacing your analysts?"** No. The analyst
+          +s still decide. The AI does the reading, cross-checking and "w
+          +hat-if" work that doesn't scale with people, and it plugs into
+          + their existing ranking method (Spire, for example, ranks by I
+          +SO 27005 likelihood × impact). It fills in that method with ev
+          +idence rather than replacing it [Q35, RF 31].                 
+      158 +                                                              
+      159 +**"Is it autonomous if humans approve things?"** Yes. Scanning
+          +, scoring and ranking run on their own around the clock, becau
+          +se they only produce information. Humans supervise and can ove
+          +rride ("on the loop"). The only hard stop is before anything t
+          +ouches a satellite ("in the loop") [Q37].                     
+      160 +                                                              
+     … 15 more lines (ctrl+o to expand)
+
+● Recorded so far: RF item 32, Q31–Q38 and the Viva_Prep answers. Next are one
+  wording fix, the HANDOFF warning, and the merge. Then the review itself.
+
+● Bash(cd "~/ZorinProjects/College/BAI
+      BusinessArtificialIntelligense/MidTerm_Project" && python3 - <<'EOF'
+      p='report/Viva_Prep.md'…)
+  ⎿  f81a00e Merge branch 'docs/recentre-review'
+     f39c184 docs(handoff): flag spec v2 as superseded by re-centred concep
+     t
+     … +9 lines (ctrl+o to expand)
+  ⎿  Updated report/Viva_Prep.md (+1 -1)
+      160  
+      161  **"Isn't this Spacecraft Mission Operations (telemetry analyti
+           cs), not vulnerability prioritisation?"** No. The world model'
+           s output is a **security ranking**: which flaw to fix first an
+           d why. We deliberately don't sell fleet monitoring. Aerospace 
+           Corp and Google are building that [Q36, RF 32].
+      162  
+      163 -**"Aerospace Corp has SPARTA and an AI anomaly tool with Googl
+          -e. Why won't they build this?"** They might; they're the bigge
+          -st new-entrant threat. But they are a government research cent
+          -re (FFRDC) working for government missions. We serve mid-size 
+          -*commercial* operators, a niche they don't sell to, and we out
+          -put in SPARTA IDs so we build on their work instead of fightin
+          -g it [RF 10/13, RF 32].                                       
+      163 +**"Aerospace Corp has SPARTA and an AI anomaly tool with Googl
+          +e. Why won't they build this?"** They might; they're the bigge
+          +st new-entrant threat. But they are a government research cent
+          +re (FFRDC) working for government missions. We serve mid-size 
+          +*commercial* operators, which their government focus doesn't t
+          +arget (my reasoning, not a sourced fact), and we output in SPA
+          +RTA IDs so we build on their work instead of fighting it [RF 1
+          +0/13, RF 32].                                                 
+      164  
+      165  **"Viasat was a misconfiguration, not an unpatched flaw. Why u
+           se it?"** Correct, and I say so. I use it for the path and the
+            method: getting in on the ground, then using legitimate comma
+           nds to harm tens of thousands of terminals. That is exactly th
+           e kind of harm our world model plays out [RF 32].
+      166  
+  ⎿  Updated HANDOFF.md (+2 -0)
+      1  # Session Handoff
+      2  
+      3 +> **⚠ Partly superseded (2026-09-30 evening).** The scope was cu
+        +t back to the original problem, with AI at the centre: **predict
+        +ive prioritisation** (scan → score → rank with reasons) delivere
+        +d as a copilot. The world model now predicts what a flaw would d
+        +o to each satellite, plus battery/thermal margin. The RL planner
+        +, rollout/rollback building and monitoring are cut. See topic re
+        +port **Q31–Q38**, RF **item 32** and Viva_Prep **§9**. **Spec v2
+        + is NOT to be drafted from.** Spec v3 is pending the user's appr
+        +oval of the re-centred concept. §1–§4 below describe the older v
+        +2 state.                                                        
+      4 +                                                                
+      5  **Written:** 2026-09-30, end of the research-validation + report
+         -design session.
+      6  **Deadline:** 1 Oct 2026, 23:59. That's about a day, so bias tow
+         ard drafting, not more research.
+      7  **Purpose:** give a fresh session everything it needs to continu
+         e without re-deriving decisions. `CLAUDE.md` (auto-loaded) has t
+         he stable facts; this file has the *state of work* and the *why*
+          behind recent decisions.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+● Everything is recorded and merged. Here's the review, in plain words.
+
+  Final review: the re-centred Periapt
+
+  The concept as it stands
+
+  - Problem: operators get more security advisories than their teams can check.
+    For each advisory they must work out by hand which satellites have the flaw,
+    whether an attacker could reach them, and how bad an attack would be. That
+    work is split across three teams.
+  - What Periapt does: it watches advisories around the clock and ranks every
+    flaw for this operator's fleet, with the reasons.
+  - Where the AI is:
+    a. An LLM agent reads advisories and finds the affected satellites, citing
+       the line in the parts list it matched.
+    b. A world model, learned from each satellite's own telemetry and command
+       history, plays out "what if an attacker sent these commands?" That
+       predicts the damage to each satellite. It also forecasts battery and
+       thermal margin, so fixes can be timed safely.
+  - Reused, not rebuilt: severity scores (CVSS), exploit likelihood (EPSS),
+    SPARTA IDs, and the reach check.
+  - People: the ranking runs on its own, and anyone can override it. A human
+    approves anything that touches a satellite.
+  - Delivery: it works as a copilot. Security gets the "why", flight software
+    gets the "what", ops gets the "when".
+  - Out of scope: writing patches, running rollouts and rollbacks, fleet
+    monitoring, ground-IT patching, a terminal product, and the RL planner.
+
+  Estimated marks
+
+  These are estimates, assuming the draft is written well. Nothing is written
+  yet, so Presentation can only be guessed.
+
+  ┌──────────────┬─────┬────────┬────────────┬──────────────────────────────┐
+  │  Component   │ Max │ Spec   │ Re-centred │      What holds it back      │
+  │              │     │   v2   │            │                              │
+  ├──────────────┼─────┼────────┼────────────┼──────────────────────────────┤
+  │              │     │        │            │ The AI core rests on one     │
+  │ Content      │ 8   │ 5–6    │ 6.5–7      │ unproven idea (see weak spot │
+  │              │     │        │            │  1)                          │
+  ├──────────────┼─────┼────────┼────────────┼──────────────────────────────┤
+  │ Presentation │ 4   │ 2.5–3  │ 2.5–3.5    │ Needs 3 clean visuals and a  │
+  │              │     │        │            │ tight 4 pages                │
+  ├──────────────┼─────┼────────┼────────────┼──────────────────────────────┤
+  │              │     │        │            │ One question now drives      │
+  │ Storytelling │ 4   │ 2.5–3  │ 3–3.5      │ everything: "which flaw      │
+  │              │     │        │            │ first, and why?" Risk: too   │
+  │              │     │        │            │ many hedges                  │
+  ├──────────────┼─────┼────────┼────────────┼──────────────────────────────┤
+  │              │     │        │            │ The attack "what-if" idea is │
+  │ Creativity   │ 4   │ 3–3.5  │ 3–3.5      │  fresh; generic "copilot"    │
+  │              │     │        │            │ wording would waste it       │
+  ├──────────────┼─────┼────────┼────────────┼──────────────────────────────┤
+  │ Total        │ 20  │ ~13–15 │ ~15.5–17.5 │                              │
+  └──────────────┴─────┴────────┴────────────┴──────────────────────────────┘
+
+  Fit with the topic listing
+
+  ┌──────────────────┬──────────────────────┬───────────────────────────────┐
+  │  The topic says  │  Re-centred concept  │              Fit              │
+  ├──────────────────┼──────────────────────┼───────────────────────────────┤
+  │ Autonomous       │ Scans and ranks on   │ ✅                            │
+  │                  │ its own, 24/7        │                               │
+  ├──────────────────┼──────────────────────┼───────────────────────────────┤
+  │                  │ The agent reads      │                               │
+  │ Scanning         │ advisories and finds │ ✅                            │
+  │                  │  affected satellites │                               │
+  ├──────────────────┼──────────────────────┼───────────────────────────────┤
+  │ Scoring          │ EPSS as an input,    │                               │
+  │ (Predictive ML)  │ plus our world-model │ ✅                            │
+  │                  │  impact prediction   │                               │
+  ├──────────────────┼──────────────────────┼───────────────────────────────┤
+  │ Prioritising     │ A ranked list with   │ ✅                            │
+  │                  │ reasons              │                               │
+  ├──────────────────┼──────────────────────┼───────────────────────────────┤
+  │                  │ The clock starts the │                               │
+  │ Unpatched flaws, │  day a flaw is       │ ✅ (say it this way)          │
+  │  "day zero"      │ known, often before  │                               │
+  │                  │ a patch exists       │                               │
+  ├──────────────────┼──────────────────────┼───────────────────────────────┤
+  │                  │                      │ ⚠️ Word it as "infrastructure │
+  │ Critical         │ Space is not a US    │  critical sectors depend on"  │
+  │ infrastructure   │ critical sector      │ (Viasat cut monitoring of     │
+  │                  │                      │ ~5,800 wind turbines)         │
+  ├──────────────────┼──────────────────────┼───────────────────────────────┤
+  │                  │ "Mission Operations  │ ✅ Only if the world model is │
+  │ Neighbouring     │ / telemetry          │  pitched as ranking, never as │
+  │ topics           │ analytics" and       │  monitoring                   │
+  │                  │ "SOAR"               │                               │
+  └──────────────────┴──────────────────────┴───────────────────────────────┘
+
+  Course concepts
+
+  - Already planned: Gartner stack, B2B/B2G, design-thinking empathy, the four
+    lenses, efficiency vs innovation, the moat sources, "the model isn't the
+    moat", Porter plus niche strategy, persona label and psychographics,
+    diffusion of innovation, Lemon & Verhoef, Puntoni, trust
+    (competence/integrity/benevolence, zone of trust, experts trust automation
+    less), and the governance cases (Air Canada, Zillow, prompt injection, model
+    cards).
+  - Still to add when writing v3:
+    - Architecture goes in A.2; the rubric puts it there.
+    - Name the agent pattern: orchestrator plus tools, ReAct, perceive → act.
+    - Human override logging.
+    - Trust = emotions + satisfaction + reliability.
+    - The Gartner "pilot trap" in the customer journey.
+    - Morningstar's "intangible assets" as the fifth moat source.
+    - CrowdStrike 2024 as the reason we never auto-patch.
+    - Shadow AI.
+    - Least privilege for the agent.
+    - Cruise as the audit-log case.
+    - Viability includes compliance.
+    - Gartner Layer 7, next to CrowdStrike's Charlotte AI (a triage copilot, the
+      closest analogue).
+    - A sourced "why now".
+
+  Claims check
+
+  Corrected in the files now:
+  1. Viasat was a misconfiguration, not an unpatched flaw. The satellite was
+     never touched, and the modems could be reset. We keep it for the method:
+     get in on the ground, then use legitimate commands to cause mass harm. That
+     is exactly what our world model plays out.
+  2. EPSS already predicts whether a flaw will be exploited, with ML, for free.
+     It's an input, not our claim.
+  3. Fleet monitoring is being built by Aerospace Corp and Google (April 2026).
+     This confirms your cut, and makes Aerospace Corp the biggest new-entrant
+     threat.
+  4. CT Cubed's "Terrain Trace" can't be found any more. Describe CT Cubed as
+     assessments, training and cyber ranges. IRON GALAXY stays named.
+  5. Simulating attack impact on satellites exists in research (NASA's NOS3
+     simulator, March 2026). So claim only that nobody does it automatically,
+     per satellite, from live data, to rank flaws.
+
+  New support found:
+  - JPL's 2018 model (Hundman et al., KDD) learns spacecraft behaviour from
+    commands and past telemetry. It proves the world-model idea is feasible,
+    gives the baseline for the test, and is a peer-reviewed AI reference.
+
+  Must be labelled as hypotheses, not facts:
+  - Predicting harm from command sequences the model has never seen.
+  - The battery/thermal forecast.
+  - Whether exploit scores learned on ordinary IT carry over to space.
+
+  The earlier "never say" list still applies.
+
+  Weak spots that remain
+
+  1. The AI's novelty is one idea, and it's unproven. Defence: the JPL
+     precedent, the Viasat legitimate-commands case, a test that can fail, and
+     "unknown = high priority".
+  2. Aerospace Corp could build this. Answer: we're commercial, they focus on
+     government, and we build on SPARTA. That answer is my reasoning, not a
+     sourced fact.
+  3. Value is smaller for new, identical fleets. Early adopters should be
+     operators with older or mixed fleets.
+  4. Few buyers, and people-heavy delivery. Viability stays the weakest point.
+  5. Most operators have no parts lists. Onboarding has to build them.
+
+  Your call
+
+  1. Approve the concept and the cuts above? Then I write spec v3.
+  2. Ranking rule: the AI can raise a flaw's priority on its own, lowering it
+     needs a human, and "outside the model's data" means high priority. Yes or
+     no?
+  3. References: SIA 2026 report, NIST SP 800-171, NIST AI RMF 1.0 (quick PDF
+     check needed), and Hundman et al. 2018. This drops IR 8270, which is still
+     unverified.
+  4. Drop the India and SBIR lines?
+
+  Files updated and merged into main:
+  - research/Research_Findings.md item 32
+  - topic/Topic_Brainstorm_Report.md Q31–Q38, plus the Viasat fix in Q25
+  - report/Viva_Prep.md §9, plus the Viasat fixes
+  - the HANDOFF.md warning banner
+
+  One suggestion: move Discussion on the World model.txt into logs/. It's
+  evidence of your own thinking for the appendix. Want me to?
+
+  Sources:
+  - Viasat KA-SAT overview
+  - GovInfoSecurity on Viasat
+  - FIRST EPSS
+  - Hundman et al. 2018
+  - Silent Subversion (NOS3), arXiv 2603.10388
+  - Aerospace–Google (Military & Aerospace Electronics)
+  - Aerospace press release
+  - CT Cubed
+  - Via Satellite, smallsat startups 2026
+
+✻ Worked for 10m 12s · done 8:14 PM
+
+❯ /effort                                                                       
+  ⎿  Set effort level to high (saved as your default for new sessions):
+     Comprehensive implementation with extensive testing and documentation ·
+     burns fastest — medium handles most tasks
+
+❯ so we have discarded the patches that would be made and testing those patches 
+  but then where does the world model comes in because if I remember correctly  
+  it is used to test out or predict what the patch would do.                    
+
+● You remember correctly: the original job was to predict what a patch would do.
+  That job is gone, but the world model has a new one.
+
+  Old job (dropped): "What will this patch do to the satellite?"
+  A patch is new code the satellite has never run. A model that learned from the
+  satellite's past behaviour has never seen that code, so it can't know. Only
+  the manufacturer's emulator, which actually runs the code, can show that.
+
+  New job (kept): "What would an attacker do to this satellite through this 
+  flaw?"
+  Exploiting a flaw usually means sending the satellite commands: turn this off,
+  point there, overwrite that. These are commands the satellite already knows.
+  Viasat's attackers used ordinary, legitimate management commands. The world
+  model has seen those commands many times in normal operations, so it can play
+  them out and predict the result.
+
+  Example:
+  - An advisory says a flaw lets an attacker switch off heaters.
+  - The world model plays it out on each satellite:
+    - Satellite 12 is old, has a weak battery and is heading into Earth's
+      shadow, so it freezes within hours. Rank high.
+    - Satellite 40 is new and in sunlight, so it recovers. Rank lower.
+  - Simple rules would give both satellites the same score. The world model
+    tells them apart, and that difference is what decides which flaw and which
+    satellite get fixed first.
+
+  Second, smaller job: it forecasts battery and heat at upcoming passes, so the
+  team knows when a fix is safe to send.
+
+  Limit to state honestly: if an attack uses commands the model has never seen,
+  its prediction is weak. In that case the flaw is ranked high by default, and
+  the manufacturer's simulator can check it.
+
+  In short, the world model moved from judging fixes to judging threats. That
+  puts it in the prioritisation step, which is where the topic says it belongs.
+
+  The four decisions from my last message are still open: approve the concept,
+  the ranking rule, the references, and dropping India/SBIR.
+
+✻ Baked for 11s · done 8:23 PM
+
+❯ I approve the first three. Hold on for India. Start the version three draft.  
+  I'm a bit concerned about the weak spots that you mentioned. Is there any,    
+  any way that we can either move in a complement or adjacent space and not     
+  being the competitor to the aerospace corp? How is the value smaller for the  
+  new identical fields Exactly? I am focusing on people heavy because the claim 
+  or my understanding was that these people, this industry does not trust       
+  automations and new automations especially and innovations easily. You have   
+  to build it, you have to earn the trust and then we can proceed. We can also  
+  scope it out as if I am able to do the things that I do claim in this version 
+  then I can build on that and try to go for the scope that we eliminated. on   
+  the operator part I mean we would never have the full data from the start     
+  right we have to get the data about the satellite the parts the software and  
+  everything from the onboarder client.                                         
+
+● Web Search("FFRDC restriction compete with private sector FAR 35.017 Aerospace
+            Corporation commercial work")
+  ⎿  Did 1 search in 6s
+
+● FAR 35.017's restriction on FFRDCs like Aerospace Corp competing with industry
+  actually turns weak spot 2 into a partnership angle. I'll log this as Q39 and
+  draft spec v3 on a mini-branch next.
+
+● Bash(cd "~/ZorinProjects/College/BAI
+      BusinessArtificialIntelligense/MidTerm_Project" && git switch -c
+      docs/spec-v3 && python3 - <<'EOF'
+      p='research/Researc…)
+  ⎿  Switched to a new branch 'docs/spec-v3'
+     86b9355 docs(research): add FAR 35.017 FFRDC finding to item 32
+  ⎿  Updated research/Research_Findings.md (+2 -1)
+      182  - *Attack-impact simulation on satellites exists in research, 
+           with physics simulators:* Vanlyssel, Roman and Anwar, "Silent 
+           Subversion: Sensor Spoofing Attacks via Supply Chain Implants 
+           in Satellite Systems" (arXiv 2603.10388, 11 Mar 2026) demonstr
+           ates an attack end to end in NASA's NOS3 simulator (physics-ba
+           sed, not learned). → "Nobody simulates attack impact" would be
+            false. Claim only that no one publicly offers it automaticall
+           y, per satellite, from live data, to rank flaws (absence of cl
+           aims, not proof of absence).
+      183  - *New adjacent: Aerospace Corp + Google Public Sector (April 
+           2026) [secondary + press release]:* an agentic-AI proof of con
+           cept on Vertex AI that monitors every satellite in proliferate
+           d-LEO constellations for behavioural anomalies, moving "beyond
+            static threshold alarms", and suggests root causes. → Fleet m
+           onitoring is being built by the FFRDC that owns SPARTA/SPARTEN
+           D. Name it in rivalry/new entrants; keep monitoring out of Per
+           iapt's core (it also sits near the sibling topic "Spacecraft M
+           ission Operations… telemetry analytics").
+      184  - *CT Cubed today:* homepage lists tactics (security assessmen
+           ts, penetration testing), training, and custom cyber ranges. *
+           *"Terrain Trace" was not found** (site or web search, 2026-09-
+           30); treat the "AI risk assessment" description in item 10/13 
+           as unverified. Keep IRON GALAXY named (originality rule).
+      185 +- *Aerospace Corp is structurally a partner, not a rival (FAR 
+          +35.017) [primary: FAR; Aerospace's FFRDC status from raw/03]:*
+          + "It is not the Government's intent that an FFRDC use its priv
+          +ileged information or access to installations equipment and re
+          +al property to compete with the private sector." Sponsoring ag
+          +reements must prohibit the FFRDC from "competing with any non-
+          +FFRDC concern in response to a Federal agency request for prop
+          +osal". A secondary summary adds that FFRDCs don't manufacture 
+          +products or work for commercial companies (unverified wording)
+          +. → Aerospace publishes frameworks (SPARTA) and builds governm
+          +ent prototypes, leaving commercial products to industry. The r
+          +eal commercial entrant threat is its partners (Google) and the
+          + primes/consultancies, not Aerospace itself.                  
+      186  - *Reminder (item 30):* space is **not** one of the 16 CISA cr
+           itical-infrastructure sectors. Word the topic fit as "infrastr
+           ucture that critical sectors depend on" (Viasat → ~5,800 wind 
+           turbines, item 4); the EU does list space (NIS2, item 2).
+      186 -Sources: [Viasat KA-SAT overview](https://www.viasat.com/persp
+          -ectives/corporate/2022/ka-sat-network-cyber-attack-overview/) 
+          -· [GovInfoSecurity (secondary)](https://www.govinfosecurity.co
+          -m/viasat-traces-outage-to-exploit-vpn-misconfiguration-a-18815
+          -) · [FIRST EPSS](https://www.first.org/epss/) · [Hundman et al
+          -. 2018 (arXiv)](https://arxiv.org/abs/1802.04431) · [Silent Su
+          -bversion (arXiv)](https://arxiv.org/abs/2603.10388) · [Aerospa
+          -ce press release](https://aerospace.org/press-release/aerospac
+          -e-and-google-public-sector-collaborate-modernize-satellite-ano
+          -maly-resolution) · [Military & Aerospace Electronics (secondar
+          -y)](https://www.militaryaerospace.com/communications/news/5538
+          -7527/aerospace-and-google-collaborate-on-ai-for-satellite-oper
+          -ations) · [CT Cubed](https://ctcubed.com/)                    
+      187 +Sources: [Viasat KA-SAT overview](https://www.viasat.com/persp
+          +ectives/corporate/2022/ka-sat-network-cyber-attack-overview/) 
+          +· [GovInfoSecurity (secondary)](https://www.govinfosecurity.co
+          +m/viasat-traces-outage-to-exploit-vpn-misconfiguration-a-18815
+          +) · [FIRST EPSS](https://www.first.org/epss/) · [Hundman et al
+          +. 2018 (arXiv)](https://arxiv.org/abs/1802.04431) · [Silent Su
+          +bversion (arXiv)](https://arxiv.org/abs/2603.10388) · [Aerospa
+          +ce press release](https://aerospace.org/press-release/aerospac
+          +e-and-google-public-sector-collaborate-modernize-satellite-ano
+          +maly-resolution) · [Military & Aerospace Electronics (secondar
+          +y)](https://www.militaryaerospace.com/communications/news/5538
+          +7527/aerospace-and-google-collaborate-on-ai-for-satellite-oper
+          +ations) · [CT Cubed](https://ctcubed.com/) · [FAR 35.017](http
+          +s://www.law.cornell.edu/cfr/text/48/35.017)                   
+      188  
+      189  ---
+      190  
+
+● Now the spec itself.
+
+● Write(report/specs/2026-09-30-report-draft-design.md)
+  ⎿  Added 262 lines, removed 150 lines
+        1  # Report Draft — Design Spec
+        2  
+        3 -**Date:** 2026-09-30 · **Deadline:** 1 Oct 2026, 23:59 · **Sta
+          -tus:** v2, awaiting user review (v2 changes listed in §8)     
+        3 +**Date:** 2026-09-30 · **Deadline:** 1 Oct 2026, 23:59 · **Sta
+          +tus:** v3, awaiting user review. It replaces v2 (still in git 
+          +history). The changes are listed in §10.                      
+        4  
+        5 -## 1. Decisions (from the brainstorming session)              
+        5 +**Why v3 exists:** v2 had grown into "known flaw → safe fix ac
+          +ross the whole mission", with AI as a helper. That was too wid
+          +e to deliver and had drifted from the listed topic. v3 cuts ba
+          +ck to the original problem and puts AI at the centre (topic re
+          +port Q31–Q39).                                                
+        6  
+        7 +## 1. Decisions                                               
+        8 +                                                              
+        9  | Decision | Choice | Note |
+       10  |---|---|---|
+        9 -| Company name | **Periapt**: a protective amulet; echoes *per
+          -iapsis*, an orbit's closest point ("protection at the closest 
+          -point of risk") | Renamed from Phylax after an existing EU AI 
+          -security firm, Phylax Intelligence, was found (Q30). Deep web 
+          -check 2026-09-30: no security/space company named Periapt; onl
+          -y unrelated uses (audio cables, AU financial advisory, IL heal
+          -th startup, RPG publisher). |                                 
+       10 -| Format | Word/PDF doc, 4 pages + 1-page appendix, 2 visuals 
+          -| Draft in markdown → convert to .docx at the end. |          
+       11 -| Draft depth | Full prose, **user rewrites in own voice** | B
+          -rief §F prohibits submitting AI text unrevised; viva possible.
+          - Every factual sentence carries a source tag `[RF n]` / `[Q n]
+          -` in the draft so it can be defended, and the tags are strippe
+          -d at conversion. |                                            
+       12 -| Jurisdiction | **United States** (main) | India = a one-line
+          - "next market / engineering base" in the vision, backed by a s
+          -eparate research task (§7). |                                 
+       13 -| Positioning | **A domain copilot that owns the workflow** (Q
+          -27) | Periapt makes security, flight-software and mission-ops 
+          -teams more productive. It reads, cross-references, drafts and 
+          -watches; **the team decides**. It never pitches replacing staf
+          -f. |                                                          
+       14 -| Revenue | **No revenue or ACV figure** (Q29) | The rubric as
+          -ks for value *to the customer*. Show pricing *structure* only:
+          - per-fleet annual subscription + one-time onboarding/integrati
+          -on fee (covers the people-heavy integration cost, Q24). |     
+       15 -| Structure | **Design-Thinking frame**: an empathy opening, o
+          -ne course concept anchoring each rubric section, a closing fou
+          -r-lens check (Feasibility / Usability / Desirability / Viabili
+          -ty) | Each section is also designed to hit a named grading com
+          -ponent (§3). |                                                
+       11 +| Company name | **Periapt**: a protective amulet; echoes *per
+          +iapsis*, an orbit's closest point ("protection at the closest 
+          +point of risk") | Renamed from Phylax (Q30). |                
+       12 +| Topic | Defence, Space & Cybersecurity → **Day-Zero Vulnerab
+          +ility Prioritisation (Predictive ML)**: "autonomous systems sc
+          +anning, scoring, and prioritising unpatched security flaws in 
+          +critical infrastructure" | **The core is predictive prioritisa
+          +tion** (Q36). |                                               
+       13 +| Scope | Known flaws that could affect a satellite operator's
+          + fleet. Periapt **finds, scores, ranks and explains**. Ground 
+          +systems count only as the way in. It does not write, test or s
+          +end fixes. | The niche from the original 17 Sept problem (Q34)
+          +. |                                                           
+       14 +| Positioning | **A copilot for the three teams** (security, f
+          +light software, mission ops). The AI reads, predicts, ranks an
+          +d drafts; each team keeps its decision. | Q35. It plugs into t
+          +he team's own ranking method, so there's no migration. |      
+       15 +| Relation to Aerospace Corp | **Complement, not rival.** Peri
+          +apt builds on SPARTA and speaks its IDs. As an FFRDC, Aerospac
+          +e is barred from competing with industry (FAR 35.017). | Q39, 
+          +RF 32. |                                                      
+       16 +| Autonomy | Scan, score and rank run **on their own**. Humans
+          + can override at any time (**on the loop**). A human approves 
+          +**before anything touches a satellite** (**in the loop**). | Q
+          +37. |                                                         
+       17 +| Ranking rule | The AI may **raise** a flaw's priority on its
+          + own. **Lowering** needs a human. If the world model is **outs
+          +ide its data**, impact counts as **high**. | Approved 2026-09-
+          +30. |                                                         
+       18 +| Growth path | **Stage 1 = this report's product.** Later sta
+          +ges (fix-window planning, then validation/rollout with partner
+          +s) come only after trust is earned. | Q39. Course: "think big,
+          + act small"; niche first, then adjacent (Porter deck, Thiel). 
+          +|                                                             
+       19 +| People-heavy start | Deliberate: forward-deployed engineers 
+          +onboard each customer and build trust in shadow mode. | Q39. E
+          +xperts rely less on automation (Sanchez et al., S11). |       
+       20 +| Format | Word/PDF doc, 4 pages + 1-page appendix, **3 visual
+          +s** | Draft in markdown → .docx at the end. |                 
+       21 +| Draft depth | Full prose with `[RF n]`/`[Q n]` tags; **the u
+          +ser rewrites it in their own voice** | Brief §F; viva possible
+          +. The tags are stripped at conversion. |                      
+       22 +| Jurisdiction | **United States** | **India: on hold (user de
+          +cision pending).** SBIR: also held, so it's kept out of the te
+          +xt. |                                                         
+       23 +| Revenue | **No revenue or ACV figure** (Q29). Pricing *struc
+          +ture* only: per-fleet annual subscription + one-time onboardin
+          +g fee. | |                                                    
+       24 +| Structure | Design-Thinking frame: empathy opening → one cou
+          +rse concept per section → four-lens close → the opening scene 
+          +resolved (bookend) | |                                        
+       25 +| Key references | SIA 29th State of the Satellite Industry **
+          +Report** 2026 · NIST SP 800-171 Rev 2 · NIST AI RMF 1.0 · Hund
+          +man et al. 2018 (KDD) | Approved 2026-09-30. NIST IR 8270 drop
+          +ped (still unverified, R35). |                                
+       26  
+       17 -## 2. Running threads (Storytelling)                          
+       27 +## 2. The product (the single source for every section)       
+       28  
+       19 -1. **The ground-to-space loop.** It's the problem (Viasat: a g
+          -round VPN flaw → 30,000 modems, 5,800 turbines [RF 4]), the ag
+          -entic workflow, the source of the moat's data, and the reason 
+          -for the stop rules.                                           
+       20 -2. **Trust.** Subject-matter experts rely less on automation (
+          -Sanchez et al., S11). That drives human approval, outputs expr
+          -essed in SPARTA IDs, and "decision support, not certified safe
+          -".                                                            
+       29 +**The problem.** Advisories arrive faster than teams can check
+          + them (CVEs +20.6% from 2024 to 2025 [RF 27]). For each adviso
+          +ry, someone has to work out by hand which satellites have the 
+          +flaw, whether an attacker could reach them, and how bad an att
+          +ack would be for each satellite. Today that work is split acro
+          +ss security, flight software and mission ops.                 
+       30  
+       22 -Each section ends with a one-line handoff to the next. Honest 
+          -weaknesses get one line per section and are gathered in the fo
+          -ur-lens close.                                                
+       31 +**What Periapt does.** It watches advisories around the clock 
+          +and turns each one into a **ranked, explained list for this op
+          +erator's fleet**: which flaw first, on which satellites, and w
+          +hy.                                                           
+       32  
+       24 -## 3. Section design (course anchor × grading target × content
+          -)                                                             
+       33 +### 2.1 How a ranking is made: three layers, and AI only where
+          + rules can't reach                                            
+       34 +| Layer | Question | How | AI? |                              
+       35 +|---|---|---|---|                                             
+       36 +| 1. Facts | Which satellites and ground systems have the flaw
+          +? Can an attacker reach the fleet from it? | The **LLM agent**
+          + reads the advisory and proposes matches. A deterministic matc
+          +h against the parts list confirms each one and must cite the m
+          +atching line; anything unmatched goes to a human. A **reach ma
+          +p** (ground → network → spacecraft paths) checks whether it's 
+          +reachable. | LLM for reading; the rest is plain software |    
+       37 +| 2. Standard scores | How severe is it, and how likely is an 
+          +attack? | CVSS, **EPSS** (FIRST's free ML exploitation forecas
+          +t [RF 32]), SPARTA technique and countermeasure IDs | Existing
+          + tools, **used, not rebuilt** |                               
+       38 +| 3. Impact per satellite | What would an attacker actually do
+          + to *each* satellite through this flaw? | The **world model** 
+          +plays out "what if these commands were sent?" on each satellit
+          +e in its current condition | **Periapt's own AI** |           
+       39  
+       26 -**Page budget:** opening + A.0 + A.1 ≈ 1 p · A.2 + A.3 ≈ 1 p ·
+          - A.4 ≈ ¾ p · A.5 ≈ ¾ p · close + references ≈ ½ p.            
+       40 +- **Rank = likelihood (layers 1–2) × impact (layer 3).** This 
+          +fills in the operator's *existing* method (e.g. Spire ranks by
+          + ISO 27005 likelihood × impact [RF 31]) instead of replacing i
+          +t.                                                            
+       41 +- **Authority:** layers 1–2 set a floor. Layer 3 can raise a f
+          +law, but lowering it needs a human. Outside its data → "impact
+          + unknown" → high.                                             
+       42  
+       43 +### 2.2 The world model (what it is, and what it isn't)       
+       44 +- **What it is:** a model learned from each satellite's own te
+          +lemetry and command history, of the form "current state + comm
+          +and → next state". JEPA-style is the candidate design. JPL's L
+          +STM (Hundman et al. 2018 [RF 32]) is the published precedent a
+          +nd the baseline it has to beat.                               
+       45 +- **Job 1, impact:** real attacks often use *legitimate* comma
+          +nds at the wrong time or scale. Viasat's attackers used legiti
+          +mate management commands [RF 32]. The model has seen those com
+          +mand types in normal operations, so it can predict the damage 
+          +for *each* satellite. For example, an old satellite with a wea
+          +k battery, heading into eclipse, is hurt more by "heaters off"
+          + than a new one in sunlight.                                  
+       46 +- **Job 2, margin forecast:** battery and thermal margin at up
+          +coming passes, so a suggested fix window is safe. The schedule
+          +r itself is plain software, not AI.                           
+       47 +- **What it is not:** it doesn't predict what a patch (new cod
+          +e) will do (R6, Q31). It doesn't trace ground→space reach (the
+          + reach map does that). It isn't a fleet-monitoring product (Ae
+          +rospace Corp + Google are building that [RF 32]; it also sits 
+          +near the sibling topic "Spacecraft Mission Operations… telemet
+          +ry analytics").                                               
+       48 +- **Why a world model and not rules or a classifier:** rules g
+          +ive every satellite the same answer. A classifier needs many l
+          +abelled failures, which are rare. A world model learns normal 
+          +behaviour from unlabelled data (Q31).                         
+       49 +- **Honest limits (label them as hypotheses):** predicting har
+          +m from command sequences it has never seen (so extreme cases g
+          +et checked in the manufacturer's physics simulator, and "unkno
+          +wn" means high); the margin forecast; exploit likelihood learn
+          +ed on IT carrying over to space (R17).                        
+       50 +                                                              
+       51 +### 2.3 The agent (A.1's "agentic" part)                      
+       52 +- **Pattern:** one orchestrator agent working ReAct-style (rea
+          +son → call a tool → observe → repeat), with these tools: parts
+          + list, reach map, EPSS/CVSS feed, SPARTA, world model, and the
+          + team's ticket system. The loop is perceive (advisory) → proce
+          +ss (match, score, what-if) → decide (rank) → act (brief and ti
+          +cket), as taught in S2–3.                                     
+       53 +- **Multi-step workflow, running alone:** new advisory → match
+          + → reach → scores → what-if per satellite → rank → a brief for
+          + each team in its own terms (security: *why*; flight software:
+          + *what*; ops: *when*) → tickets → re-rank on news or overrides
+          +.                                                             
+       54 +- **Reliability patterns** (Parth Garg deck): step limits, str
+          +uctured and validated outputs, the layer-1/2 floor acting as a
+          + check on layer 3, and retry on failure.                      
+       55 +- **After a human-approved fix:** it reads the result from the
+          + operator's existing tools and stores it in the record. It doe
+          +sn't monitor satellites itself.                               
+       56 +                                                              
+       57 +### 2.4 Data and onboarding (we never start with full data)   
+       58 +- Everything comes from the client: parts lists and software v
+          +ersions, the ground-to-fleet network map, and telemetry and co
+          +mmand history. Where available, the manufacturer's data packag
+          +e is added. Most operators have no ready parts list (R14), so 
+          +**forward-deployed engineers build it**, paid for by the onboa
+          +rding fee.                                                    
+       59 +- Until a fleet's world model is trained, layer 3 answers "unk
+          +nown", so ranking stays **conservative** (high by default).   
+       60 +- **Shadow mode does three jobs at once:** it earns trust (ran
+          +kings shown next to the team's own), gathers data, and trains 
+          +the world model.                                              
+       61 +- Label as an assumption: operators keep telemetry and command
+          + archives.                                                    
+       62 +                                                              
+       63 +### 2.5 Where the value is smaller (stated honestly, Q39)     
+       64 +The world model earns its keep by **telling satellites apart**
+          +. In a new fleet of identical satellites (same design, same so
+          +ftware, healthy batteries, similar orbits), "what would this a
+          +ttack do?" gives nearly the same answer for every satellite, s
+          +o layer 3 adds little over a rule. The history is also short, 
+          +so the model is weaker (cold start). Value remains in reading 
+          +at scale, speed, and ranking *across* flaws. Satellites drift 
+          +apart as they age (batteries wear, sensors degrade, eclipse se
+          +asons differ, software versions split during staggered updates
+          +); this is reasoning, not a sourced fact. **So early adopters 
+          +are operators with older or mixed fleets.**                   
+       65 +                                                              
+       66 +### 2.6 Out of scope for Stage 1 (becomes later stages or viva
+          + material)                                                    
+       67 +Writing patches (the manufacturer's job) · testing patches in 
+          +an emulator · running rollouts or rollbacks (Spire and SpaceX 
+          +already sell or build these) · fleet monitoring (Aerospace + G
+          +oogle) · ground-IT patching as a product (Tenable, Qualys) · t
+          +erminals as a product area · the RL planner (dropped, Q32).   
+       68 +                                                              
+       69 +## 3. Running threads (Storytelling)                          
+       70 +- **Driving question:** *"Which flaw first, and why?"* Every s
+          +ection answers part of it.                                    
+       71 +- **Thread 1: the way in and the legitimate commands.** Viasat
+          +: a misconfigured ground VPN appliance → legitimate management
+          + commands → ~30,000 terminals knocked offline, ~5,800 wind tur
+          +bines losing remote monitoring [RF 4, RF 32]. It is the proble
+          +m, what the world model plays out, and why ground systems coun
+          +t as the way in.                                              
+       72 +- **Thread 2: trust, earned in stages.** Experts rely less on 
+          +automation (S11), so Periapt is a copilot, the human decides, 
+          +and trust grows shadow → assist → delegate. That is also why t
+          +he company grows in stages. Use S11 fully: *emotions* drive tr
+          +ust (the 2 a.m. fear becomes confidence), *satisfaction* means
+          + performance above expectations (which drives renewal), and *r
+          +eliability and validity* come before trust.                   
+       73 +- Each section ends with a one-line handoff. Honest weaknesses
+          + get at most **one line per section**. The real ones are gathe
+          +red in the four-lens close, and the full list goes to Viva_Pre
+          +p.                                                            
+       74 +                                                              
+       75 +## 4. Section design (course anchor × grading target × content
+          +)                                                             
+       76 +                                                              
+       77 +**Page budget:** opening + A.0 + A.1 ≈ 1¼ p · A.2 + A.3 ≈ 1 p 
+          +· A.4 ≈ ¾ p · A.5 ≈ ¾ p · close + references ≈ ¼ p. Cutting ha
+          +ppens after the full draft (user, 2026-09-30).                
+       78 +                                                              
+       79  ### Opening scene (~⅙ p) — Empathy (S11) → Storytelling
+       29 -A 2 a.m. advisory lands. A CISO at a mid-size operator has 200
+          - satellites, a flaw in ground-station software, and the next p
+          -ass window closing. Does the flaw reach the fleet? Is the vend
+          -or patch safe to uplink? Introduces the persona, who returns i
+          -n A.4.                                                        
+       80 +2 a.m. An advisory lands: a flaw in the ground mission-control
+          + software could let an attacker send commands to the fleet. Th
+          +e CISO of a mid-size operator has 200 satellites and no patch 
+          +yet. Which satellites are most at risk *tonight*, and what can
+          + be done before the vendor ships a fix? Fiction, marked illust
+          +rative. The persona returns in A.4, and the scene is resolved 
+          +in the close.                                                 
+       81  
+       31 -### A.0 Overview: Periapt — Gartner 8-layer stack; B2B/B2G → C
+          -ontent + Creativity                                           
+       32 -- Brand: name story (amulet + periapsis), mission ("keep every
+          - fleet safely patchable"), vision ("the trusted decision layer
+          - for every software-defined spacecraft"; dream-big line).     
+       33 -- Stack position: **Layer 6 (AI Application) serving Layer 7 (
+          -Security & Risk)** for space missions.                        
+       34 -- Market: 14,266 operational satellites end-2025, 4,434 deploy
+          -ed in 2025 (+65%) [RF 1]. Say plainly that growth is driven mo
+          -stly by mega-constellations (R1) and that the target is the mi
+          -d-size tier.                                                  
+       35 -- Why ripe for AI: exposure is rising (CVEs 40,009 in 2024 → 4
+          -8,185 in 2025; 57,908 by 31 Aug 2026 **YTD** [RF 27, R10]) and
+          - applies mainly to ground-segment software; triage stays manua
+          -l and siloed.                                                 
+       36 -- **Do not use:** "~16k satellites", "~58k/yr", "3-person team
+          -", "40% since 2000", a Starlink % share.                      
+       82 +### A.0 Overview — Gartner 8-layer stack; Foundation Capital (
+          +domain-specific AI); B2B/B2G → Content + Creativity           
+       83 +- **Brand:** the name story. Mission: *"Tell every operator, w
+          +ithin minutes of a new flaw, what it means for each satellite,
+          + with reasons they can check."* Vision: *"the trusted decision
+          + layer for every spacecraft operator"*, with the staged path (
+          +A.5/close) as the dream-big line.                             
+       84 +- **Stack position:** Layer 7, **AI Security & Risk**, where t
+          +he course deck places CrowdStrike. The closest course analogue
+          + is CrowdStrike's Charlotte AI, which helps analysts triage. I
+          +t is *strategic/domain-specific AI* in Foundation Capital's te
+          +rms.                                                          
+       85 +- **Market:** 14,266 operational satellites at end-2025; 4,434
+          + deployed in 2025 (+65%) [RF 1]. Say that growth is mostly meg
+          +a-constellations; the target is the mid-size tier (R1).       
+       86 +- **Why ripe for AI (sourced "why now"):** CVEs 40,009 (2024) 
+          +→ 48,185 (2025) → 57,908 **YTD to 31 Aug 2026** [RF 27]; manua
+          +l triage doesn't scale with that; attackers can use legitimate
+          + commands (Viasat); ML already forecasts exploitation for IT (
+          +EPSS [RF 32]), but nothing predicts impact on a specific satel
+          +lite.                                                         
+       87 +- **Topic fit, worded carefully:** "day zero" = the day a flaw
+          + becomes known, often before a patch exists. "Critical infrast
+          +ructure" = infrastructure that critical sectors depend on: Via
+          +sat cut wind-turbine monitoring [RF 4]; the EU lists space as 
+          +a high-criticality sector [RF 2]; the US doesn't list it as a 
+          +CISA sector [RF 30]. Don't claim it is one.                   
+       88  
+       89  ### A.1 Agentic AI & Value — agent vs agentic AI (S2–3); ReAct
+           ; efficiency vs innovation (S3) → Content + Presentation (Visu
+           al 1)
+       39 -- **Architecture (reframed per R6/R8/R14/R31):**              
+       40 -  1. *Advisory agent* (LLM, ReAct-style): reads advisories and
+          - CVEs, proposes component matches; deterministic SBOM/CPE matc
+          -hing confirms; every match cites its inventory line; unmatched
+          - → human. Self-hosted open-weights model inside the US boundar
+          -y.                                                            
+       41 -  2. *Exposure graph*: ground → network → link → spacecraft → 
+          -terminal consequence paths. This is the answer to Viasat: know
+          -ing *that* VPN flaw reaches the fleet, which generic vulnerabi
+          -lity management tools don't model (R5).                       
+       42 -  3. *Risk scorer*: exploitability + consequence, expressed in
+          - **SPARTA technique/countermeasure IDs**.                     
+       43 -  4. *Fix planner*: constraint solver for pass windows, power 
+          -and staged rollout (guaranteed feasibility) + a learned policy
+          - that improves rollout *order* from outcomes. **Change from th
+          -e locked "constrained RL planner" — flag for user.**          
+       44 -  5. *Validation*: the manufacturer's emulator/testbed **runs*
+          -* the fix (as with ESA OBSM [RF 6]; Spire-style CI/testbed [RF
+          - 31]). **The JEPA world model is the judge (Q26):** it compare
+          -s the emulator's simulated telemetry, then the canary satellit
+          -e's real telemetry, against "how *this* satellite normally beh
+          -aves", catching subtle drift that scripted pass/fail tests mis
+          -s. It judges code that has actually run; it doesn't predict un
+          -seen code (R6). During rollout it watches every channel on eve
+          -ry satellite in every pass, which no team can do by hand.     
+       45 -  6. *Human approval gate* → uplink via the operator's existin
+          -g update manager → monitor → auto-halt/rollback.              
+       46 -- Fix ladder: vendor patch → workaround → ground fix → accept 
+          -and monitor → AI-drafted patch only as a suggestion to the man
+          -ufacturer [TB 7.4].                                           
+       47 -- **What is new vs existing tools (Q26):** scoring (IT scanner
+          -s, SPARTA), health monitoring (Spire CMP) and attack detection
+          - (Deloitte Silent Shield) already exist. Periapt's product is 
+          -the **agentic flow from a known flaw to a safe, scheduled fix 
+          -across the whole mission**: reachability → ranked plan (satell
+          -ites, order, pass, or a workaround) → emulator-and-canary vali
+          -dation → approval → watch and halt. It replaces today's handof
+          -f chain (security → flight software/manufacturer → mission ops
+          -), not any team.                                              
+       48 -- **Why teams want it (Q27):** it takes on the parts of the jo
+          -b that don't scale with people: *coverage* (every channel, sat
+          -ellite and pass), *memory* (the context graph keeps outcomes w
+          -hen staff leave), *consistency* (the same at 2 a.m. as 2 p.m.;
+          - fights automation bias) and *joining the pieces*. Versus a ge
+          -neral AI assistant: a general assistant can't trace ground→fle
+          -et reachability, plan around passes and power, or judge emulat
+          -or runs against a satellite's normal behaviour. Demand line: C
+          -VEs grew 20.6% from 2024 to 2025 [RF 27], and Periapt lets a t
+          -eam absorb growing volume without growing headcount at the sam
+          -e rate (no claim about actual team growth).                   
+       49 -- **Value case in three layers (Q29), no revenue figure:**    
+       50 -  1. *Value table*, split into efficiency, risk reduction and 
+          -innovation (S3): analyst hours per finding · time from advisor
+          -y to approved plan · handoffs cut (4 teams → 1 flow, structura
+          -l, from Q8) · findings per analyst as volume grows [RF 27] · u
+          -nsafe uplinks = 0 · tail-loss avoided (~$0.5–1M smallsat, seco
+          -ndary; ~$300M GEO [RF 4]) · **innovation:** assurance evidence
+          - packs for insurers and defence contracts (supports 800-171 3.
+          -14.1 [RF 30]).                                                
+       51 -  2. *Before/after* of the opening scene: the steps and handof
+          -fs come from our research; any durations are marked **"illustr
+          -ative"**.                                                     
+       52 -  3. *Proof = renewal*: pilot metrics from layer 1 trigger ren
+          -ewal in A.4 (links A.1 → A.4).                                
+       53 -- **Value ordering (R3/R4):** lead with **speed and coverage o
+          -f triage** (frequent, measurable). A bricked satellite is a **
+          -tail risk**, not the headline: no base rate exists, and Viasat
+          - itself reported the attack as financially immaterial [RF 4]. 
+          -Viasat is used for *disruption scale* (30,000 modems, 5,800 tu
+          -rbines) and the *ground→space path*, never as a dollar loss.  
+       54 -- **Evaluation (R17):** proxy metrics are named up front: anal
+          -yst hours per finding at equal coverage; time-to-remediate for
+          - flaws later exploited on the ground segment (observable); agr
+          -eement with red-team results in the testbed/cyber range; backt
+          -est against past Space ISAC advisories. Transfer of ground-tra
+          -ined exploitability to space is stated as an open validation r
+          -isk.                                                          
+       55 -- Honest line: rollout/rollback tooling already exists (Planet
+          - pipeline, Spire CMP [RF 31]). Periapt connects prioritisation
+          - to it; it doesn't replace it.                                
+       56 -- **Visual 1:** loop/architecture diagram (six stages, human g
+          -ate highlighted).                                             
+       90 +- **Workflow:** triage, from advisory to a ranked, explained d
+          +ecision, across three teams (§2).                             
+       91 +- **Role of AI:** the LLM agent (reading, matching, briefing, 
+          +orchestrating) + the world model (impact per satellite, margin
+          + forecast). Everything else is reused.                        
+       92 +- **Agentic, multi-step:** §2.3, with the autonomy boundary (r
+          +uns alone up to the ranking; a human approves anything that to
+          +uches a satellite).                                           
+       93 +- **Why teams want it (Q27, Q35):** coverage (every advisory ×
+          + every satellite), memory (the record stays when staff leave),
+          + consistency (the same at 2 a.m.), translation between the tea
+          +ms. **Versus a general assistant:** it can't trace fleet reach
+          + or play out commands on a specific satellite, and pasting fle
+          +et data into public tools is *shadow AI* (S5).                
+       94 +- **Value case in three layers (Q29), no revenue:**           
+       95 +  1. *Value table:* **efficiency** (analyst hours per advisory
+          +; time from advisory to ranked decision; coverage) · **risk** 
+          +(fewer critical flaws missed; evidence behind every approval; 
+          +smallsat ~$0.5–1M as a tail risk only [RF 4]) · **innovation**
+          + (evidence packs for insurers and DoD audits, giving 800-171 3
+          +.14.1's "timely" a documented method [RF 30]).                
+       96 +  2. *Before/after* of the opening scene: steps from research,
+          + durations marked **illustrative**.                           
+       97 +  3. *Proof = renewal* on pilot metrics (links to A.4).       
+       98 +- **Evaluation (R17), named as tests:**                       
+       99 +  - world model vs JPL's LSTM on ESA-ADB: fewer false alarms a
+          +t the same detection rate [RF 7, RF 32];                      
+      100 +  - predicted vs actual telemetry after real commands, on held
+          +-out operator logs;                                           
+      101 +  - predicted vs physics-simulator impact on replayed attack s
+          +cenarios (NOS3-style [RF 32]);                                
+      102 +  - ranking agreement with the team and red-team results in sh
+          +adow mode;                                                    
+      103 +  - backtest on past advisories: time to decision.            
+      104  
+       58 -### A.2 Moat — Morningstar five moat sources; Foundation Capit
+          -al "the model isn't the moat" → Content + Creativity          
+       59 -- "Would Periapt survive if the model changed tomorrow? Yes, b
+          -ecause the moat is the workflow and the context graph."       
+       60 -- Ranked moats:                                               
+       61 -  1. **Context graph / patch-outcome record**: every decision,
+          - approval and outcome, including ground-segment patch outcomes
+          - (the frequent ones, R11). Nobody can buy it.                 
+       62 -  2. **Switching costs**: the approval workflow, audit trail, 
+          -integrations, and SPARTA-mapped history (platformization logic
+          - from the student moats PPT).                                 
+       63 -  3. **Efficient scale**: a niche too small for many players; 
+          -the small buyer pool becomes a moat (turns R19 around).       
+       64 -  4. *Conditional upside*: a cross-fleet network effect, only 
+          -if operators opt in via an SDA-style neutral model sharing min
+          -imum data [RF 31, Q22]. Named test before claiming it: **poole
+          -d vs local model on held-out anomalies in design-partner pilot
+          -s**, since DP noise and per-fleet adapters may erase the gain 
+          -(R12).                                                        
+       65 -- **Data-volume caveat (R11):** spacecraft patch outcomes are 
+          -rare and mostly "success". The record therefore counts any pos
+          -t-update anomaly/degradation plus ground-segment patch outcome
+          -s, and the report says the space-side label volume is unmeasur
+          -ed.                                                           
+       66 -- Removed from the moat: public data (feasibility only [RF 7])
+          - and manufacturer partnerships (unevidenced, R13).            
+       67 -- Honest line: thin at cold start, grows per customer; the pro
+          -duct must work fully for one operator.                        
+      105 +  If the world model loses to the plain forecaster, only the m
+          +odel choice changes (Q33).                                    
+      106 +- **Visual 1:** the loop: advisory → three layers → ranked lis
+          +t → per-team briefs → human gate, with the authority rule show
+          +n.                                                            
+      107  
+       69 -### A.3 Five Forces — Porter (S7); niche strategy (Thiel); "co
+          -mpetitors = anyone meeting the same need" → Content + Presenta
+          -tion (Visual 2)                                               
+       70 -- **Strategic point:** *be the neutral decision layer on top o
+          -f what operators already use.* Every force pushes Periapt towa
+          -rd integrating, not replacing.                                
+       71 -- Buyers: few and capable → **high**. Honest count: Planet, Ir
+          -idium, SES(+Intelsat), ICEYE [RF 11, 31]; all run formal in-ho
+          -use programs (SES 40+ staff). Globalstar out (Amazon). **Spire
+          - is not counted as a buyer**: it is the co-opetition case (a p
+          -ossible buyer, a supplier, and a rollout-tooling partner/rival
+          - at once, R15). Buyer HQ/US status is not verified (R19), so t
+          -he text says "named mid-size operators", not "US buyers".     
+       72 -- Suppliers (Periapt's own inputs, R18): manufacturers' SBOMs,
+          - emulators and patches → **high**, consolidating under primes 
+          -[RF 12]. Their incentive: lower support/warranty cost, and a c
+          -ustomer-requested SBOM feed. Ground-station-as-a-service → low
+          - [RF 12].                                                     
+       73 -- Rivalry: **low on the whole loop**. Named adjacents: **Aeros
+          -pace Corp SPARTA/SPARTEND** (reference and on-orbit detection,
+          - not per-operator decisioning), **CT Cubed IRON GALAXY** (trai
+          -ning range), Spire CMP (rollout only → partner), Deloitte Sile
+          -nt Shield (detection) [RF 10/13, 31]. Caveat: absence of publi
+          -c claims ≠ absence (R23).                                     
+       74 -- Substitutes: **the good-enough stack** = in-house program + 
+          -SPARTA + vendor patches + Spire-style tooling; doing nothing [
+          -RF 14, 31] → **high**. SpaceX's in-house OTA system is cited o
+          -nly as a *secondary* source about *mega-operators*, and termin
+          -als and satellites are kept separate (R21).                   
+       75 -- S.3404 appears, if at all, only as a policy-attention signal
+          -, never as a "tailwind" (R24).                                
+       76 -- New entrants: primes and Booz Allen/Deloitte → **high threat
+          -**. Clearances/FOCI/ITAR block startups first (R22), so the en
+          -try path is commercial, unclassified, US-person team; a cleare
+          -d partner later.                                              
+       77 -- Regulation cuts both ways: no binding US mandate [RF 30]. 80
+          -0-171 3.14.1 "timely" with no prioritisation method is the ope
+          -ning for the ground-IT module.                                
+       78 -- **Visual 2:** compact table: force · rating · evidence · wha
+          -t Periapt does about it.                                      
+      108 +### A.2 Moat & Defensibility — the rubric puts "Core Product A
+          +rchitecture" here; Morningstar's five moat sources + platformi
+          +zation (student deck); Foundation Capital "the model isn't the
+          + moat" → Content + Creativity                                 
+      109 +- **Core product architecture (features):** advisory reader · 
+          +parts and reach map · score layer · world-model what-if · rank
+          +ing with the authority rule · per-team briefs and tickets · th
+          +e record. (Visual 1 is referenced here too.)                  
+      110 +- **"Would Periapt survive if the model changed tomorrow?"** Y
+          +es. The moat is what each customer's use builds up, not the ar
+          +chitecture.                                                   
+      111 +- **Moats, ranked:**                                          
+      112 +  1. **Switching cost: the per-fleet world model.** It is trai
+          +ned on the customer's own satellites; leaving means starting o
+          +ver, because a rival needs months of that fleet's history to c
+          +atch up.                                                      
+      113 +  2. **Intangible asset: the record.** Every flaw, ranking, ov
+          +erride (with its reason) and outcome. Nobody can buy it. Overr
+          +ides count as learning signal (R11: spacecraft outcomes are ra
+          +re).                                                          
+      114 +  3. **Switching cost: workflow and integrations.** Tickets, p
+          +arts lists, approvals and audit trail run through it (platform
+          +ization, in a light form).                                    
+      115 +  4. **Efficient scale:** a niche too small for many players (
+          +turns R19 around).                                            
+      116 +  5. *Conditional:* a cross-fleet network effect, only through
+          + opt-in, SDA-style minimum-data sharing [RF 31, Q22]. Test poo
+          +led vs local on held-out pilot data first (R12).              
+      117 +- **Removed:** public data (it proves feasibility only [RF 7])
+          + and manufacturer partnerships (no evidence, R13).            
+      118 +- **Honest line:** thin at cold start; it grows per customer; 
+          +the product must work fully for a single operator.            
+      119  
+       80 -### A.4 Persona & Journey — 2–3-word label + psychographics (S
+          -8); Diffusion of Innovation; Lemon & Verhoef; Puntoni's four A
+          -I experiences (S9–10) → Storytelling + Presentation (persona c
+          -ard)                                                          
+       81 -- **Persona: "the Stretched Sentinel"**: a CISO/VP Security at
+          - a US mid-size operator that also holds DoD/government contrac
+          -ts (resolves R26: one actor). Grounded in Planet's VP & CISO p
+          -osting (scope spans cyber, mission assurance, compliance, AI g
+          -overnance [RF 16]). Pains, goals, decision criteria (evidence,
+          - auditability, doesn't touch the command path, fits existing t
+          -ools). Psychographic: an expert, therefore sceptical of automa
+          -tion.                                                         
+       82 -- **Buying committee** (R27): economic buyer = CISO; approver 
+          -= mission-ops lead; champion = SecOps engineer.               
+       83 -- Diffusion: early adopters = operators already running staged
+          - deploy pipelines (Planet-like).                              
+       84 -- **Journey** (prepurchase → purchase → postpurchase, cyclical
+          -) mapped to Puntoni:                                          
+       85 -  - *Data capture*: onboarding builds the inventory (manufactu
+          -rer data package + operator config) as a cost-to-serve (R14). 
+       86 -  - *Classification*: shadow mode, ranked findings next to the
+          - team's own triage.                                           
+       87 -  - *Delegation*: guarded execution. Ground-side fixes and pla
+          -n drafting run automatically; uplinks are human-approved; pre-
+          -approved fix plans ahead of pass windows (R9).                
+       88 -  - *Social*: the explanations and evidence packs the CISO sho
+          -ws the board and insurer.                                     
+       89 -  - Renewal: triggered by hours saved plus zero unsafe uplinks
+          -.                                                             
+       90 -- **Timeline (R28), labelled as an assumption:** design-partne
+          -r paid pilot → shadow mode ~1 quarter → guarded ground-side au
+          -tomation → first uplink-assist decisions → renewal at 12 month
+          -s. Runway from paid pilots and seed funding. Entry via the gro
+          -und-IT module (800-171), with the space core as upsell. SBIR o
+          -nly "if authority is current" (R25, checked in §7).           
+      120 +### A.3 Five Forces — Porter (S7); niche strategy (Thiel); "co
+          +mpetitors = anyone meeting the same need"; streetlight effect 
+          +→ Content + Presentation (Visual 2)                           
+      121 +- **Strategic point:** *be the neutral commercial layer that b
+          +uilds on public tools (SPARTA, EPSS) and plugs into the operat
+          +or's own.* Every force pushes toward integrating, not replacin
+          +g.                                                            
+      122 +- **Buyers: high.** Few and capable: Planet, Iridium, SES(+Int
+          +elsat), ICEYE [RF 11, 31], all running formal programs (SES 40
+          ++ staff; Spire ranks by ISO 27005). Globalstar is out (Amazon)
+          +. Spire is the co-opetition case (operator, manufacturer and t
+          +ooling vendor), not counted as a buyer (R15). Say "named mid-s
+          +ize operators", not "US buyers" (R19).                        
+      123 +- **Suppliers:** parts lists and manufacturer data are **high*
+          +* power (primes are consolidating [RF 12]). Telemetry is the c
+          +ustomer's own. Public feeds (advisories, EPSS, SPARTA) and ope
+          +n-weight LLMs are **low**.                                    
+      124 +- **Rivalry: low for satellite-specific impact ranking; crowde
+          +d for IT prioritisation** (Tenable, Qualys, Nucleus, with EPSS
+          +). Named adjacents:                                           
+      125 +  - **Aerospace Corp SPARTA/SPARTEND** (reference framework an
+          +d on-orbit detection);                                        
+      126 +  - **Aerospace + Google** (anomaly monitoring for government 
+          +pLEO constellations [RF 32]);                                 
+      127 +  - **CT Cubed IRON GALAXY** (assessments, training, cyber ran
+          +ges [RF 32]);                                                 
+      128 +  - Deloitte Silent Shield (detection);                       
+      129 +  - Spire CMP (rollout).                                      
+      130  
+       92 -### A.5 Governance (US) — Trust (competence, integrity, benevo
+          -lence; distrust ↔ overtrust zone, S11); risk taxonomy, kill sw
+          -itch, audit log, drift, prompt injection, Air Canada (S5); NIS
+          -T AI RMF → Content + Storytelling                             
+       93 -- **Autonomy table** (R9): autonomous = ingest, map, score, dr
+          -aft plans, ground ticketing, monitoring, auto-halt · human-app
+          -roved = ground-change execution, every uplink · **never automa
+          -ted** = changes to the command, boot or auth path; AI-written 
+          -flight code uplink. Missing approval at pass close → **hold**.
+       94 -- **Stop rules (T4):** anomaly score over threshold after cana
+          -ry; any telemetry loss after uplink; confidence under a floor;
+          - the flaw touches the command-authentication path → human-only
+          -; conflicting advisories → escalate.                          
+       95 -- **Unrecoverable-failure class (T5, Q25):** A/B partition + w
+          -atchdog as a precondition; canary on the least-critical satell
+          -ite; limits on how far a bad patch can spread.                
+       96 -- **Hallucination and injection:** retrieval-grounded, citatio
+          -n-required mapping; advisories treated as untrusted input (ind
+          -irect prompt injection, S5 + student PPT); insecure-output han
+          -dling → structured outputs only.                              
+       97 -- **Monitoring and audit:** drift monitoring (Zillow lesson); 
+          -NIST SP 800-53 AU-2/3/6 audit trail [RF 24]; model cards.     
+       98 -- **Liability (T6, Q25):** "decision support with evidence and
+          - stated residual risk", never "certified safe"; the manufactur
+          -er warrants its own patch; contractual cap; audit trail as evi
+          -dence. Air Canada lesson: companies are bound by their AI's ou
+          -tput, so claims are worded carefully.                         
+       99 -- **Jurisdiction:** NIST AI RMF Govern/Map/Measure/Manage mapp
+          -ing [RF 19]; CCPA: Periapt is a service provider; terminal loc
+          -ation data minimised [RF 23, R32]; FTC: fairness risk low (mac
+          -hines, not people) but AI capability claims must not overstate
+          - (one line, no specific FTC case); **EAR 9A515 first, ITAR whe
+          -re applicable** [RF 22, R16]; federated pool limited to US + l
+          -icence-exempt allies (AUS/CAN/UK); whether trained weights are
+          - controlled is flagged as open.                               
+      100 -- **Customer exit / unlearning (R33):** a departing operator's
+          - local data and adapters are deleted; its past contribution to
+          - any shared model can't be removed selectively. It is handled 
+          -by periodic retraining from retained contributions, and the li
+          -mitation is stated.                                           
+      101 -- Ends the trust thread: calibrated trust = the zone between o
+          -ver- and under-trust.                                         
+      131 +  Caveat (streetlight effect): we searched where the light is,
+          + in public claims. Absence of claims isn't proof (R23).       
+      132 +- **Substitutes: high.** The good-enough stack: in-house team 
+          ++ ISO 27005 ranking + scanners with EPSS + SPARTA.            
+      133 +- **New entrants: high.** Google (already working with Aerospa
+          +ce), the primes, Booz Allen and Deloitte. **Aerospace Corp its
+          +elf is a partner, not a rival:** FAR 35.017 bars an FFRDC from
+          + competing with industry [RF 32]. Periapt builds on SPARTA; Ae
+          +rospace's testbed access for ISAC members (ASC-100 [RF 31]) is
+          + a validation route. Entry path: a commercial, unclassified, U
+          +S-person team; a cleared partner later (R22).                 
+      134 +- **Regulation cuts both ways:** there is no binding US mandat
+          +e [RF 30]. 800-171 3.14.1 says "timely" with no prioritisation
+          + method, which makes DoD contractors the beachhead. S.3404 is 
+          +out (R24).                                                    
+      135 +- **Visual 2:** a compact table: force · rating · evidence · w
+          +hat Periapt does about it.                                    
+      136  
+      137 +### A.4 Persona & Journey — 2–3-word label + psychographics (S
+          +8); Diffusion of Innovation; Lemon & Verhoef; Puntoni's four e
+          +xperiences (S9–10); Gartner "pilot trap" (S1) → Storytelling +
+          + Presentation (Visual 3)                                      
+      138 +- **Persona: "the Stretched Sentinel".** The CISO/VP Security 
+          +at a US mid-size operator that also holds DoD contracts (R26),
+          + grounded in Planet's VP & CISO posting [RF 16].              
+      139 +  - Pains: advisory overload, audit pressure, being blamed for
+          + the one flaw that was missed.                                
+      140 +  - Goals: defend the fleet, show auditors a method.          
+      141 +  - Decision criteria: evidence, auditability, never touches t
+          +he command path, fits the tools the team already has.         
+      142 +  - Psychographic: an expert, and so sceptical of automation. 
+      143 +- **Buying committee (R27):** the CISO holds the budget; a Sec
+          +Ops analyst is the daily user and champion; the mission-ops le
+          +ad approves anything that touches a satellite.                
+      144 +- **Diffusion:** early adopters are operators with formal prog
+          +rams, **older or mixed fleets** (§2.5) and DoD contracts.     
+      145 +- **Journey, built to escape the pilot trap** (Gartner: 80%+ o
+          +f AI initiatives stall at pilot, S1):                         
+      146 +  - *Prepurchase:* advisory overload plus an audit or incident
+          + trigger.                                                     
+      147 +  - *Purchase:* paid pilot → **data capture** (Puntoni): forwa
+          +rd-deployed engineers build the parts list, reach map and hist
+          +ory (§2.4).                                                   
+      148 +  - *Postpurchase:*                                           
+      149 +    - **classification**: shadow mode, with rankings next to t
+          +he team's own, while the model trains;                        
+      150 +    - **delegation**: low-impact flaws are auto-triaged and ti
+          +cketed, and humans own the top of the list;                   
+      151 +    - **social**: explanations and evidence packs for the boar
+          +d, the insurer and DoD auditors;                              
+      152 +    - **renewal** on hours saved, time to decision and no crit
+          +ical flaw missed;                                             
+      153 +    - the loop repeats with new advisories and Stage 2.       
+      154 +- **Timeline (R28), labelled an assumption:** paid pilot → sha
+          +dow mode ~1 quarter → assisted triage → renewal at 12 months. 
+      155 +- **Visual 3:** persona card + journey strip.                 
+      156 +                                                              
+      157 +### A.5 Governance (US) — trust (competence, integrity, benevo
+          +lence; zone of trust, S11); risk tiers, HITL, kill switch, aud
+          +it log, drift, prompt injection, agent access, shadow AI (S5);
+          + NIST AI RMF → Content + Storytelling                         
+      158 +- **Autonomy table (risk tiers):**                            
+      159 +  - *Runs alone:* ingest, match, score, what-if, rank, brief, 
+          +ticket, re-rank.                                              
+      160 +  - *Human, any time:* override a ranking; overrides are logge
+          +d with a reason.                                              
+      161 +  - *Human approval required:* any action that touches a satel
+          +lite or a ground system.                                      
+      162 +  - *Never automated:* changes to the command, boot or authent
+          +ication path.                                                 
+      163 +- **Stop / escalate rules:**                                  
+      164 +  1. no cited parts-list line → human;                        
+      165 +  2. world model outside its data → "impact unknown", ranked h
+          +igh, flagged;                                                 
+      166 +  3. conflicting advisories → escalate;                       
+      167 +  4. the flaw touches command authentication or the boot path 
+          +→ top priority, handled by humans only;                       
+      168 +  5. drift (predictions stop matching real telemetry) → layer 
+          +3 paused and ranking falls back to layers 1–2 until retrained.
+      169 +- **Kill switch:** the operator can switch off layer 3 or the 
+          +whole agent, and ranking falls back to layers 1–2.            
+      170 +- **Hallucination:** citation-required matching, deterministic
+          + confirmation, structured outputs only.                       
+      171 +- **AI security:**                                            
+      172 +  - advisories are untrusted input (indirect prompt injection,
+          + S5);                                                         
+      173 +  - **least privilege:** the agent can read telemetry and writ
+          +e tickets, and has **no route to command systems**.           
+      174 +- **Why never auto-act:** CrowdStrike 2024 (8.5M devices hit b
+          +y one bad update; student moat deck): being embedded everywher
+          +e cuts both ways.                                             
+      175 +- **Monitoring and audit:** drift monitoring as satellites age
+          + (Zillow); NIST SP 800-53 AU-2/3/6 audit trail (Cruise: missin
+          +g logs cost a permit) [RF 24]; model cards.                   
+      176 +- **Liability (Q25):** decision support with evidence and a st
+          +ated residual risk, never "certified safe". Exposure is smalle
+          +r than in v2 because Periapt ranks and humans act. Air Canada:
+          + companies are bound by their AI's words, so claims are worded
+          + carefully.                                                   
+      177 +- **Jurisdiction (US):**                                      
+      178 +  - NIST AI RMF: Govern = ownership of overrides and approvals
+          +; Map = the rank-vs-act boundary; Measure = the tests in A.1 p
+          +lus drift; Manage = stop rules and the kill switch [RF 19].   
+      179 +  - CCPA: Periapt is a service provider, handling mostly machi
+          +ne data; terminal data only as aggregate counts (which CCPA ex
+          +cludes) [RF 23].                                              
+      180 +  - FTC: fairness risk is low, but capability claims must not 
+          +overstate (one line).                                         
+      181 +  - Sector rules: EAR 9A515 first, ITAR where it applies, deem
+          +ed export → US-person access to customer data [RF 22]; 800-171
+          + [RF 30].                                                     
+      182 +- **Customer exit:** that fleet's model and data are deleted. 
+          +This is simple because models are per fleet. Only the conditio
+          +nal pooled model has the unlearning limit (R33).              
+      183 +- **Trust close:** calibrated trust sits between over- and und
+          +er-trust, and is earned in stages.                            
+      184 +                                                              
+      185  ### Close: four-lens check (~⅙ p) → Storytelling + Content
+      104 -One line per lens with its honest risk: *Feasibility* (validat
+          -ion stays with the manufacturer's testbed; ground→space exploi
+          -tability transfer unproven, R17), *Usability* (fits existing p
+          -ipelines; approval inside pass windows), *Desirability* (in-ho
+          -use teams are capable → "connect and speed up", Q20–21), *Viab
+          -ility* (per-fleet subscription + onboarding fee that covers in
+          -tegration labour; a small buyer pool; people-heavy delivery. N
+          -amed as the weakest point, Q24; no revenue figure, Q29). Then 
+          -the dream-big vision line (+ India as next market/engineering 
+          -base, pending §7).                                            
+      186 +- *Feasibility:* the world model's impact prediction is the on
+          +e unproven piece, with named tests and a safe fallback (layers
+          + 1–2, "unknown = high").                                      
+      187 +- *Usability:* it fits existing tools and methods, and each te
+          +am gets its own brief.                                        
+      188 +- *Desirability:* capable teams → a copilot, not a replacement
+          +; value is highest for older or mixed fleets.                 
+      189 +- *Viability:* a per-fleet subscription plus an onboarding fee
+          +; people-heavy on purpose at the start; a small buyer pool; co
+          +mpliance (EAR/ITAR, CMMC) is part of viability (S1). **This is
+          + the weakest point.**                                         
+      190  
+      106 -### References (3–4 key, non-blog)                            
+      107 -1. NIST IR 8270 (verify the control text in the PDF, R35) · 2.
+          - SPD-5, 85 FR 56155 (Federal Register, primary) · 3. NIST SP 8
+          -00-171 Rev 2 (read directly in item 30) · 4. SIA 29th State of
+          - the Satellite Industry Report 2026 (cite the report, not the 
+          -press release). Langer & Bouwmeester is dropped unless its exa
+          -ct 2-year reliability figure is used. Course frameworks (Porte
+          -r, Lemon & Verhoef 2016, Puntoni et al. 2021, Lee & See 2004) 
+          -are cited in-text.                                            
+      191 +Then the **staged vision** (dream big): Stage 2 = fix-window p
+          +lanning + outcome tracking; Stage 3 = validation and rollout i
+          +ntegration with partners (Spire-style tools, manufacturer emul
+          +ators). Each stage starts only when the previous one has earne
+          +d trust. *(India: on hold.)* End on the 2 a.m. scene resolved:
+          + by 2:10 the CISO has a ranked list with reasons, approves the
+          + first work-around, and goes back to sleep (illustrative).    
+      192  
+      193 +### References (3–4 key, non-blog, approved)                  
+      194 +1. SIA 29th State of the Satellite Industry **Report** (2026):
+          + cite the report, not the press release (R35).                
+      195 +2. NIST SP 800-171 Rev 2 (read directly, RF 30).              
+      196 +3. NIST AI RMF 1.0 (AI 100-1): check the PDF text before final
+          + (RF 19 flag).                                                
+      197 +4. Hundman et al., "Detecting Spacecraft Anomalies Using LSTMs
+          + and Nonparametric Dynamic Thresholding", ACM KDD 2018 [RF 32]
+          +.                                                             
+      198 +                                                              
+      199 +Course frameworks (Porter; Lemon & Verhoef 2016; Puntoni et al
+          +. 2021; Lee & See 2004; Pavlou & Fygenson 2006) are cited in-t
+          +ext.                                                          
+      200 +                                                              
+      201  ### Appendix (1 page) → Creativity & Effort
+      110 -1. Working evidence: **moat-evolution decision tree** (Q10 → Q
+          -12 → Q13 → Q18 → Q22: network effect → rare events → outcome d
+          -ata → context graph + switching costs).                       
+      111 -2. AI tools: Claude Code (Opus) as main assistant; Sonnet/Opus
+          - subagents for sourced research and a red-team review; verific
+          -ation discipline (§10.1 log). ≥2 transcript links (Q28): run `
+          -/export` + `/transcript` for this session first; split the **r
+          -edacted** `logs/TRANSCRIPT_LOG.md` into per-session chunks; th
+          -e user uploads them to Google Drive with "anyone with the link
+          - can view" and pastes the links.                              
+      112 -3. Hardest concept: **defensibility, i.e. who owns the data an
+          -d why operators would share.** Options considered: federated n
+          -etwork effect, public data, manufacturer partnerships, outcome
+          - record + switching costs. Why the last one was chosen.       
+      113 -4. Accepted / modified / rejected / independently developed: f
+          -rom TB §11.2 + Q17–Q25. Independently raised by the user: regu
+          -lation double edge, the Item 7 disconnect, in-house teams, hel
+          -ping competitors, unit economics, undo = unreliable.          
+      202 +1. **Working evidence:** two decision trees.                  
+      203 +   - *Moat:* Q10 → Q13 → Q18 → Q22 → per-fleet model + record.
+      204 +   - *Where the AI sits:* predict patch effects ✗ (R6) → judge
+          + test runs (commodity, Q33) → predict flaw impact ✓ (Q36).    
+      205 +2. **AI tools:** Claude Code (Opus) as the main assistant; Son
+          +net/Opus subagents for sourced research and a red-team review;
+          + verification discipline (§10.1 log, RF 32). ≥2 transcript lin
+          +ks: redacted `logs/TRANSCRIPT_LOG.md` chunks on Google Drive (
+          +user task).                                                   
+      206 +3. **Hardest concept (recommended):** *what the AI should actu
+          +ally predict.* The options were patch effect, judge, and flaw 
+          +impact; say why flaw impact won. Alternative: defensibility (w
+          +ho owns the data). The user picks one.                        
+      207 +4. **Accepted / modified / rejected / independently developed:
+          +** TB §11.2 + Q17–Q39. Raised independently by the user: regul
+          +ation cuts both ways, public data isn't a moat, in-house teams
+          +, helping competitors, unit economics, undo = unreliable, scop
+          +e drift away from AI (Q34), replacement vs assistance (Q35), t
+          +opic fit (Q36), autonomy (Q37), the Aerospace complement (Q39)
+          +.                                                             
+      208  
+      115 -## 4. Numbers: use / avoid (Content accuracy)                 
+      116 -Use: 14,266 sats [RF 1] · 4,434 deployed 2025 (+65%) · CVEs 40
+          -,009 / 48,185 / 57,908 YTD 31 Aug 2026 · Viasat ~30,000 modems
+          -, ~5,800 turbines, and "no material impact" (use honestly) · S
+          -ES 40+ security staff · smallsat ~$0.5–1M (secondary, CubeSat-
+          -class) · analyst $115–159K (general-industry) · 800-171 3.14.1
+          - exact text.                                                  
+      117 -Avoid: ~16–17k sats · ~58k/yr · Starlink % · "3-person team" ·
+          - "40% since 2000" · "fully tested" · "legally required to patc
+          -h" · "nobody validates patches" · "crores per year".          
+      209 +## 5. Numbers and wording: use / avoid                        
+      210 +- **Use:**                                                    
+      211 +  - 14,266 satellites; 4,434 deployed in 2025 (+65%) [RF 1];  
+      212 +  - CVEs 40,009 / 48,185 / 57,908 **YTD** [RF 27];            
+      213 +  - Viasat: *misconfigured* VPN appliance, *legitimate* comman
+          +ds, ~30,000 modems shipped, ~5,800 turbines, "no material impa
+          +ct" [RF 4, 32];                                               
+      214 +  - SES 40+ staff; 800-171 3.14.1 exact text;                 
+      215 +  - smallsat ~$0.5–1M (secondary, tail risk only);            
+      216 +  - EPSS = probability of exploitation in the next 30 days [RF
+          + 32].                                                         
+      217 +- **Avoid:**                                                  
+      218 +  - ~16–17k satellites; ~58k CVEs/yr; any Starlink %; "3-perso
+          +n team"; "40% since 2000";                                    
+      219 +  - "fully tested", "certified safe", "legally required to pat
+          +ch", "nobody validates patches";                              
+      220 +  - any revenue/ACV figure;                                   
+      221 +  - "Viasat was an unpatched flaw"; "satellites are US critica
+          +l infrastructure";                                            
+      222 +  - "nobody simulates attacks on satellites" (NOS3 research ex
+          +ists);                                                        
+      223 +  - "Terrain Trace / CT Cubed AI risk assessment"; SBIR; S.340
+          +4;                                                            
+      224 +  - "predicts what a patch will do".                          
+      225 +- **Label as hypotheses:** impact prediction for command seque
+          +nces never seen; the margin forecast; IT → space exploit trans
+          +fer; operators keep telemetry and command archives; satellites
+          + drift apart as they age; bus-type libraries reused across cus
+          +tomers lower onboarding cost.                                 
+      226  
+      119 -## 4a. Review coverage matrix (every item in `research/Researc
+          -h_Findings_Review.md`)                                        
+      227 +## 6. Review coverage matrix                                  
+      228  
+      121 -"Fixed" = the draft changes the claim. "Caveat" = the claim st
+          -ays but its limit is stated. "Avoid" = the claim is kept out o
+          -f the draft.                                                  
+      229 +"Fixed" = the draft changes the claim. "Caveat" = the claim st
+          +ays with its limit stated. "Avoid" = kept out. "Cut" = out of 
+          +Stage 1 scope.                                                
+      230  
+      123 -| Item | Issue (short) | Handling | Where |                   
+      231 +| Item | Issue (short) | Handling in v3 | Where |             
+      232  |---|---|---|---|
+      125 -| K1 | No binding US mandate | Fixed: pitch on operational ris
+          -k; regulation cuts both ways | A.3, A.5 |                     
+      126 -| K2 | Public data ≠ moat | Fixed: removed from moat, kept as 
+          -feasibility | A.2 |                                           
+      127 -| K3 | Static vs live is the wrong axis | Fixed: reference vs 
+          -decision-and-execution; build on SPARTA | A.1, A.3 |          
+      128 -| K4 | Operators do it in-house | Fixed: "connect and speed up
+          -"; good-enough stack as substitute | A.3, close |             
+      129 -| K5 | Why share with rivals | Fixed: network effect condition
+          -al, SDA model | A.2 |                                         
+      130 -| R1 | Growth is mega-constellation growth | Caveat: say so; t
+          -arget is the mid-size tier | A.0 |                            
+      131 -| R2 | Satellite numbers don't reconcile | Avoid: no Starlink 
+          -%; SIA 14,266 only | A.0, §4 |                                
+      132 -| R3 | Viasat "immaterial" | Fixed: disruption scale + path, n
+          -ot dollars | A.1 |                                            
+      133 -| R4 | No brick base rate | Fixed: triage speed leads; brickin
+          -g = tail risk | A.1 |                                         
+      134 -| R5 | Viasat supports the commodity layer | Fixed: ground→spa
+          -ce consequence modelling is the differentiator | A.1 |        
+      135 -| R6 | World model can't predict new code | Fixed: emulator ru
+          -ns the fix; JEPA judges emulator + canary runs against normal 
+          -behaviour (Q26) | A.1 |                                       
+      136 -| R7 | Auto-rollback exists (Spire, SpaceX) | Fixed: integrate
+          - with existing update managers | A.1, A.3 |                   
+      137 -| R8 | RL vs solver | Fixed: solver + learned ordering (user t
+          -o confirm) | A.1 |                                            
+      138 -| R9 | Where does the agent act? | Fixed: autonomy table; hold
+          - on missing approval | A.4, A.5 |                             
+      139 -| R10 | CVE arithmetic | Fixed: 57,908 stated as YTD; scoped t
+          -o ground software | A.0 |                                     
+      140 -| R11 | Outcome-label volume unknown | Caveat: broadened label
+          -; volume unmeasured | A.2 |                                   
+      141 -| R12 | DP erodes pooled model | Caveat: pooled-vs-local pilot
+          - test named | A.2 |                                           
+      142 -| R13 | Manufacturer moat unevidenced | Fixed: removed from mo
+          -at; moved to supplier power | A.2, A.3 |                      
+      143 -| R14 | No SBOMs available | Fixed: onboarding builds inventor
+          -y as cost-to-serve | A.1, A.4 |                               
+      144 -| R15 | Spire triple role | Fixed: co-opetition case, not in b
+          -uyer pool | A.3 |                                             
+      145 -| R16 | Export-control overstated | Fixed: EAR 9A515 first; al
+          -lied pool; weights question open | A.5 |                      
+      146 -| R17 | No evaluation method | Fixed: proxy metrics named; tra
+          -nsfer risk stated | A.1, close |                              
+      147 -| R18 | Supplier power from wrong side | Fixed: Periapt's own 
+          -inputs = high | A.3 |                                         
+      148 -| R19 | Buyer pool tiny/unsourced | Caveat: named operators on
+          -ly; efficient-scale framing | A.2, A.3 |                      
+      149 -| R20 | No unit economics | Reframed (Q29): customer-value cas
+          -e + pricing structure; no revenue figure; viability named as w
+          -eakest point | A.1, close |                                   
+      150 -| R21 | SpaceX evidence secondary | Caveat: tagged secondary, 
+          -mega-operators only | A.3 |                                   
+      151 -| R22 | Barriers hit the startup first | Fixed: entry path sta
+          -ted | A.3 |                                                   
+      152 -| R23 | Originality caveats dropped | Caveat: absence of claim
+          -s ≠ absence | A.3 |                                           
+      153 -| R24 | S.3404 "tailwind" | Avoid: attention signal only | A.3
+          - |                                                            
+      154 -| R25 | SBIR contradiction | Caveat: conditional wording; stat
+          -us check in §7 | A.4 |                                        
+      155 -| R26 | Three first customers | Fixed: one actor (mid-size ope
+          -rator with DoD contracts) | A.4 |                             
+      233 +| K1 | No binding US mandate | Fixed: pitch on operational ris
+          +k; 800-171 beachhead | A.3, A.5 |                             
+      234 +| K2 | Public data ≠ moat | Fixed: feasibility only | A.2 |   
+      235 +| K3 | Static vs live is the wrong axis | Fixed: build on SPAR
+          +TA; complement Aerospace | A.3 |                              
+      236 +| K4 | Operators do it in-house | Fixed: fills in their own li
+          +kelihood × impact method | §2.1, A.3 |                        
+      237 +| K5 | Why share with rivals | Fixed: network effect condition
+          +al | A.2 |                                                    
+      238 +| R1 | Growth is mega-constellations | Caveat: target mid-size
+          + | A.0 |                                                      
+      239 +| R2 | Satellite numbers | Avoid: SIA 14,266 only | A.0 |     
+      240 +| R3 | Viasat "immaterial" | Fixed: used for the method (way i
+          +n + legitimate commands), not dollars | Threads, A.0 |        
+      241 +| R4 | No brick base rate | Fixed: triage speed leads; loss is
+          + a tail risk | A.1 |                                          
+      242 +| R5 | Viasat supports the commodity layer | Fixed: generic to
+          +ols don't know the way in reaches the fleet, or what the comma
+          +nds would do | §2.1 |                                         
+      243 +| R6 | World model can't predict new code | **Dissolved:** it 
+          +predicts flaw impact from known commands; patches out of scope
+          + | §2.2 |                                                     
+      244 +| R7 | Auto-rollback exists | Cut: rollout/rollback out of Sta
+          +ge 1 | §2.6 |                                                 
+      245 +| R8 | RL vs solver | Cut: no RL; plain scheduler + forecast |
+          + §2.2 |                                                       
+      246 +| R9 | Where does the agent act? | Fixed: autonomy table | A.5
+          + |                                                            
+      247 +| R10 | CVE arithmetic | Fixed: YTD stated | A.0 |            
+      248 +| R11 | Outcome labels rare | Caveat: world model learns unlab
+          +elled normal data; overrides count as signal | A.2 |          
+      249 +| R12 | DP erodes pooled model | Caveat: pooled vs local test 
+          +| A.2 |                                                       
+      250 +| R13 | Manufacturer moat unevidenced | Fixed: removed; suppli
+          +er power | A.2, A.3 |                                         
+      251 +| R14 | No SBOMs | Fixed: forward-deployed engineers build the
+          +m; onboarding fee | §2.4, A.4 |                               
+      252 +| R15 | Spire triple role | Fixed: co-opetition, not a buyer |
+          + A.3 |                                                        
+      253 +| R16 | Export control | Fixed: EAR first; deemed export | A.5
+          + |                                                            
+      254 +| R17 | No evaluation | Fixed: five named tests | A.1 |       
+      255 +| R18 | Supplier power from the wrong side | Fixed: Periapt's 
+          +own inputs | A.3 |                                            
+      256 +| R19 | Buyer pool tiny | Caveat: named operators; efficient s
+          +cale; staged growth | A.2, A.3 |                              
+      257 +| R20 | No unit economics | Reframed: value case + pricing str
+          +ucture; people-heavy on purpose; weakest point | A.1, close | 
+      258 +| R21 | SpaceX evidence secondary | Avoid in the report (rollo
+          +ut cut); viva only | — |                                      
+      259 +| R22 | Barriers hit the startup first | Fixed: entry path | A
+          +.3 |                                                          
+      260 +| R23 | Originality caveats | Caveat: streetlight effect | A.3
+          + |                                                            
+      261 +| R24 | S.3404 | Avoid | — |                                  
+      262 +| R25 | SBIR contradiction | Held (user); out of the text | — 
+          +|                                                             
+      263 +| R26 | Three first customers | Fixed: one actor | A.4 |      
+      264  | R27 | Buyer ≠ approver ≠ user | Fixed: buying committee | A.
+           4 |
+      157 -| R28 | No sales cycle | Fixed: labelled assumption timeline |
+          - A.4 |                                                        
+      158 -| R29 | Liability | Fixed: decision-support wording, cap, manu
+          -facturer warranty | A.5 |                                     
+      159 -| R30 | No stop rules | Fixed: 5 stop rules + autonomy table |
+          - A.5 |                                                        
+      160 -| R31 | LLM hosting + hallucination | Fixed: self-hosted, cita
+          -tion-required, deterministic match | A.1, A.5 |               
+      161 -| R32 | FTC + CCPA role | Fixed: one-line FTC; service-provide
+          -r role | A.5 |                                                
+      162 -| R33 | Unlearning on exit | Caveat: retraining approach, limi
+          -tation stated | A.5 |                                         
+      163 -| R34 | 40% statistic unsourced | Avoid: Langer dropped unless
+          - the exact figure is used | §4, refs |                        
+      164 -| R35 | Reference flags | Caveat: verify IR 8270 + cite the SI
+          -A report itself before final | refs |                         
+      265 +| R28 | No sales cycle | Fixed: labelled timeline | A.4 |     
+      266 +| R29 | Liability | Fixed: decision support; smaller exposure 
+          +| A.5 |                                                       
+      267 +| R30 | No stop rules | Fixed: 5 rules + kill switch | A.5 |  
+      268 +| R31 | LLM hosting + hallucination | Fixed: self-hosted, cita
+          +tion-required | §2.1, A.5 |                                   
+      269 +| R32 | FTC + CCPA | Fixed: machine data; aggregate counts; FT
+          +C line | A.5 |                                                
+      270 +| R33 | Unlearning on exit | Fixed: per-fleet model deleted; p
+          +ooled limit stated | A.5 |                                    
+      271 +| R34 | 40% stat | Avoid | — |                                
+      272 +| R35 | Reference flags | Fixed: new list; SIA report + AI RMF
+          + PDF checks are user tasks | Refs |                           
+      273 +| RF 32 | Viasat wording; EPSS; Aerospace+Google; CT Cubed; NO
+          +S3; critical infrastructure; FAR 35.017 | Fixed as listed in §
+          +5 and A.3 | A.0, A.3, §5 |                                    
+      274  
+      166 -## 5. Output files                                            
+      275 +## 7. Output files                                            
+      276  - `report/Periapt_Report_Draft.md`: the draft, with source tag
+           s.
+      168 -- Visuals built at the conversion step (diagram + table).     
+      169 -- Conversion to `.docx` is a later step, not in this draft.   
+      277 +- Visuals at the conversion step (loop diagram, Five Forces ta
+          +ble, persona + journey strip).                                
+      278  
+      171 -## 6. Out of scope for this draft                             
+      172 -New research (except §7), final formatting, the .docx build, s
+          -tripping source tags, and the user's voice rewrite.           
+      279 +## 8. Out of scope for this draft                             
+      280 +New research, final formatting, the .docx build, stripping tag
+          +s, and the user's voice rewrite.                              
+      281  
+      174 -## 7. Parallel tasks                                          
+      175 -- **India research** (Sonnet subagent): mid-size operator coun
+          -t under IN-SPACe, security-team maturity, engineering cost bas
+          -e, DPDP/IN-SPACe/CERT-In constraints. Output → RF item 32 + ra
+          -w/08. Feeds one vision line only.                             
+      176 -- **Name check**: done (Q30). Phylax, Amyntor and PassWarden w
+          -ere taken; Periapt is clear in security/space.                
+      177 -- **SBIR status** (R25): quick check whether SBIR/STTR authori
+          -ty is current; one line in A.4 depends on it.                 
+      282 +## 9. Open items (user)                                       
+      283 +- India line: on hold. SBIR: held with it.                    
+      284 +- Before final: check the NIST AI RMF PDF text and cite the SI
+          +A report itself (R35).                                        
+      285 +- Choose the appendix's hardest concept (recommended: what the
+          + AI should predict).                                          
+      286 +- Transcript links on Google Drive.                           
+      287  
+      179 -## 8. v2 changes (from the post-review discussion, TB Q26–Q29)
+      180 -1. **Positioning:** a domain copilot that owns the workflow; t
+          -he product is the flaw → safe-fix flow, not scoring/monitoring
+          - (Q26, Q27).                                                  
+      181 -2. **World model role:** the judge of emulator and canary runs
+          -, plus fleet-wide watch during rollout (Q26).                 
+      182 -3. **Value:** the three-layer value case replaces the revenue/
+          -ACV formula; pricing structure only (Q29).                    
+      183 -4. **Persona:** "the Stretched Sentinel" confirmed; the author
+          - is free to strengthen it (Q28).                              
+      184 -5. **Name:** Phylax → **Periapt** (Q30).                      
+      185 -6. **Transcripts:** redacted log chunks via Google Drive links
+          - (Q28).                                                       
+      186 -7. **Viva prep:** every challenge and review question compiled
+          - in `report/Viva_Prep.md`.                                    
+      288 +## 10. v3 changes (from Q31–Q39)                              
+      289 +1. **Core:** predictive prioritisation, delivered as a copilot
+          +; fixing kept out of Stage 1 (Q34–Q36).                       
+      290 +2. **World model:** predicts each flaw's impact per satellite 
+          ++ margin forecast; no longer judges patches (Q31, Q33, Q36).  
+      291 +3. **Planner:** RL dropped; plain scheduler fed by the forecas
+          +t (Q32).                                                      
+      292 +4. **Layers + authority rule:** existing tools for facts and s
+          +cores; AI only for impact; the AI can raise, not silently lowe
+          +r (Q35, approved).                                            
+      293 +5. **Autonomy:** runs alone up to the ranking; on/in-the-loop 
+          +split (Q37).                                                  
+      294 +6. **Aerospace Corp:** complement, not rival (FAR 35.017); Goo
+          +gle and the primes are the real entrants (Q39).               
+      295 +7. **Honest scope notes:** onboarding builds the data; people-
+          +heavy on purpose; value highest for older/mixed fleets; staged
+          + growth (Q39).                                                
+      296 +8. **Architecture moved to A.2** (rubric placement); **3 visua
+          +ls**; course hooks added (pilot trap, CrowdStrike 2024, intang
+          +ible assets, shadow AI, least privilege, Cruise, S11 emotions/
+          +satisfaction, Viability incl. compliance, Layer 7 like Charlot
+          +te AI).                                                       
+      297 +9. **Corrections (RF 32):** Viasat wording, EPSS as input, Aer
+          +ospace + Google adjacent, CT Cubed wording, critical-infrastru
+          +cture wording.                                                
+      298 +10. **References:** SIA report, 800-171, NIST AI RMF, Hundman 
+          +2018.                                                         
+
+● The spec is written. A self-review found two small fixes, so I'll apply those,
+  then log Q39 and update CLAUDE.md and HANDOFF to match what you approved.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+● Retrying once; the safety check failed on a temporary error.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+● Bash is still failing on that check. I'll switch to the Edit tool for these
+  changes.
+
+● Update(report/specs/2026-09-30-report-draft-design.md)
+  ⎿  Added 1 line, removed 1 line
+      123  - **Suppliers:** parts lists and manufacturer data are **high*
+           * power (primes are consolidating [RF 12]). Telemetry is the c
+           ustomer's own. Public feeds (advisories, EPSS, SPARTA) and ope
+           n-weight LLMs are **low**.
+      124  - **Rivalry: low for satellite-specific impact ranking; crowde
+           d for IT prioritisation** (Tenable, Qualys, Nucleus, with EPSS
+           ). Named adjacents:
+      125    - **Aerospace Corp SPARTA/SPARTEND** (reference framework an
+           d on-orbit detection);
+      126 -  - **Aerospace + Google** (anomaly monitoring for government 
+          -pLEO constellations [RF 32]);                                 
+      126 +  - **Aerospace + Google** (agentic anomaly monitoring for pro
+          +liferated-LEO constellations [RF 32]);                        
+      127    - **CT Cubed IRON GALAXY** (assessments, training, cyber ran
+           ges [RF 32]);
+      128    - Deloitte Silent Shield (detection);
+      129    - Spire CMP (rollout).
+
+● Update(report/specs/2026-09-30-report-draft-design.md)
+  ⎿  Added 1 line, removed 1 line
+      13  | Scope | Known flaws that could affect a satellite operator's 
+          fleet. Periapt **finds, scores, ranks and explains**. Ground sy
+          stems count only as the way in. It does not write, test or send
+           fixes. | The niche from the original 17 Sept problem (Q34). |
+      14  | Positioning | **A copilot for the three teams** (security, fl
+          ight software, mission ops). The AI reads, predicts, ranks and 
+          drafts; each team keeps its decision. | Q35. It plugs into the 
+          team's own ranking method, so there's no migration. |
+      15  | Relation to Aerospace Corp | **Complement, not rival.** Peria
+          pt builds on SPARTA and speaks its IDs. As an FFRDC, Aerospace 
+          is barred from competing with industry (FAR 35.017). | Q39, RF 
+          32. |
+      16 -| Autonomy | Scan, score and rank run **on their own**. Humans 
+         -can override at any time (**on the loop**). A human approves **
+         -before anything touches a satellite** (**in the loop**). | Q37.
+         - |                                                             
+      16 +| Autonomy | Scan, score and rank run **on their own**. Humans 
+         +can override at any time (**on the loop**). A human approves **
+         +before anything touches a satellite or a ground system** (**in 
+         +the loop**). | Q37. |                                          
+      17  | Ranking rule | The AI may **raise** a flaw's priority on its 
+          own. **Lowering** needs a human. If the world model is **outsid
+          e its data**, impact counts as **high**. | Approved 2026-09-30.
+           |
+      18  | Growth path | **Stage 1 = this report's product.** Later stag
+          es (fix-window planning, then validation/rollout with partners)
+           come only after trust is earned. | Q39. Course: "think big, ac
+          t small"; niche first, then adjacent (Porter deck, Thiel). |
+      19  | People-heavy start | Deliberate: forward-deployed engineers o
+          nboard each customer and build trust in shadow mode. | Q39. Exp
+          erts rely less on automation (Sanchez et al., S11). |
+
+  Read 1 file (ctrl+o to expand)
+
+● Update(topic/Topic_Brainstorm_Report.md)
+  ⎿  Added 11 lines
+      446  
+      447  **Conclusion:** the revised concept holds, and the fixes are w
+           ording and competitor naming. The scores and the remaining ope
+           n decisions are in the session review; spec v3 is pending appr
+           oval.
+      448  
+      449 +### Q39. "Can we be a complement or sit in an adjacent space i
+          +nstead of competing with Aerospace Corp? How exactly is the va
+          +lue smaller for new, identical fleets? I'm keeping it people-h
+          +eavy because this industry doesn't trust new automation: you h
+          +ave to earn trust first, then grow into the scope we cut. And 
+          +we'll never have full data at the start; it all comes from the
+          + client at onboarding."                                       
+      450 +**Origin of doubt:** the weak spots listed in the Q38 review. 
+      451 +**Reasoning:**                                                
+      452 +- *Aerospace Corp:* **yes, a complement.** As an FFRDC it is b
+          +arred by FAR 35.017 from competing with industry (RF item 32).
+          + It publishes frameworks (SPARTA) and builds government protot
+          +ypes. Periapt builds on SPARTA, speaks its IDs, and can valida
+          +te through Aerospace's ASC-100 testbed access (RF item 31). *T
+          +he real entrant threat moves* to its partner Google and to the
+          + primes and consultancies.                                    
+      453 +- *Identical fleets:* the world model earns its keep by tellin
+          +g satellites apart. In a new fleet of identical, healthy satel
+          +lites, "what would this attack do?" gives nearly the same answ
+          +er for each, so it adds little over a rule, and the history is
+          + short. The value left is reading at scale, speed, and ranking
+          + *across* flaws. Satellites drift apart as they age (reasoning
+          +, not sourced). → Early adopters are older or mixed fleets.   
+      454 +- *People-heavy:* **agreed as a strategy**, and backed by the 
+          +course: experts rely less on automation (Sanchez et al., S11),
+          + and forward-deployed engineers are in demand (S1 note). *Push
+          +back:* it's still a cost, so viability stays the weakest point
+          +. Onboarding gets cheaper only if parts libraries per satellit
+          +e bus type can be reused across customers, which is a hypothes
+          +is that needs manufacturer data (R13/R14).                    
+      455 +- *Staged growth:* **agreed.** Prove Stage 1, then add fix-win
+          +dow planning, then validation and rollout with partners. This 
+          +is the course's "think big, act small" and "dominate a niche, 
+          +then adjacent markets" (Porter deck, Thiel).                  
+      456 +- *Data:* **correct.** Onboarding builds the parts list, the r
+          +each map and the history from the client (R14). Until a fleet'
+          +s model is trained, layer 3 says "unknown", so rankings stay h
+          +igh by default. Shadow mode earns trust, gathers data and trai
+          +ns the model at the same time.                                
+      457 +**Conclusion:** all five folded into spec v3 (§1, §2.4–2.6, A.
+          +3, A.4, close).                                               
+      458 +**Change:** spec v3 written 2026-09-30. User approved: the re-
+          +centred concept and cuts, the ranking authority rule, and the 
+          +reference list. India and SBIR are on hold.                   
+      459 +                                                              
+      460  ---
+      461  
+      462  ## 5. Questions Claude Asked Me
+
+  Read 3 files (ctrl+o to expand)
+● Update(report/Viva_Prep.md)
+  ⎿  Added 1 line, removed 1 line
+      160  
+      161  **"Isn't this Spacecraft Mission Operations (telemetry analyti
+           cs), not vulnerability prioritisation?"** No. The world model'
+           s output is a **security ranking**: which flaw to fix first an
+           d why. We deliberately don't sell fleet monitoring. Aerospace 
+           Corp and Google are building that [Q36, RF 32].
+      162  
+      163 -**"Aerospace Corp has SPARTA and an AI anomaly tool with Googl
+          -e. Why won't they build this?"** They might; they're the bigge
+          -st new-entrant threat. But they are a government research cent
+          -re (FFRDC) working for government missions. We serve mid-size 
+          -*commercial* operators, which their government focus doesn't t
+          -arget (my reasoning, not a sourced fact), and we output in SPA
+          -RTA IDs so we build on their work instead of fighting it [RF 1
+          -0/13, RF 32].                                                 
+      163 +**"Aerospace Corp has SPARTA and an AI anomaly tool with Googl
+          +e. Why won't they build this?"** Aerospace is an FFRDC, and fe
+          +deral rules (FAR 35.017) bar FFRDCs from competing with indust
+          +ry. They publish frameworks like SPARTA and build prototypes f
+          +or government. We build on SPARTA and speak its IDs, so we com
+          +plement them. The real threat is the commercial side: their pa
+          +rtner Google, the primes, Booz Allen and Deloitte [Q39, RF 32]
+          +.                                                             
+      164  
+      165  **"Viasat was a misconfiguration, not an unpatched flaw. Why u
+           se it?"** Correct, and I say so. I use it for the path and the
+            method: getting in on the ground, then using legitimate comma
+           nds to harm tens of thousands of terminals. That is exactly th
+           e kind of harm our world model plays out [RF 32].
+      166  
+
+● Update(report/Viva_Prep.md)
+  ⎿  Added 8 lines
+      173  **"Why no RL planner any more?"** The review showed RL would l
+           earn from rollout outcomes that are rare and mostly successes.
+            Once we focused on prioritisation, the planner shrank to a su
+           ggested fix window: a plain scheduler fed by the world model's
+            battery and thermal forecast [Q32, Q34].
+      174  
+      175  **"What did you cut, and why?"** Writing patches (the manufact
+           urer's job). Running rollouts and rollbacks (Spire and SpaceX 
+           already sell or build them). Fleet monitoring (Aerospace Corp 
+           + Google). Ground-IT patching as a product (Tenable, Qualys). 
+           Terminals as a separate product area. The RL planner. Every cu
+           t was either already sold by someone else or not part of the o
+           riginal problem [Q34].
+      176 +                                                              
+      177 +**"Why does value drop for new fleets?"** Our AI's edge is tel
+          +ling satellites apart. In a new fleet of identical, healthy sa
+          +tellites, an attack would do roughly the same to each, so a si
+          +mple rule does almost as well, and there's little history to l
+          +earn from. We still help with reading, speed and ranking acros
+          +s flaws. That's why our first customers are older or mixed fle
+          +ets [Q39].                                                    
+      178 +                                                              
+      179 +**"Isn't people-heavy a bad business?"** It's a cost, and I na
+          +me viability as the weakest point. But it's deliberate: expert
+          +s don't trust new automation, so trust has to be earned in sha
+          +dow mode first. It gets cheaper per customer if the parts libr
+          +ary for a satellite design can be reused, which is a hypothesi
+          +s [Q39].                                                      
+      180 +                                                              
+      181 +**"Where does your data come from on day one?"** From the clie
+          +nt, at onboarding: parts lists, software versions, the ground-
+          +to-fleet network map, and telemetry and command history. Until
+          + the model is trained, it says "unknown", so rankings stay hig
+          +h by default. Shadow mode builds trust and trains the model at
+          + the same time [Q39].                                         
+      182 +                                                              
+      183 +**"Why not build the whole patch pipeline?"** Stage 1 has to e
+          +arn trust first. Once the rankings are trusted, we add fix-win
+          +dow planning, then validation and rollout with partners. Think
+          + big, act small [Q39].                                        
+
+● Update(CLAUDE.md)
+  ⎿  Added 5 lines, removed 5 lines
+       9  ## Locked decisions
+      10  
+      11  - **Company:** **Periapt** (protective amulet; echoes *periapsi
+          s*): an AI platform that prioritises and safely resolves cybers
+          ecurity vulnerabilities across satellite missions (ground → net
+          work → spacecraft → terminals), inside the listed topic "Day-Ze
+          ro Vulnerability Prioritisation" (Defence, Space & Cybersecurit
+          y segment). Renamed from Phylax on 2026-09-30 (name clash; topi
+          c report Q30).
+      12 -- **Positioning:** a domain copilot that owns the workflow: the
+         - agentic flow from a known flaw to a safe, scheduled fix, with 
+         -humans approving every uplink. It makes expert teams faster and
+         - doesn't replace them.                                         
+      13 -- **Architecture:** LLM advisory agent (self-hosted, citation-r
+         -equired) + exposure graph + JEPA-style world model (judges emul
+         -ator/canary runs and watches rollouts) + rollout planner + huma
+         -n-approved uplinks only. **Pending user confirmation:** planner
+         - = constraint solver + learned ordering, replacing the original
+         - "constrained RL" (spec v2, review R8). Evolution: `topic/Topic
+         -_Brainstorm_Report.md` §7 and Q26.                             
+      14 -- **Jurisdiction:** **United States** (confirmed 2026-09-30); I
+         -ndia only as a next-market line, pending research.             
+      15 -- **Format:** Word/PDF doc, 4 pages + 1-page appendix, 2 visual
+         -s. Draft in markdown with source tags; the user rewrites it in 
+         -their own voice.                                               
+      16 -- **Current state:** see `HANDOFF.md` (read it first in a new s
+         -ession). Spec v2 awaits approval; the report prose has not been
+         - started.                                                      
+      12 +- **Positioning (re-centred 2026-09-30, Q31–Q39):** **predictiv
+         +e prioritisation** is the core: scan advisories → score → rank 
+         +flaws per satellite, with reasons. It's delivered as a copilot 
+         +to the security, flight-software and ops teams, and each team k
+         +eeps its decision. It runs on its own up to the ranking; a huma
+         +n approves anything that touches a satellite or a ground system
+         +. It complements Aerospace Corp (builds on SPARTA; FAR 35.017).
+         + Growth is staged: fixing, validation and rollout come later, o
+         +nce trust is earned.                                           
+      13 +- **Architecture:** LLM agent (self-hosted, citation-required; 
+         +ReAct orchestrator) + reused scores (CVSS, EPSS, SPARTA) + reac
+         +h map + **world model** (learned per fleet from telemetry and c
+         +ommand history; predicts what an attacker's commands would do t
+         +o each satellite, and forecasts battery/thermal margin; JEPA-st
+         +yle as the candidate). Ranking rule: the AI can raise a priorit
+         +y, lowering needs a human, and outside its data means high. The
+         + RL planner, patch testing, rollout/rollback and monitoring are
+         + **cut** from Stage 1. Evolution: topic report Q26 and Q31–Q39.
+      14 +- **Jurisdiction:** **United States** (confirmed 2026-09-30). I
+         +ndia line and SBIR: on hold (user decision pending).           
+      15 +- **Format:** Word/PDF doc, 4 pages + 1-page appendix, 3 visual
+         +s. Draft in markdown with source tags; the user rewrites it in 
+         +their own voice.                                               
+      16 +- **Current state:** see `HANDOFF.md` (read it first in a new s
+         +ession). Spec v3 (`report/specs/2026-09-30-report-draft-design.
+         +md`) awaits the user's review; the report prose has not been st
+         +arted.                                                         
+      17  
+      18  ## File map
+      19  
+
+● Update(HANDOFF.md)
+  ⎿  Added 1 line, removed 1 line
+      1  # Session Handoff
+      2  
+      3 -> **⚠ Partly superseded (2026-09-30 evening).** The scope was cu
+        -t back to the original problem, with AI at the centre: **predict
+        -ive prioritisation** (scan → score → rank with reasons) delivere
+        -d as a copilot. The world model now predicts what a flaw would d
+        -o to each satellite, plus battery/thermal margin. The RL planner
+        -, rollout/rollback building and monitoring are cut. See topic re
+        -port **Q31–Q38**, RF **item 32** and Viva_Prep **§9**. **Spec v2
+        - is NOT to be drafted from.** Spec v3 is pending the user's appr
+        -oval of the re-centred concept. §1–§4 below describe the older v
+        -2 state.                                                        
+      3 +> **⚠ Partly superseded (2026-09-30 evening).** The scope was cu
+        +t back to the original problem, with AI at the centre: **predict
+        +ive prioritisation** (scan → score → rank with reasons) delivere
+        +d as a copilot. The world model now predicts what a flaw would d
+        +o to each satellite, plus battery/thermal margin. The RL planner
+        +, rollout/rollback building and monitoring are cut. See topic re
+        +port **Q31–Q39**, RF **item 32** and Viva_Prep **§9**. **Spec v2
+        + is NOT to be drafted from.** **Spec v3 is written** (same path)
+        + and awaits the user's review. Next: approval → writing-plans → 
+        +draft. India and SBIR are on hold. §1–§4 below describe the olde
+        +r v2 state; where they differ, trust v3.                        
+      4  
+      5  **Written:** 2026-09-30, end of the research-validation + report
+         -design session.
+      6  **Deadline:** 1 Oct 2026, 23:59. That's about a day, so bias tow
+         ard drafting, not more research.
+
+● Update(CLAUDE.md)
+  ⎿  Added 1 line, removed 1 line
+       8  
+       9  ## Locked decisions
+      10  
+      11 -- **Company:** **Periapt** (protective amulet; echoes *periapsi
+         -s*): an AI platform that prioritises and safely resolves cybers
+         -ecurity vulnerabilities across satellite missions (ground → net
+         -work → spacecraft → terminals), inside the listed topic "Day-Ze
+         -ro Vulnerability Prioritisation" (Defence, Space & Cybersecurit
+         -y segment). Renamed from Phylax on 2026-09-30 (name clash; topi
+         -c report Q30).                                                 
+      11 +- **Company:** **Periapt** (protective amulet; echoes *periapsi
+         +s*): an AI platform that predicts and prioritises which known s
+         +ecurity flaws matter most for each satellite in an operator's f
+         +leet (ground systems count as the way in), inside the listed to
+         +pic "Day-Zero Vulnerability Prioritisation" (Defence, Space & C
+         +ybersecurity segment). Renamed from Phylax on 2026-09-30 (name 
+         +clash; topic report Q30).                                      
+      12  - **Positioning (re-centred 2026-09-30, Q31–Q39):** **predictiv
+          e prioritisation** is the core: scan advisories → score → rank 
+          flaws per satellite, with reasons. It's delivered as a copilot 
+          to the security, flight-software and ops teams, and each team k
+          eeps its decision. It runs on its own up to the ranking; a huma
+          n approves anything that touches a satellite or a ground system
+          . It complements Aerospace Corp (builds on SPARTA; FAR 35.017).
+           Growth is staged: fixing, validation and rollout come later, o
+          nce trust is earned.
+      13  - **Architecture:** LLM agent (self-hosted, citation-required; 
+          ReAct orchestrator) + reused scores (CVSS, EPSS, SPARTA) + reac
+          h map + **world model** (learned per fleet from telemetry and c
+          ommand history; predicts what an attacker's commands would do t
+          o each satellite, and forecasts battery/thermal margin; JEPA-st
+          yle as the candidate). Ranking rule: the AI can raise a priorit
+          y, lowering needs a human, and outside its data means high. The
+           RL planner, patch testing, rollout/rollback and monitoring are
+           **cut** from Stage 1. Evolution: topic report Q26 and Q31–Q39.
+      14  - **Jurisdiction:** **United States** (confirmed 2026-09-30). I
+          ndia line and SBIR: on hold (user decision pending).
+
+● All the edits are in. Now I'll commit on the branch and merge into main.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+● Spec v3 is written and merged into main. It's at
+  report/specs/2026-09-30-report-draft-design.md and waiting for your review.
+  Here are your four questions first.
+
+  1. Aerospace Corp: yes, we can be a complement. Aerospace is an FFRDC, and
+  federal rules (FAR 35.017) bar FFRDCs from competing with private companies.
+  Their role is to publish frameworks like SPARTA and build prototypes for the
+  government. So Periapt builds on SPARTA, speaks its IDs, and can test through
+  Aerospace's testbed (open to Space ISAC members). The real competitors are the
+  commercial players: Google (their partner on the monitoring tool), the big
+  defence primes, Booz Allen and Deloitte.
+
+  2. Why value is smaller for new, identical fleets. Our AI's edge is telling
+  satellites apart ("this attack hurts satellite 12 more than satellite 40"). In
+  a new fleet of identical, healthy satellites, an attack does about the same
+  to each one, so a simple rule does almost as well, and there's little history
+  to learn from. We still add speed, reading at scale, and ranking flaw A
+  against flaw B. So the first customers are operators with older or mixed
+  fleets.
+
+  3. People-heavy: I agree it's a deliberate strategy. The course backs it:
+  experts trust automation less, and forward-deployed engineers are in demand.
+  The one pushback is that it still costs money, so viability stays the weakest
+  point. It gets cheaper only if the setup work for one satellite design can be
+  reused for the next customer, and that's a guess we haven't verified.
+
+  Staged growth and data: both agreed, and both are in the spec.
+  - Growth: Stage 1 is prioritisation. Later stages add the scope we cut, once
+    trust is earned. That's the course's "think big, act small".
+  - Data: all of it comes from the client at onboarding. Until a fleet's model
+    is trained, it answers "unknown", so flaws rank high by default. Shadow mode
+    builds trust, collects data and trains the model at the same time.
+
+  What changed in the files:
+  - Spec v3: the concept, all sections A.0–A.5, the tests, the stop rules, and a
+    coverage table that accounts for every one of the 35 review items plus the
+    new findings.
+  - Q39 (your challenge above) is logged in the topic report, and answers are
+    added to Viva_Prep §9.
+  - FAR 35.017 is recorded in the research findings as item 32.
+  - CLAUDE.md and HANDOFF now describe the re-centred concept, so a new session
+    won't draft from v2.
+  - India is on hold. I also held SBIR, since it was part of the same question;
+    tell me if you want to drop it.
+
+  Please review spec v3. Once you approve it, the next step is the drafting
+  plan, then the draft itself.
+
+  Sources:
+  - FAR 35.017 (Cornell LII)
+  - FAR 35.017 (acquisition.gov)
+  - GAO on FFRDCs
+  - CMS: Understanding FFRDCs
+
+✻ Brewed for 6m 14s · done 8:35 PM
+
+※ recap: We're re-centring the Periapt report on predictive AI prioritisation, and spec v3 is now written and merged. Next, please review and approve spec v3 so I can plan and start drafting. (disable recaps in /config)
+
+❯ - In the problem that we state that someone has to work out by hand which     
+  satellite has a flaw. That is an overstatement here. Softwares exist to do    
+  this work. So we need to change that.                                         
+  - on the new fleet, as the fleet becomes older we are able to differentiate   
+  them, thus as the fleet gets used and over the time our model and our         
+  solution performs better. new fleets are already configured and mostly tested 
+  out on the ground itself right softwares and hardware are tested before       
+  launches and let's assume that after a usage of three months or two quarters  
+  or a year we are able to differentiate them because of different unknown      
+  parameters that can happen in space thus we are able to distinguish between   
+  them And satellites remain for a long time, at least five years, right? Five  
+  to six years. At least I'm assuming that. Is my claim probable acceptable     
+  plausible? Also, even if let's say we launch a new fleet of 12 satellites,    
+  then it's not necessary that all of them have the same geographical locations 
+  and parameters, right? We are just saying that they have the same software    
+  components and the hardware components. Doesn't mean that they have the same  
+  environmental conditions over there. can we not differentiate them based on   
+  that as well?                                                                 
+                                                                                
+  /brainstorming everything else just looks right I guess I mean those are      
+  basically following the course components right just do a quick check that    
+  you have covered all the course components and the grading components and uh, 
+  there are no missed claims like I don't want there to be a bomb inside the    
+  design itself that will explode later.                                        
+
+● Both of your points hold, and checking them turned up two more problems in the
+  spec. I'll fix everything in the files and then summarise.
+
+● Update(report/specs/2026-09-30-report-draft-design.md)
+  ⎿  Added 7 lines, removed 1 line
+      26  
+      27  ## 2. The product (the single source for every section)
+      28  
+      29 -**The problem.** Advisories arrive faster than teams can check 
+         -them (CVEs +20.6% from 2024 to 2025 [RF 27]). For each advisory
+         -, someone has to work out by hand which satellites have the fla
+         -w, whether an attacker could reach them, and how bad an attack 
+         -would be for each satellite. Today that work is split across se
+         -curity, flight software and mission ops.                       
+      29 +**The problem.** Advisories arrive faster than teams can judge 
+         +them (CVEs +20.6% from 2024 to 2025 [RF 27]). Existing tools al
+         +ready match known CVEs to listed software: scanners on ground I
+         +T, and SBOM tools where a parts list exists (Thales Alenia uses
+         + Black Duck [RF 12]). What remains mostly manual is **judging w
+         +hat a flaw means for each satellite**:                         
+      30 +- space advisories that come as prose, not CVE entries;        
+      31 +- spacecraft parts lists that often don't exist (R14);         
+      32 +- whether a ground flaw can reach the fleet;                   
+      33 +- what an attack would actually do to each satellite.          
+      34  
+      35 +That judgement is split across security, flight software and mi
+         +ssion ops.                                                     
+      36 +                                                               
+      37  **What Periapt does.** It watches advisories around the clock a
+          nd turns each one into a **ranked, explained list for this oper
+          ator's fleet**: which flaw first, on which satellites, and why.
+      38  
+      39  ### 2.1 How a ranking is made: three layers, and AI only where 
+          rules can't reach
+
+● Update(report/specs/2026-09-30-report-draft-design.md)
+  ⎿  Added 1 line, removed 1 line
+      52  - **Job 2, margin forecast:** battery and thermal margin at upc
+          oming passes, so a suggested fix window is safe. The scheduler 
+          itself is plain software, not AI.
+      53  - **What it is not:** it doesn't predict what a patch (new code
+          ) will do (R6, Q31). It doesn't trace ground→space reach (the r
+          each map does that). It isn't a fleet-monitoring product (Aeros
+          pace Corp + Google are building that [RF 32]; it also sits near
+           the sibling topic "Spacecraft Mission Operations… telemetry an
+          alytics").
+      54  - **Why a world model and not rules or a classifier:** rules gi
+          ve every satellite the same answer. A classifier needs many lab
+          elled failures, which are rare. A world model learns normal beh
+          aviour from unlabelled data (Q31).
+      55 -- **Honest limits (label them as hypotheses):** predicting harm
+         - from command sequences it has never seen (so extreme cases get
+         - checked in the manufacturer's physics simulator, and "unknown"
+         - means high); the margin forecast; exploit likelihood learned o
+         -n IT carrying over to space (R17).                             
+      55 +- **Honest limits (label them as hypotheses):** predicting harm
+         + from command sequences it has never seen (so extreme cases get
+         + checked in the manufacturer's simulator where one is provided,
+         + and "unknown" means high); the margin forecast; exploit likeli
+         +hood learned on IT carrying over to space (R17).               
+      56  
+      57  ### 2.3 The agent (A.1's "agentic" part)
+      58  - **Pattern:** one orchestrator agent working ReAct-style (reas
+          on → call a tool → observe → repeat), with these tools: parts l
+          ist, reach map, EPSS/CVSS feed, SPARTA, world model, and the te
+          am's ticket system. The loop is perceive (advisory) → process (
+          match, score, what-if) → decide (rank) → act (brief and ticket)
+          , as taught in S2–3.
+
+● Update(report/specs/2026-09-30-report-draft-design.md)
+  ⎿  Added 9 lines, removed 2 lines
+      66  - **Shadow mode does three jobs at once:** it earns trust (rank
+          ings shown next to the team's own), gathers data, and trains th
+          e world model.
+      67  - Label as an assumption: operators keep telemetry and command 
+          archives.
+      68  
+      69 -### 2.5 Where the value is smaller (stated honestly, Q39)      
+      70 -The world model earns its keep by **telling satellites apart**.
+         - In a new fleet of identical satellites (same design, same soft
+         -ware, healthy batteries, similar orbits), "what would this atta
+         -ck do?" gives nearly the same answer for every satellite, so la
+         -yer 3 adds little over a rule. The history is also short, so th
+         -e model is weaker (cold start). Value remains in reading at sca
+         -le, speed, and ranking *across* flaws. Satellites drift apart a
+         -s they age (batteries wear, sensors degrade, eclipse seasons di
+         -ffer, software versions split during staggered updates); this i
+         -s reasoning, not a sourced fact. **So early adopters are operat
+         -ors with older or mixed fleets.**                              
+      69 +### 2.5 Value grows with time in orbit (Q39, Q40)              
+      70 +The world model earns its keep by **telling satellites apart**.
+      71 +- **From day one:** identical hardware and software don't mean 
+         +identical conditions. Each satellite has its own orbit position
+         +, sun and eclipse pattern, radiation exposure and workload.    
+      72 +- **Over time:** the differences grow. Batteries wear, sensors 
+         +drift, and software versions split during staggered updates. Ne
+         +w satellites are tested on the ground before launch, but space 
+         +adds conditions that ground tests can't reproduce.             
+      73 +- **The catch:** the model needs some operating history per sat
+         +ellite before it can use those differences (cold start). So its
+         + value is lowest just after launch and **grows the longer the f
+         +leet flies**. That growth is also a moat, because a later rival
+         + starts with less history (A.2).                               
+      74 +- **Label as assumptions:** how soon the model can tell satelli
+         +tes apart is a **pilot metric**, not a promise. The "3 months t
+         +o a year" guess and service lives are not sourced; say "years i
+         +n orbit" and don't give a number.                              
+      75 +- **Before that point**, value comes from reading at scale, spe
+         +ed, and ranking *across* flaws.                                
+      76  
+      77 +→ The first customers are fleets with some time in orbit, older
+         + or mixed.                                                     
+      78 +                                                               
+      79  ### 2.6 Out of scope for Stage 1 (becomes later stages or viva 
+          material)
+      80  Writing patches (the manufacturer's job) · testing patches in a
+          n emulator · running rollouts or rollbacks (Spire and SpaceX al
+          ready sell or build these) · fleet monitoring (Aerospace + Goog
+          le) · ground-IT patching as a product (Tenable, Qualys) · termi
+          nals as a product area · the RL planner (dropped, Q32).
+      81  
+
+● Next are the two hidden problems: the moat claim and the FAR wording.
+
+● Update(report/specs/2026-09-30-report-draft-design.md)
+  ⎿  Added 2 lines, removed 2 lines
+      122  - **Core product architecture (features):** advisory reader · 
+           parts and reach map · score layer · world-model what-if · rank
+           ing with the authority rule · per-team briefs and tickets · th
+           e record. (Visual 1 is referenced here too.)
+      123  - **"Would Periapt survive if the model changed tomorrow?"** Y
+           es. The moat is what each customer's use builds up, not the ar
+           chitecture.
+      124  - **Moats, ranked:**
+      125 -  1. **Switching cost: the per-fleet world model.** It is trai
+          -ned on the customer's own satellites; leaving means starting o
+          -ver, because a rival needs months of that fleet's history to c
+          -atch up.                                                      
+      126 -  2. **Intangible asset: the record.** Every flaw, ranking, ov
+          -erride (with its reason) and outcome. Nobody can buy it. Overr
+          -ides count as learning signal (R11: spacecraft outcomes are ra
+          -re).                                                          
+      125 +  1. **Intangible asset: the record.** Every flaw, ranking, ov
+          +erride (with its reason) and outcome, tied to each satellite's
+          + history. Nobody can buy it. Overrides count as learning signa
+          +l (R11: spacecraft outcomes are rare).                        
+      126 +  2. **Switching cost: earned trust.** A new vendor must rebui
+          +ld the parts list and reach map, train its own model, and sit 
+          +through its own shadow mode before experts trust it. *Honest l
+          +imit:* the telemetry archive belongs to the customer and leave
+          +s with them, so the moat is the time and trust needed to rebui
+          +ld, not the data.                                             
+      127    3. **Switching cost: workflow and integrations.** Tickets, p
+           arts lists, approvals and audit trail run through it (platform
+           ization, in a light form).
+      128    4. **Efficient scale:** a niche too small for many players (
+           turns R19 around).
+      129    5. *Conditional:* a cross-fleet network effect, only through
+            opt-in, SDA-style minimum-data sharing [RF 31, Q22]. Test poo
+           led vs local on held-out pilot data first (R12).
+
+● Update(report/specs/2026-09-30-report-draft-design.md)
+  ⎿  Added 1 line, removed 1 line
+      12  | Topic | Defence, Space & Cybersecurity → **Day-Zero Vulnerabi
+          lity Prioritisation (Predictive ML)**: "autonomous systems scan
+          ning, scoring, and prioritising unpatched security flaws in cri
+          tical infrastructure" | **The core is predictive prioritisation
+          ** (Q36). |
+      13  | Scope | Known flaws that could affect a satellite operator's 
+          fleet. Periapt **finds, scores, ranks and explains**. Ground sy
+          stems count only as the way in. It does not write, test or send
+           fixes. | The niche from the original 17 Sept problem (Q34). |
+      14  | Positioning | **A copilot for the three teams** (security, fl
+          ight software, mission ops). The AI reads, predicts, ranks and 
+          drafts; each team keeps its decision. | Q35. It plugs into the 
+          team's own ranking method, so there's no migration. |
+      15 -| Relation to Aerospace Corp | **Complement, not rival.** Peria
+         -pt builds on SPARTA and speaks its IDs. As an FFRDC, Aerospace 
+         -is barred from competing with industry (FAR 35.017). | Q39, RF 
+         -32. |                                                          
+      15 +| Relation to Aerospace Corp | **Complement, not rival.** Peria
+         +pt builds on SPARTA and speaks its IDs. Federal rules say an FF
+         +RDC like Aerospace should not use its privileged access to comp
+         +ete with the private sector (FAR 35.017). | Q39, RF 32. Don't s
+         +ay "banned from all commercial work". |                        
+      16  | Autonomy | Scan, score and rank run **on their own**. Humans 
+          can override at any time (**on the loop**). A human approves **
+          before anything touches a satellite or a ground system** (**in 
+          the loop**). | Q37. |
+      17  | Ranking rule | The AI may **raise** a flaw's priority on its 
+          own. **Lowering** needs a human. If the world model is **outsid
+          e its data**, impact counts as **high**. | Approved 2026-09-30.
+           |
+      18  | Growth path | **Stage 1 = this report's product.** Later stag
+          es (fix-window planning, then validation/rollout with partners)
+           come only after trust is earned. | Q39. Course: "think big, ac
+          t small"; niche first, then adjacent (Porter deck, Thiel). |
+
+● Update(report/specs/2026-09-30-report-draft-design.md)
+  ⎿  Added 1 line, removed 1 line
+      143  
+      144    Caveat (streetlight effect): we searched where the light is,
+            in public claims. Absence of claims isn't proof (R23).
+      145  - **Substitutes: high.** The good-enough stack: in-house team 
+           + ISO 27005 ranking + scanners with EPSS + SPARTA.
+      146 -- **New entrants: high.** Google (already working with Aerospa
+          -ce), the primes, Booz Allen and Deloitte. **Aerospace Corp its
+          -elf is a partner, not a rival:** FAR 35.017 bars an FFRDC from
+          - competing with industry [RF 32]. Periapt builds on SPARTA; Ae
+          -rospace's testbed access for ISAC members (ASC-100 [RF 31]) is
+          - a validation route. Entry path: a commercial, unclassified, U
+          -S-person team; a cleared partner later (R22).                 
+      146 +- **New entrants: high.** Google (already working with Aerospa
+          +ce), the primes, Booz Allen and Deloitte. **Aerospace Corp its
+          +elf is a partner, not a rival:** under FAR 35.017 an FFRDC is 
+          +not meant to use its privileged access to compete with the pri
+          +vate sector [RF 32]. Periapt builds on SPARTA; Aerospace's tes
+          +tbed access for ISAC members (ASC-100 [RF 31]) is a validation
+          + route. Entry path: a commercial, unclassified, US-person team
+          +; a cleared partner later (R22).                              
+      147  - **Regulation cuts both ways:** there is no binding US mandat
+           e [RF 30]. 800-171 3.14.1 says "timely" with no prioritisation
+            method, which makes DoD contractors the beachhead. S.3404 is 
+           out (R24).
+      148  - **Visual 2:** a compact table: force · rating · evidence · w
+           hat Periapt does about it.
+      149  
+
+● Update(report/specs/2026-09-30-report-draft-design.md)
+  ⎿  Added 1 line, removed 1 line
+      154    - Decision criteria: evidence, auditability, never touches t
+           he command path, fits the tools the team already has.
+      155    - Psychographic: an expert, and so sceptical of automation.
+      156  - **Buying committee (R27):** the CISO holds the budget; a Sec
+           Ops analyst is the daily user and champion; the mission-ops le
+           ad approves anything that touches a satellite.
+      157 -- **Diffusion:** early adopters are operators with formal prog
+          -rams, **older or mixed fleets** (§2.5) and DoD contracts.     
+      157 +- **Diffusion:** early adopters are operators with formal prog
+          +rams, **fleets with time in orbit, older or mixed** (§2.5) and
+          + DoD contracts. The category is at the *introduction* stage of
+          + the product lifecycle (S7), which is why the journey starts w
+          +ith a pilot and early adopters.                               
+      158  - **Journey, built to escape the pilot trap** (Gartner: 80%+ o
+           f AI initiatives stall at pilot, S1):
+      159    - *Prepurchase:* advisory overload plus an audit or incident
+            trigger.
+      160    - *Purchase:* paid pilot → **data capture** (Puntoni): forwa
+           rd-deployed engineers build the parts list, reach map and hist
+           ory (§2.4).
+
+● Update(report/specs/2026-09-30-report-draft-design.md)
+  ⎿  Added 1 line, removed 1 line
+      198  ### Close: four-lens check (~⅙ p) → Storytelling + Content
+      199  - *Feasibility:* the world model's impact prediction is the on
+           e unproven piece, with named tests and a safe fallback (layers
+            1–2, "unknown = high").
+      200  - *Usability:* it fits existing tools and methods, and each te
+           am gets its own brief.
+      201 -- *Desirability:* capable teams → a copilot, not a replacement
+          -; value is highest for older or mixed fleets.                 
+      201 +- *Desirability:* capable teams → a copilot, not a replacement
+          +; value grows with time in orbit.                             
+      202  - *Viability:* a per-fleet subscription plus an onboarding fee
+           ; people-heavy on purpose at the start; a small buyer pool; co
+           mpliance (EAR/ITAR, CMMC) is part of viability (S1). **This is
+            the weakest point.**
+      203  
+      204  Then the **staged vision** (dream big): Stage 2 = fix-window p
+           lanning + outcome tracking; Stage 3 = validation and rollout i
+           ntegration with partners (Spire-style tools, manufacturer emul
+           ators). Each stage starts only when the previous one has earne
+           d trust. *(India: on hold.)* End on the 2 a.m. scene resolved:
+            by 2:10 the CISO has a ranked list with reasons, approves the
+            first work-around, and goes back to sleep (illustrative).
+
+● Update(report/specs/2026-09-30-report-draft-design.md)
+  ⎿  Added 2 lines, removed 1 line
+      185    - advisories are untrusted input (indirect prompt injection,
+            S5);
+      186    - **least privilege:** the agent can read telemetry and writ
+           e tickets, and has **no route to command systems**.
+      187  - **Why never auto-act:** CrowdStrike 2024 (8.5M devices hit b
+           y one bad update; student moat deck): being embedded everywher
+           e cuts both ways.
+      188 -- **Monitoring and audit:** drift monitoring as satellites age
+          - (Zillow); NIST SP 800-53 AU-2/3/6 audit trail (Cruise: missin
+          -g logs cost a permit) [RF 24]; model cards.                   
+      188 +- **Monitoring and audit:** drift monitoring as satellites age
+          + (Zillow); NIST SP 800-53 AU-2/3/6 audit trail with at least w
+          +eekly review (Cruise: missing logs cost a permit) [RF 24]; mod
+          +el cards; a periodic safety review that re-runs the A.1 tests.
+      189 +- **Bias (S6), in this domain:** the model can favour satellit
+          +es with rich data and under-rank ones with thin data. The rule
+          + "unknown = high" guards against that, and the safety review c
+          +hecks it.                                                     
+      190  - **Liability (Q25):** decision support with evidence and a st
+           ated residual risk, never "certified safe". Exposure is smalle
+           r than in v2 because Periapt ranks and humans act. Air Canada:
+            companies are bound by their AI's words, so claims are worded
+            carefully.
+      191  - **Jurisdiction (US):**
+      192    - NIST AI RMF: Govern = ownership of overrides and approvals
+           ; Map = the rank-vs-act boundary; Measure = the tests in A.1 p
+           lus drift; Manage = stop rules and the kill switch [RF 19].
+
+● Update(report/specs/2026-09-30-report-draft-design.md)
+  ⎿  Added 2 lines, removed 1 line
+      236    - "nobody simulates attacks on satellites" (NOS3 research ex
+           ists);
+      237    - "Terrain Trace / CT Cubed AI risk assessment"; SBIR; S.340
+           4;
+      238    - "predicts what a patch will do".
+      239 -- **Label as hypotheses:** impact prediction for command seque
+          -nces never seen; the margin forecast; IT → space exploit trans
+          -fer; operators keep telemetry and command archives; satellites
+          - drift apart as they age; bus-type libraries reused across cus
+          -tomers lower onboarding cost.                                 
+      239 +- **Also avoid:** "tools can't tell which satellites have a fl
+          +aw" (they can, for listed CVEs); "FFRDCs are banned from comme
+          +rcial work"; any satellite service-life number; "the telemetry
+          + data is our moat".                                           
+      240 +- **Label as hypotheses:** how soon the model can tell satelli
+          +tes apart (a pilot metric); impact prediction for command sequ
+          +ences never seen; the margin forecast; IT → space exploit tran
+          +sfer; operators keep telemetry and command archives; satellite
+          +s drift apart as they age; bus-type libraries reused across cu
+          +stomers lower onboarding cost.                                
+      241  
+      242  ## 6. Review coverage matrix
+      243  
+
+● Update(report/specs/2026-09-30-report-draft-design.md)
+  ⎿  Added 1 line, removed 1 line
+       94  
+       95  ### A.0 Overview — Gartner 8-layer stack; Foundation Capital (
+           domain-specific AI); B2B/B2G → Content + Creativity
+       96  - **Brand:** the name story. Mission: *"Tell every operator, w
+           ithin minutes of a new flaw, what it means for each satellite,
+            with reasons they can check."* Vision: *"the trusted decision
+            layer for every spacecraft operator"*, with the staged path (
+           A.5/close) as the dream-big line.
+       97 -- **Stack position:** Layer 7, **AI Security & Risk**, where t
+          -he course deck places CrowdStrike. The closest course analogue
+          - is CrowdStrike's Charlotte AI, which helps analysts triage. I
+          -t is *strategic/domain-specific AI* in Foundation Capital's te
+          -rms.                                                          
+       97 +- **Stack position:** Layer 7, **AI Security & Risk**, where t
+          +he course deck places CrowdStrike. The closest course analogue
+          + is CrowdStrike's Charlotte AI, which helps analysts triage. I
+          +t is *strategic/domain-specific AI* in Foundation Capital's te
+          +rms. *Viva nuance:* Gartner's Layer 7 is strictly about securi
+          +ng AI (TRiSM). The course places cybersecurity vendors there, 
+          +and Periapt is an AI application (Layer 6) delivering Layer-7 
+          +security outcomes, while applying Layer-7 protections to its o
+          +wn LLM.                                                       
+       98  - **Market:** 14,266 operational satellites at end-2025; 4,434
+            deployed in 2025 (+65%) [RF 1]. Say that growth is mostly meg
+           a-constellations; the target is the mid-size tier (R1).
+       99  - **Why ripe for AI (sourced "why now"):** CVEs 40,009 (2024) 
+           → 48,185 (2025) → 57,908 **YTD to 31 Aug 2026** [RF 27]; manua
+           l triage doesn't scale with that; attackers can use legitimate
+            commands (Viasat); ML already forecasts exploitation for IT (
+           EPSS [RF 32]), but nothing predicts impact on a specific satel
+           lite.
+      100  - **Topic fit, worded carefully:** "day zero" = the day a flaw
+            becomes known, often before a patch exists. "Critical infrast
+           ructure" = infrastructure that critical sectors depend on: Via
+           sat cut wind-turbine monitoring [RF 4]; the EU lists space as 
+           a high-criticality sector [RF 2]; the US doesn't list it as a 
+           CISA sector [RF 30]. Don't claim it is one.
+● Update(report/specs/2026-09-30-report-draft-design.md)
+  ⎿  Added 1 line
+      311  8. **Architecture moved to A.2** (rubric placement); **3 visua
+           ls**; course hooks added (pilot trap, CrowdStrike 2024, intang
+           ible assets, shadow AI, least privilege, Cruise, S11 emotions/
+           satisfaction, Viability incl. compliance, Layer 7 like Charlot
+           te AI).
+      312  9. **Corrections (RF 32):** Viasat wording, EPSS as input, Aer
+           ospace + Google adjacent, CT Cubed wording, critical-infrastru
+           cture wording.
+      313  10. **References:** SIA report, 800-171, NIST AI RMF, Hundman 
+           2018.
+      314 +11. **Q40 fixes:** the problem statement no longer says matchi
+          +ng is manual (tools exist); value grows with time in orbit; th
+          +e moat is the record + earned trust (the telemetry archive bel
+          +ongs to the customer); softer FAR 35.017 wording; bias line (S
+          +6); periodic safety review; product lifecycle (S7); Layer 6/7 
+          +nuance.                                                       
+
+● Update(report/Viva_Prep.md)
+  ⎿  Added 1 line, removed 1 line
+      160  
+      161  **"Isn't this Spacecraft Mission Operations (telemetry analyti
+           cs), not vulnerability prioritisation?"** No. The world model'
+           s output is a **security ranking**: which flaw to fix first an
+           d why. We deliberately don't sell fleet monitoring. Aerospace 
+           Corp and Google are building that [Q36, RF 32].
+      162  
+      163 -**"Aerospace Corp has SPARTA and an AI anomaly tool with Googl
+          -e. Why won't they build this?"** Aerospace is an FFRDC, and fe
+          -deral rules (FAR 35.017) bar FFRDCs from competing with indust
+          -ry. They publish frameworks like SPARTA and build prototypes f
+          -or government. We build on SPARTA and speak its IDs, so we com
+          -plement them. The real threat is the commercial side: their pa
+          -rtner Google, the primes, Booz Allen and Deloitte [Q39, RF 32]
+          -.                                                             
+      163 +**"Aerospace Corp has SPARTA and an AI anomaly tool with Googl
+          +e. Why won't they build this?"** Aerospace is an FFRDC. Federa
+          +l rules (FAR 35.017) say an FFRDC should not use its privilege
+          +d access to compete with the private sector. They publish fram
+          +eworks like SPARTA and build prototypes for government. We bui
+          +ld on SPARTA and speak its IDs, so we complement them. The rea
+          +l threat is the commercial side: their partner Google, the pri
+          +mes, Booz Allen and Deloitte [Q39, RF 32].                    
+      164  
+      165  **"Viasat was a misconfiguration, not an unpatched flaw. Why u
+           se it?"** Correct, and I say so. I use it for the path and the
+            method: getting in on the ground, then using legitimate comma
+           nds to harm tens of thousands of terminals. That is exactly th
+           e kind of harm our world model plays out [RF 32].
+      166  
+
+● Update(report/Viva_Prep.md)
+  ⎿  Added 5 lines, removed 1 line
+      174  
+      175  **"What did you cut, and why?"** Writing patches (the manufact
+           urer's job). Running rollouts and rollbacks (Spire and SpaceX 
+           already sell or build them). Fleet monitoring (Aerospace Corp 
+           + Google). Ground-IT patching as a product (Tenable, Qualys). 
+           Terminals as a separate product area. The RL planner. Every cu
+           t was either already sold by someone else or not part of the o
+           riginal problem [Q34].
+      176  
+      177 -**"Why does value drop for new fleets?"** Our AI's edge is tel
+          -ling satellites apart. In a new fleet of identical, healthy sa
+          -tellites, an attack would do roughly the same to each, so a si
+          -mple rule does almost as well, and there's little history to l
+          -earn from. We still help with reading, speed and ranking acros
+          -s flaws. That's why our first customers are older or mixed fle
+          -ets [Q39].                                                    
+      177 +**"Does it work for a brand-new fleet?"** Partly at first, and
+          + better over time. Identical hardware doesn't mean identical c
+          +onditions: each satellite has its own orbit position, eclipses
+          +, radiation and workload, and the differences grow as batterie
+          +s and sensors age. But the model needs some operating history 
+          +per satellite first. So the value grows the longer the fleet f
+          +lies, and how fast is something we measure in the pilot, not a
+          + promise. Until then, we still help with reading, speed and ra
+          +nking across flaws [Q39, Q40].                                
+      178  
+      179 +**"Isn't this just a scanner? Tools already match CVEs to soft
+          +ware."** Yes, they do, and we use them. What they don't do is 
+          +judge what a flaw means for each satellite: space advisories t
+          +hat aren't CVE entries, missing spacecraft parts lists, whethe
+          +r a ground flaw reaches the fleet, and what an attack would ac
+          +tually do [Q40].                                              
+      180 +                                                              
+      181 +**"The customer owns the telemetry. How is that a moat?"** It 
+          +isn't; the data leaves with them. The moat is the record (ever
+          +y decision, override and outcome) and the time and trust a new
+          + vendor needs to rebuild everything and pass its own shadow mo
+          +de with sceptical experts [Q40].                              
+      182 +                                                              
+      183  **"Isn't people-heavy a bad business?"** It's a cost, and I na
+           me viability as the weakest point. But it's deliberate: expert
+           s don't trust new automation, so trust has to be earned in sha
+           dow mode first. It gets cheaper per customer if the parts libr
+           ary for a satellite design can be reused, which is a hypothesi
+           s [Q39].
+      184  
+      185  **"Where does your data come from on day one?"** From the clie
+           nt, at onboarding: parts lists, software versions, the ground-
+           to-fleet network map, and telemetry and command history. Until
+            the model is trained, it says "unknown", so rankings stay hig
+           h by default. Shadow mode builds trust and trains the model at
+            the same time [Q39].
+
+● Update(CLAUDE.md)
+  ⎿  Added 1 line, removed 1 line
+       9  ## Locked decisions
+      10  
+      11  - **Company:** **Periapt** (protective amulet; echoes *periapsi
+          s*): an AI platform that predicts and prioritises which known s
+          ecurity flaws matter most for each satellite in an operator's f
+          leet (ground systems count as the way in), inside the listed to
+          pic "Day-Zero Vulnerability Prioritisation" (Defence, Space & C
+          ybersecurity segment). Renamed from Phylax on 2026-09-30 (name 
+          clash; topic report Q30).
+      12 -- **Positioning (re-centred 2026-09-30, Q31–Q39):** **predictiv
+         -e prioritisation** is the core: scan advisories → score → rank 
+         -flaws per satellite, with reasons. It's delivered as a copilot 
+         -to the security, flight-software and ops teams, and each team k
+         -eeps its decision. It runs on its own up to the ranking; a huma
+         -n approves anything that touches a satellite or a ground system
+         -. It complements Aerospace Corp (builds on SPARTA; FAR 35.017).
+         - Growth is staged: fixing, validation and rollout come later, o
+         -nce trust is earned.                                           
+      12 +- **Positioning (re-centred 2026-09-30, Q31–Q39):** **predictiv
+         +e prioritisation** is the core: scan advisories → score → rank 
+         +flaws per satellite, with reasons. It's delivered as a copilot 
+         +to the security, flight-software and ops teams, and each team k
+         +eeps its decision. It runs on its own up to the ranking; a huma
+         +n approves anything that touches a satellite or a ground system
+         +. It complements Aerospace Corp (builds on SPARTA; under FAR 35
+         +.017 an FFRDC shouldn't use privileged access to compete with i
+         +ndustry). Growth is staged: fixing, validation and rollout come
+         + later, once trust is earned.                                  
+      13  - **Architecture:** LLM agent (self-hosted, citation-required; 
+          ReAct orchestrator) + reused scores (CVSS, EPSS, SPARTA) + reac
+          h map + **world model** (learned per fleet from telemetry and c
+          ommand history; predicts what an attacker's commands would do t
+          o each satellite, and forecasts battery/thermal margin; JEPA-st
+          yle as the candidate). Ranking rule: the AI can raise a priorit
+          y, lowering needs a human, and outside its data means high. The
+           RL planner, patch testing, rollout/rollback and monitoring are
+           **cut** from Stage 1. Evolution: topic report Q26 and Q31–Q39.
+      14  - **Jurisdiction:** **United States** (confirmed 2026-09-30). I
+          ndia line and SBIR: on hold (user decision pending).
+      15  - **Format:** Word/PDF doc, 4 pages + 1-page appendix, 3 visual
+          s. Draft in markdown with source tags; the user rewrites it in 
+          their own voice.
+
+● Update(topic/Topic_Brainstorm_Report.md)
+  ⎿  Added 1 line, removed 1 line
+      449  ### Q39. "Can we be a complement or sit in an adjacent space i
+           nstead of competing with Aerospace Corp? How exactly is the va
+           lue smaller for new, identical fleets? I'm keeping it people-h
+           eavy because this industry doesn't trust new automation: you h
+           ave to earn trust first, then grow into the scope we cut. And 
+           we'll never have full data at the start; it all comes from the
+            client at onboarding."
+      450  **Origin of doubt:** the weak spots listed in the Q38 review.
+      451  **Reasoning:**
+      452 -- *Aerospace Corp:* **yes, a complement.** As an FFRDC it is b
+          -arred by FAR 35.017 from competing with industry (RF item 32).
+          - It publishes frameworks (SPARTA) and builds government protot
+          -ypes. Periapt builds on SPARTA, speaks its IDs, and can valida
+          -te through Aerospace's ASC-100 testbed access (RF item 31). *T
+          -he real entrant threat moves* to its partner Google and to the
+          - primes and consultancies.                                    
+      452 +- *Aerospace Corp:* **yes, a complement.** Under FAR 35.017 an
+          + FFRDC is not meant to use its privileged access to compete wi
+          +th the private sector (RF item 32; wording softened in Q40). I
+          +t publishes frameworks (SPARTA) and builds government prototyp
+          +es. Periapt builds on SPARTA, speaks its IDs, and can validate
+          + through Aerospace's ASC-100 testbed access (RF item 31). *The
+          + real entrant threat moves* to its partner Google and to the p
+          +rimes and consultancies.                                      
+      453  - *Identical fleets:* the world model earns its keep by tellin
+           g satellites apart. In a new fleet of identical, healthy satel
+           lites, "what would this attack do?" gives nearly the same answ
+           er for each, so it adds little over a rule, and the history is
+            short. The value left is reading at scale, speed, and ranking
+            *across* flaws. Satellites drift apart as they age (reasoning
+           , not sourced). → Early adopters are older or mixed fleets.
+      454  - *People-heavy:* **agreed as a strategy**, and backed by the 
+           course: experts rely less on automation (Sanchez et al., S11),
+            and forward-deployed engineers are in demand (S1 note). *Push
+           back:* it's still a cost, so viability stays the weakest point
+           . Onboarding gets cheaper only if parts libraries per satellit
+           e bus type can be reused across customers, which is a hypothes
+           is that needs manufacturer data (R13/R14).
+      455  - *Staged growth:* **agreed.** Prove Stage 1, then add fix-win
+           dow planning, then validation and rollout with partners. This 
+           is the course's "think big, act small" and "dominate a niche, 
+           then adjacent markets" (Porter deck, Thiel).
+
+● Update(topic/Topic_Brainstorm_Report.md)
+  ⎿  Added 11 lines
+      457  **Conclusion:** all five folded into spec v3 (§1, §2.4–2.6, A.
+           3, A.4, close).
+      458  **Change:** spec v3 written 2026-09-30. User approved: the re-
+           centred concept and cuts, the ranking authority rule, and the 
+           reference list. India and SBIR are on hold.
+      459  
+      460 +### Q40. "Saying someone works out by hand which satellites ha
+          +ve a flaw is an overstatement; software exists for that. And f
+          +or new fleets: satellites are tested on the ground, but after 
+          +some months in space unknown conditions make them differ, they
+          + fly for years, and even 12 identical satellites have differen
+          +t locations and conditions. Is that plausible? Then a final ch
+          +eck that nothing in the design will blow up later."           
+      461 +**Reasoning:**                                                
+      462 +- *Overstatement:* **conceded.** Scanners and SBOM tools alrea
+          +dy match listed CVEs to software (e.g. Thales Alenia uses Blac
+          +k Duck, RF item 12). What's still manual is judging what a fla
+          +w *means* for each satellite: prose space advisories, missing 
+          +spacecraft parts lists (R14), reach from ground to fleet, and 
+          +the actual impact.                                            
+      463 +- *New fleets:* **plausible, with two limits.** Right: identic
+          +al hardware ≠ identical conditions (orbit position, eclipses, 
+          +radiation, workload), and differences grow with age. So value 
+          +**grows with time in orbit**, which is also a moat. Limit 1: t
+          +he model still needs some operating history per satellite, so 
+          +"3 months to a year" is a guess to measure in the pilot, not a
+          + claim. Limit 2: service life varies a lot by satellite class 
+          +and isn't in our sources, so don't give a number.             
+      464 +- *Hidden problems found in the final check:*                 
+      465 +  - (1) the moat said the per-fleet model was a switching cost
+          +, but the telemetry archive belongs to the customer and leaves
+          + with them → the moat is now the record + the time and trust n
+          +eeded to rebuild;                                             
+      466 +  - (2) "FAR 35.017 bars FFRDCs from competing with industry" 
+          +overstated the rule → softened to "not meant to use privileged
+          + access to compete with the private sector";                  
+      467 +  - (3) "the manufacturer's simulator" assumed access → "where
+          + one is provided".                                            
+      468 +- *Course gaps closed:* bias (S6: data-poor satellites under-r
+          +anked → "unknown = high"), a periodic safety review, the produ
+          +ct lifecycle (S7), and the Layer 6/7 nuance.                  
+      469 +**Change:** spec v3 §2, §2.5, A.0, A.2, A.3, A.4, A.5, §5, §10
+          +; Viva_Prep §9.                                               
+      470 +                                                              
+      471  ---
+      472  
+      473  ## 5. Questions Claude Asked Me
+
+● Now I'll commit and merge.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+● Both your points are fixed, and the final check turned up three hidden
+  problems in the spec. All of it is fixed in the files and merged into main,
+  and logged as Q40.
+
+  Your two points
+
+  1. "Worked out by hand": you're right, that was an overstatement. Scanners and
+  parts-list (SBOM) tools already match known CVEs to software; Thales Alenia,
+  for example, uses Black Duck. The problem now reads: tools find the flaw, but
+  judging what it means for each satellite is still manual. That covers:
+  - space advisories that come as plain text instead of CVE entries;
+  - spacecraft parts lists that often don't exist;
+  - whether a ground flaw can reach the fleet;
+  - what an attack would actually do to each satellite.
+
+  2. New fleets: your reasoning is plausible, with two limits.
+  - Correct: identical hardware and software doesn't mean identical conditions.
+    Each satellite has its own orbit position, eclipses, radiation and workload,
+    and the differences grow as batteries and sensors age. So the product gets
+    better the longer the fleet flies. That also strengthens the moat, because a
+    competitor starting later has less history.
+  - Limit 1: the model still needs some operating history for each satellite
+    first. "3 months to a year" is a guess, so the spec treats it as something
+    the pilot measures, not a promise.
+  - Limit 2: service life varies a lot by satellite type, and we have no source
+    for it. The spec says "years in orbit" and gives no number.
+
+  Hidden problems found and fixed
+
+  1. The moat claim was wrong. It said a new vendor would need months of the
+     fleet's history, but the telemetry archive belongs to the customer and
+     leaves with them. The moat is now:
+     - the record of every decision, override and outcome;
+     - the time and trust a new vendor would need to rebuild everything and pass
+       its own shadow mode with sceptical experts.
+
+     This fits your trust argument.
+  2. The FAR 35.017 wording was too strong. The rule says an FFRDC shouldn't use
+     its privileged access to compete with private companies, which is narrower
+     than an outright ban. Softened everywhere.
+  3. We assumed access to the manufacturer's simulator. It now says "where one
+     is provided".
+
+  Course and grading check
+
+  - Course concepts: every session from S1–S3 and S5–S11 is now used (S4 was
+    fintech examples, so it doesn't apply), along with the student decks on
+    Foundation Capital, moats, ReAct, prompt injection, bias and drift, and
+    regulation. The last gaps are now filled:
+    - bias (S6): satellites with little data could be under-ranked, and "unknown
+      = high" guards against that;
+    - a periodic safety review;
+    - the product lifecycle (S7);
+    - a viva answer on why Periapt sits in Gartner's Layer 7.
+  - Grading components: every rubric bullet in A.0–A.5 has a place in the spec,
+    including the six trust-and-safety items and one jurisdiction. The appendix
+    has all four required parts. There are 3 visuals and 4 non-blog references,
+    and SPARTA and IRON GALAXY are named for the originality check.
+
+  Your call
+
+  Approve spec v3? If yes, next comes the drafting plan (execution method is
+  your pick), then the draft itself.
+
+  Still open on your side: India and SBIR (on hold), choosing the appendix's
+  hardest concept, and the transcript links.
+
+✻ Baked for 2m 22s · done 9:02 PM
+
+※ recap: We're preparing the Periapt mid-sem report, now centred on predicting which security flaws matter most for each satellite. Spec v3 is written with all fixes merged. Next step: you approve spec v3, then I write the drafting plan.
+
+❯ /superpowers:brainstorming approved write the plan and save it the drafting   
+will begin in a new session                                                     
+
+● Spec v3 is approved, so per the brainstorming flow the next step is the
+  writing-plans skill.
+
+● Skill(superpowers:writing-plans)
+  ⎿  Successfully loaded skill
+
+● I'll draft the implementation plan using the writing-plans skill, framing each
+  task's verification around required terms, banned phrases, and word counts
+  since the deliverable is prose rather than code.
+
+● Write(report/plans/2026-09-30-report-draft-plan.md)
+  ⎿  Wrote 466 lines to report/plans/2026-09-30-report-draft-plan.md
+      1 # Periapt Report Draft — Implementation Plan
+      3 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:su
+        bagent-driven-development (recommended) or superpowers:executing-
+         [ ]`) syntax for tracking.
+      5 **Goal:** Write `report/Periapt_Report_Draft.md`: the full prose 
+        draft of the 4-page + 1-page-appendix report, with every factual 
+        n voice.
+      6 
+        the spec's order. Each task writes one section (or a close pair),
+        bsent, word count in
+     … +762 lines (ctrl+o to expand)
+
+● Found a gap: the term checks scanned the whole file, letting terms from
+  earlier sections falsely pass later checks. I'll add a section-scoped check
+  script and update every task to use it.
+
+● Update(report/plans/2026-09-30-report-draft-plan.md)
+  ⎿  Added 1 line
+      67  
+      68  **Files:**
+      69  - Create: `report/Periapt_Report_Draft.md`
+      70 +- Create: `scripts/draft_check.sh` (section-scoped checks used 
+         +by every task)                                                 
+      71  
+      72  - [ ] **Step 1: Read inputs.** Read in full: `CLAUDE.md`, `HAND
+          OFF.md` (banner), `report/specs/2026-09-30-report-draft-design.
+          md`, `report/Viva_Prep.md` §9. Keep `research/Research_Findings
+          .md` open for number checks.
+      73  - [ ] **Step 2: Create the branch.**
+
+● Update(report/plans/2026-09-30-report-draft-plan.md)
+  ⎿  Added 30 lines, removed 11 lines
+      105  ## Appendix: Thinking and AI Use
+      106  ```
+      107  
+      108 -- [ ] **Step 4: Check that all 10 headings exist.**           
+      108 +- [ ] **Step 4: Write `scripts/draft_check.sh`:**             
+      109  
+      110 -Run: `grep -c '^## ' report/Periapt_Report_Draft.md`          
+      111 -Expected: `10`                                                
+      110 +```bash                                                       
+      111 +#!/usr/bin/env bash                                           
+      112 +# Checks for report/Periapt_Report_Draft.md, scoped to one "##
+          + " section.                                                   
+      113 +#   draft_check.sh words "<heading>"        -> word count of t
+          +hat section                                                   
+      114 +#   draft_check.sh has "<heading>" term...  -> ok/MISSING per 
+          +term (case-insensitive); exit 1 if any missing                
+      115 +set -euo pipefail                                             
+      116 +f="${DRAFT:-report/Periapt_Report_Draft.md}"                  
+      117 +sec() { awk -v h="$1" '$0=="## " h {f=1; next} /^## /{f=0} f' 
+          +"$f"; }                                                       
+      118 +cmd="$1"; h="$2"; shift 2                                     
+      119 +case "$cmd" in                                                
+      120 +  words) sec "$h" | wc -w ;;                                  
+      121 +  has) miss=0                                                 
+      122 +       for t in "$@"; do                                      
+      123 +         if sec "$h" | grep -qiF -- "$t"; then echo "ok  $t"; 
+          +else echo "MISSING $t"; miss=1; fi                            
+      124 +       done                                                   
+      125 +       exit $miss ;;                                          
+      126 +  *) echo "usage: $0 words|has <heading> [terms...]" >&2; exit
+          + 2 ;;                                                         
+      127 +esac                                                          
+      128 +```                                                           
+      129  
+      113 -- [ ] **Step 5: Commit.**                                     
+      130 +- [ ] **Step 5: Verify the skeleton and the script.**         
+      131  
+      132 +Run: `grep -c '^## ' report/Periapt_Report_Draft.md` → expect 
+          +`10`.                                                         
+      133 +Run: `bash scripts/draft_check.sh words "A.1 Agentic AI and Va
+          +lue"` → expect `0`.                                           
+      134 +Run: `bash scripts/draft_check.sh has "A.1 Agentic AI and Valu
+          +e" "zzz"; echo "exit=$?"` → expect `MISSING zzz` and `exit=1`.
+      135 +                                                              
+      136 +- [ ] **Step 6: Commit.**                                     
+      137 +                                                              
+      138  ```bash
+      116 -git add report/Periapt_Report_Draft.md                        
+      117 -git commit -m "docs(report): add draft skeleton               
+      139 +git add report/Periapt_Report_Draft.md scripts/draft_check.sh 
+      140 +git commit -m "docs(report): add draft skeleton and section ch
+          +eck script                                                    
+      141  
+      142  Co-Authored-By: Claude Opus 5.5 <[email]>"
+      143  ```
+      144  
+      122 -**Helper used by every later task.** Section word count, where
+          - `<H>` is the heading text after `## `:                       
+      145 +**Every later task** uses `bash scripts/draft_check.sh has "<h
+          +eading>" terms...` (expected: all `ok`, exit 0) and `bash scri
+          +pts/draft_check.sh words "<heading>"`. The heading is the text
+          + after `## `, exactly as written in the skeleton.             
+      146  
+      124 -```bash                                                       
+      125 -awk -v h="<H>" '$0=="## " h {f=1; next} /^## /{f=0} f' report/
+          -Periapt_Report_Draft.md | wc -w                               
+      126 -```                                                           
+      127 -                                                              
+      147  ---
+      148  
+      149  ### Task 1: Opening scene + A.0 Overview
+
+● Update(report/plans/2026-09-30-report-draft-plan.md)
+  ⎿  Added 4 lines, removed 3 lines
+      167  - [ ] **Step 2: Required-term check.**
+      168  
+      169  ```bash
+      170 -for t in "periapsis" "Layer 7" "Charlotte" "14,266" "4,434" "5
+          -7,908" "year to date" "EPSS" "legitimate" "misconfigured" "Whi
+          -ch flaw first" "illustrative" "day zero"; do grep -qi "$t" rep
+          -ort/Periapt_Report_Draft.md && echo "ok  $t" || echo "MISSING 
+          -$t"; done                                                     
+      170 +bash scripts/draft_check.sh has "Opening: 2 a.m." "2 a.m." "20
+          +0 satellites" "no patch" "Which flaw first" "illustrative"    
+      171 +bash scripts/draft_check.sh has "A.0 Overview: Periapt" "peria
+          +psis" "Layer 7" "Charlotte" "14,266" "4,434" "57,908" "year to
+          + date" "EPSS" "legitimate" "misconfigured" "day zero" "Black D
+          +uck"                                                          
+      172  ```
+      173  
+      173 -Expected: every line starts with `ok`.                        
+      174 -- [ ] **Step 3: Word counts.** Run the helper with `Opening: 2
+          - a.m.` (expect 90–140) and `A.0 Overview: Periapt` (expect 220
+          -–320). If a count is outside its range, edit and re-run.      
+      174 +Expected: all `ok`, exit 0.                                   
+      175 +- [ ] **Step 3: Word counts.** `bash scripts/draft_check.sh wo
+          +rds "Opening: 2 a.m."` → 90–140; `bash scripts/draft_check.sh 
+          +words "A.0 Overview: Periapt"` → 220–320. If a count is outsid
+          +e its range, edit and re-run.                                 
+      176  - [ ] **Step 4: Commit** with the message `docs(report): draft
+            opening scene and A.0 overview`.
+      177  
+      178  ---
+
+● Update(report/plans/2026-09-30-report-draft-plan.md)
+  ⎿  Added 2 lines, removed 2 lines
+      212  - [ ] **Step 2: Required-term check.**
+      213  
+      214  ```bash
+      215 -for t in "ReAct" "orchestrat" "world model" "Hundman" "ISO 270
+          -05" "EPSS" "SPARTA" "shadow AI" "ESA-ADB" "illustrative" "rene
+          -wal" "efficiency" "innovation" "mermaid" "unknown"; do grep -q
+          -i "$t" report/Periapt_Report_Draft.md && echo "ok  $t" || echo
+          - "MISSING $t"; done                                           
+      215 +bash scripts/draft_check.sh has "A.1 Agentic AI and Value" "Re
+          +Act" "orchestrat" "world model" "Hundman" "ISO 27005" "EPSS" "
+          +SPARTA" "shadow AI" "ESA-ADB" "illustrative" "renewal" "effici
+          +ency" "innovation" "mermaid" "unknown" "heaters"              
+      216  ```
+      217  
+      218 -Expected: all `ok`.                                           
+      218 +Expected: all `ok`, exit 0.                                   
+      219  - [ ] **Step 3: Hypothesis hedging check.** Every sentence cla
+           iming what the world model predicts must carry a hedge.
+      220  
+      221  Run: `awk '$0=="## A.1 Agentic AI and Value"{f=1;next}/^## /{f
+           =0}f' report/Periapt_Report_Draft.md | grep -i "world model" |
+            grep -viE "hypothes|test|pilot|candidate|assum|aim|designed|e
+           xpect|learn"`
+
+● Update(report/plans/2026-09-30-report-draft-plan.md)
+  ⎿  Added 1 line, removed 1 line
+      221  Run: `awk '$0=="## A.1 Agentic AI and Value"{f=1;next}/^## /{f
+           =0}f' report/Periapt_Report_Draft.md | grep -i "world model" |
+            grep -viE "hypothes|test|pilot|candidate|assum|aim|designed|e
+           xpect|learn"`
+      222  
+      223  Expected: no output, or only lines that clearly describe the d
+           esign rather than claim a result. Rephrase any line that state
+           s a result as fact.
+      224 -- [ ] **Step 4: Word count.** Run the helper with `A.1 Agentic
+          - AI and Value`; expect 420–560 (the mermaid block counts a lit
+          -tle).                                                         
+      224 +- [ ] **Step 4: Word count.** `bash scripts/draft_check.sh wor
+          +ds "A.1 Agentic AI and Value"` → 420–560 (the mermaid block co
+          +unts a little).                                               
+      225  - [ ] **Step 5: Commit** with the message `docs(report): draft
+            A.1 agentic AI and value`.
+      226  
+      227  ---
+
+● Update(report/plans/2026-09-30-report-draft-plan.md)
+  ⎿  Added 2 lines, removed 2 lines
+      247  - [ ] **Step 2: Required-term check.**
+      248  
+      249  ```bash
+      250 -for t in "intangible" "switching cost" "efficient scale" "netw
+          -ork effect" "changed tomorrow" "record" "shadow mode" "belongs
+          - to the customer" "time in orbit"; do grep -qi "$t" report/Per
+          -iapt_Report_Draft.md && echo "ok  $t" || echo "MISSING $t"; do
+          -ne                                                            
+      250 +bash scripts/draft_check.sh has "A.2 Architecture, Moat and De
+          +fensibility" "intangible" "switching cost" "efficient scale" "
+          +network effect" "changed tomorrow" "record" "shadow mode" "bel
+          +ongs to the customer" "time in orbit"                         
+      251  ```
+      252  
+      253 -Expected: all `ok`.                                           
+      253 +Expected: all `ok`, exit 0.                                   
+      254  - [ ] **Step 3: Moat-claim check** (a banned claim).
+      255  
+      256  Run: `grep -niE "telemetry (data|archive) is (our|the) moat|da
+           ta moat" report/Periapt_Report_Draft.md`
+
+● Update(report/plans/2026-09-30-report-draft-plan.md)
+  ⎿  Added 1 line, removed 1 line
+      255  
+      256  Run: `grep -niE "telemetry (data|archive) is (our|the) moat|da
+           ta moat" report/Periapt_Report_Draft.md`
+      257  Expected: no output.
+      258 -- [ ] **Step 4: Word count.** Run the helper with `A.2 Archite
+          -cture, Moat and Defensibility`; expect 280–380.               
+      258 +- [ ] **Step 4: Word count.** `bash scripts/draft_check.sh wor
+          +ds "A.2 Architecture, Moat and Defensibility"` → 280–380.     
+      259  - [ ] **Step 5: Commit** with the message `docs(report): draft
+            A.2 architecture and moat`.
+      260  
+      261  ---
+
+● Update(report/plans/2026-09-30-report-draft-plan.md)  ⎿  Added 2 lines, removed 2 lines
+      283  - [ ] **Step 2: Required-term check.**
+      284  
+      285  ```bash
+      286 -for t in "SPARTA" "SPARTEND" "IRON GALAXY" "Google" "FAR 35.01
+          -7" "streetlight" "Globalstar" "ICEYE" "3.14.1" "substitut" "ne
+          -w entrant" "supplier" "rivalry" "buyer"; do grep -qi "$t" repo
+          -rt/Periapt_Report_Draft.md && echo "ok  $t" || echo "MISSING $
+          -t"; done                                                      
+      286 +bash scripts/draft_check.sh has "A.3 Porter's Five Forces" "SP
+          +ARTA" "SPARTEND" "IRON GALAXY" "Google" "FAR 35.017" "streetli
+          +ght" "Globalstar" "ICEYE" "3.14.1" "substitut" "new entrant" "
+          +supplier" "rivalry" "buyer"                                   
+      287  ```
+      288  
+      289 -Expected: all `ok`.                                           
+      289 +Expected: all `ok`, exit 0.                                   
+      290  - [ ] **Step 3: FAR wording check.**
+      291  
+      292  Run: `grep -niE "banned from|prohibited from (all )?commercial
+           |barred from" report/Periapt_Report_Draft.md`
+
+● Update(report/plans/2026-09-30-report-draft-plan.md)
+  ⎿  Added 1 line, removed 1 line
+      291  
+      292  Run: `grep -niE "banned from|prohibited from (all )?commercial
+           |barred from" report/Periapt_Report_Draft.md`
+      293  Expected: no output.
+      294 -- [ ] **Step 4: Word count.** Run the helper with `A.3 Porter'
+          -s Five Forces`; expect 300–420.                               
+      294 +- [ ] **Step 4: Word count.** `bash scripts/draft_check.sh wor
+          +ds "A.3 Porter's Five Forces"` → 300–420.                     
+      295  - [ ] **Step 5: Commit** with the message `docs(report): draft
+            A.3 five forces`.
+      296  
+      297  ---
+
+● Update(report/plans/2026-09-30-report-draft-plan.md)
+  ⎿  Added 3 lines, removed 3 lines
+      319  - [ ] **Step 2: Required-term check.**
+      320  
+      321  ```bash
+      322 -for t in "Stretched Sentinel" "pain" "goal" "decision criteria
+          -" "psychographic" "buying committee" "early adopter" "prepurch
+          -ase" "postpurchase" "data capture" "classification" "delegatio
+          -n" "social" "renewal" "pilot trap" "assumption" "onboarding"; 
+          -do grep -qi "$t" report/Periapt_Report_Draft.md && echo "ok  $
+          -t" || echo "MISSING $t"; done                                 
+      322 +bash scripts/draft_check.sh has "A.4 Persona and Customer Jour
+          +ney" "Stretched Sentinel" "pain" "goal" "decision criteria" "p
+          +sychographic" "buying committee" "early adopter" "prepurchase"
+          + "postpurchase" "data capture" "classification" "delegation" "
+          +social" "renewal" "pilot trap" "assumption" "onboarding"      
+      323  ```
+      324  
+      325 -Expected: all `ok`.                                           
+      326 -- [ ] **Step 3: Word count.** Run the helper with `A.4 Persona
+          - and Customer Journey`; expect 350–470.                       
+      325 +Expected: all `ok`, exit 0.                                   
+      326 +- [ ] **Step 3: Word count.** `bash scripts/draft_check.sh wor
+          +ds "A.4 Persona and Customer Journey"` → 350–470.             
+      327  - [ ] **Step 4: Commit** with the message `docs(report): draft
+            A.4 persona and journey`.
+      328  
+      329  ---
+
+● Update(report/plans/2026-09-30-report-draft-plan.md)
+  ⎿  Added 2 lines, removed 2 lines
+      364  - [ ] **Step 2: Required-term check.**
+      365  
+      366  ```bash
+      367 -for t in "override" "stop" "escalat" "kill switch" "hallucinat
+          -" "prompt injection" "least privilege" "CrowdStrike" "drift" "
+          -audit" "model card" "bias" "Air Canada" "NIST AI RMF" "Govern"
+          - "Map" "Measure" "Manage" "CCPA" "FTC" "EAR" "ITAR" "800-171" 
+          -"competence" "integrity" "benevolence" "certified safe"; do gr
+          -ep -qi "$t" report/Periapt_Report_Draft.md && echo "ok  $t" ||
+          - echo "MISSING $t"; done                                      
+      367 +bash scripts/draft_check.sh has "A.5 Governance, Guardrails an
+          +d US Compliance" "override" "stop" "escalat" "kill switch" "ha
+          +llucinat" "prompt injection" "least privilege" "CrowdStrike" "
+          +drift" "audit" "model card" "bias" "Air Canada" "NIST AI RMF" 
+          +"Govern" "Map" "Measure" "Manage" "CCPA" "FTC" "EAR" "ITAR" "8
+          +00-171" "competence" "integrity" "benevolence" "certified safe
+          +"                                                             
+      368  ```
+      369  
+      370 -Expected: all `ok`. "certified safe" may only appear inside "n
+          -ever 'certified safe'".                                       
+      370 +Expected: all `ok`, exit 0. "certified safe" may only appear i
+          +nside "never 'certified safe'".                               
+      371  - [ ] **Step 3: "certified safe" context check.**
+      372  
+      373  Run: `grep -ni "certified safe" report/Periapt_Report_Draft.md
+           `
+
+● Update(report/plans/2026-09-30-report-draft-plan.md)
+  ⎿  Added 1 line, removed 1 line
+      372  
+      373  Run: `grep -ni "certified safe" report/Periapt_Report_Draft.md
+           `
+      374  Expected: every hit is a negation ("never", "not").
+      375 -- [ ] **Step 4: Word count.** Run the helper with `A.5 Governa
+          -nce, Guardrails and US Compliance`; expect 380–500.           
+      375 +- [ ] **Step 4: Word count.** `bash scripts/draft_check.sh wor
+          +ds "A.5 Governance, Guardrails and US Compliance"` → 380–500. 
+      376  - [ ] **Step 5: Commit** with the message `docs(report): draft
+            A.5 governance`.
+      377  
+      378  ---
+
+● Update(report/plans/2026-09-30-report-draft-plan.md)
+  ⎿  Added 3 lines, removed 2 lines
+      400  - [ ] **Step 2: Required-term check.**
+      401  
+      402  ```bash
+      403 -for t in "Feasibility" "Usability" "Desirability" "Viability" 
+          -"weakest" "Stage 2" "Stage 3" "2:10" "Which flaw first" "Satel
+          -lite Industry Association" "800-171" "AI 100-1" "Hundman"; do 
+          -grep -qi "$t" report/Periapt_Report_Draft.md && echo "ok  $t" 
+          -|| echo "MISSING $t"; done                                    
+      403 +bash scripts/draft_check.sh has "Close: Four Lenses, and 2 a.m
+          +. Again" "Feasibility" "Usability" "Desirability" "Viability" 
+          +"weakest" "Stage 2" "Stage 3" "2:10" "Which flaw first"       
+      404 +bash scripts/draft_check.sh has "References" "Satellite Indust
+          +ry Association" "800-171" "AI 100-1" "Hundman"                
+      405  ```
+      406  
+      406 -Expected: all `ok`.                                           
+      407 +Expected: all `ok`, exit 0.                                   
+      408  - [ ] **Step 3: Reference count.**
+      409  
+      410  Run: `awk '$0=="## References"{f=1;next}/^## /{f=0}f' report/P
+           eriapt_Report_Draft.md | grep -cE '^[0-9]+\.'`
+
+● Update(report/plans/2026-09-30-report-draft-plan.md)
+  ⎿  Added 1 line, removed 1 line
+      409  
+      410  Run: `awk '$0=="## References"{f=1;next}/^## /{f=0}f' report/P
+           eriapt_Report_Draft.md | grep -cE '^[0-9]+\.'`
+      411  Expected: `4`
+      412 -- [ ] **Step 4: Word count.** Run the helper with `Close: Four
+          - Lenses, and 2 a.m. Again`; expect 130–200.                   
+      412 +- [ ] **Step 4: Word count.** `bash scripts/draft_check.sh wor
+          +ds "Close: Four Lenses, and 2 a.m. Again"` → 130–200.         
+      413  - [ ] **Step 5: Commit** with the message `docs(report): draft
+            close and references`.
+      414  
+      415  ---
+
+● Update(report/plans/2026-09-30-report-draft-plan.md)
+  ⎿  Added 3 lines, removed 3 lines
+      430  - [ ] **Step 2: Required-term check.**
+      431  
+      432  ```bash
+      433 -for t in "decision tree" "Claude Code" "subagent" "Transcript 
+          -1" "Transcript 2" "hardest" "accepted" "modified" "rejected" "
+          -independently" "Q34" "Q36"; do grep -qi "$t" report/Periapt_Re
+          -port_Draft.md && echo "ok  $t" || echo "MISSING $t"; done     
+      433 +bash scripts/draft_check.sh has "Appendix: Thinking and AI Use
+          +" "decision tree" "Claude Code" "subagent" "Transcript 1" "Tra
+          +nscript 2" "hardest" "accepted" "modified" "rejected" "indepen
+          +dently" "Q34" "Q36"                                           
+      434  ```
+      435  
+      436 -Expected: all `ok`.                                           
+      437 -- [ ] **Step 3: Word count.** Run the helper with `Appendix: T
+          -hinking and AI Use`; expect 380–520.                          
+      436 +Expected: all `ok`, exit 0.                                   
+      437 +- [ ] **Step 3: Word count.** `bash scripts/draft_check.sh wor
+          +ds "Appendix: Thinking and AI Use"` → 380–520.                
+      438  - [ ] **Step 4: Commit** with the message `docs(report): draft
+            appendix`.
+      439  
+      440  ---
+
+● Two last fixes: the Review Focus task numbers are off by one, and I need to
+  confirm no old helper references are left.
+
+● Update(report/plans/2026-09-30-report-draft-plan.md)
+  ⎿  Added 1 line, removed 1 line
+      55  
+      56  These are the failure modes most likely to hurt the user in gra
+          ding or a viva. Each has a check in the task that owns it.
+      57  
+      58 -1. **A hypothesis written as a fact** (e.g. "the world model pr
+         -edicts the damage" with no hedge). Expect hedged wording and a 
+         -named test. Checked in Task 3 (A.1 tests) and Task 9 (hypothesi
+         -s-word check).                                                 
+      58 +1. **A hypothesis written as a fact** (e.g. "the world model pr
+         +edicts the damage" with no hedge). Expect hedged wording and a 
+         +named test. Checked in Task 2 (hedging check) and Task 9 (numbe
+         +r audit).                                                      
+      59  2. **Scope drift back into fixing or monitoring** (e.g. "Periap
+          t rolls out the patch" or "monitors the fleet"). Expect "the te
+          am fixes; Periapt ranks and explains". Checked in Task 9 (drift
+           grep).
+      60  3. **A missing rubric bullet**, especially A.5's six trust-and-
+          safety items and A.4's "decision-making criteria". Expect each 
+          by name. Checked in Tasks 5 and 7.
+      61  4. **A number not in Research_Findings, or a banned phrase.** C
+          hecked in Task 9 (banned-wording grep plus a manual number audi
+          t).
+
+● Update(report/plans/2026-09-30-report-draft-plan.md)
+  ⎿  Added 1 line, removed 1 line
+      57  
+      58  1. **A hypothesis written as a fact** (e.g. "the world model pr
+          edicts the damage" with no hedge). Expect hedged wording and a 
+          named test. Checked in Task 2 (hedging check) and Task 9 (numbe
+          r audit).
+      59  2. **Scope drift back into fixing or monitoring** (e.g. "Periap
+          t rolls out the patch" or "monitors the fleet"). Expect "the te
+          am fixes; Periapt ranks and explains". Checked in Task 9 (drift
+           grep).
+      60 -3. **A missing rubric bullet**, especially A.5's six trust-and-
+         -safety items and A.4's "decision-making criteria". Expect each 
+         -by name. Checked in Tasks 5 and 7.                             
+      60 +3. **A missing rubric bullet**, especially A.5's six trust-and-
+         +safety items and A.4's "decision-making criteria". Expect each 
+         +by name. Checked in Tasks 5 and 6.                             
+      61  4. **A number not in Research_Findings, or a banned phrase.** C
+          hecked in Task 9 (banned-wording grep plus a manual number audi
+          t).
+      62  5. **Broken storytelling**: the opening scene not resolved, the
+           persona not returning, the driving question missing. Checked i
+          n Task 8 and Task 9.
+      63  
+
+● Update(report/plans/2026-09-30-report-draft-plan.md)
+  ⎿  Added 1 line, removed 1 line
+      59  2. **Scope drift back into fixing or monitoring** (e.g. "Periap
+          t rolls out the patch" or "monitors the fleet"). Expect "the te
+          am fixes; Periapt ranks and explains". Checked in Task 9 (drift
+           grep).
+      60  3. **A missing rubric bullet**, especially A.5's six trust-and-
+          safety items and A.4's "decision-making criteria". Expect each 
+          by name. Checked in Tasks 5 and 6.
+      61  4. **A number not in Research_Findings, or a banned phrase.** C
+          hecked in Task 9 (banned-wording grep plus a manual number audi
+          t).
+      62 -5. **Broken storytelling**: the opening scene not resolved, the
+         - persona not returning, the driving question missing. Checked i
+         -n Task 8 and Task 9.                                           
+      62 +5. **Broken storytelling**: the opening scene not resolved, the
+         + persona not returning, the driving question missing. Checked i
+         +n Task 7 and Task 9.                                           
+      63  
+      64  ---
+      65  
+
+● Update(HANDOFF.md)
+  ⎿  Added 1 line, removed 1 line
+      1  # Session Handoff
+      2  
+      3 -> **⚠ Partly superseded (2026-09-30 evening).** The scope was cu
+        -t back to the original problem, with AI at the centre: **predict
+        -ive prioritisation** (scan → score → rank with reasons) delivere
+        -d as a copilot. The world model now predicts what a flaw would d
+        -o to each satellite, plus battery/thermal margin. The RL planner
+        -, rollout/rollback building and monitoring are cut. See topic re
+        -port **Q31–Q39**, RF **item 32** and Viva_Prep **§9**. **Spec v2
+        - is NOT to be drafted from.** **Spec v3 is written** (same path)
+        - and awaits the user's review. Next: approval → writing-plans → 
+        -draft. India and SBIR are on hold. §1–§4 below describe the olde
+        -r v2 state; where they differ, trust v3.                        
+      3 +> **⚠ Partly superseded (2026-09-30 evening).** The scope was cu
+        +t back to the original problem, with AI at the centre: **predict
+        +ive prioritisation** (scan → score → rank with reasons) delivere
+        +d as a copilot. The world model now predicts what a flaw would d
+        +o to each satellite, plus battery/thermal margin. The RL planner
+        +, rollout/rollback building and monitoring are cut. See topic re
+        +port **Q31–Q39**, RF **item 32** and Viva_Prep **§9**. **Spec v2
+        + is NOT to be drafted from.** **Spec v3 is approved** (same path
+        +). **The drafting plan is written:** `report/plans/2026-09-30-re
+        +port-draft-plan.md` (Tasks 0–9, each with runnable checks). Next
+        + session: run the plan with the execution method the user picks 
+        +→ `report/Periapt_Report_Draft.md`. India and SBIR are on hold. 
+        +§1–§4 below describe the older v2 state; where they differ, trus
+        +t v3.                                                           
+      4  
+      5  **Written:** 2026-09-30, end of the research-validation + report
+         -design session.
+      6  **Deadline:** 1 Oct 2026, 23:59. That's about a day, so bias tow
+         ard drafting, not more research.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+● The drafting plan is written and merged into main at
+  report/plans/2026-09-30-report-draft-plan.md. HANDOFF now points to it, so the
+  new session can start there.
+
+  It has 10 tasks:
+  - Task 0: set up the draft file and a small check script.
+  - Tasks 1–8: write each section in the spec's order.
+  - Task 9: whole-draft checks, then merge.
+
+  Each task has a list of what the section must contain, and ends with checks
+  the new session can run: required terms present, banned wording absent, and a
+  word count in range. The final task also looks for numbers without a source,
+  scope drift back into fixing or monitoring, and whether the 2 a.m. scene is
+  resolved at the end.
+
+  Please review the plan and pick how the new session should run it:
+
+  - Native (my recommendation): one session writes every section itself, then
+    one reviewer checks the whole draft. The sections share one story, one voice
+    and the same running threads, and a mistake in prose is cheap to fix before
+    your rewrite. Separate agents per section would split the voice.
+  - Subagent-driven: a fresh agent writes each section and a fresh reviewer
+    checks it. More thorough, but slower and costlier, and the voice may vary
+    between sections.
+
+  Still on your side:
+  - India and SBIR (on hold);
+  - choosing the appendix's hardest concept (default: what the AI should
+    predict);
+  - the two transcript links;
+  - a quick check of the NIST AI RMF PDF and the SIA report before submitting.
+
+✻ Worked for 3m 46s · done 9:19 PM
+
+❯ What are the bash scripts for exactly? I mean, we are drafting a report,      
+  right? So why bash scripts for codes?                                         
+
+● The script isn't part of the report and never gets submitted. It's a small
+  checking tool (about 15 lines) that the drafting session runs on the draft to
+  catch mistakes it could easily miss. It checks three things:
+
+  1. Nothing required is missing. After writing, say, A.5, it confirms that
+     every rubric item is in that section: human override, stop rules,
+     hallucination safeguards, monitoring, privacy and so on.
+  2. No banned claims slipped in. It searches for the things we agreed never to
+     say: "16,000 satellites", "Viasat was an unpatched flaw", "certified safe",
+     any revenue figure, and so on. These are exactly the "bombs" you were
+     worried about.
+  3. Length. It counts words per section, so the draft stays near the 4-page
+     budget.
+
+  It's like a spell-checker for our own rules. The alternative is re-reading
+  every section by hand against a long checklist, which is slow and easy to get
+  wrong at the end of a long session. The script does it in a second and gives
+  the same answer every time.
+
+  It lives in scripts/ next to the existing transcript.py tool, and it's only
+  used during drafting.
+
+  If you'd rather not have it, I can remove it, and the plan's checks would
+  become a manual read-through checklist instead. That's your call, but I'd keep
+  it, because it's what protects the draft from the mistakes we spent today
+  fixing.
+
+✻ Baked for 7s · done 9:21 PM
+
+❯ keep it also update the handoffs and instructions for the new session.        
+
+● I'll rewrite HANDOFF so it describes the current state only (the v2-era text
+  stays in git history), and update CLAUDE.md's file map and state line to
+  match.
+
+  Read 2 files (ctrl+o to expand)
+
+● Write(HANDOFF.md)
+  ⎿  Added 57 lines, removed 72 lines
+       1  # Session Handoff
+       2  
+       3 -> **⚠ Partly superseded (2026-09-30 evening).** The scope was c
+         -ut back to the original problem, with AI at the centre: **predi
+         -ctive prioritisation** (scan → score → rank with reasons) deliv
+         -ered as a copilot. The world model now predicts what a flaw wou
+         -ld do to each satellite, plus battery/thermal margin. The RL pl
+         -anner, rollout/rollback building and monitoring are cut. See to
+         -pic report **Q31–Q39**, RF **item 32** and Viva_Prep **§9**. **
+         -Spec v2 is NOT to be drafted from.** **Spec v3 is approved** (s
+         -ame path). **The drafting plan is written:** `report/plans/2026
+         --09-30-report-draft-plan.md` (Tasks 0–9, each with runnable che
+         -cks). Next session: run the plan with the execution method the 
+         -user picks → `report/Periapt_Report_Draft.md`. India and SBIR a
+         -re on hold. §1–§4 below describe the older v2 state; where they
+         - differ, trust v3.                                             
+       3 +**Written:** 2026-09-30, end of the re-centring session (spec v
+         +3 + drafting plan).                                            
+       4 +**Deadline:** 1 Oct 2026, 23:59. Draft first; no new research. 
+       5 +**Older state:** the v2-era handoff is in git history (commit `
+         +f39c184` and earlier). Where they differ, trust this file.     
+       6  
+       5 -**Written:** 2026-09-30, end of the research-validation + repor
+         -t-design session.                                              
+       6 -**Deadline:** 1 Oct 2026, 23:59. That's about a day, so bias to
+         -ward drafting, not more research.                              
+       7 -**Purpose:** give a fresh session everything it needs to contin
+         -ue without re-deriving decisions. `CLAUDE.md` (auto-loaded) has
+         - the stable facts; this file has the *state of work* and the *w
+         -hy* behind recent decisions.                                   
+       8 -                                                               
+       7  ---
+       8  
+       9  ## 1. Where we are
+      10  
+      13 -The design is finished; the report prose has not been started. 
+      11 +- **Spec v3 is approved:** `report/specs/2026-09-30-report-draf
+         +t-design.md`.                                                  
+      12 +- **The drafting plan is written:** `report/plans/2026-09-30-re
+         +port-draft-plan.md` (Tasks 0–9).                               
+      13 +- **The report prose has not been started.** The next session w
+         +rites `report/Periapt_Report_Draft.md` by running the plan.    
+      14  
+      15 -- **Spec v2 written, awaiting the user's approval:** `report/sp
+         -ecs/2026-09-30-report-draft-design.md`. The user has **not** ap
+         -proved it yet (last answer before the rename: "Discuss more fir
+         -st", then v2 was written from that discussion).                
+      16 -- **Next steps, in order** (the superpowers:brainstorming → wri
+         -ting-plans flow was in use; respect its gates):                
+      17 -  1. Get explicit approval of spec v2 (or apply requested chang
+         -es).                                                           
+      18 -  2. Invoke `superpowers:writing-plans` for an implementation p
+         -lan for the draft; the user picks the execution method.        
+      19 -  3. Write `report/Periapt_Report_Draft.md`: full prose, every 
+         -fact tagged `[RF n]`/`[Q n]`. **The user will rewrite it in the
+         -ir own voice** (brief §F forbids unrevised AI text; a viva is p
+         -ossible).                                                      
+      20 -  4. Later: visuals (loop diagram + Five Forces table), then `.
+         -docx` conversion (docx skill), then strip the tags.            
+      21 -- **Parallel tasks still to launch once the spec is approved** 
+         -(spec §7):                                                     
+      22 -  - India research (Sonnet subagent) → RF item 32 + `research/r
+         -aw/08-*.md`. It feeds **one vision line only**: India as next m
+         -arket / engineering base.                                      
+      23 -  - SBIR/STTR current status check (review R25: items 10/15 say
+         - lapsed, item 17 cites a live Sept 2026 topic).                
+      24 -  - *(The name check is done; see §3.)*                        
+      15 +## 2. What the next session does, in order                     
+      16  
+      26 -## 2. Read order for a new session                             
+      17 +1. Read the files in §3.                                       
+      18 +2. **Ask the user for the execution method** before starting. T
+         +hey haven't picked one yet.                                    
+      19 +   - **Native (recommended):** one session writes every section
+         +, then one reviewer checks the whole draft. This keeps one voic
+         +e and one story.                                               
+      20 +   - **Subagent-driven:** a fresh agent per section plus a revi
+         +ewer each time. Slower, and the voice may vary.                
+      21 +3. Run the plan task by task: Native → `superpowers:executing-p
+         +lans`; Subagent-driven → `superpowers:subagent-driven-developme
+         +nt`. Tick the checkboxes in the plan as you go.                
+      22 +4. After each section, run its checks with `scripts/draft_check
+         +.sh`. The plan gives the exact commands. **The script is a chec
+         +king tool only**, not part of the report. The user approved kee
+         +ping it: it catches missing rubric points, banned claims and ov
+         +er-length sections.                                            
+      23 +5. Task 9 does the whole-draft checks, updates this file, and m
+         +erges into `main`.                                             
+      24 +6. Tell the user in plain words what's done and what's left for
+         + them (§6).                                                    
+      25  
+      28 -1. `CLAUDE.md` (auto-loaded): stable decisions and working habi
+         -ts.                                                            
+      26 +## 3. Read order                                               
+      27 +                                                               
+      28 +1. `CLAUDE.md` (auto-loaded): locked decisions and working habi
+         +ts.                                                            
+      29  2. **This file.**
+      30 -3. `report/specs/2026-09-30-report-draft-design.md`: **the blue
+         -print.** Section design, numbers to use or avoid (§4), coverage
+         - matrix of every review item (§4a), v2 changes (§8).           
+      31 -4. `report/Viva_Prep.md`: every challenge compressed into defen
+         -d-ready answers. The fastest way to absorb the reasoning.      
+      32 -5. `research/Research_Findings.md`: the sourced facts (items 1–
+         -31). **Check here before stating any number.**                 
+      33 -6. `research/Research_Findings_Review.md`: red-team list R1–R35
+         - (why many claims were reframed).                              
+      34 -7. `topic/Topic_Brainstorm_Report.md` §4 **Q17–Q30** (this sess
+         -ion's challenges), §7 concept (§7.5 moat is marked superseded),
+         - §9.6 drafting tasks T1–T8.                                    
+      35 -8. Only if needed: `research/raw/0N-*.md` (full subagent output
+         -s; never edit), `brief/Instructions.md` (rubric), `Prof_Materia
+         -ls/` course decks (text extracts can be regenerated with `pdfto
+         -text`).                                                        
+      30 +3. `report/specs/2026-09-30-report-draft-design.md`: **the blue
+         +print.** Read all of it: the product (§2), threads (§3), each s
+         +ection (§4), the use/avoid list (§5), and the coverage matrix (
+         +§6).                                                           
+      31 +4. `report/plans/2026-09-30-report-draft-plan.md`: the tasks an
+         +d their checks.                                                
+      32 +5. `report/Viva_Prep.md` **§9**: the current reasoning in plain
+         + words. §1–§8 are older; where they differ, §9 wins.           
+      33 +6. `research/Research_Findings.md`: check here **before writing
+         + any number**. Item 32 holds the newest verified facts.        
+      34 +7. Only if needed: `topic/Topic_Brainstorm_Report.md` §4 **Q31–
+         +Q40** (why the scope changed), `research/Research_Findings_Revi
+         +ew.md` (R1–R35), and `Prof_Materials/` (course decks; regenerat
+         +e text with `pdftotext` if needed).                            
+      35  
+      37 -## 3. Decisions made this session (and why)                    
+      36 +## 4. The concept in one paragraph                             
+      37  
+      39 -| Decision | Outcome | Why / where logged |                    
+      40 -|---|---|---|                                                  
+      41 -| **Company name** | **Periapt**: a protective amulet; echoes *
+         -periapsis*, "protection at the closest point of risk" | "Phylax
+         -" clashed with Phylax Intelligence (EU AI security firm, differ
+         -ent product). Amyntor failed a *deep* check (two Indian cyberse
+         -curity firms). Periapt has no security/space use. [Q30] |      
+      42 -| Format | Word/PDF doc, 4 pages + 1-page appendix, 2 visuals |
+         - user choice |                                                 
+      43 -| Jurisdiction | **United States** (main); India as next-market
+         - line pending research | user choice |                         
+      44 -| Draft depth | Full prose with source tags; user rewrites | ac
+         -ademic-integrity rule |                                        
+      45 -| Structure | Design-Thinking frame: empathy opening → one cour
+         -se concept anchoring each rubric section → four-lens close (Fea
+         -sibility/Usability/Desirability/Viability). Each section also t
+         -argets a named grading component. | user asked for "course conc
+         -epts in harmony" + "mix grading components" |                  
+      46 -| Positioning | **A domain copilot that owns the workflow**: ma
+         -kes security, flight-software and ops teams more productive; th
+         -e team decides | [Q26, Q27] |                                  
+      47 -| Product core | The agentic flow **known flaw → safe, schedule
+         -d fix across the whole mission** (reachability → ranked plan → 
+         -validation → human approval → watch/halt), not scoring or monit
+         -oring | [Q26] |                                                
+      48 -| World model role | **Judge** of manufacturer-emulator runs an
+         -d the canary satellite vs "how this satellite normally behaves"
+         -; fleet-wide watch during rollout. It does **not** predict unse
+         -en code. | [Q26, R6] |                                         
+      49 -| Planner | Constraint solver (passes/power) + learned rollout 
+         -*ordering*. **Differs from the CLAUDE.md "constrained RL" lock;
+         - user confirmation is pending.** | [R8] |                      
+      50 -| Moat order | (1) context graph / patch-outcome record → (2) s
+         -witching costs → (3) efficient scale → network effect *conditio
+         -nal* only. Public data and manufacturer partnerships removed. |
+         - [Q18, Q22, RF 7] |                                            
+      51 -| Value | **No revenue/ACV figure.** Three-layer value case: va
+         -lue table (efficiency / risk / innovation) → before/after of th
+         -e opening scene → renewal on pilot metrics. Pricing *structure*
+         - only: per-fleet subscription + onboarding fee. | [Q29] |      
+      52 -| First customer | One actor: a US mid-size operator that also 
+         -holds DoD contracts. Persona "the Stretched Sentinel" (CISO) + 
+         -buying committee (mission-ops approver, SecOps champion). User 
+         -approved. | [Q28, R26, R27] |                                  
+      53 -| Liability | "Decision support with evidence and stated residu
+         -al risk", never "certified safe"; command/boot/auth-path change
+         -s never automated; missing approval → hold | [Q25, R29, R30] | 
+      38 +Periapt watches new security advisories around the clock. For e
+         +very flaw it works out which satellites are affected, whether a
+         +n attacker could reach them, how likely an attack is, and **wha
+         +t the attack would actually do to each satellite**. It then ran
+         +ks the flaws with reasons and briefs each team (security, fligh
+         +t software, mission ops) in its own terms.                     
+      39 +- **AI parts:** an LLM agent (reads, matches, briefs) and a **w
+         +orld model** learned per fleet from telemetry and command histo
+         +ry. The world model predicts attack impact per satellite and fo
+         +recasts battery/thermal margin.                                
+      40 +- **Reused, not rebuilt:** existing tools cover CVSS, EPSS and 
+         +SPARTA.                                                        
+      41 +- **Autonomy:** it runs on its own up to the ranking. Humans ca
+         +n override at any time. A human approves anything that touches 
+         +a satellite or a ground system.                                
+      42 +- **Ranking rule:** the AI can raise a priority; lowering it ne
+         +eds a human; outside the model's data, impact counts as high.  
+      43 +- **Scope:** Stage 1 is prioritisation only. Fixing, validation
+         + and rollout are later stages, once trust is earned.           
+      44  
+      55 -## 4. The discussion arc, compressed (so the next session doesn
+         -'t re-open settled points)                                     
+      45 +## 5. Decisions made in this session (and why)                 
+      46  
+      57 -Each line is a user challenge and what it changed. Full entries
+         - are in the topic report §4.                                   
+      58 -- **Q17:** regulation is a double edge → there is **no binding 
+         -US vulnerability-management mandate** (RF 30); regulation is on
+         -ly a tailwind.                                                 
+      59 -- **Q18:** public data proves feasibility for everyone → not a 
+         -moat.                                                          
+      60 -- **Q19:** "static vs live" is the wrong SPARTA axis → referenc
+         -e vs decision-and-execution; build *on* SPARTA.                
+      61 -- **Q20–Q21:** operators already do this in-house, formally (SE
+         -S 40+ staff, Planet SatSec, Spire ISO 27005 ranking; RF 31) → "
+         -connect and speed up", not "you lack a team". The "3-person tea
+         -m" quote **has no source; never cite it.**                     
+      62 -- **Q22:** operators won't feed competitors → network effect co
+         -nditional; SDA-style sharing is the only precedent.            
+      63 -- **Q23:** "worst topic?" → everything that died was an overcla
+         -im, not the core. Stop researching, draft.                     
+      64 -- **Q24:** unit economics don't close at SaaS per-asset rates; 
+         -the cost is **people**, not compute.                           
+      65 -- **Q25:** "needing undo means unreliable" → reliability = rare
+         -, contained, recoverable failures; unrecoverable classes are pr
+         -evented.                                                       
+      66 -- **Q26–Q27:** detection and monitoring already exist → the pro
+         -duct is the flaw→fix flow; a copilot for researchers.          
+      67 -- **Q28:** the persona was a decision, not a task; transcripts 
+         -go out as Google Drive links.                                  
+      68 -- **Q29:** drop revenue/ACV; show customer value in three layer
+         -s.                                                             
+      69 -- **Q30:** name clash → Periapt.                               
+      47 +| Decision | Outcome | Where logged |                          
+      48 +|---|---|---|                                                  
+      49 +| Scope | Cut back to the original problem: **predictive priori
+         +tisation**, not the whole flaw → fix flow | Q34, Q36 |         
+      50 +| Positioning | A copilot for the three teams; it plugs into th
+         +eir own ranking method (e.g. ISO 27005) | Q35 |                
+      51 +| World model | Predicts **flaw impact** per satellite, plus ma
+         +rgin forecast. It does **not** predict what a patch does, and i
+         +t is **not** a monitoring product | Q31, Q33, Q36 |            
+      52 +| Planner | RL dropped; a plain scheduler fed by the forecast |
+         + Q32 |                                                         
+      53 +| Autonomy | Autonomous up to the ranking; on-the-loop override
+         +; in-the-loop approval | Q37 |                                 
+      54 +| Aerospace Corp | **Complement, not rival** (builds on SPARTA;
+         + FAR 35.017, softened wording) | Q39, Q40 |                    
+      55 +| Value over time | Grows with time in orbit; how fast is a pil
+         +ot metric, not a promise | Q39, Q40 |                          
+      56 +| Moat | The record + earned trust. The telemetry archive belon
+         +gs to the customer | Q40 |                                     
+      57 +| People-heavy | Deliberate, to earn trust; viability stays the
+         + weakest point | Q39 |                                         
+      58 +| References | SIA 2026 report · NIST SP 800-171 · NIST AI RMF 
+         +1.0 · Hundman et al. 2018 | spec §1 |                          
+      59 +| Visuals | 3: loop diagram (mermaid in the draft), Five Forces
+         + table, persona + journey strip | spec §4 |                    
+      60 +| India, SBIR | **On hold.** Keep them out of the draft | spec 
+         +§9 |                                                           
+      61  
+      71 -## 5. Hard rules for drafting                                  
+      72 -                                                               
+      73 -- **Source every fact** from `research/Research_Findings.md` (C
+         -LAUDE.md rule; §10.1 in the topic report shows why).           
+      74 -- **Never say:** "~16k satellites", "58k CVEs/yr" (57,908 is **
+         -YTD to 31 Aug 2026**), any Starlink %, "3-person team", "40% of
+         - CubeSats since 2000", "fully tested", "legally required to pat
+         -ch", "nobody validates patches", any revenue/ACV number. (Spec 
+         -§4.)                                                           
+      75 -- **Name SPARTA/SPARTEND and CT Cubed IRON GALAXY** explicitly 
+         -(originality rule).                                            
+      76 -- Keep **Spire** as the co-opetition case, not a buyer; **Globa
+         -lstar** is out (Amazon acquisition).                           
+      77 -- Every review item R1–R35 has a planned handling in spec §4a. 
+         -Don't silently drop any.                                       
+      78 -- The user **challenges hard and wants honest pushback, not agr
+         -eement.** When a challenge lands, log it as the next Q-entry (Q
+         -31+) in the topic report §4 *and* add the defend-ready answer t
+         -o `report/Viva_Prep.md`.                                       
+      79 -                                                               
+      62  ## 6. User-owned tasks (Claude can't do these)
+      63  
+      82 -- Approve spec v2 (and confirm the planner change).            
+      83 -- Final rewrite of the draft in their own voice.               
+      84 -- Transcript links: split the **redacted** `logs/TRANSCRIPT_LOG
+         -.md` into per-session chunks (Claude can do the split), upload 
+         -to Google Drive with "anyone with the link can view", and paste
+         - ≥2 links into the appendix.                                   
+      85 -- Before claiming references were read: check NIST IR 8270's co
+         -ntrol text in the PDF, and cite the SIA *report*, not its press
+         - release (R35).                                                
+      64 +- The final rewrite of the draft in their own voice, and cuttin
+         +g it to 4 pages + a 1-page appendix.                           
+      65 +- Choosing the appendix's hardest concept (default: *what the A
+         +I should predict*).                                            
+      66 +- Transcript links: run `/export` then `/transcript` for this s
+         +ession; split the **redacted** `logs/TRANSCRIPT_LOG.md` into ch
+         +unks; upload to Google Drive with "anyone with the link can vie
+         +w"; paste ≥2 links into the appendix.                          
+      67 +- Before submitting: check the NIST AI RMF PDF text, and cite t
+         +he SIA *report*, not its press release.                        
+      68 +- The India decision.                                          
+      69 +- Whether to move `Discussion on the World model.txt` into `log
+         +s/` as appendix evidence (it's the user's own study session).  
+      70  
+      71  ## 7. Practical gotchas
+      72  
+      89 -- **Git:** mini-branch per change (`docs/<topic>`), conventiona
+         -l commits, `merge --no-ff` into `main`, never push. `README.md`
+         - has an **uncommitted user edit (resume IDs)**: leave it alone 
+         -and never stage it.                                            
+      90 -- **`/transcript` does its own git work.** `scripts/transcript.
+         -py` branches from the *current* HEAD, commits and merges into `
+         -main`. Run from a feature branch, it also merges that branch's 
+         -unmerged work. That is harmless, but tell the user.            
+      91 -- **Bash's auto-mode safety check can fail transiently.** Fall 
+         -back to the Read tool for reading.                             
+      92 -- **Name checks:** a quick web search isn't enough (Amyntor pas
+         -sed quick, failed deep). Use the extended search mode.         
+      93 -- The session style used subagents only when the user asked (So
+         -nnet for research, Opus for review). Don't spawn unprompted.   
+      73 +- **Git:** mini-branch per change (`docs/<topic>`), conventiona
+         +l commits, `merge --no-ff` into `main`, never push. **Never sta
+         +ge** `README.md` (the user's uncommitted edit) or `Discussion o
+         +n the World model.txt` (the user's file).                      
+      74 +- **`/transcript` does its own git work:** it branches from the
+         + current HEAD and merges into `main`. Run from a feature branch
+         +, it also merges that branch. Harmless, but tell the user.     
+      75 +- **The Bash safety check can fail transiently.** Retry once. I
+         +f it fails again, use the Read/Edit/Write tools, which worked e
+         +very time this session.                                        
+      76 +- **Plain language is a user rule:** short, simple, to the poin
+         +t, no jargon.                                                  
+      77 +- The user challenges hard and wants honest pushback. Log each 
+         +new challenge as the next Q-entry (**Q41+**) in the topic repor
+         +t §4 *and* in Viva_Prep §9.                                    
+      78 +- Subagents only when the user asks.                           
+
+● Update(CLAUDE.md)
+  ⎿  Added 1 line, removed 1 line
+      13  - **Architecture:** LLM agent (self-hosted, citation-required; 
+          ReAct orchestrator) + reused scores (CVSS, EPSS, SPARTA) + reac
+          h map + **world model** (learned per fleet from telemetry and c
+          ommand history; predicts what an attacker's commands would do t
+          o each satellite, and forecasts battery/thermal margin; JEPA-st
+          yle as the candidate). Ranking rule: the AI can raise a priorit
+          y, lowering needs a human, and outside its data means high. The
+           RL planner, patch testing, rollout/rollback and monitoring are
+           **cut** from Stage 1. Evolution: topic report Q26 and Q31–Q39.
+      14  - **Jurisdiction:** **United States** (confirmed 2026-09-30). I
+          ndia line and SBIR: on hold (user decision pending).
+      15  - **Format:** Word/PDF doc, 4 pages + 1-page appendix, 3 visual
+          s. Draft in markdown with source tags; the user rewrites it in 
+          their own voice.
+      16 -- **Current state:** see `HANDOFF.md` (read it first in a new s
+         -ession). Spec v3 (`report/specs/2026-09-30-report-draft-design.
+         -md`) awaits the user's review; the report prose has not been st
+         -arted.                                                         
+      16 +- **Current state:** see `HANDOFF.md` (read it first in a new s
+         +ession). Spec v3 is approved; the drafting plan (`report/plans/
+         +2026-09-30-report-draft-plan.md`) is written; the report prose 
+         +has not been started. Ask the user for the execution method (Na
+         +tive recommended) before running the plan.                     
+      17  
+      18  ## File map
+      19  
+
+● Update(CLAUDE.md)
+  ⎿  Added 1 line, removed 1 line
+      22  | `brief/` | Assignment inputs (Instructions, Project Topics, p
+          rofessor note). Read-only. |
+      23  | `topic/` | `Topic_Brainstorm_Report.md` — topic decision hist
+          ory, every challenge raised and answered, §10.1 verification lo
+          g. |
+      24  | `research/` | `Research_Plan.md` (29 numbered research tasks,
+           tagged to rubric markers) → `Research_Findings.md` (sourced an
+          swers) → `Research_Findings_Explained.md` (same, plain-language
+          ). `Research_Findings_Review.md` (red-team list of weak claims,
+           R1–R35 + top 5). `research/raw/` = the 7 subagents' full promp
+          ts/approach/sources/output — never edit, historical record. |
+      25 -| `report/` | `specs/2026-09-30-report-draft-design.md` (report
+         - blueprint, spec v2), `Viva_Prep.md` (defend-ready answers to e
+         -very challenge/review question). The draft and final submission
+         - go here. |                                                    
+      25 +| `report/` | `specs/2026-09-30-report-draft-design.md` (report
+         + blueprint, **spec v3, approved**), `plans/2026-09-30-report-dr
+         +aft-plan.md` (drafting tasks + checks), `Viva_Prep.md` (defend-
+         +ready answers; §9 is current). The draft (`Periapt_Report_Draft
+         +.md`) and final submission go here. |                          
+      26  | `logs/` | `TRANSCRIPT_LOG.md` (committed, redacted, feeds the
+           mandatory GenAI appendix) + `exports/` (raw `/export` dumps, s
+          ource material for the log). |
+      27  | `scripts/` | `transcript.py` + its test — do not hand-edit `T
+          RANSCRIPT_LOG.md`. |
+      28  | `Prof_Materials` | Symlink to the professor's lecture/student
+          -PPT materials — gitignored (external, not project content), bu
+          t its course concepts must be applied when drafting. |
+
+● Update(CLAUDE.md)  ⎿  Added 1 line, removed 1 line
+      24  | `research/` | `Research_Plan.md` (29 numbered research tasks,
+           tagged to rubric markers) → `Research_Findings.md` (sourced an
+          swers) → `Research_Findings_Explained.md` (same, plain-language
+          ). `Research_Findings_Review.md` (red-team list of weak claims,
+           R1–R35 + top 5). `research/raw/` = the 7 subagents' full promp
+          ts/approach/sources/output — never edit, historical record. |
+      25  | `report/` | `specs/2026-09-30-report-draft-design.md` (report
+           blueprint, **spec v3, approved**), `plans/2026-09-30-report-dr
+          aft-plan.md` (drafting tasks + checks), `Viva_Prep.md` (defend-
+          ready answers; §9 is current). The draft (`Periapt_Report_Draft
+          .md`) and final submission go here. |
+      26  | `logs/` | `TRANSCRIPT_LOG.md` (committed, redacted, feeds the
+           mandatory GenAI appendix) + `exports/` (raw `/export` dumps, s
+          ource material for the log). |
+      27 -| `scripts/` | `transcript.py` + its test — do not hand-edit `T
+         -RANSCRIPT_LOG.md`. |                                           
+      27 +| `scripts/` | `transcript.py` + its test — do not hand-edit `T
+         +RANSCRIPT_LOG.md`. `draft_check.sh` (created by plan Task 0) — 
+         +checking tool for the draft only (required terms, word counts p
+         +er section); not part of the report. |                         
+      28  | `Prof_Materials` | Symlink to the professor's lecture/student
+          -PPT materials — gitignored (external, not project content), bu
+          t its course concepts must be applied when drafting. |
+      29  
+      30  Flow: `research/raw` → `research/Research_Findings*` → `topic/`
+           → `report/`. `HANDOFF.md` (root) = current work state for a fr
+          esh session.
+
+● Update(CLAUDE.md)
+  ⎿  Added 1 line, removed 1 line
+      33  
+      34  - **Must not be an existing company's work** — this is why the 
+          satellite niche exists inside the generic "Day-Zero Vulnerabili
+          ty Prioritisation" topic. Before asserting originality, check `
+          research/raw/03-competitors-rivalry.md` — Aerospace Corp's SPAR
+          TA and CT Cubed's IRON GALAXY are the two closest adjacents and
+           must be named/differentiated explicitly in the report, never o
+          mitted.
+      35  - **4 pages + 1-page appendix.** Appendix needs: working eviden
+          ce, AI tools used + ≥2 transcript links, hardest-concept discus
+          sion, what was accepted/modified/rejected/independently develop
+          ed.
+      36 -- **3–4 key references, non-blog.** Shortlist already narrowed 
+         -in `research/Research_Findings.md` item 29.                    
+      36 +- **3–4 key references, non-blog.** Final list approved in spec
+         + v3 §1 (SIA 2026 report, NIST SP 800-171, NIST AI RMF 1.0, Hund
+         +man et al. 2018); it replaces the item 29 shortlist.           
+      37  - Grading: Content 8 · Presentation 4 · Storytelling 4 · Creati
+          vity 4. Plagiarism must stay under 10%.
+      38  
+      39  ## Working habits (do these without being asked)
+
+● Update(CLAUDE.md)
+  ⎿  Added 2 lines, removed 1 line
+      41  - **Source facts, don't recall them.** Before stating a market 
+          number, competitor claim, or regulatory fact in the report, che
+          ck `research/Research_Findings.md` first. If it's not there, ei
+          ther research it or flag it explicitly as unverified — never as
+          sert from model memory (see `topic/Topic_Brainstorm_Report.md` 
+          §10.1 for what happened last time unverified numbers were used)
+          .
+      42  - **Save work in mini-branches.** Every meaningful change: shor
+          t-lived `docs/<topic>` branch, small commits with conventional 
+          prefixes, `git merge --no-ff` back into `main`, never push (no 
+          remote), leave branches undeleted. Don't wait to be asked.
+      43  - **Transcripts.** After `/export`, run `/transcript` (wraps `s
+          cripts/transcript.py`) to file it into `logs/TRANSCRIPT_LOG.md`
+          . A later export that continues an earlier one replaces that se
+          ction — don't hand-append.
+      44 -- **User challenges reasoning hard** and wants honest pushback,
+         - not agreement — see the full challenge/answer log in `topic/To
+         -pic_Brainstorm_Report.md` §4 for the standard this project hold
+         -s itself to.                                                   
+      44 +- **User challenges reasoning hard** and wants honest pushback,
+         + not agreement — see the full challenge/answer log in `topic/To
+         +pic_Brainstorm_Report.md` §4 for the standard this project hold
+         +s itself to. Log each new challenge as the next Q-entry (Q41+) 
+         +there and in `report/Viva_Prep.md` §9.                         
+      45 +- **Plain language.** Answers are short, simple and to the poin
+         +t, with no jargon (user rule, 2026-09-30).                     
+
+● The plan's final task still points to the old HANDOFF wording, so I'll update
+  it to match the new file.
+
+● Update(report/plans/2026-09-30-report-draft-plan.md)
+  ⎿  Added 1 line, removed 1 line
+      473  Run: `grep -ci "Stretched Sentinel\|the CISO" report/Periapt_R
+           eport_Draft.md` → expect `≥ 3` (opening, A.4, close).
+      474  - [ ] **Step 6: Coverage matrix walk.** Open spec §6. For each
+            row (K1–K5, R1–R35, RF 32), confirm the handling is visible i
+           n the draft section named ("Avoid", "Held" and "Cut" rows mean
+            it must be absent). Fix any gap.
+      475  - [ ] **Step 7: Total length.** `wc -w report/Periapt_Report_D
+           raft.md`. Expected about 2,700–3,500 words; the user cuts to 4
+            pages + a 1-page appendix later.
+      476 -- [ ] **Step 8: Update the HANDOFF banner.** Replace the sente
+          -nce "**Spec v3 is written** (same path) and awaits the user's 
+          -review. Next: approval → writing-plans → draft." with "**Draft
+          - written:** `report/Periapt_Report_Draft.md` (with source tags
+          -). Next: the user's voice rewrite and cut to 4+1 pages → visua
+          -ls → .docx (docx skill) → strip tags. User tasks: transcript l
+          -inks, check the NIST AI RMF PDF and SIA report, India decision
+          -."                                                            
+      476 +- [ ] **Step 8: Update HANDOFF.md §1.** Replace the bullet "**
+          +The report prose has not been started.** The next session writ
+          +es `report/Periapt_Report_Draft.md` by running the plan." with
+          + "**Draft written:** `report/Periapt_Report_Draft.md` (with so
+          +urce tags). Next: the user's voice rewrite and cut to 4+1 page
+          +s → visuals → .docx (docx skill) → strip tags. User tasks are 
+          +in §6." Also set §2 step 1 to "The plan is done; see §6." In `
+          +CLAUDE.md`, change "the report prose has not been started. Ask
+          + the user for the execution method (Native recommended) before
+          + running the plan." to "the draft is written; next is the user
+          +'s rewrite."                                                  
+      477  - [ ] **Step 9: Commit and merge.**
+      478  
+      479  ```bash
+
+  Ran 2 shell commands (ctrl+o to expand)
+
+● The script stays, and the handoff and instructions are updated and merged into
+  main.
+
+  HANDOFF.md is rewritten for the new session and now covers:
+  - where things stand: spec v3 approved, plan ready, no prose yet;
+  - what the new session does, in order. First it asks you for the execution
+    method (Native recommended), then it runs the plan and checks each section
+    with the script;
+  - the read order, with Viva_Prep §9 marked as the current reasoning;
+  - a one-paragraph summary of the concept;
+  - this session's decisions and where each is logged;
+  - your own tasks;
+  - gotchas: never stage README.md or your discussion file, and fall back to the
+    Read/Edit tools if Bash's safety check fails.
+
+  CLAUDE.md now has:
+  - the current state line;
+  - the new plan file in the file map;
+  - draft_check.sh, described as a checking tool that isn't part of the report;
+  - the approved reference list;
+  - the plain-language rule, and Q41 as the next challenge number.
+
+  The plan's last task now updates the new HANDOFF wording once the draft is
+  done. My memory notes are updated too.
+
+  To start drafting: open a new session and say "continue the Periapt draft". It
+  will read HANDOFF, ask you Native or Subagent-driven, and begin.
+
+  Before closing this session, run /export and then /transcript, so today's work
+  goes into the transcript log for your appendix links.
+
+✻ Churned for 1m 11s · done 9:24 PM
+```
+<!-- /session: completed-v3-drafted-plan-report-draft-next -->
