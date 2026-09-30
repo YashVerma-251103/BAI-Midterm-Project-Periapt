@@ -8,10 +8,12 @@ The Business of AI — Mid-Semester Assignment (20 marks). **Not code.** The del
 
 ## Locked decisions
 
-- **Company:** an AI platform that prioritises and safely resolves cybersecurity vulnerabilities across satellite missions (ground → network → spacecraft → terminals), inside the listed topic "Day-Zero Vulnerability Prioritisation" (Defence, Space & Cybersecurity segment).
-- **Architecture:** JEPA-style world model (fleet telemetry) + constrained RL rollout planner + LLM agent (advisory ingestion) + human-approved uplinks only. Full detail and its evolution: `topic/Topic_Brainstorm_Report.md` §7.
-- **Jurisdiction:** United States recommended (NIST AI RMF + IR 8270/8401 + SPD-5 + ITAR/EAR) — see `topic/Topic_Brainstorm_Report.md` §4 Q16. **Final confirmation still pending.**
-- **Still open:** company name/mission/vision, submission format, final jurisdiction sign-off.
+- **Company:** **Periapt** (protective amulet; echoes *periapsis*): an AI platform that prioritises and safely resolves cybersecurity vulnerabilities across satellite missions (ground → network → spacecraft → terminals), inside the listed topic "Day-Zero Vulnerability Prioritisation" (Defence, Space & Cybersecurity segment). Renamed from Phylax on 2026-09-30 (name clash; topic report Q30).
+- **Positioning:** a domain copilot that owns the workflow: the agentic flow from a known flaw to a safe, scheduled fix, with humans approving every uplink. It makes expert teams faster and doesn't replace them.
+- **Architecture:** LLM advisory agent (self-hosted, citation-required) + exposure graph + JEPA-style world model (judges emulator/canary runs and watches rollouts) + rollout planner + human-approved uplinks only. **Pending user confirmation:** planner = constraint solver + learned ordering, replacing the original "constrained RL" (spec v2, review R8). Evolution: `topic/Topic_Brainstorm_Report.md` §7 and Q26.
+- **Jurisdiction:** **United States** (confirmed 2026-09-30); India only as a next-market line, pending research.
+- **Format:** Word/PDF doc, 4 pages + 1-page appendix, 2 visuals. Draft in markdown with source tags; the user rewrites it in their own voice.
+- **Current state:** see `HANDOFF.md` (read it first in a new session). Spec v2 awaits approval; the report prose has not been started.
 
 ## File map
 
@@ -20,12 +22,12 @@ The Business of AI — Mid-Semester Assignment (20 marks). **Not code.** The del
 | `brief/` | Assignment inputs (Instructions, Project Topics, professor note). Read-only. |
 | `topic/` | `Topic_Brainstorm_Report.md` — topic decision history, every challenge raised and answered, §10.1 verification log. |
 | `research/` | `Research_Plan.md` (29 numbered research tasks, tagged to rubric markers) → `Research_Findings.md` (sourced answers) → `Research_Findings_Explained.md` (same, plain-language). `Research_Findings_Review.md` (red-team list of weak claims, R1–R35 + top 5). `research/raw/` = the 7 subagents' full prompts/approach/sources/output — never edit, historical record. |
-| `report/` | Final submission goes here. Currently empty. |
+| `report/` | `specs/2026-09-30-report-draft-design.md` (report blueprint, spec v2), `Viva_Prep.md` (defend-ready answers to every challenge/review question). The draft and final submission go here. |
 | `logs/` | `TRANSCRIPT_LOG.md` (committed, redacted, feeds the mandatory GenAI appendix) + `exports/` (raw `/export` dumps, source material for the log). |
 | `scripts/` | `transcript.py` + its test — do not hand-edit `TRANSCRIPT_LOG.md`. |
 | `Prof_Materials` | Symlink to the professor's lecture/student-PPT materials — gitignored (external, not project content), but its course concepts must be applied when drafting. |
 
-Flow: `research/raw` → `research/Research_Findings*` → `topic/` → `report/`.
+Flow: `research/raw` → `research/Research_Findings*` → `topic/` → `report/`. `HANDOFF.md` (root) = current work state for a fresh session.
 
 ## Constraints that shape every decision
 
