@@ -1,4 +1,4 @@
-# Phylax — Viva Prep
+# Periapt — Viva Prep
 
 Compiled 2026-09-30 from every challenge in `topic/Topic_Brainstorm_Report.md` §4 (Q1–Q29) and every grader question in `research/Research_Findings_Review.md` (K1–K5, R1–R35).
 
@@ -8,7 +8,7 @@ Compiled 2026-09-30 from every challenge in `topic/Topic_Brainstorm_Report.md` �
 
 ## 0. The 30-second pitch
 
-Satellite operators carry known flaws across ground stations, networks, radio links, spacecraft and user terminals. Fixing one safely today means a slow handoff: security finds it, flight software or the manufacturer patches it, mission ops fits it into a pass window, and someone decides whether it's safe. **Phylax is a domain copilot that owns that workflow.** It checks whether a flaw actually reaches the fleet, drafts a ranked fix plan that respects passes and power, has the manufacturer's emulator run the fix while our world model judges the result, then watches the canary and halts if anything drifts. **Humans approve every uplink.** We make expert teams faster. We don't replace them.
+Satellite operators carry known flaws across ground stations, networks, radio links, spacecraft and user terminals. Fixing one safely today means a slow handoff: security finds it, flight software or the manufacturer patches it, mission ops fits it into a pass window, and someone decides whether it's safe. **Periapt is a domain copilot that owns that workflow.** It checks whether a flaw actually reaches the fleet, drafts a ranked fix plan that respects passes and power, has the manufacturer's emulator run the fix while our world model judges the result, then watches the canary and halts if anything drifts. **Humans approve every uplink.** We make expert teams faster. We don't replace them.
 
 ## 1. Numbers you may be asked for (and ones to never say)
 
@@ -26,6 +26,8 @@ Satellite operators carry known flaws across ground stations, networks, radio li
 ---
 
 ## 2. Overview & originality
+
+**"Is Periapt an existing company?"** No. We first called it Phylax, then found an EU firm, Phylax Intelligence, selling AI situational awareness for physical threats to critical infrastructure (a different product, same name). We also rejected Amyntor, used by two Indian cybersecurity firms. A deep web check found no security or space company named Periapt, only unrelated uses such as audio cables and a health app [Q30]. *Name story:* a periapt is a protective amulet, and the word echoes *periapsis*, an orbit's closest point: "protection at the closest point of risk."
 
 **"Is this an existing company?"** No. The closest adjacents are named in the report: **Aerospace Corp's SPARTA/SPARTEND** (a reference framework plus on-orbit detection) and **CT Cubed's IRON GALAXY** (a training cyber range). Neither decides per operator, validates fixes in a testbed, or schedules rollouts [RF 10/13]. *Conceded:* absence of public claims isn't proof of absence. We couldn't query Crunchbase, and stealth or classified programmes can't be seen [R23, Q5].
 
@@ -75,7 +77,7 @@ Satellite operators carry known flaws across ground stations, networks, radio li
 
 ## 5. Porter's Five Forces
 
-**The strategic point:** every force pushes Phylax to be **the neutral layer that integrates with what operators already have**, not a replacement.
+**The strategic point:** every force pushes Periapt to be **the neutral layer that integrates with what operators already have**, not a replacement.
 
 - **Buyers: high.** A few capable operators (Planet, Iridium, SES+Intelsat, ICEYE), all with formal in-house programs [RF 11, 31]. "Name your first ten customers" → we name the few in range honestly, then the widening segments [R19].
 - **Suppliers: high (our inputs).** Manufacturers' SBOMs, emulators and patches, from firms consolidating under the primes. Their incentive to cooperate: lower support and warranty cost, and customers asking for SBOM feeds [R18].

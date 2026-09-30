@@ -334,7 +334,7 @@ Liability follows the wording: we don't write patches (Q8), the operator approve
 
 ### Q27. "How is this safety net valuable enough against the companies' own researchers and teams? That is what they were hired to do. The main thing is to make the researcher's life easier and more productive."
 **Origin of doubt:** follows from Q26 and Q20–Q21 (operators run capable in-house programs).
-**Reasoning:** the user's reframe was adopted. Phylax shouldn't compete with teams. It should take on the parts of their job that don't scale with people: *coverage* (every channel, satellite and pass during a rollout), *memory* (outcomes stay in the context graph when staff leave), *consistency* (the same at 2 a.m.; counters automation bias and fatigue) and *joining the pieces* across the four groups. It fits the trust thread: experts rely less on automation (Sanchez et al., S11), so a copilot that supports judgment is adopted and a replacement is rejected. *Pushback:* "why not a general AI assistant?" Because a general assistant can't trace ground→fleet reachability, plan around passes and power, or judge emulator runs against a satellite's normal behaviour.
+**Reasoning:** the user's reframe was adopted. Periapt (then called Phylax) shouldn't compete with teams. It should take on the parts of their job that don't scale with people: *coverage* (every channel, satellite and pass during a rollout), *memory* (outcomes stay in the context graph when staff leave), *consistency* (the same at 2 a.m.; counters automation bias and fatigue) and *joining the pieces* across the four groups. It fits the trust thread: experts rely less on automation (Sanchez et al., S11), so a copilot that supports judgment is adopted and a replacement is rejected. *Pushback:* "why not a general AI assistant?" Because a general assistant can't trace ground→fleet reachability, plan around passes and power, or judge emulator runs against a satellite's normal behaviour.
 **Conclusion:** the positioning is **"a domain copilot that owns the workflow"** (Foundation Capital: own the workflow, not the model). Demand line limited to what's sourced: CVEs +20.6% from 2024 to 2025 (RF item 27). No claim about how fast teams grow.
 **Change:** spec v2 decisions table (positioning) and A.1.
 
@@ -353,6 +353,14 @@ Liability follows the wording: we don't write patches (Q8), the operator approve
 - *Pricing structure without numbers:* per-fleet annual subscription + a one-time onboarding/integration fee that pays for the people-heavy integration work.
 **Conclusion:** drop the revenue and ACV figures. Show customer value in three layers and pricing structure only. Viability stays named as the weakest point.
 **Change:** spec v2 (A.1 value case, close, review matrix R20 row).
+
+### Q30. "What are the odds: how did we land on a company with our idea and the same name? phylax-intelligence.com"
+**Origin of doubt:** the user found an existing company named Phylax after the name had been chosen.
+**Check (fetched 2026-09-30):** Phylax Intelligence (EU) sells "AI-powered Situational Awareness and Decision Support For Security & Crisis Teams" for physical threats and hazards (sabotage, drones, floods, fires, intrusions, misinformation), with satellites only as an imagery source. It does no vulnerability prioritisation, patching, spacecraft software or rollout. **Same name, different idea, so originality holds.**
+**Reasoning:** "Phylax" (guardian) is an obvious word for security founders; a blockchain firm, Phylax Systems, also exists (from memory, unverified). Brief §F forbids using an existing company, and a TA googling the name would find an AI security firm that mentions satellites, which invites an originality flag. So the name was changed.
+**Candidates checked:** PassWarden (taken: KeepSolid password manager) · **Amyntor (taken: two cybersecurity firms in Thiruvananthapuram, India; missed by the quick search and found by the deep one)** · Nightpass (several nightlife apps) · Kessler Shield (no company, but reads as debris shielding) · **Periapt: no security/space use; only unrelated uses (audio cables, AU financial advisory, IL ADHD health startup, RPG publisher, dissolved UK software firm).**
+**Conclusion:** renamed to **Periapt**, a protective amulet that echoes *periapsis*, an orbit's closest point ("protection at the closest point of risk"). Test applied: *no security/space company uses the name, and nothing a TA finds could be confused with the idea.*
+**Lesson:** a quick search isn't a name check. Amyntor passed the quick search and failed the deep one.
 
 ---
 
