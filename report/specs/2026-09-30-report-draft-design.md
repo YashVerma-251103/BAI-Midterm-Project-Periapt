@@ -12,7 +12,7 @@
 | Topic | Defence, Space & Cybersecurity → **Day-Zero Vulnerability Prioritisation (Predictive ML)**: "autonomous systems scanning, scoring, and prioritising unpatched security flaws in critical infrastructure" | **The core is predictive prioritisation** (Q36). |
 | Scope | Known flaws that could affect a satellite operator's fleet. Periapt **finds, scores, ranks and explains**. Ground systems count only as the way in. It does not write, test or send fixes. | The niche from the original 17 Sept problem (Q34). |
 | Positioning | **A copilot for the three teams** (security, flight software, mission ops). The AI reads, predicts, ranks and drafts; each team keeps its decision. | Q35. It plugs into the team's own ranking method, so there's no migration. |
-| Relation to Aerospace Corp | **Complement, not rival.** Periapt builds on SPARTA and speaks its IDs. As an FFRDC, Aerospace is barred from competing with industry (FAR 35.017). | Q39, RF 32. |
+| Relation to Aerospace Corp | **Complement, not rival.** Periapt builds on SPARTA and speaks its IDs. Federal rules say an FFRDC like Aerospace should not use its privileged access to compete with the private sector (FAR 35.017). | Q39, RF 32. Don't say "banned from all commercial work". |
 | Autonomy | Scan, score and rank run **on their own**. Humans can override at any time (**on the loop**). A human approves **before anything touches a satellite or a ground system** (**in the loop**). | Q37. |
 | Ranking rule | The AI may **raise** a flaw's priority on its own. **Lowering** needs a human. If the world model is **outside its data**, impact counts as **high**. | Approved 2026-09-30. |
 | Growth path | **Stage 1 = this report's product.** Later stages (fix-window planning, then validation/rollout with partners) come only after trust is earned. | Q39. Course: "think big, act small"; niche first, then adjacent (Porter deck, Thiel). |
@@ -26,7 +26,13 @@
 
 ## 2. The product (the single source for every section)
 
-**The problem.** Advisories arrive faster than teams can check them (CVEs +20.6% from 2024 to 2025 [RF 27]). For each advisory, someone has to work out by hand which satellites have the flaw, whether an attacker could reach them, and how bad an attack would be for each satellite. Today that work is split across security, flight software and mission ops.
+**The problem.** Advisories arrive faster than teams can judge them (CVEs +20.6% from 2024 to 2025 [RF 27]). Existing tools already match known CVEs to listed software: scanners on ground IT, and SBOM tools where a parts list exists (Thales Alenia uses Black Duck [RF 12]). What remains mostly manual is **judging what a flaw means for each satellite**:
+- space advisories that come as prose, not CVE entries;
+- spacecraft parts lists that often don't exist (R14);
+- whether a ground flaw can reach the fleet;
+- what an attack would actually do to each satellite.
+
+That judgement is split across security, flight software and mission ops.
 
 **What Periapt does.** It watches advisories around the clock and turns each one into a **ranked, explained list for this operator's fleet**: which flaw first, on which satellites, and why.
 
@@ -46,7 +52,7 @@
 - **Job 2, margin forecast:** battery and thermal margin at upcoming passes, so a suggested fix window is safe. The scheduler itself is plain software, not AI.
 - **What it is not:** it doesn't predict what a patch (new code) will do (R6, Q31). It doesn't trace ground→space reach (the reach map does that). It isn't a fleet-monitoring product (Aerospace Corp + Google are building that [RF 32]; it also sits near the sibling topic "Spacecraft Mission Operations… telemetry analytics").
 - **Why a world model and not rules or a classifier:** rules give every satellite the same answer. A classifier needs many labelled failures, which are rare. A world model learns normal behaviour from unlabelled data (Q31).
-- **Honest limits (label them as hypotheses):** predicting harm from command sequences it has never seen (so extreme cases get checked in the manufacturer's physics simulator, and "unknown" means high); the margin forecast; exploit likelihood learned on IT carrying over to space (R17).
+- **Honest limits (label them as hypotheses):** predicting harm from command sequences it has never seen (so extreme cases get checked in the manufacturer's simulator where one is provided, and "unknown" means high); the margin forecast; exploit likelihood learned on IT carrying over to space (R17).
 
 ### 2.3 The agent (A.1's "agentic" part)
 - **Pattern:** one orchestrator agent working ReAct-style (reason → call a tool → observe → repeat), with these tools: parts list, reach map, EPSS/CVSS feed, SPARTA, world model, and the team's ticket system. The loop is perceive (advisory) → process (match, score, what-if) → decide (rank) → act (brief and ticket), as taught in S2–3.
@@ -60,8 +66,15 @@
 - **Shadow mode does three jobs at once:** it earns trust (rankings shown next to the team's own), gathers data, and trains the world model.
 - Label as an assumption: operators keep telemetry and command archives.
 
-### 2.5 Where the value is smaller (stated honestly, Q39)
-The world model earns its keep by **telling satellites apart**. In a new fleet of identical satellites (same design, same software, healthy batteries, similar orbits), "what would this attack do?" gives nearly the same answer for every satellite, so layer 3 adds little over a rule. The history is also short, so the model is weaker (cold start). Value remains in reading at scale, speed, and ranking *across* flaws. Satellites drift apart as they age (batteries wear, sensors degrade, eclipse seasons differ, software versions split during staggered updates); this is reasoning, not a sourced fact. **So early adopters are operators with older or mixed fleets.**
+### 2.5 Value grows with time in orbit (Q39, Q40)
+The world model earns its keep by **telling satellites apart**.
+- **From day one:** identical hardware and software don't mean identical conditions. Each satellite has its own orbit position, sun and eclipse pattern, radiation exposure and workload.
+- **Over time:** the differences grow. Batteries wear, sensors drift, and software versions split during staggered updates. New satellites are tested on the ground before launch, but space adds conditions that ground tests can't reproduce.
+- **The catch:** the model needs some operating history per satellite before it can use those differences (cold start). So its value is lowest just after launch and **grows the longer the fleet flies**. That growth is also a moat, because a later rival starts with less history (A.2).
+- **Label as assumptions:** how soon the model can tell satellites apart is a **pilot metric**, not a promise. The "3 months to a year" guess and service lives are not sourced; say "years in orbit" and don't give a number.
+- **Before that point**, value comes from reading at scale, speed, and ranking *across* flaws.
+
+→ The first customers are fleets with some time in orbit, older or mixed.
 
 ### 2.6 Out of scope for Stage 1 (becomes later stages or viva material)
 Writing patches (the manufacturer's job) · testing patches in an emulator · running rollouts or rollbacks (Spire and SpaceX already sell or build these) · fleet monitoring (Aerospace + Google) · ground-IT patching as a product (Tenable, Qualys) · terminals as a product area · the RL planner (dropped, Q32).
@@ -81,7 +94,7 @@ Writing patches (the manufacturer's job) · testing patches in an emulator · ru
 
 ### A.0 Overview — Gartner 8-layer stack; Foundation Capital (domain-specific AI); B2B/B2G → Content + Creativity
 - **Brand:** the name story. Mission: *"Tell every operator, within minutes of a new flaw, what it means for each satellite, with reasons they can check."* Vision: *"the trusted decision layer for every spacecraft operator"*, with the staged path (A.5/close) as the dream-big line.
-- **Stack position:** Layer 7, **AI Security & Risk**, where the course deck places CrowdStrike. The closest course analogue is CrowdStrike's Charlotte AI, which helps analysts triage. It is *strategic/domain-specific AI* in Foundation Capital's terms.
+- **Stack position:** Layer 7, **AI Security & Risk**, where the course deck places CrowdStrike. The closest course analogue is CrowdStrike's Charlotte AI, which helps analysts triage. It is *strategic/domain-specific AI* in Foundation Capital's terms. *Viva nuance:* Gartner's Layer 7 is strictly about securing AI (TRiSM). The course places cybersecurity vendors there, and Periapt is an AI application (Layer 6) delivering Layer-7 security outcomes, while applying Layer-7 protections to its own LLM.
 - **Market:** 14,266 operational satellites at end-2025; 4,434 deployed in 2025 (+65%) [RF 1]. Say that growth is mostly mega-constellations; the target is the mid-size tier (R1).
 - **Why ripe for AI (sourced "why now"):** CVEs 40,009 (2024) → 48,185 (2025) → 57,908 **YTD to 31 Aug 2026** [RF 27]; manual triage doesn't scale with that; attackers can use legitimate commands (Viasat); ML already forecasts exploitation for IT (EPSS [RF 32]), but nothing predicts impact on a specific satellite.
 - **Topic fit, worded carefully:** "day zero" = the day a flaw becomes known, often before a patch exists. "Critical infrastructure" = infrastructure that critical sectors depend on: Viasat cut wind-turbine monitoring [RF 4]; the EU lists space as a high-criticality sector [RF 2]; the US doesn't list it as a CISA sector [RF 30]. Don't claim it is one.
@@ -109,8 +122,8 @@ Writing patches (the manufacturer's job) · testing patches in an emulator · ru
 - **Core product architecture (features):** advisory reader · parts and reach map · score layer · world-model what-if · ranking with the authority rule · per-team briefs and tickets · the record. (Visual 1 is referenced here too.)
 - **"Would Periapt survive if the model changed tomorrow?"** Yes. The moat is what each customer's use builds up, not the architecture.
 - **Moats, ranked:**
-  1. **Switching cost: the per-fleet world model.** It is trained on the customer's own satellites; leaving means starting over, because a rival needs months of that fleet's history to catch up.
-  2. **Intangible asset: the record.** Every flaw, ranking, override (with its reason) and outcome. Nobody can buy it. Overrides count as learning signal (R11: spacecraft outcomes are rare).
+  1. **Intangible asset: the record.** Every flaw, ranking, override (with its reason) and outcome, tied to each satellite's history. Nobody can buy it. Overrides count as learning signal (R11: spacecraft outcomes are rare).
+  2. **Switching cost: earned trust.** A new vendor must rebuild the parts list and reach map, train its own model, and sit through its own shadow mode before experts trust it. *Honest limit:* the telemetry archive belongs to the customer and leaves with them, so the moat is the time and trust needed to rebuild, not the data.
   3. **Switching cost: workflow and integrations.** Tickets, parts lists, approvals and audit trail run through it (platformization, in a light form).
   4. **Efficient scale:** a niche too small for many players (turns R19 around).
   5. *Conditional:* a cross-fleet network effect, only through opt-in, SDA-style minimum-data sharing [RF 31, Q22]. Test pooled vs local on held-out pilot data first (R12).
@@ -130,7 +143,7 @@ Writing patches (the manufacturer's job) · testing patches in an emulator · ru
 
   Caveat (streetlight effect): we searched where the light is, in public claims. Absence of claims isn't proof (R23).
 - **Substitutes: high.** The good-enough stack: in-house team + ISO 27005 ranking + scanners with EPSS + SPARTA.
-- **New entrants: high.** Google (already working with Aerospace), the primes, Booz Allen and Deloitte. **Aerospace Corp itself is a partner, not a rival:** FAR 35.017 bars an FFRDC from competing with industry [RF 32]. Periapt builds on SPARTA; Aerospace's testbed access for ISAC members (ASC-100 [RF 31]) is a validation route. Entry path: a commercial, unclassified, US-person team; a cleared partner later (R22).
+- **New entrants: high.** Google (already working with Aerospace), the primes, Booz Allen and Deloitte. **Aerospace Corp itself is a partner, not a rival:** under FAR 35.017 an FFRDC is not meant to use its privileged access to compete with the private sector [RF 32]. Periapt builds on SPARTA; Aerospace's testbed access for ISAC members (ASC-100 [RF 31]) is a validation route. Entry path: a commercial, unclassified, US-person team; a cleared partner later (R22).
 - **Regulation cuts both ways:** there is no binding US mandate [RF 30]. 800-171 3.14.1 says "timely" with no prioritisation method, which makes DoD contractors the beachhead. S.3404 is out (R24).
 - **Visual 2:** a compact table: force · rating · evidence · what Periapt does about it.
 
@@ -141,7 +154,7 @@ Writing patches (the manufacturer's job) · testing patches in an emulator · ru
   - Decision criteria: evidence, auditability, never touches the command path, fits the tools the team already has.
   - Psychographic: an expert, and so sceptical of automation.
 - **Buying committee (R27):** the CISO holds the budget; a SecOps analyst is the daily user and champion; the mission-ops lead approves anything that touches a satellite.
-- **Diffusion:** early adopters are operators with formal programs, **older or mixed fleets** (§2.5) and DoD contracts.
+- **Diffusion:** early adopters are operators with formal programs, **fleets with time in orbit, older or mixed** (§2.5) and DoD contracts. The category is at the *introduction* stage of the product lifecycle (S7), which is why the journey starts with a pilot and early adopters.
 - **Journey, built to escape the pilot trap** (Gartner: 80%+ of AI initiatives stall at pilot, S1):
   - *Prepurchase:* advisory overload plus an audit or incident trigger.
   - *Purchase:* paid pilot → **data capture** (Puntoni): forward-deployed engineers build the parts list, reach map and history (§2.4).
@@ -172,7 +185,8 @@ Writing patches (the manufacturer's job) · testing patches in an emulator · ru
   - advisories are untrusted input (indirect prompt injection, S5);
   - **least privilege:** the agent can read telemetry and write tickets, and has **no route to command systems**.
 - **Why never auto-act:** CrowdStrike 2024 (8.5M devices hit by one bad update; student moat deck): being embedded everywhere cuts both ways.
-- **Monitoring and audit:** drift monitoring as satellites age (Zillow); NIST SP 800-53 AU-2/3/6 audit trail (Cruise: missing logs cost a permit) [RF 24]; model cards.
+- **Monitoring and audit:** drift monitoring as satellites age (Zillow); NIST SP 800-53 AU-2/3/6 audit trail with at least weekly review (Cruise: missing logs cost a permit) [RF 24]; model cards; a periodic safety review that re-runs the A.1 tests.
+- **Bias (S6), in this domain:** the model can favour satellites with rich data and under-rank ones with thin data. The rule "unknown = high" guards against that, and the safety review checks it.
 - **Liability (Q25):** decision support with evidence and a stated residual risk, never "certified safe". Exposure is smaller than in v2 because Periapt ranks and humans act. Air Canada: companies are bound by their AI's words, so claims are worded carefully.
 - **Jurisdiction (US):**
   - NIST AI RMF: Govern = ownership of overrides and approvals; Map = the rank-vs-act boundary; Measure = the tests in A.1 plus drift; Manage = stop rules and the kill switch [RF 19].
@@ -185,7 +199,7 @@ Writing patches (the manufacturer's job) · testing patches in an emulator · ru
 ### Close: four-lens check (~⅙ p) → Storytelling + Content
 - *Feasibility:* the world model's impact prediction is the one unproven piece, with named tests and a safe fallback (layers 1–2, "unknown = high").
 - *Usability:* it fits existing tools and methods, and each team gets its own brief.
-- *Desirability:* capable teams → a copilot, not a replacement; value is highest for older or mixed fleets.
+- *Desirability:* capable teams → a copilot, not a replacement; value grows with time in orbit.
 - *Viability:* a per-fleet subscription plus an onboarding fee; people-heavy on purpose at the start; a small buyer pool; compliance (EAR/ITAR, CMMC) is part of viability (S1). **This is the weakest point.**
 
 Then the **staged vision** (dream big): Stage 2 = fix-window planning + outcome tracking; Stage 3 = validation and rollout integration with partners (Spire-style tools, manufacturer emulators). Each stage starts only when the previous one has earned trust. *(India: on hold.)* End on the 2 a.m. scene resolved: by 2:10 the CISO has a ranked list with reasons, approves the first work-around, and goes back to sleep (illustrative).
@@ -222,7 +236,8 @@ Course frameworks (Porter; Lemon & Verhoef 2016; Puntoni et al. 2021; Lee & See 
   - "nobody simulates attacks on satellites" (NOS3 research exists);
   - "Terrain Trace / CT Cubed AI risk assessment"; SBIR; S.3404;
   - "predicts what a patch will do".
-- **Label as hypotheses:** impact prediction for command sequences never seen; the margin forecast; IT → space exploit transfer; operators keep telemetry and command archives; satellites drift apart as they age; bus-type libraries reused across customers lower onboarding cost.
+- **Also avoid:** "tools can't tell which satellites have a flaw" (they can, for listed CVEs); "FFRDCs are banned from commercial work"; any satellite service-life number; "the telemetry data is our moat".
+- **Label as hypotheses:** how soon the model can tell satellites apart (a pilot metric); impact prediction for command sequences never seen; the margin forecast; IT → space exploit transfer; operators keep telemetry and command archives; satellites drift apart as they age; bus-type libraries reused across customers lower onboarding cost.
 
 ## 6. Review coverage matrix
 
@@ -296,3 +311,4 @@ New research, final formatting, the .docx build, stripping tags, and the user's 
 8. **Architecture moved to A.2** (rubric placement); **3 visuals**; course hooks added (pilot trap, CrowdStrike 2024, intangible assets, shadow AI, least privilege, Cruise, S11 emotions/satisfaction, Viability incl. compliance, Layer 7 like Charlotte AI).
 9. **Corrections (RF 32):** Viasat wording, EPSS as input, Aerospace + Google adjacent, CT Cubed wording, critical-infrastructure wording.
 10. **References:** SIA report, 800-171, NIST AI RMF, Hundman 2018.
+11. **Q40 fixes:** the problem statement no longer says matching is manual (tools exist); value grows with time in orbit; the moat is the record + earned trust (the telemetry archive belongs to the customer); softer FAR 35.017 wording; bias line (S6); periodic safety review; product lifecycle (S7); Layer 6/7 nuance.
