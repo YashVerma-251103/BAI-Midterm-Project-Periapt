@@ -40,7 +40,7 @@ So what does the AI actually do at 2 a.m.?
 
 Rank = likelihood × mission impact, for exposed satellites only. This fills in the operator's own method (Spire ranks by ISO 27005 likelihood × impact [RF 31]) instead of replacing it.
 
-**The two AI parts.** (1) A self-hosted **LLM agent** reads advisories, even prose ones, matches, briefs and orchestrates. (2) A **world model** learned per fleet from telemetry and command history ("state + command → next state"); JEPA-style is the candidate, and JPL's LSTM (Hundman et al. 2018 [RF 32]) is the precedent and the baseline to beat. It is designed to play out "what if these commands were sent?" *Which commands?* The advisory says what the flaw gives an attacker, for example control of the server that sends commands. The reach map says which satellites that server talks to. The possible commands are the ones that server is allowed to send (the operator's own command list), narrowed to the SPARTA attack techniques that fit this kind of access. The world model plays those sequences out on each satellite's current state, and the worst predicted outcome becomes that satellite's impact score. Real attacks often misuse legitimate commands (Viasat [RF 32]), and those command types already appear in the normal operations it learns from. *Illustrative:* "heaters off" should hurt old satellite 12, entering eclipse on a weak battery, more than new satellite 40 in sunlight. It also aims to forecast battery and thermal margin, so a fix window is safe. Outside its data, impact is "unknown" and counts as high.
+**The two AI parts.** (1) A self-hosted **LLM agent** reads advisories, even prose ones, matches, briefs and orchestrates. (2) A **world model** learned per fleet from telemetry and command history ("state + command → next state"); JEPA-style is the candidate, and JPL's LSTM (Hundman et al. 2018 [RF 32]) is the precedent and the baseline to beat. It is designed to play out "what if these commands were sent?" *Which commands?* The advisory says what the flaw gives an attacker, for example control of the server that sends commands. The reach map says which satellites that server talks to. The possible commands are the ones that server is allowed to send (the operator's own command list), narrowed to the SPARTA attack techniques that fit this kind of access. The world model plays those sequences out on each satellite's current state, and the worst predicted outcome becomes that satellite's impact score. Real attacks often misuse legitimate commands (Viasat [RF 32]), and those command types already appear in the normal operations it learns from. *Illustrative:* "heaters off" should hurt old satellite 12, entering eclipse on a weak battery, more than new satellite 40 in sunlight. It also aims to forecast battery and thermal margin, so a fix window is safe. **Authority rule:** the AI may raise a priority on its own; lowering one needs a human; outside its data, impact is "unknown" and counts as high.
 
 **Why it is agentic.** One orchestrator works ReAct-style (reason → call a tool → observe), with tools for the parts list, reach map, scores, SPARTA, world model and tickets. It perceives, processes, decides (ranks) and acts (briefs, tickets), then re-ranks on news or overrides. After the team fixes a flaw, it reads the result from the team's own tools, stores it in the record and re-ranks what's left; it never tests or sends the fix. Step limits, validated outputs and the layer-1/2 floor keep it reliable. It runs alone up to the ranking; humans override at any time and approve anything that touches a satellite or ground system.
 
@@ -52,7 +52,7 @@ Rank = likelihood × mission impact, for exposed satellites only. This fills in 
 
 *A rough starting estimate (all inputs are our assumptions, to be measured in the pilot):* hours saved per operator = relevant advisories per week × analyst hours each × share Periapt handles alone. With 20 advisories, 3 hours each and half handled alone, the security team saves 30 hours a week, about 0.75 of one analyst's time, or roughly $85K–120K a year at a general-industry analyst salary of $115K–159K (not space-specific) [RF 5]. It counts security-analyst time only; time saved for flight software and ops is left out.
 
-*Before/after (illustrative):* today, three teams check lists by hand until morning; with Periapt, a ranked list with reasons arrives in minutes. Proof is renewal on these pilot metrics (A.4).
+*Before/after (illustrative):* today, three teams piece the answer together overnight from scanner output, documents and each other; with Periapt, a ranked list with reasons arrives in minutes. Proof is renewal on these pilot metrics (A.4).
 
 **Tests** [R 17]: world model vs JPL's LSTM on ESA-ADB (fewer false alarms at equal detection) [RF 7, RF 32]; predicted vs actual telemetry after real commands; predicted vs simulator impact on replayed attacks (NOS3-style [RF 32]); agreement with the team in shadow mode; backtest on past advisories, which also tests the hypothesis that IT-trained EPSS holds for space flaws. If it loses to the plain forecaster, only the model changes [Q 33].
 
@@ -61,9 +61,9 @@ Rank = likelihood × mission impact, for exposed satellites only. This fills in 
 ```mermaid
 flowchart LR
   A[New advisory] --> B[LLM agent: read + match]
-  B --> C[Layer 1: facts + reach map]
-  C --> D[Layer 2: CVSS, EPSS, SPARTA]
-  D --> E[Layer 3: world model what-if per satellite]
+  B --> C[1. Exposure: parts list + reach map]
+  C --> D[2. Likelihood: CVSS, EPSS, SPARTA]
+  D --> E[3. Mission impact: world model what-if per satellite]
   E --> F[Ranked list with reasons]
   F --> G[Briefs: security / flight software / ops]
   G --> H{Human: override any time; approve before anything touches a satellite}
@@ -76,7 +76,7 @@ If this works, what stops a rival copying it?
 
 **Core product architecture.** The A.1 loop (Visual 1) runs on four product features:
 1. **Onboarding kit:** forward-deployed engineers build the parts list and reach map with the customer.
-2. **The authority rule:** the AI may raise a priority; lowering one needs a human; "unknown" counts as high.
+2. **The authority rule** (A.1), enforced in software, not left to the model.
 3. **Per-team briefs and tickets**, inside each team's own tools.
 4. **The record:** every flaw, ranking, override (with its reason) and outcome, per satellite.
 
@@ -143,13 +143,13 @@ Inside those operators, who actually buys?
 | Stage | What happens | AI experience |
 |---|---|---|
 | Prepurchase | Advisory overload plus a trigger: an audit or an incident | |
-| Purchase | Paid pilot and onboarding: forward-deployed engineers build the parts list, reach map and history with the customer; we never start with full data, and we assume operators keep telemetry and command archives [R 14] | Data capture |
+| Purchase | Paid pilot and onboarding with A.2's kit; we never start with full data, and we assume operators keep telemetry and command archives [R 14] | Data capture |
 | Postpurchase: shadow | Periapt's rankings sit next to the team's own while the world model trains | Classification |
 | Postpurchase: assist | Low-impact flaws are auto-triaged and ticketed; humans own the top of the list | Delegation |
 | Postpurchase: show | Explanations and evidence packs for the board, insurer and DoD auditor | Social |
 | Renewal | Renew on hours saved, time to decision and no critical flaw missed; the loop restarts with new advisories and, later, Stage 2 | |
 
-Shadow mode does the trust work. Satisfaction means performance above expectations, and it drives renewal (Kumar et al. 2019, Session 11). The 2 a.m. fear turns into confidence one ranking at a time.
+Satisfaction means performance above expectations, and it drives renewal (Kumar et al. 2019, Session 11). The 2 a.m. fear turns into confidence one ranking at a time.
 
 **Timeline** (an assumption, not a sourced sales cycle) [R 28]: paid pilot → about one quarter in shadow mode → assisted triage → renewal at 12 months.
 
@@ -177,7 +177,7 @@ A **kill switch** lets the operator turn off layer 3 or the whole agent, with th
 
 **Hallucination and reliability.** Every match cites a parts-list line and passes a plain-rule check; outputs are structured and validated [R 31].
 
-**AI security.** Advisories are untrusted input, a route for prompt injection, so their text is data, never instructions. **Least privilege:** the agent reads telemetry and writes tickets, with no route to command systems. A sanctioned, self-hosted tool removes the pull towards shadow AI. **Model poisoning:** training data and overrides are logged and vetted, and every retrained model must pass a release test in simulation (replayed attacks, held-out logs, a fixed set of known critical flaws it must still rank high) before it ranks anything. Because the AI can only raise a priority, a poisoned model can't push a flaw below layers 1–2. Why never auto-act? In 2024 one bad CrowdStrike update hit 8.5M Windows devices: being everywhere cuts both ways.
+**AI security.** Advisories are untrusted input, a route for prompt injection, so their text is data, never instructions. **Least privilege:** the agent reads telemetry and writes tickets, with no route to command systems. A sanctioned, self-hosted tool removes the pull towards shadow AI. **Model poisoning:** training data and overrides are logged and vetted, and every retrained model must pass a release test in simulation (replayed attacks, held-out logs, a fixed set of known critical flaws it must still rank high) before it ranks anything. Because the AI can only raise a priority (A.1), a poisoned model can't push a flaw below layers 1–2. Why never auto-act? In 2024 one bad CrowdStrike update hit 8.5M Windows devices: being everywhere cuts both ways.
 
 **Monitoring and safety audits.** Drift checks as satellites age (Zillow's pricing model failed when its market shifted). An audit trail on NIST SP 800-53 AU-2/3/6, reviewed at least weekly [RF 24] (Cruise lost a permit partly over missing records). A model card per fleet, and a periodic safety review re-running A.1's tests. **Bias:** the model may under-rank satellites with thin data; "unknown = high" guards against that, and the review checks it.
 
@@ -197,7 +197,7 @@ Does the whole story hold up?
 ## Close: Four Lenses, and 2 a.m. Again
 
 **Four lenses** (Session 1):
-- *Feasibility:* layers 1–2 use proven tools, and learned spacecraft models already exist (Hundman et al. 2018). The open question is predicting damage from command sequences never seen; named tests decide it, and if it fails, Periapt still ranks on exposure and scores.
+- *Feasibility:* layers 1–2 use proven tools, and learned spacecraft models already exist (A.1). The open question is predicting damage from command sequences never seen; named tests decide it, and if it fails, Periapt still ranks on exposure and scores.
 - *Usability:* it fits the team's own tools and ranking method, and each team gets its own brief.
 - *Desirability:* operators already run formal security programs but face rising advisory volume and an undefined "timely"; Periapt supports their teams as a copilot and doesn't replace them.
 - *Viability:* **the biggest risk**: a small buyer pool, people-heavy onboarding, slow trust-based sales, and compliance and model-upkeep costs. We manage it three ways: an onboarding fee for each new fleet or satellite design covers the engineers' setup work, so new work never starts at a loss, while satellites of a known design are added cheaply and the subscription grows with the fleet (priced per satellite, as CrowdStrike prices per endpoint [RF 28]); the product is configured, not custom-built, so it scales; and growth goes abroad in stages.
