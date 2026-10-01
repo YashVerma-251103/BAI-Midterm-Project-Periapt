@@ -204,3 +204,9 @@ I also rejected the unsourced "3-person team" claim and the stale numbers after 
 
 **"Your market is tiny. Then what?"** Efficient scale cuts both ways: few rivals bother, but growth is capped. The path out is abroad, in stages. Two of my named buyers already aren't US companies (SES, ICEYE). Export rules decide the order: UK, Canada and Australia first (licence-free since 2024), Europe later. Demand there is unproven [Q43, RF 22, RF 2].
 
+**"You plan to go abroad, but your team is US-persons only. Isn't that a contradiction?"** No. The US-person team is about export rules: spacecraft technical data can't be shown to foreign persons without a licence, even inside the US (deemed export). That team can still serve UK, Canadian and Australian operators, which need no licence since 2024. What has to wait is hiring foreign staff, or serving countries that need a licence [Q44, RF 22].
+
+**"What does 'high' mean in your Five Forces table?"** High = that force has strong power to squeeze our profits (buyers push prices down, substitutes let customers skip us, entrants take the market). Four of five are high, so it's a hard industry; that's why the strategy is to integrate rather than fight [Q44].
+
+**"Is every customer getting a custom product?"** Configured, not custom-built. The base model is shared; the fleet layer learns each customer's satellites; the copilot layer is set up to their ranking method, tools and team roles. Custom code per customer would turn us into a consultancy and hurt viability [Q44].
+
