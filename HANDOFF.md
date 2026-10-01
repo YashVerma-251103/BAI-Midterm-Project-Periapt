@@ -12,7 +12,7 @@
 - **Spec v3 approved**; the plan was run overnight (Tasks 0–9).
 - **Content draft, complete and reviewed:** `report/Periapt_Report_Draft.md` (markdown, with source tags). Body ≈ 3,650 words without tags; 4 pages hold ≈ 2,100.
 - **Review fixes (1 Oct):** Q41–Q49 in the topic report §4 and Viva_Prep §9. A no-repetition pass found little to cut, so the cut must come from compressing.
-- **In progress:** the submittable report as a Word file for the user to review: `report/Periapt_Report_v1_FOR-REVIEW.docx` (+ PDF), with Figure 1 drawn as a compact S-shaped SVG (`report/figures/`).
+- **Built for review:** `report/Periapt_Report_v1_FOR-REVIEW.docx` (+ `.pdf`), A4, Calibri 10.5pt, 1.8 cm margins. Body = 4 pages + ~220 words on page 5 (end of the close + references); appendix = 1 page with room to spare. Figure 1 is a hand-drawn S-shaped SVG (`report/figures/fig1_periapt_loop.svg`, PNG rendered with headless Chrome). Rebuild with `scripts/make_report.js` (needs `npm install docx` in a temp dir).
 - Overnight decisions: `logs/Overnight_Draft_Log_2026-09-30.md`.
 
 ## 2. What the next session does, in order
