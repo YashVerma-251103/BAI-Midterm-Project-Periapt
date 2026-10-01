@@ -192,3 +192,5 @@ I also rejected the unsourced "3-person team" claim and the stale numbers after 
 
 **"If the satellites are identical and new, why rank them differently?"** Because their conditions aren't identical: sun, eclipse, radiation and workload differ from day one. The model still needs some history per satellite to use that, which is a pilot metric [Q41, Q40].
 
+**"Is it really agentic if it only writes briefs and tickets?"** *(prepare this one)* Yes. It does the whole multi-step job on its own: read the advisory, match it, trace reach, pull scores, play out the attacker's commands per satellite, rank, brief each team, and re-rank when news or an override arrives. Stopping before anything touches a satellite is a deliberate trust choice, not a missing ability: experts rely less on automation (Sanchez et al., 2011), and one bad automatic action could hurt a whole fleet (CrowdStrike 2024). Autonomy grows in stages as trust is earned [Q37, Q42].
+
