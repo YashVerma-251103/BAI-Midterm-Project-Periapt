@@ -476,6 +476,15 @@ Only two ideas failed. The scope grew from the work-arounds (emulator judge, sol
 - Also accepted: "no *product* predicts per-satellite impact" (research does simulate attacks: NOS3, RF 32), and B2B2G instead of B2G.
 **Change:** draft opening + A.0. A.0 is now ~100 words over target; the cut happens at the 4-page step.
 
+### Q42. Review of A.1 (1 Oct): "Name the layers by the problem they solve and add what each gives the team. 'Hand-checking' is wrong, since software and a thin night shift do most of the watching. Is the rough estimate per analyst? A lost smallsat is a big tail risk; keep it or not? And after we hand the ranking to the internal teams, should we also test their fixes, plan them and send feedback, or are the teams good enough without us?"
+**Reasoning:**
+- *Layer table:* **agreed.** Renamed to Exposure / Likelihood / Mission impact, with a "What the team gets" column.
+- *Hand-checking:* **conceded.** Scanners already match listed CVEs (Q40). The value is catching what they miss (prose advisories, no parts list) and whether the flaw really reaches the fleet.
+- *Estimate scope:* it's per operator (the team's total), shown as a share of one analyst's time. It counts security-analyst time only, so it's conservative. All inputs except the salary range (RF 5, general industry) are our assumptions.
+- *Tail risk:* **kept, reworded.** It's the customer's risk, not Periapt's, and we have no base rate for how often it happens (R4). So it's shown as "what's at stake", not counted in the value case.
+- *Testing the teams' fixes:* **not in Stage 1.** The teams are capable, not lacking (SES 40+ staff; Planet ground test → staging → rollout; Spire's update manager with rollbacks and a testbed; RF 31), and the world model can't predict new code (R6). What Stage 1 gives back after the handoff: a safe fix window (the margin forecast), the outcome stored in the record, and a re-ranked list. Planning and outcome tracking is Stage 2; validation and rollout with partners is Stage 3, once trust is earned (Q34, Q39).
+**Change:** draft A.1 (table, command chain, rough estimate, after-fix line, risk wording); Viva_Prep §9.
+
 ---
 
 ## 5. Questions Claude Asked Me

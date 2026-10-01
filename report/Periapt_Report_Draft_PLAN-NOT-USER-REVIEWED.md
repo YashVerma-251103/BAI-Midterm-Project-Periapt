@@ -34,23 +34,25 @@ So what does the AI actually do at 2 a.m.?
 
 **Three layers; AI only where rules can't reach.**
 
-| Layer | Question | How |
-|---|---|---|
-| 1. Facts | Which satellites have it? Can an attacker reach them? | LLM proposes matches; a plain rule confirms each against a cited parts-list line; a reach map checks ground → spacecraft paths |
-| 2. Scores | How severe? How likely? | CVSS, EPSS (FIRST's free ML exploit forecast [RF 32]), SPARTA: reused, not rebuilt |
-| 3. Impact | What would an attack do to *each* satellite? | Periapt's world model |
+| Layer | The question it answers | How | What the team gets |
+|---|---|---|---|
+| 1. Exposure | Which of *our* satellites carry this flaw, and can an attacker reach them through it? | LLM proposes matches; a plain rule confirms each against a cited parts-list line; the reach map traces ground → spacecraft paths | Affected satellites that scanners miss (prose advisories, no parts list), each with the line that proves it, and only the ones an attacker can actually reach |
+| 2. Likelihood | How severe is it, and how likely is an attack soon? | CVSS, EPSS (FIRST's free ML exploit forecast [RF 32]), SPARTA: reused, not rebuilt | Scores the team already knows and trusts; nothing new to learn |
+| 3. Mission impact | If it were used, what would it do to *each* satellite right now? | Periapt's world model | The same flaw ranked differently per satellite, so the one that would be hurt most gets fixed first |
 
-Rank = likelihood × impact. This fills in the operator's own method (Spire ranks by ISO 27005 likelihood × impact [RF 31]) instead of replacing it.
+Rank = likelihood × mission impact, for exposed satellites only. This fills in the operator's own method (Spire ranks by ISO 27005 likelihood × impact [RF 31]) instead of replacing it.
 
-**The two AI parts.** (1) A self-hosted **LLM agent** reads advisories, even prose ones, matches, briefs and orchestrates. (2) A **world model** learned per fleet from telemetry and command history ("state + command → next state"); JEPA-style is the candidate, and JPL's LSTM (Hundman et al. 2018 [RF 32]) is the precedent and the baseline to beat. It is designed to play out "what if these commands were sent?" Real attacks often misuse legitimate commands (Viasat [RF 32]), and those command types already appear in the normal operations it learns from. *Illustrative:* "heaters off" should hurt old satellite 12, entering eclipse on a weak battery, more than new satellite 40 in sunlight. It also aims to forecast battery and thermal margin, so a fix window is safe. Outside its data, impact is "unknown" and counts as high.
+**The two AI parts.** (1) A self-hosted **LLM agent** reads advisories, even prose ones, matches, briefs and orchestrates. (2) A **world model** learned per fleet from telemetry and command history ("state + command → next state"); JEPA-style is the candidate, and JPL's LSTM (Hundman et al. 2018 [RF 32]) is the precedent and the baseline to beat. It is designed to play out "what if these commands were sent?" *Which commands?* The advisory says what the flaw gives an attacker, for example control of the server that sends commands. The reach map says which satellites that server talks to. The possible commands are the ones that server is allowed to send (the operator's own command list), narrowed to the SPARTA attack techniques that fit this kind of access. The world model plays those sequences out on each satellite's current state, and the worst predicted outcome becomes that satellite's impact score. Real attacks often misuse legitimate commands (Viasat [RF 32]), and those command types already appear in the normal operations it learns from. *Illustrative:* "heaters off" should hurt old satellite 12, entering eclipse on a weak battery, more than new satellite 40 in sunlight. It also aims to forecast battery and thermal margin, so a fix window is safe. Outside its data, impact is "unknown" and counts as high.
 
-**Why it is agentic.** One orchestrator works ReAct-style (reason → call a tool → observe), with tools for the parts list, reach map, scores, SPARTA, world model and tickets. It perceives, processes, decides (ranks) and acts (briefs, tickets), then re-ranks on news or overrides. Step limits, validated outputs and the layer-1/2 floor keep it reliable. It runs alone up to the ranking; humans override at any time and approve anything that touches a satellite or ground system.
+**Why it is agentic.** One orchestrator works ReAct-style (reason → call a tool → observe), with tools for the parts list, reach map, scores, SPARTA, world model and tickets. It perceives, processes, decides (ranks) and acts (briefs, tickets), then re-ranks on news or overrides. After the team fixes a flaw, it reads the result from the team's own tools, stores it in the record and re-ranks what's left; it never tests or sends the fix. Step limits, validated outputs and the layer-1/2 floor keep it reliable. It runs alone up to the ranking; humans override at any time and approve anything that touches a satellite or ground system.
 
 **Why teams want it** [Q 27, Q 35]: coverage, memory (the record outlives staff turnover), consistency at 2 a.m., and translation (security gets *why*, flight software *what*, ops *when*). A general chatbot can't trace reach or play out commands, and pasting fleet data into one is shadow AI.
 
 | Efficiency | Risk | Innovation |
 |---|---|---|
-| Analyst hours per advisory; time to decision; coverage | Fewer critical flaws missed; evidence behind approvals; a lost smallsat (~$0.5–1M [RF 4]) as tail risk only | Evidence packs for insurers and DoD audits, a method for 800-171's "timely" [RF 30] |
+| Analyst hours per advisory; time to decision; coverage | Fewer critical flaws missed; evidence behind approvals. Rare but costly: replacing one lost smallsat costs about $0.5–1M [RF 4]; we don't count on it, it shows what's at stake | Evidence packs for insurers and DoD audits, a method for 800-171's "timely" [RF 30] |
+
+*A rough starting estimate (all inputs are our assumptions, to be measured in the pilot):* hours saved per operator = relevant advisories per week × analyst hours each × share Periapt handles alone. With 20 advisories, 3 hours each and half handled alone, the security team saves 30 hours a week, about 0.75 of one analyst's time, or roughly $85K–120K a year at a general-industry analyst salary of $115K–159K (not space-specific) [RF 5]. It counts security-analyst time only; time saved for flight software and ops is left out.
 
 *Before/after (illustrative):* today, three teams check lists by hand until morning; with Periapt, a ranked list with reasons arrives in minutes. Proof is renewal on these pilot metrics (A.4).
 

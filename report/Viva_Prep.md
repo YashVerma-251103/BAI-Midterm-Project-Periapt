@@ -192,3 +192,9 @@ I also rejected the unsourced "3-person team" claim and the stale numbers after 
 
 **"If the satellites are identical and new, why rank them differently?"** Because their conditions aren't identical: sun, eclipse, radiation and workload differ from day one. The model still needs some history per satellite to use that, which is a pilot metric [Q41, Q40].
 
+**"Is it really agentic if it only writes briefs and tickets?"** *(prepare this one)* Yes. It does the whole multi-step job on its own: read the advisory, match it, trace reach, pull scores, play out the attacker's commands per satellite, rank, brief each team, and re-rank when news or an override arrives. Stopping before anything touches a satellite is a deliberate trust choice, not a missing ability: experts rely less on automation (Sanchez et al., 2011), and one bad automatic action could hurt a whole fleet (CrowdStrike 2024). Autonomy grows in stages as trust is earned [Q37, Q42].
+
+**"After you hand over the ranking, why not test the team's fix too?"** Because the teams already do that well: Planet tests on the ground, then in orbit, then rolls out; Spire has an update manager with rollbacks and a testbed. Also, our model learns from normal commands and can't predict new code. What we give back after the handoff is a safe fix window, the outcome stored in the record, and a re-ranked list. Fix planning and outcome tracking come in Stage 2, once trust is earned [Q42, RF 31].
+
+**"Is your $85K–120K figure real?"** It's a rough starting estimate per operator, and I say so: 20 advisories × 3 hours × half handled alone = 30 hours a week, about 0.75 of an analyst. Only the salary range is sourced, and it's general-industry. The pilot measures the real numbers [Q42, RF 5].
+
