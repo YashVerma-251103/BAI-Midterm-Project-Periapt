@@ -495,6 +495,14 @@ Only two ideas failed. The scope grew from the work-arounds (emulator judge, sol
 - *No repetition:* A.2's architecture now lists only features A.1 didn't cover. A whole-draft repetition pass comes before the 4-page cut.
 **Change:** draft A.2 rewritten; A.5 customer-exit line aligned; Viva_Prep §9.
 
+### Q44. Review of A.3 (1 Oct): "What does a 'high' rating mean: more power to hurt us? I chose the best topic to screw me. Can't we customise the application layer per customer, with the world model shared and the copilot wrapper per customer?"
+**Reasoning:**
+- *"High":* yes. High = that force can squeeze our profits. Four of five are high, so it's a hard industry; the strategic point (integrate, don't replace; go niche) is the answer. The table header now says "high = bad for us".
+- *"Worst topic":* **pushed back.** Reports that make every force friendly look unanalysed. A hard industry with a clear answer to each squeeze is the stronger story.
+- *Customise per customer:* **yes, as configuration.** Shared base model → per-fleet layer (their data) → copilot layer configured to their ranking method, tools, roles and thresholds. Not custom code per customer, which would turn us into a consultancy and hurt viability.
+- Also fixed: supplier power high → **medium** (we build parts lists with the customer, so manufacturer concentration hurts less); the Buyers row points back to A.0's five named buyers (no repetition); a one-line "Net" verdict. US-person team vs going abroad → viva sheet.
+**Change:** draft A.3; Viva_Prep §9.
+
 ---
 
 ## 5. Questions Claude Asked Me

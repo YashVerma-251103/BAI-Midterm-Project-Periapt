@@ -86,3 +86,7 @@ Format: *decision — why — cost if wrong.*
 2. Review the plan (`report/plans/2026-09-30-report-draft-plan.md`) and the draft side by side.
 3. If you're happy: rename the draft (drop `_PLAN-NOT-USER-REVIEWED`) and update HANDOFF, CLAUDE.md and README; `scripts/draft_check.sh`'s default path needs the same rename.
 4. Still yours (HANDOFF §6): the voice rewrite and cut to 4+1 pages, the hardest-concept choice, transcript links (`/export` then `/transcript` for this session too), NIST AI RMF PDF check, SIA report citation, India decision.
+
+## Morning review (1 Oct, with the user)
+- Q41 (opening + A.0), Q42 (A.1), Q43 (A.2), Q44 (A.3) logged in the topic report and Viva_Prep §9.
+- *Ruling (user's no-repetition rule):* the A.3 term check now reports `MISSING ICEYE`, because the buyer names live only in A.0 and A.3 points back to them. The user's rule wins over the plan's term list. Expected; not a defect.

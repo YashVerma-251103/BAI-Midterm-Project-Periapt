@@ -103,10 +103,10 @@ The world model has two parts: a shared base trained only on public data and ope
 
 *Visual 2:*
 
-| Force | Rating | Evidence | What Periapt does |
+| Force | Rating (high = bad for us) | Evidence | What Periapt does |
 |---|---|---|---|
-| Buyers | High | Few, capable mid-size operators (Planet, Iridium, SES (+Intelsat), ICEYE), all with formal programs; SES has "over 40" security staff. Globalstar is out (Amazon deal) [RF 11, RF 31] | A copilot that fills in their method, with evidence they can audit |
-| Suppliers | High for parts lists and manufacturer data; low for public feeds and open-weight LLMs | Primes are buying up manufacturers [RF 12]; telemetry is the customer's own | Build parts lists at onboarding; self-host an open-weight model |
+| Buyers | High | The five named buyers (A.0) are few and capable, all with formal security programs; SES alone has "over 40" security staff. Globalstar is out (Amazon deal) [RF 11, RF 31] | A copilot that fills in their method, with evidence they can audit |
+| Suppliers | Medium | Manufacturer data is concentrating as primes buy up makers [RF 12]; telemetry is the customer's own; public feeds and open-weight LLMs are freely available | Build parts lists with the customer at onboarding instead of relying on manufacturers; self-host an open-weight model |
 | Rivalry | Low for satellite-specific impact ranking; crowded for IT | Tenable, Qualys and Nucleus already rank IT flaws [RF 10; TB §10.1] | Use their output; don't sell IT ranking |
 | Substitutes | High | The good-enough stack: in-house team + ISO 27005 + scanners with EPSS + SPARTA [RF 31] | Plug into it and prove hours saved |
 | New entrants | High | Google (already working with Aerospace), the primes, Booz Allen, Deloitte [RF 32] | Move first with a commercial, unclassified, US-person team; a cleared partner later [R 22] |
@@ -118,6 +118,8 @@ Spire is co-opetition, not a buyer: operator, manufacturer and tooling vendor at
 **Aerospace Corp is a partner, not a rival.** Under FAR 35.017, an FFRDC like Aerospace is not meant to use its privileged access to compete with the private sector [RF 32]. Periapt builds on SPARTA; Aerospace's ASC-100 testbed for ISAC members is a validation route [RF 31].
 
 **Regulation cuts both ways.** No binding US mandate requires flaw prioritisation [RF 30], so compliance won't sell it. But NIST SP 800-171 3.14.1 tells DoD contractors to "Identify, report, and correct system flaws in a timely manner" without defining "timely" [RF 30]. DoD-contracting operators need a method they can show: our beachhead.
+
+**Net:** a hard industry for a generic tool, but workable for a neutral layer with a shared core, configured (not custom-built) to each operator's method and tools.
 
 Inside those operators, who actually buys?
 
