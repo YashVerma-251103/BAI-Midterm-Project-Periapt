@@ -509,6 +509,14 @@ Only two ideas failed. The scope grew from the work-arounds (emulator judge, sol
 - Also: the flight-software lead added to the buying committee (reads the *what* brief; can block adoption); an illustrative persona quote; the psychographic points back to A.2 instead of repeating Sanchez.
 **Change:** draft A.4; Viva_Prep §9.
 
+### Q46. Review of A.5 (1 Oct): "Logging overrides and reviewing them isn't enough against model poisoning; test in simulation, or even on a decommissioned satellite, and count it as a cost. What does the CCPA line actually mean? If the only personal data is staff names, is CCPA worth the space?"
+**Reasoning:**
+- *Poisoning:* **agreed that logging alone isn't enough.** (The world model never runs on a real satellite; it only predicts, and the agent has no route to command systems, so poisoning skews rankings rather than hurting satellites.) Fix: vetted training data and overrides, plus a release test in simulation for every retrained model: replayed attacks (NOS3-style, RF 32), held-out logs, and a fixed set of known critical flaws it must still rank high (the tripwire). Backstop: the authority rule (the AI can only raise), so a poisoned model can't push a flaw below layers 1–2. Release tests are added to the close's viability line as a running cost.
+- *Decommissioned satellites:* kept out. They're rarely offered, commanding them carries risk (debris, licence terms), and we have no source.
+- *CCPA:* explained. The old line covered terminal data, which Stage 1 never touches; telemetry is machine data; the only personal data is staff names in the audit trail. **Pushback on dropping it:** the rubric's US option names CCPA/CPRA, so one short line stays (same length as before).
+- Also: Zillow and Cruise get a clause each; GDPR (if we go to Europe) goes to the viva sheet; the repetition pass is deferred to the end.
+**Change:** draft A.5 and close; Viva_Prep §9.
+
 ---
 
 ## 5. Questions Claude Asked Me

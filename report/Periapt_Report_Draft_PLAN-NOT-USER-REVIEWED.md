@@ -179,15 +179,15 @@ A **kill switch** lets the operator turn off layer 3 or the whole agent, with th
 
 **Hallucination and reliability.** Every match cites a parts-list line and passes a plain-rule check; outputs are structured and validated [R 31].
 
-**AI security.** Advisories are untrusted input, a route for prompt injection, so their text is data, never instructions. **Least privilege:** the agent reads telemetry and writes tickets, with no route to command systems. A sanctioned, self-hosted tool removes the pull towards shadow AI. Why never auto-act? In 2024 one bad CrowdStrike update hit 8.5M Windows devices: being everywhere cuts both ways.
+**AI security.** Advisories are untrusted input, a route for prompt injection, so their text is data, never instructions. **Least privilege:** the agent reads telemetry and writes tickets, with no route to command systems. A sanctioned, self-hosted tool removes the pull towards shadow AI. **Model poisoning:** training data and overrides are logged and vetted, and every retrained model must pass a release test in simulation (replayed attacks, held-out logs, a fixed set of known critical flaws it must still rank high) before it ranks anything. Because the AI can only raise a priority, a poisoned model can't push a flaw below layers 1–2. Why never auto-act? In 2024 one bad CrowdStrike update hit 8.5M Windows devices: being everywhere cuts both ways.
 
-**Monitoring and safety audits.** Drift checks as satellites age (the Zillow lesson). An audit trail on NIST SP 800-53 AU-2/3/6, reviewed at least weekly [RF 24] (the Cruise lesson). A model card per fleet, and a periodic safety review re-running A.1's tests. **Bias:** the model may under-rank satellites with thin data; "unknown = high" guards against that, and the review checks it.
+**Monitoring and safety audits.** Drift checks as satellites age (Zillow's pricing model failed when its market shifted). An audit trail on NIST SP 800-53 AU-2/3/6, reviewed at least weekly [RF 24] (Cruise lost a permit partly over missing records). A model card per fleet, and a periodic safety review re-running A.1's tests. **Bias:** the model may under-rank satellites with thin data; "unknown = high" guards against that, and the review checks it.
 
 **Liability.** Decision support with evidence and a stated residual risk, never "certified safe". Periapt ranks and humans act, so exposure is smaller [Q 25]; Air Canada was held to its chatbot's words, so claims stay careful.
 
 **Data privacy and US rules.**
 - **NIST AI RMF** [RF 19]: Govern = who owns overrides and approvals; Map = the rank-vs-act boundary; Measure = A.1's tests plus drift; Manage = stop rules and the kill switch.
-- **CCPA:** a service provider handling mostly machine data; terminal data only as aggregate counts, which CCPA excludes [RF 23].
+- **CCPA:** almost all data is machine telemetry; the only personal data is staff names in the audit trail, handled as a service provider [RF 23].
 - **FTC:** low fairness risk; capability claims must not overstate.
 - **Sector rules:** EAR 9A515 first, ITAR where it applies; deemed-export rules mean only US persons touch customer technical data [RF 22]; NIST SP 800-171 for DoD work [RF 30].
 - **Customer exit:** that fleet's layer and our copy of its data are deleted, which is clean because the shared base holds no customer data; only an opt-in pooled model would face the unlearning limit [R 33].
@@ -202,7 +202,7 @@ Does the whole story hold up?
 - *Feasibility:* impact prediction, above all for command sequences never seen, is the one unproven piece. It has named tests and a safe fallback (layers 1–2; "unknown = high").
 - *Usability:* it fits the team's tools and ranking method, and each team gets its own brief.
 - *Desirability:* a copilot for capable teams, not a replacement; value grows with time in orbit.
-- *Viability:* a per-fleet subscription plus an onboarding fee; people-heavy on purpose at first (cheaper if parts libraries per bus type can be reused, a hypothesis); a small buyer pool; compliance (EAR/ITAR, CMMC) costs too. **This is the weakest point.**
+- *Viability:* a per-fleet subscription plus an onboarding fee; people-heavy on purpose at first (cheaper if parts libraries per bus type can be reused, a hypothesis); model upkeep, including release tests, is a running cost; a small buyer pool; compliance (EAR/ITAR, CMMC) costs too. **This is the weakest point.**
 
 **Think big, act small.** Stage 1 ranks, explains, suggests a safe fix window and records the outcome. Stage 2 adds fix planning, outcome tracking and feedback to the teams. Stage 3 adds testing the teams' fixes and rollout with partners (Spire-style tools, manufacturer emulators). Each starts once the last has earned trust [Q 42].
 
