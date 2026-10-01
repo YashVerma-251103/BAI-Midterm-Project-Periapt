@@ -127,15 +127,16 @@ Inside those operators, who actually buys?
 
 *Visual 3, part 1: persona card*
 
-> **"The Stretched Sentinel"**, the CISO from our 2 a.m. scene: CISO / VP Security at a US mid-size operator that also holds DoD contracts [R 26]. Grounded in Planet's live VP & CISO posting, where one role spans cyber, compliance and AI governance [RF 16].
+> **"The Stretched Sentinel"**, the CISO from our 2 a.m. scene: CISO / VP Security at a mid-size operator that also serves US defence customers [R 26]. Grounded in Planet's live VP & CISO posting, where one role spans cyber, compliance and AI governance [RF 16].
+> - *"I don't need another dashboard. I need to know which flaw to fix first, and be able to prove why."* (illustrative)
 > - **Pains:** advisory overload; audit pressure; blame for the one flaw that was missed.
 > - **Goals:** defend the fleet; show auditors a method.
 > - **Decision criteria:** evidence behind every ranking; auditability; never touches the command path; fits the tools the team already has.
-> - **Psychographic:** an expert, and so sceptical of automation (experts rely less on automation; Sanchez et al., 2011).
+> - **Psychographic:** an expert, and so sceptical of automation (A.2).
 
-**Buying committee** [R 27]: the CISO holds the budget; a SecOps analyst is the daily user and champion; the mission-ops lead approves anything that touches a satellite.
+**Buying committee** [R 27]: the CISO holds the budget; a SecOps analyst is the daily user and champion; the flight-software lead reads the *what* brief and can block adoption if it's wrong; the mission-ops lead approves anything that touches a satellite.
 
-**Diffusion of Innovation.** The category is at the introduction stage of its life cycle (Session 7), so we sell to early adopters: operators with formal programs, DoD contracts and fleets with some time in orbit, older or mixed, where the world model has most to say.
+**Diffusion of Innovation.** The category is at the introduction stage of its life cycle (Session 7), so we sell to early adopters: operators with formal programs, US defence customers and fleets with some time in orbit, older or mixed, where the world model has most to say.
 
 **Journey.** Lemon & Verhoef's stages, with Puntoni et al.'s AI experiences, built to escape the pilot trap (Gartner: over 80% of enterprise AI initiatives stall at pilot).
 

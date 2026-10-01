@@ -210,3 +210,5 @@ I also rejected the unsourced "3-person team" claim and the stale numbers after 
 
 **"Is every customer getting a custom product?"** Configured, not custom-built. The base model is shared; the fleet layer learns each customer's satellites; the copilot layer is set up to their ranking method, tools and team roles. Custom code per customer would turn us into a consultancy and hurt viability [Q44].
 
+**"Your persona is a CISO. Is this US-only?"** No. The role exists everywhere, and two of my five named buyers are European. What anchors the beachhead is serving US defence customers, because NIST SP 800-171's "timely" flaw rule comes with DoD contracts, and a European operator can hold those too [Q45, RF 30].
+

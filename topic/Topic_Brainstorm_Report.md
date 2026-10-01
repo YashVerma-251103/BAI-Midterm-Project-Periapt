@@ -503,6 +503,12 @@ Only two ideas failed. The scope grew from the work-arounds (emulator judge, sol
 - Also fixed: supplier power high → **medium** (we build parts lists with the customer, so manufacturer concentration hurts less); the Buyers row points back to A.0's five named buyers (no repetition); a one-line "Net" verdict. US-person team vs going abroad → viva sheet.
 **Change:** draft A.3; Viva_Prep §9.
 
+### Q45. Review of A.4 (1 Oct): "Add the flight-software lead, a persona quote, and drop the repeated Sanchez cite. Remove 'US' from the persona: a CISO / VP Security isn't limited to the US."
+**Reasoning:**
+- *Remove US:* **agreed, with one hook kept.** The persona is now "a mid-size operator that also serves US defence customers". The nationality goes, but the US-defence link stays, because A.3's beachhead rests on NIST SP 800-171 (it comes with DoD contracts, which non-US operators can hold too). Two of the five named buyers are European (SES, ICEYE), so this is more consistent.
+- Also: the flight-software lead added to the buying committee (reads the *what* brief; can block adoption); an illustrative persona quote; the psychographic points back to A.2 instead of repeating Sanchez.
+**Change:** draft A.4; Viva_Prep §9.
+
 ---
 
 ## 5. Questions Claude Asked Me
