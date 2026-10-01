@@ -198,3 +198,9 @@ I also rejected the unsourced "3-person team" claim and the stale numbers after 
 
 **"Is your $85K–120K figure real?"** It's a rough starting estimate per operator, and I say so: 20 advisories × 3 hours × half handled alone = 30 hours a week, about 0.75 of an analyst. Only the salary range is sourced, and it's general-industry. The pilot measures the real numbers [Q42, RF 5].
 
+**"If the customer leaves, don't they take everything?"** They take their data: telemetry, command history and the record. They don't take the working system. The base model and software are ours; their fleet layer is licensed during the subscription and deleted on exit. A rival, or their own team, has to rebuild the models and integrations and win their experts' trust again [Q43].
+
+**"The model was trained on their data. What if a big customer demands it?"** It's a common fight in AI contracts, and I can't promise we'd always win it. Three hedges: the contract (data theirs, model ours); the design (the fleet layer is a thin add-on that doesn't work without our base, which never sees customer data); and time (a frozen copy goes stale as satellites age). I don't claim nobody could ever build better; a rich operator could [Q43].
+
+**"Your market is tiny. Then what?"** Efficient scale cuts both ways: few rivals bother, but growth is capped. The path out is abroad, in stages. Two of my named buyers already aren't US companies (SES, ICEYE). Export rules decide the order: UK, Canada and Australia first (licence-free since 2024), Europe later. Demand there is unproven [Q43, RF 22, RF 2].
+

@@ -485,6 +485,16 @@ Only two ideas failed. The scope grew from the work-arounds (emulator judge, sol
 - *Testing the teams' fixes:* **not in Stage 1.** The teams are capable, not lacking (SES 40+ staff; Planet ground test → staging → rollout; Spire's update manager with rollbacks and a testbed; RF 31), and the world model can't predict new code (R6). What Stage 1 gives back after the handoff: a safe fix window (the margin forecast), the outcome stored in the record, and a re-ranked list. Planning and outcome tracking is Stage 2; validation and rollout with partners is Stage 3, once trust is earned (Q34, Q39).
 **Change:** draft A.1 (table, command chain, rough estimate, after-fix line, risk wording); Viva_Prep §9.
 
+### Q43. Review of A.2 (1 Oct): "Even combined, the moat isn't strong. If the customer leaves with the record, do we keep the model? Is the 'rival' possibly the customer itself? Can we go international once the US niche is won? Don't repeat things, refer back to earlier sections instead. Trust isn't one moat among many; trust is what keeps the customer, the workflow and the growing value. And if the model was trained on their data, how do we stop them owning it, or doing better than us?"
+**Reasoning:**
+- *Moat strength:* **agreed it's weak**, and it stays labelled thin at the start. The rewrite makes it more honest, not bigger.
+- *Trust as the root:* **agreed.** Earned trust (an intangible asset, earned per customer in shadow mode) keeps the customer, and staying builds the record in use, the workflow switching cost and value that grows with time in orbit. Efficient scale is market structure, not caused by trust.
+- *Who owns what:* the customer owns telemetry, command history and the record (exportable). Periapt owns the base model and software. The fleet layer is licensed only during the subscription and deleted on exit. The rival can be the customer's own team (the in-house substitute); either way they must rebuild the models and integrations and win trust again.
+- *"They can't do better than us":* **can't be promised** (a rich operator could build better). Three hedges instead: (1) the contract (data theirs, model ours); (2) the design: a shared base trained only on public data and open simulators plus a thin per-fleet layer (adapter technique, RF 8), so the fleet layer is useless alone and exit deletion is clean; (3) time: a frozen copy goes stale as satellites age.
+- *International:* **viable in stages, demand unproven.** Two named buyers are already non-US (SES, ICEYE). Export control decides the order: a 2024 EAR rule removed licence needs for the UK, Canada and Australia (RF 22); Europe later (EU Space Act not before 2030, RF 2). Kept as a one-line hint in A.2.
+- *No repetition:* A.2's architecture now lists only features A.1 didn't cover. A whole-draft repetition pass comes before the 4-page cut.
+**Change:** draft A.2 rewritten; A.5 customer-exit line aligned; Viva_Prep §9.
+
 ---
 
 ## 5. Questions Claude Asked Me
