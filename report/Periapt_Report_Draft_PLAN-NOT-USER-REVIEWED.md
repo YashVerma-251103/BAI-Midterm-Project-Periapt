@@ -6,7 +6,7 @@
 
 ## Opening: 2 a.m.
 
-*An illustrative scene.* It is 2 a.m. A security advisory lands: a flaw in the ground mission-control software could let an attacker send commands to the fleet. The vendor has no patch yet. The CISO of a mid-size satellite operator reads it and thinks of 200 satellites. Some are new. Some have flown for years on tired batteries. The security team, the flight-software team and mission operations each hold part of the answer, and each speaks a different language. One question has to be answered before morning: which satellites are most at risk tonight, and what can safely be done before the vendor's fix arrives? Tomorrow another advisory will arrive, and the same question starts again: **which flaw first, and why?**
+*An illustrative scene.* It is 2 a.m. A security advisory lands: a flaw in the ground mission-control software could let an attacker send commands to the fleet. The vendor has no patch yet. The CISO of a mid-size satellite operator reads it and thinks of 200 satellites. Some are new. Some have flown for years on tired batteries. Even two launched together sit in different sun, eclipse, radiation and workload, so the same command can do very different damage. The security team, the flight-software team and mission operations each hold part of the answer, and each speaks a different language. One question has to be answered before morning: which satellites are most at risk tonight, and what can safely be done before the vendor's fix arrives? Tomorrow another advisory will arrive, and the same question starts again: **which flaw first, and why?**
 
 ## A.0 Overview: Periapt
 
@@ -14,15 +14,15 @@
 - **Mission:** "Tell every operator, within minutes of a new flaw, what it means for each satellite, with reasons they can check."
 - **Vision:** "The trusted decision layer for every spacecraft operator." We start small and grow as trust is earned.
 
-**Where it sits.** Gartner Layer 7, AI Security & Risk, where the course places CrowdStrike; the closest analogue is CrowdStrike's Charlotte AI, which helps analysts triage. Foundation Capital would call it domain-specific AI: the value is knowing satellites, not owning a model. B2B to operators; B2G through operators with US defence contracts.
+**Where it sits.** On the Gartner stack, Periapt is a Layer 6 AI application that delivers Layer 7 (AI Security & Risk) outcomes, the layer where the course lists CrowdStrike; it also applies Layer 7 guardrails to its own LLM (A.5). The closest analogue is CrowdStrike's Charlotte AI, which helps analysts triage. Foundation Capital would call it domain-specific AI: the value is knowing satellites, not owning a model. B2B to operators, and B2B2G where those operators serve US defence customers.
 
-**Market.** 14,266 satellites operated at end-2025; 4,434 were deployed in 2025 alone (+65%) [RF 1]. That growth is mostly mega-constellations, so Periapt targets the mid-size tier [R 1, RF 11].
+**Market.** 14,266 satellites operated at end-2025; 4,434 were deployed in 2025 alone (+65%) [RF 1]. That growth is mostly mega-constellations, so Periapt targets the mid-size tier [R 1]. No official size exists for this niche, so we estimate it ourselves: *sum of the fleet sizes of the named mid-size buyers* (Planet ~200, Iridium ~75, SES ~50, Intelsat ~50, ICEYE ~52–72) ≈ **430–450 satellites across 5 operators** [RF 11]. This is our estimate from a public tracker, not an official figure. For scale only, the whole commercial satellite industry is $303B [RF 1].
 
 **Why now.**
 - Advisories outgrow teams: 40,009 CVEs in 2024, 48,185 in 2025, 57,908 year to date to 31 August 2026 [RF 27].
 - Tools already match known CVEs to software lists (Thales Alenia Space uses Black Duck [RF 12]); what stays manual is judging what a flaw means for *each satellite* [Q 40].
 - At Viasat in 2022, attackers entered through a misconfigured ground VPN appliance, then sent legitimate management commands; Viasat shipped nearly 30,000 modems [RF 4, RF 32].
-- ML already forecasts which IT flaws will be exploited (EPSS [RF 32]); we found nothing that predicts what a flaw would do to a specific satellite.
+- ML already forecasts which IT flaws will be exploited (EPSS [RF 32]). Research simulates attacks on satellites (NOS3 [RF 32]), but we found no product that predicts, automatically and per satellite from live data, what a flaw would do.
 
 **Topic fit.** Day zero is the day a flaw becomes known, often before a patch exists. Satellites are not one of the 16 US critical infrastructure sectors [RF 30], but critical sectors depend on them: Viasat's outage cut remote monitoring of ~5,800 wind turbines [RF 4], and the EU lists space as a high-criticality sector [RF 2].
 
