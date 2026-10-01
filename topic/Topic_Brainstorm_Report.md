@@ -530,6 +530,10 @@ Only two ideas failed. The scope grew from the work-arounds (emulator judge, sol
 **Reasoning:** **conceded.** The cost depends on what's new. More satellites of a known design (same bus and software) are cheap: copy the parts list, add versions; the reach map barely changes on the same ground system. A new fleet or new design is real onboarding again. Software updates are upkeep, covered by the subscription. So the pricing follows the work: an onboarding fee for each new fleet or satellite design, plus a subscription that grows with the fleet, priced per satellite (analogy: CrowdStrike per endpoint per year, RF 28). A customer launching more satellites grows revenue, and parts-library reuse per design (a hypothesis) matters more.
 **Change:** draft close (viability line); Viva_Prep §9.
 
+### Q49. Review of the appendix (1 Oct): "Is the 'independently raised' list needed, given the page limit? Both hardest concepts guided the work; can we use both?"
+**Reasoning:** the list is required (brief §D 3b: accepted / modified / rejected / independently developed) and is the strongest proof of ownership, so all items stay, plus Q41–Q48 in short form. The brief asks for *one* hardest concept, so it's framed as one concept with its consequence: *what the AI should predict* (main) raised the second hard question, *if the model learns from the customer's data, what is our moat?*, traced in the updated moat tree (data → earned trust; base/fleet-layer split).
+**Change:** draft appendix (moat tree, hardest-concept paragraph, Modified row, independent row). The appendix is now ~620 words, so it needs trimming to fit one page.
+
 ---
 
 ## 5. Questions Claude Asked Me

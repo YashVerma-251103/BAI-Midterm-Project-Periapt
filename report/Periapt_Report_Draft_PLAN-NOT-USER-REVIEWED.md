@@ -227,7 +227,9 @@ Cross-fleet network effect (Q10)
  └ Enough shared failures to learn from? No, they're rare (Q13)
     └ Public data? Proves feasibility for everyone, so not a moat (Q18)
        └ Pooled data? Operators won't help rivals (Q22), so only conditional
-          └ What needs no cooperation? The record + earned trust ✓ (Q40)
+          └ The customer's own data? It's theirs and leaves with them (Q40)
+             └ What keeps them? Earned trust ✓, then the record, workflow and value follow (Q43)
+                └ Who owns the model? Base ours; fleet layer licensed, deleted on exit ✓ (Q43)
 ```
 
 *Where should the AI sit?*
@@ -246,13 +248,15 @@ Predict patch effects ✗  new code is outside the model's data (R6)
 - *A judge of emulator test runs:* it works, but emulators already exist, so it is a commodity (Q33).
 - *Each flaw's impact on each satellite:* chosen. Attacks misuse commands the model has already seen in normal operations, the answer differs per satellite, and it is exactly "prioritisation", the listed topic (Q36).
 
-The trade-off: the chosen option is the least proven, so it comes with named tests and the rule "unknown = high". (Alternative topic for this box: defensibility, meaning who owns the data.)
+The trade-off: the chosen option is the least proven, so it comes with named tests and the rule "unknown = high".
+
+That choice raised a second hard question. If the model learns from each customer's own telemetry, the data is theirs, so what stops them leaving with it, and what is our moat at all? Working it through (the first tree) moved the moat from data to earned trust, and split the model into a shared base we own and a thin fleet layer that is licensed and deleted on exit (Q40, Q43).
 
 **4. Accepted, modified, rejected, independently developed.**
 
 | | What |
 |---|---|
 | Accepted | The satellite niche inside Day-Zero Vulnerability Prioritisation; mid-size operators as the target; reusing EPSS and SPARTA instead of rebuilding them |
-| Modified | Moat: network effect → the record + earned trust; world model: judging patches → predicting flaw impact; Aerospace Corp: rival → complement; scope: the whole flaw-to-fix pipeline → prioritisation only |
+| Modified | Moat: network effect → earned trust as the root, with a base/fleet-layer model split; world model: judging patches → predicting flaw impact; Aerospace Corp: rival → complement; scope: the whole flaw-to-fix pipeline → prioritisation only |
 | Rejected | Generic vulnerability management (not novel); AI-written patches sent to satellites; the RL planner; customer telemetry as the moat; a revenue figure without evidence |
-| Independently raised by me | Regulation cuts both ways (Q17); public data isn't a moat (Q18); in-house teams (Q20); why help competitors (Q22); unit economics (Q24); undo = unreliable (Q25); scope drift away from AI (Q34); replacement vs assistance (Q35); topic fit (Q36); autonomy (Q37); Aerospace as a complement (Q39); matching is already automated (Q40) |
+| Independently raised by me | Regulation cuts both ways (Q17); public data isn't a moat (Q18); in-house teams (Q20); why help competitors (Q22); unit economics (Q24); undo = unreliable (Q25); scope drift away from AI (Q34); replacement vs assistance (Q35); topic fit (Q36); autonomy (Q37); Aerospace as a complement (Q39); matching is already automated (Q40); market size as a labelled estimate (Q41); what each layer gives the team (Q42); trust as the root of the moat, and who owns the model (Q43); configured, not custom, per customer (Q44); a persona not bound to the US (Q45); model poisoning tested in simulation (Q46); feasibility and desirability wording (Q47); onboarding per new fleet (Q48) |
