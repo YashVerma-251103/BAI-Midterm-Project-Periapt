@@ -517,6 +517,15 @@ Only two ideas failed. The scope grew from the work-arounds (emulator judge, sol
 - Also: Zillow and Cruise get a clause each; GDPR (if we go to Europe) goes to the viva sheet; the repetition pass is deferred to the end.
 **Change:** draft A.5 and close; Viva_Prep §9.
 
+### Q47. Review of the close (1 Oct): "Doesn't 'impact prediction is unproven' make it sound unfeasible? Why is viability the weakest point? Don't claim customers 'want a copilot'; we're a facilitator, not a replacement. What does 'the onboarding fee pays for the engineers' mean?"
+**Reasoning:**
+- *Feasibility:* **agreed, a wording problem.** It now opens with what's proven (layers 1–2 on existing tools; learned spacecraft models exist, Hundman 2018), then the one open question (damage from never-seen command sequences), the tests, and the fallback (rank on exposure and scores).
+- *Viability:* it's weakest because it rests mostly on assumptions: ~5 named buyers, people-heavy onboarding, slow trust-based sales, compliance and upkeep costs, and no sourced price (Q29). The other lenses have evidence. It's now framed as "the biggest risk, and how we manage it".
+- *Desirability:* **agreed.** No claim about what customers want (no survey). It states the need (formal programs, rising volume, undefined "timely") and our role (a copilot that supports, not replaces).
+- *Onboarding fee:* the one-time fee covers the engineers' setup work (parts list, reach map), so each new customer doesn't start at a loss before the yearly subscription pays back. Like a security system's installation fee.
+- Also: the 2 a.m. bookend now says the CISO approves the work-around *the flight-software brief suggests* (Stage 1 doesn't plan fixes).
+**Change:** draft close.
+
 ---
 
 ## 5. Questions Claude Asked Me

@@ -199,14 +199,14 @@ Does the whole story hold up?
 ## Close: Four Lenses, and 2 a.m. Again
 
 **Four lenses** (Session 1):
-- *Feasibility:* impact prediction, above all for command sequences never seen, is the one unproven piece. It has named tests and a safe fallback (layers 1–2; "unknown = high").
-- *Usability:* it fits the team's tools and ranking method, and each team gets its own brief.
-- *Desirability:* a copilot for capable teams, not a replacement; value grows with time in orbit.
-- *Viability:* a per-fleet subscription plus an onboarding fee; people-heavy on purpose at first (cheaper if parts libraries per bus type can be reused, a hypothesis); model upkeep, including release tests, is a running cost; a small buyer pool; compliance (EAR/ITAR, CMMC) costs too. **This is the weakest point.**
+- *Feasibility:* layers 1–2 use proven tools, and learned spacecraft models already exist (Hundman et al. 2018). The open question is predicting damage from command sequences never seen; named tests decide it, and if it fails, Periapt still ranks on exposure and scores.
+- *Usability:* it fits the team's own tools and ranking method, and each team gets its own brief.
+- *Desirability:* operators already run formal security programs but face rising advisory volume and an undefined "timely"; Periapt supports their teams as a copilot and doesn't replace them.
+- *Viability:* **the biggest risk**: a small buyer pool, people-heavy onboarding, slow trust-based sales, and compliance and model-upkeep costs. We manage it three ways: a one-time onboarding fee covers the engineers' setup work, so each new customer doesn't start at a loss; the product is configured, not custom-built, so it scales; and growth goes abroad in stages.
 
 **Think big, act small.** Stage 1 ranks, explains, suggests a safe fix window and records the outcome. Stage 2 adds fix planning, outcome tracking and feedback to the teams. Stage 3 adds testing the teams' fixes and rollout with partners (Spire-style tools, manufacturer emulators). Each starts once the last has earned trust [Q 42].
 
-**2 a.m., again** (illustrative). By 2:10 the CISO has a ranked list. Satellite 12 is first (reachable from the ground, and "heaters off" would hurt it most in tonight's eclipse); the rest follow, with reasons. The CISO approves the first work-around and goes back to sleep. Which flaw first, and why? Now there is an answer anyone can check.
+**2 a.m., again** (illustrative). By 2:10 the CISO has a ranked list. Satellite 12 is first (reachable from the ground, and "heaters off" would hurt it most in tonight's eclipse); the rest follow, with reasons. The CISO approves the work-around the flight-software brief suggests and goes back to sleep. Which flaw first, and why? Now there is an answer anyone can check.
 
 ## References
 
