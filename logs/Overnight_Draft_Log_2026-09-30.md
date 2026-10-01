@@ -90,3 +90,4 @@ Format: *decision — why — cost if wrong.*
 ## Morning review (1 Oct, with the user)
 - Q41 (opening + A.0), Q42 (A.1), Q43 (A.2), Q44 (A.3) logged in the topic report and Viva_Prep §9.
 - *Ruling (user's no-repetition rule):* the A.3 term check now reports `MISSING ICEYE`, because the buyer names live only in A.0 and A.3 points back to them. The user's rule wins over the plan's term list. Expected; not a defect.
+- **1 Oct:** draft reviewed with the user (Q41–Q49) and renamed to `report/Periapt_Report_Draft.md` at the user's request; marks in HANDOFF, CLAUDE.md, README and the draft banner removed. `draft_check.sh` default path updated.

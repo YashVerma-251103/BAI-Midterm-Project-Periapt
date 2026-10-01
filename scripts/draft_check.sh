@@ -3,7 +3,7 @@
 #   draft_check.sh words "<heading>"        -> word count of that section
 #   draft_check.sh has "<heading>" term...  -> ok/MISSING per term (case-insensitive); exit 1 if any missing
 set -euo pipefail
-f="${DRAFT:-report/Periapt_Report_Draft_PLAN-NOT-USER-REVIEWED.md}"
+f="${DRAFT:-report/Periapt_Report_Draft.md}"
 sec() { awk -v h="$1" '$0=="## " h {f=1; next} /^## /{f=0} f' "$f"; }
 cmd="$1"; h="$2"; shift 2
 case "$cmd" in
