@@ -202,7 +202,7 @@ Does the whole story hold up?
 - *Desirability:* a copilot for capable teams, not a replacement; value grows with time in orbit.
 - *Viability:* a per-fleet subscription plus an onboarding fee; people-heavy on purpose at first (cheaper if parts libraries per bus type can be reused, a hypothesis); a small buyer pool; compliance (EAR/ITAR, CMMC) costs too. **This is the weakest point.**
 
-**Think big, act small.** Stage 1 ranks. Stage 2 adds fix-window planning and outcome tracking. Stage 3 adds validation and rollout with partners (Spire-style tools, manufacturer emulators). Each starts once the last has earned trust.
+**Think big, act small.** Stage 1 ranks, explains, suggests a safe fix window and records the outcome. Stage 2 adds fix planning, outcome tracking and feedback to the teams. Stage 3 adds testing the teams' fixes and rollout with partners (Spire-style tools, manufacturer emulators). Each starts once the last has earned trust [Q 42].
 
 **2 a.m., again** (illustrative). By 2:10 the CISO has a ranked list. Satellite 12 is first (reachable from the ground, and "heaters off" would hurt it most in tonight's eclipse); the rest follow, with reasons. The CISO approves the first work-around and goes back to sleep. Which flaw first, and why? Now there is an answer anyone can check.
 
