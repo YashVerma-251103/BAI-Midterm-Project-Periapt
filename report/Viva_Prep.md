@@ -216,3 +216,5 @@ I also rejected the unsourced "3-person team" claim and the stale numbers after 
 
 **"What stops someone poisoning your model?"** Three layers. Training data and overrides are logged and vetted. Every retrained model must pass a release test in simulation before it ranks anything, including a fixed set of known critical flaws it must still rank high. And the authority rule: the AI can only raise a priority, so a poisoned model can't push a flaw below the standard scores. It can't touch a satellite either; it only predicts [Q46].
 
+**"Why is viability your weakest point?"** Because it rests on assumptions, not evidence: about five named buyers, engineers onboarding every customer, slow trust-based sales, compliance and upkeep costs, and no sourced price. I manage it: a one-time onboarding fee covers the setup work so each new customer doesn't start at a loss, the product is configured rather than custom-built so it scales, and growth goes abroad in stages [Q47].
+
