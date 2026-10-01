@@ -3,7 +3,7 @@
 **Written:** 2026-09-30, end of the overnight drafting run (the earlier version, written after spec v3 + the plan, is in git history).
 **Deadline:** 1 Oct 2026, 23:59. No new research.
 
-> ⚠️ **The draft was written from a plan the user had NOT reviewed.** The user asked for this to show in the file name: `report/Periapt_Report_Draft_PLAN-NOT-USER-REVIEWED.md`. Keep that name until the user has reviewed the plan (`report/plans/2026-09-30-report-draft-plan.md`) and the draft; then rename it (`git mv`) and update this file, `CLAUDE.md` and `README.md`.
+> The draft was written overnight from a plan the user had not read. **On 1 Oct the user reviewed the whole draft section by section with Claude (Q41–Q49)** and approved renaming it to `report/Periapt_Report_Draft.md`.
 
 ---
 
@@ -11,14 +11,14 @@
 
 - **Spec v3 is approved:** `report/specs/2026-09-30-report-draft-design.md`.
 - **The drafting plan was run in full overnight (Tasks 0–9), unattended.** The user had not read the plan.
-- **Draft written:** `report/Periapt_Report_Draft_PLAN-NOT-USER-REVIEWED.md` (with source tags; ~3,400 words without tags and code blocks). Every plan check passes.
+- **Draft written and reviewed:** `report/Periapt_Report_Draft.md` (with source tags). Reviewed with the user on 1 Oct (Q41–Q49). Body ≈ 3,700 words without tags; it must shrink to ≈ 2,100 for 4 pages.
 - **Every decision made on the user's behalf** is in `logs/Overnight_Draft_Log_2026-09-30.md` ("Rulings", "Deferred minors"). Read it first.
 
 ## 2. What the next session does, in order
 
 1. Read `logs/Overnight_Draft_Log_2026-09-30.md`, then the draft.
 2. The user reviews the plan and the draft (morning of 1 Oct). Act on their changes; log new challenges as Q41+.
-3. Once the user approves: rename the draft (drop `_PLAN-NOT-USER-REVIEWED`) and update the marks in this file, `CLAUDE.md` and `README.md`.
+3. Done 1 Oct: draft renamed after the review. Next: the no-repetition pass (Claude), then the user's rewrite and cut.
 4. Then: the user's voice rewrite and cut to 4 pages + 1-page appendix → visuals (Visual 1 mermaid, Visual 2 Five Forces table, Visual 3 persona + journey) → .docx (docx skill) → strip tags. User tasks are in §6.
 5. `scripts/draft_check.sh` points at the current draft name by default (`DRAFT=<path>` overrides it). Re-run the checks after edits.
 
