@@ -468,6 +468,14 @@ Only two ideas failed. The scope grew from the work-arounds (emulator judge, sol
 - *Course gaps closed:* bias (S6: data-poor satellites under-ranked → "unknown = high"), a periodic safety review, the product lifecycle (S7), and the Layer 6/7 nuance.
 **Change:** spec v3 §2, §2.5, A.0, A.2, A.3, A.4, A.5, §5, §10; Viva_Prep §9.
 
+### Q41. Morning review of the opening + A.0 (1 Oct): "Check the Layer 7 claim first, then hedge it as a Layer 6 app delivering Layer 7 outcomes. Add that environmental conditions differ even for newly launched satellites. Give a market size, worded clearly as our own estimate from a formula, since no official number exists."
+**Reasoning:**
+- *Layer 7:* **checked and conceded.** The course's Gartner notes define Layer 7 as "Guardrails, TRiSM, governance, and threat protection" (securing AI) and Layer 6 as "AI Applications". CrowdStrike is listed at Layer 7 as a vendor. So Periapt is a Layer 6 app delivering Layer 7-style outcomes, and it applies Layer 7 guardrails to its own LLM.
+- *New satellites differ:* **agreed.** Two satellites launched together still sit in different sun, eclipse, radiation and workload. That's now in the opening, so the reader sees early why one flaw can rank differently per satellite.
+- *Market size:* **agreed, with one pushback.** A dollar figure needs a price per customer, which we cut in Q29 (no sourced price). So the estimate counts satellites instead: the sum of the named mid-size buyers' fleets (Planet, Iridium, SES, Intelsat, ICEYE; RF 11) ≈ 430–450 satellites across 5 operators. It's labelled as our estimate from a public tracker, not an official figure, with the $303B commercial satellite industry (RF 1) as scale only.
+- Also accepted: "no *product* predicts per-satellite impact" (research does simulate attacks: NOS3, RF 32), and B2B2G instead of B2G.
+**Change:** draft opening + A.0. A.0 is now ~100 words over target; the cut happens at the 4-page step.
+
 ---
 
 ## 5. Questions Claude Asked Me

@@ -185,3 +185,10 @@ I also rejected the unsourced "3-person team" claim and the stale numbers after 
 **"Where does your data come from on day one?"** From the client, at onboarding: parts lists, software versions, the ground-to-fleet network map, and telemetry and command history. Until the model is trained, it says "unknown", so rankings stay high by default. Shadow mode builds trust and trains the model at the same time [Q39].
 
 **"Why not build the whole patch pipeline?"** Stage 1 has to earn trust first. Once the rankings are trusted, we add fix-window planning, then validation and rollout with partners. Think big, act small [Q39].
+
+**"Is Periapt really Gartner Layer 7?"** Strictly, no. Layer 7 is about securing AI (guardrails, TRiSM). Periapt is a Layer 6 AI app that delivers security outcomes, the layer where the course lists CrowdStrike, and it applies Layer 7 guardrails to its own LLM [Q41].
+
+**"How big is the market?"** No official number exists for this niche, so I estimate it by counting satellites: the named mid-size buyers fly about 430–450 satellites across 5 operators (public tracker, RF 11). It's small, and I say so. I don't give a dollar figure because I have no sourced price per customer [Q41, Q29].
+
+**"If the satellites are identical and new, why rank them differently?"** Because their conditions aren't identical: sun, eclipse, radiation and workload differ from day one. The model still needs some history per satellite to use that, which is a pilot metric [Q41, Q40].
+
