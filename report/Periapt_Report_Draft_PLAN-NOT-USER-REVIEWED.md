@@ -181,7 +181,7 @@ A **kill switch** lets the operator turn off layer 3 or the whole agent, with th
 
 **AI security.** Advisories are untrusted input, a route for prompt injection, so their text is data, never instructions. **Least privilege:** the agent reads telemetry and writes tickets, with no route to command systems. A sanctioned, self-hosted tool removes the pull towards shadow AI. Why never auto-act? In 2024 one bad CrowdStrike update hit 8.5M Windows devices: being everywhere cuts both ways.
 
-**Monitoring and safety audits.** Drift checks as satellites age (the Zillow lesson). An audit trail on NIST SP 800-53 AU-2/3/6, reviewed at least weekly [RF 24] (the Cruise lesson). A model card per fleet, and a periodic safety review re-running A.1's tests. **Bias:** the model may under-rank satellites with thin data; "unknown = high" guards against that, and the review checks it.
+**Monitoring and safety audits.** Drift checks as satellites age (Zillow's pricing model failed when its market shifted). An audit trail on NIST SP 800-53 AU-2/3/6, reviewed at least weekly [RF 24] (Cruise lost a permit partly over missing records). A model card per fleet, and a periodic safety review re-running A.1's tests. **Bias:** the model may under-rank satellites with thin data; "unknown = high" guards against that, and the review checks it.
 
 **Liability.** Decision support with evidence and a stated residual risk, never "certified safe". Periapt ranks and humans act, so exposure is smaller [Q 25]; Air Canada was held to its chatbot's words, so claims stay careful.
 
