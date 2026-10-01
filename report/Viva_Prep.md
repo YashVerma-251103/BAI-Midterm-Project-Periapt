@@ -214,3 +214,5 @@ I also rejected the unsourced "3-person team" claim and the stale numbers after 
 
 **"If you go to Europe, what about GDPR?"** It would apply there. The report's jurisdiction is the US, so I don't cover it. The personal data we hold is small anyway (staff names in the audit trail), and the per-fleet design keeps each customer's data separate [Q46].
 
+**"What stops someone poisoning your model?"** Three layers. Training data and overrides are logged and vetted. Every retrained model must pass a release test in simulation before it ranks anything, including a fixed set of known critical flaws it must still rank high. And the authority rule: the AI can only raise a priority, so a poisoned model can't push a flaw below the standard scores. It can't touch a satellite either; it only predicts [Q46].
+
