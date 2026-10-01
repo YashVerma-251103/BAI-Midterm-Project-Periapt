@@ -526,6 +526,10 @@ Only two ideas failed. The scope grew from the work-arounds (emulator judge, sol
 - Also: the 2 a.m. bookend now says the CISO approves the work-around *the flight-software brief suggests* (Stage 1 doesn't plan fixes).
 **Change:** draft close.
 
+### Q48. (1 Oct): "Onboarding isn't once per customer. If the client launches a new fleet, doesn't that need a new parts list and reach map too?"
+**Reasoning:** **conceded.** The cost depends on what's new. More satellites of a known design (same bus and software) are cheap: copy the parts list, add versions; the reach map barely changes on the same ground system. A new fleet or new design is real onboarding again. Software updates are upkeep, covered by the subscription. So the pricing follows the work: an onboarding fee for each new fleet or satellite design, plus a subscription that grows with the fleet, priced per satellite (analogy: CrowdStrike per endpoint per year, RF 28). A customer launching more satellites grows revenue, and parts-library reuse per design (a hypothesis) matters more.
+**Change:** draft close (viability line); Viva_Prep §9.
+
 ---
 
 ## 5. Questions Claude Asked Me

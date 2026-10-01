@@ -218,3 +218,5 @@ I also rejected the unsourced "3-person team" claim and the stale numbers after 
 
 **"Why is viability your weakest point?"** Because it rests on assumptions, not evidence: about five named buyers, engineers onboarding every customer, slow trust-based sales, compliance and upkeep costs, and no sourced price. I manage it: a one-time onboarding fee covers the setup work so each new customer doesn't start at a loss, the product is configured rather than custom-built so it scales, and growth goes abroad in stages [Q47].
 
+**"What happens when the customer launches a new fleet?"** They pay an onboarding fee again for a new fleet or a new satellite design, because that's real work (new parts list, new reach paths). More satellites of a design we already know are cheap to add. The subscription is priced per satellite, like CrowdStrike per endpoint, so a growing fleet grows our revenue [Q48, RF 28].
+
