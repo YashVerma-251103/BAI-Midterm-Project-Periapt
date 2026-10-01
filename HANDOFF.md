@@ -1,26 +1,26 @@
 # Session Handoff
 
-**Written:** 2026-09-30, end of the overnight drafting run (the earlier version, written after spec v3 + the plan, is in git history).
+**Written:** 1 Oct 2026, during the review session (earlier versions are in git history).
 **Deadline:** 1 Oct 2026, 23:59. No new research.
 
-> The draft was written overnight from a plan the user had not read. **On 1 Oct the user reviewed the whole draft section by section with Claude (Q41–Q49)** and approved renaming it to `report/Periapt_Report_Draft.md`.
+> The draft was written overnight (30 Sep) from a plan the user hadn't read. On 1 Oct the user reviewed every section with Claude (Q41–Q49), **read the whole draft, and confirmed it holds all the material the report needs.** It was renamed `report/Periapt_Report_Draft.md`.
 
 ---
 
 ## 1. Where we are
 
-- **Spec v3 is approved:** `report/specs/2026-09-30-report-draft-design.md`.
-- **The drafting plan was run in full overnight (Tasks 0–9), unattended.** The user had not read the plan.
-- **Draft written and reviewed:** `report/Periapt_Report_Draft.md` (with source tags). Reviewed with the user on 1 Oct (Q41–Q49). Body ≈ 3,700 words without tags; it must shrink to ≈ 2,100 for 4 pages.
-- **Every decision made on the user's behalf** is in `logs/Overnight_Draft_Log_2026-09-30.md` ("Rulings", "Deferred minors"). Read it first.
+- **Spec v3 approved**; the plan was run overnight (Tasks 0–9).
+- **Content draft, complete and reviewed:** `report/Periapt_Report_Draft.md` (markdown, with source tags). Body ≈ 3,650 words without tags; 4 pages hold ≈ 2,100.
+- **Review fixes (1 Oct):** Q41–Q49 in the topic report §4 and Viva_Prep §9. A no-repetition pass found little to cut, so the cut must come from compressing.
+- **In progress:** the submittable report as a Word file for the user to review: `report/Periapt_Report_v1_FOR-REVIEW.docx` (+ PDF), with Figure 1 drawn as a compact S-shaped SVG (`report/figures/`).
+- Overnight decisions: `logs/Overnight_Draft_Log_2026-09-30.md`.
 
 ## 2. What the next session does, in order
 
-1. Read `logs/Overnight_Draft_Log_2026-09-30.md`, then the draft.
-2. The user reviews the plan and the draft (morning of 1 Oct). Act on their changes; log new challenges as Q41+.
-3. Done 1 Oct: draft renamed after the review. Next: the no-repetition pass (Claude), then the user's rewrite and cut.
-4. Then: the user's voice rewrite and cut to 4 pages + 1-page appendix → visuals (Visual 1 mermaid, Visual 2 Five Forces table, Visual 3 persona + journey) → .docx (docx skill) → strip tags. User tasks are in §6.
-5. `scripts/draft_check.sh` points at the current draft name by default (`DRAFT=<path>` overrides it). Re-run the checks after edits.
+1. Read this file, then the latest `report/Periapt_Report_v*_FOR-REVIEW.docx` (or its PDF) and the user's comments.
+2. Apply the user's changes. Every factual change is checked against `research/Research_Findings.md` first; log new challenges as Q50+.
+3. The user rewrites in their own voice (the appendix says "I rewrote it in my own words", which must be true), fills in name/roll number and the two transcript links, and submits by 23:59.
+4. `scripts/draft_check.sh` still works on the markdown draft (`DRAFT=<path>` overrides the default).
 
 ## 3. Read order
 
