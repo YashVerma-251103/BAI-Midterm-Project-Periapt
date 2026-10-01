@@ -76,27 +76,26 @@ If this works, what stops a rival copying it?
 
 ## A.2 Architecture, Moat and Defensibility
 
-**Core product architecture** (the loop in Visual 1):
-1. **Advisory reader:** the LLM agent, which must cite what it matched.
-2. **Parts list and reach map**, built with the customer.
-3. **Score layer:** CVSS, EPSS and SPARTA, reused.
-4. **World-model what-if:** impact per satellite.
-5. **Ranking with the authority rule:** the AI can raise a priority; lowering needs a human; "unknown" counts as high.
-6. **Per-team briefs and tickets** in each team's own tools.
-7. **The record:** every flaw, ranking, override and outcome.
+**Core product architecture.** The A.1 loop (Visual 1) runs on four product features:
+1. **Onboarding kit:** forward-deployed engineers build the parts list and reach map with the customer.
+2. **The authority rule:** the AI may raise a priority; lowering one needs a human; "unknown" counts as high.
+3. **Per-team briefs and tickets**, inside each team's own tools.
+4. **The record:** every flaw, ranking, override (with its reason) and outcome, per satellite.
 
-**Would Periapt survive if the model changed tomorrow?** Yes. The model isn't the moat (Foundation Capital); A.1's tests already allow swapping it. The moat is what each customer's use builds up. Using Morningstar's moat sources, ranked:
-1. **Intangible asset: the record.** Every flaw, ranking, override (with its reason) and outcome, tied to each satellite's history. Nobody can buy it. Spacecraft failures are rare, so overrides also count as learning signal [R 11].
-2. **Switching cost: earned trust.** A new vendor must rebuild the parts list and reach map, retrain, and sit through its own shadow mode before sceptical experts trust it. The telemetry archive belongs to the customer and leaves with them [Q 40]; the moat is the time and trust to rebuild, not the data.
-3. **Switching cost: workflow.** Tickets, approvals and the audit trail run through Periapt, a light form of platformization.
-4. **Efficient scale:** the niche is small, so it supports few players [R 19].
-5. *Conditional:* **a cross-fleet network effect**, only through opt-in, minimum-data sharing on the Space Data Association model [RF 31, Q 22], and only if a pooled model beats local ones on held-out pilot data [R 12].
+The world model has two parts: a shared base trained only on public data and open simulators, and a thin layer per fleet trained on that customer's data (a known technique [RF 8]). Any model can be swapped in, so Periapt survives if the model changes tomorrow: the model isn't the moat (Foundation Capital).
 
-**Value grows with time in orbit.** Identical satellites face different orbits, eclipses, radiation and workloads. We assume the differences grow as batteries wear and software versions split. The model needs history per satellite first, so value grows the longer the fleet flies; how fast is a pilot metric, not a promise. A later rival must retrain on that history and re-earn trust.
+**The moat: earned trust, and what it builds.** Experts rely less on automation (Sanchez et al., 2011), so trust is earned slowly, in shadow mode, and kept only while the rankings keep being right. In Morningstar's terms it is an intangible asset, like a brand earned one customer at a time. Trust keeps the customer, and staying builds the rest:
+- **the record in use:** it feeds each ranking, its overrides train the fleet layer (spacecraft failures are rare, so overrides are the signal [R 11]), and it backs every audit;
+- **a workflow switching cost:** tickets, approvals and the audit trail run through Periapt (light platformization);
+- **value that grows with time in orbit:** we expect satellites to drift apart as they age, and the fleet layer learns those differences; how fast is a pilot metric.
 
-**Not counted as moats:** public data, which proves feasibility for everyone [RF 7], and manufacturer partnerships (no evidence found) [R 13].
+**Who owns what.** The customer owns its data: telemetry, command history and the record, which it can export. Periapt owns the base model and the software, and licenses the fleet layer only while the subscription runs; on exit it is deleted. A copy would help little anyway: the fleet layer doesn't work without our base, and a frozen model goes stale as satellites age. So a customer who leaves keeps its data but loses a working system. A rival, or the customer's own team, must rebuild the models and integrations and win the experts' trust again [Q 40, Q 43].
 
-The honest limit: the moat is thin at cold start, so the product must deliver full value to a single operator. Who else wants this job?
+**Market structure.** Efficient scale: the niche is small, so few rivals bother [R 19]. The same smallness caps growth, so the longer path runs abroad, starting with allied operators where export rules allow [RF 22].
+
+**Conditional:** a cross-fleet network effect, only through opt-in, minimum-data sharing on the Space Data Association model [RF 31, Q 22], and only if a pooled model beats local ones on held-out pilot data [R 12]. **Not moats:** public data, which proves feasibility for everyone [RF 7], and manufacturer partnerships (no evidence found) [R 13].
+
+**The honest limit:** the moat is thin at the start, and trust is fragile: one missed critical flaw can cost it. That is why the guardrails matter. Who else wants this job?
 
 ## A.3 Porter's Five Forces
 
@@ -188,7 +187,7 @@ A **kill switch** lets the operator turn off layer 3 or the whole agent, with th
 - **CCPA:** a service provider handling mostly machine data; terminal data only as aggregate counts, which CCPA excludes [RF 23].
 - **FTC:** low fairness risk; capability claims must not overstate.
 - **Sector rules:** EAR 9A515 first, ITAR where it applies; deemed-export rules mean only US persons touch customer technical data [RF 22]; NIST SP 800-171 for DoD work [RF 30].
-- **Customer exit:** that fleet's model and data are deleted (simple, as models are per fleet); only an opt-in pooled model faces the unlearning limit [R 33].
+- **Customer exit:** that fleet's layer and our copy of its data are deleted, which is clean because the shared base holds no customer data; only an opt-in pooled model would face the unlearning limit [R 33].
 
 **Trust** = competence (the tests), integrity (the audit trail), benevolence (no route to commands) (Pavlou & Fygenson, 2006). The aim is calibrated trust, between distrust and over-trust (Lee & See, 2004), earned in stages.
 
