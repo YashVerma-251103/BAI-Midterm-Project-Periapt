@@ -14,6 +14,7 @@
 - **Review fixes (1 Oct):** Q41–Q49 in the topic report §4 and Viva_Prep §9. A no-repetition pass found little to cut, so the cut must come from compressing.
 - **Built for review:** `report/Periapt_Report_v1_FOR-REVIEW.docx` (+ `.pdf`), A4, Calibri 10.5pt, 1.8 cm margins. Body = 4 pages + ~220 words on page 5 (end of the close + references); appendix = 1 page with room to spare. Figure 1 is a hand-drawn S-shaped SVG (`report/figures/fig1_periapt_loop.svg`, PNG rendered with headless Chrome). Rebuild with `scripts/make_report.js` (needs `npm install docx` in a temp dir).
 - Overnight decisions: `logs/Overnight_Draft_Log_2026-09-30.md`.
+- **Drive pack (1 Oct):** `Periapt_Drive_Pack/` (gitignored) is the upload folder for Google Drive: documents in numbered folders + transcripts T01–T12 split by conversation. Rebuild: `python3 scripts/build_drive_pack.py`. The user fills the GitHub/Drive link slots in `00_START_HERE.txt` and the transcript index after upload. This session (and later ones) need a new row in `PARTS` after `/export` + `/transcript`.
 
 ## 2. What the next session does, in order
 
